@@ -1,13 +1,13 @@
 {
   "curriculumId": "android-basic",
   "title": "Androidアプリ開発基礎",
-  "description": "KotlinとJetpack Composeを使用した最新のAndroid開発を学びます。",
+  "description": "KotlinとJetpack Composeを使用した最新のAndroid開発を、基礎から公開まで体系的に学びます。",
   "chapters": [
     {
       "id": "intro",
       "title": "1. 導入と環境構築",
       "items": [
-        { "id": "setup", "title": "Android Studioのインストール", "path": "chapters/01-setup.md" },
+        { "id": "setup", "title": "Android Studioのインストールと環境準備", "path": "chapters/01-setup.md" },
         { "id": "first-app", "title": "初めてのプロジェクト作成", "path": "chapters/02-first-app.md" }
       ]
     },
@@ -16,7 +16,42 @@
       "title": "2. UI構築の基本",
       "items": [
         { "id": "compose", "title": "Jetpack Composeとは", "path": "chapters/03-compose.md" },
-        { "id": "layout", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md" }
+        { "id": "layout", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md" },
+        { "id": "state", "title": "Composeの状態管理", "path": "chapters/06-state.md" },
+        { "id": "navigation", "title": "画面遷移（Navigation）", "path": "chapters/07-navigation.md" }
+      ]
+    },
+    {
+      "id": "kotlin",
+      "title": "3. Kotlin基礎",
+      "items": [
+        { "id": "kotlin-basics", "title": "Kotlin基礎（Android向け）", "path": "chapters/05-kotlin-basics.md" }
+      ]
+    },
+    {
+      "id": "architecture",
+      "title": "4. アーキテクチャとデータ",
+      "items": [
+        { "id": "architecture", "title": "アーキテクチャ基礎（MVVM）", "path": "chapters/08-architecture.md" },
+        { "id": "data-layer", "title": "データ取得と非同期処理", "path": "chapters/09-data-layer.md" },
+        { "id": "network", "title": "ネットワーク通信（Retrofit）", "path": "chapters/10-network.md" },
+        { "id": "storage", "title": "データ保存（Room / DataStore）", "path": "chapters/11-storage.md" }
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "5. 品質と運用",
+      "items": [
+        { "id": "testing", "title": "テスト（ユニット/Compose UI）", "path": "chapters/12-testing.md" },
+        { "id": "performance", "title": "パフォーマンスと最適化", "path": "chapters/13-performance.md" },
+        { "id": "publishing", "title": "アプリ公開と運用", "path": "chapters/14-publishing.md" }
+      ]
+    },
+    {
+      "id": "project",
+      "title": "6. 総合演習",
+      "items": [
+        { "id": "project", "title": "総合演習：TODOアプリを作る", "path": "chapters/15-project.md" }
       ]
     }
   ]
