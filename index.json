@@ -1,0 +1,23 @@
+{
+  "curriculumId": "android-basic",
+  "title": "Androidアプリ開発基礎",
+  "description": "KotlinとJetpack Composeを使用した最新のAndroid開発を学びます。",
+  "chapters": [
+    {
+      "id": "intro",
+      "title": "1. 導入と環境構築",
+      "items": [
+        { "id": "setup", "title": "Android Studioのインストール", "path": "chapters/01-setup.md" },
+        { "id": "first-app", "title": "初めてのプロジェクト作成", "path": "chapters/02-first-app.md" }
+      ]
+    },
+    {
+      "id": "ui",
+      "title": "2. UI構築の基本",
+      "items": [
+        { "id": "compose", "title": "Jetpack Composeとは", "path": "chapters/03-compose.md" },
+        { "id": "layout", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md" }
+      ]
+    }
+  ]
+}
