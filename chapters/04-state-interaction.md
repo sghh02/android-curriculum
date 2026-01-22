@@ -611,9 +611,9 @@ var password by remember { mutableStateOf("") }
 
 ---
 
-## ハンズオン：TODOリスト入力を作る
+## ハンズオン：メモリスト入力を作る
 
-学んだ内容を使って、TODOの追加機能を作ってみましょう。
+学んだ内容を使って、メモの追加機能を作ってみましょう。
 
 ### 要件
 
@@ -626,7 +626,7 @@ var password by remember { mutableStateOf("") }
 
 ```kotlin
 @Composable
-fun TodoInput() {
+fun MemoInput() {
     // ここにコードを書いてみよう
 }
 ```
@@ -635,9 +635,9 @@ fun TodoInput() {
 
 ```kotlin
 @Composable
-fun TodoInput() {
+fun MemoInput() {
     var inputText by remember { mutableStateOf("") }
-    var todos by remember { mutableStateOf(listOf<String>()) }
+    var memos by remember { mutableStateOf(listOf<String>()) }
 
     Column(modifier = Modifier.padding(16.dp)) {
         // 入力エリア
@@ -648,7 +648,7 @@ fun TodoInput() {
             OutlinedTextField(
                 value = inputText,
                 onValueChange = { inputText = it },
-                label = { Text("新しいTODO") },
+                label = { Text("新しいメモ") },
                 modifier = Modifier.weight(1f),
                 singleLine = true
             )
@@ -658,7 +658,7 @@ fun TodoInput() {
             Button(
                 onClick = {
                     if (inputText.isNotBlank()) {
-                        todos = todos + inputText.trim()
+                        memos = memos + inputText.trim()
                         inputText = ""
                     }
                 },
@@ -670,15 +670,15 @@ fun TodoInput() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // TODOリスト
-        if (todos.isEmpty()) {
+        // メモリスト
+        if (memos.isEmpty()) {
             Text(
-                text = "TODOがありません",
+                text = "メモがありません",
                 color = Color.Gray,
                 modifier = Modifier.padding(16.dp)
             )
         } else {
-            todos.forEachIndexed { index, todo ->
+            memos.forEachIndexed { index, memo ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -691,10 +691,10 @@ fun TodoInput() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(todo)
+                        Text(memo)
                         IconButton(
                             onClick = {
-                                todos = todos.filterIndexed { i, _ -> i != index }
+                                memos = memos.filterIndexed { i, _ -> i != index }
                             }
                         ) {
                             Icon(

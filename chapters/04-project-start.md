@@ -168,7 +168,7 @@ enum class Category(
     WORK("仕事", "#FF6B6B"),
     PERSONAL("プライベート", "#4ECDC4"),
     IDEA("アイデア", "#FFE66D"),
-    TODO("TODO", "#95E1D3");
+    TASK("やること", "#95E1D3");
 
     companion object {
         fun fromDisplayName(name: String): Category {
@@ -278,14 +278,14 @@ object SampleData {
                 category = Category.IDEA
             ),
             Memo(
-                title = "今週のTODO",
+                title = "今週のやること",
                 content = """
                     - プログラミング課題を完成させる
                     - 本を2冊読む
                     - ジムに3回行く
                     - 部屋の掃除
                 """.trimIndent(),
-                category = Category.TODO
+                category = Category.TASK
             ),
             Memo(
                 title = "読書メモ",
@@ -633,7 +633,7 @@ enum class Category(
     WORK("仕事", "#FF6B6B"),
     PERSONAL("プライベート", "#4ECDC4"),
     IDEA("アイデア", "#FFE66D"),
-    TODO("TODO", "#95E1D3"),
+    TASK("やること", "#95E1D3"),
     STUDY("学習", "#FFA07A");  // 追加
 
     companion object {

@@ -21,7 +21,7 @@
 
 | 用途 | 推奨 |
 |------|------|
-| 構造化データ（TODO、ユーザー情報など） | **Room** |
+| 構造化データ（メモ、ユーザー情報など） | **Room** |
 | キー/値ペア（設定、フラグなど） | **DataStore** |
 | 大量データ | **Room** |
 | シンプルな値 | **DataStore** |
@@ -50,8 +50,8 @@ dependencies {
 ## Room - Entity（テーブル定義）
 
 ```kotlin
-@Entity(tableName = "todos")
-data class TodoEntity(
+@Entity(tableName = "memos")
+data class MemoEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
@@ -90,49 +90,49 @@ data class UserEntity(
 
 ```kotlin
 @Dao
-interface TodoDao {
+interface MemoDao {
     // 全件取得（Flow）
-    @Query("SELECT * FROM todos ORDER BY created_at DESC")
-    fun getAllTodos(): Flow<List<TodoEntity>>
+    @Query("SELECT * FROM memos ORDER BY created_at DESC")
+    fun getAllMemos(): Flow<List<MemoEntity>>
 
     // 条件付き取得
-    @Query("SELECT * FROM todos WHERE is_completed = :completed")
-    fun getTodosByStatus(completed: Boolean): Flow<List<TodoEntity>>
+    @Query("SELECT * FROM memos WHERE is_completed = :completed")
+    fun getMemosByStatus(completed: Boolean): Flow<List<MemoEntity>>
 
     // 単一取得
-    @Query("SELECT * FROM todos WHERE id = :id")
-    suspend fun getTodoById(id: Int): TodoEntity?
+    @Query("SELECT * FROM memos WHERE id = :id")
+    suspend fun getMemoById(id: Int): MemoEntity?
 
     // 挿入（IDを返す）
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(todo: TodoEntity): Long
+    suspend fun insert(memo: MemoEntity): Long
 
     // 複数挿入
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(todos: List<TodoEntity>)
+    suspend fun insertAll(memos: List<MemoEntity>)
 
     // 更新
     @Update
-    suspend fun update(todo: TodoEntity)
+    suspend fun update(memo: MemoEntity)
 
     // 削除
     @Delete
-    suspend fun delete(todo: TodoEntity)
+    suspend fun delete(memo: MemoEntity)
 
     // IDで削除
-    @Query("DELETE FROM todos WHERE id = :id")
+    @Query("DELETE FROM memos WHERE id = :id")
     suspend fun deleteById(id: Int)
 
     // 全削除
-    @Query("DELETE FROM todos")
+    @Query("DELETE FROM memos")
     suspend fun deleteAll()
 
     // 完了済みを削除
-    @Query("DELETE FROM todos WHERE is_completed = 1")
+    @Query("DELETE FROM memos WHERE is_completed = 1")
     suspend fun deleteCompleted()
 
     // カウント
-    @Query("SELECT COUNT(*) FROM todos WHERE is_completed = 0")
+    @Query("SELECT COUNT(*) FROM memos WHERE is_completed = 0")
     fun getActiveCount(): Flow<Int>
 }
 ```
@@ -143,12 +143,12 @@ interface TodoDao {
 
 ```kotlin
 @Database(
-    entities = [TodoEntity::class],
+    entities = [MemoEntity::class],
     version = 1,
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun todoDao(): TodoDao
+    abstract fun memoDao(): MemoDao
 
     companion object {
         @Volatile
@@ -176,54 +176,54 @@ abstract class AppDatabase : RoomDatabase() {
 ## Room - Repository実装
 
 ```kotlin
-interface TodoRepository {
-    fun getAllTodos(): Flow<List<Todo>>
-    fun getActiveTodos(): Flow<List<Todo>>
-    suspend fun addTodo(title: String)
-    suspend fun toggleComplete(todo: Todo)
-    suspend fun deleteTodo(todo: Todo)
+interface MemoRepository {
+    fun getAllMemos(): Flow<List<Memo>>
+    fun getActiveMemos(): Flow<List<Memo>>
+    suspend fun addMemo(title: String)
+    suspend fun toggleComplete(memo: Memo)
+    suspend fun deleteMemo(memo: Memo)
 }
 
-class TodoRepositoryImpl(
-    private val todoDao: TodoDao
-) : TodoRepository {
+class MemoRepositoryImpl(
+    private val memoDao: MemoDao
+) : MemoRepository {
 
-    override fun getAllTodos(): Flow<List<Todo>> {
-        return todoDao.getAllTodos().map { entities ->
+    override fun getAllMemos(): Flow<List<Memo>> {
+        return memoDao.getAllMemos().map { entities ->
             entities.map { it.toDomain() }
         }
     }
 
-    override fun getActiveTodos(): Flow<List<Todo>> {
-        return todoDao.getTodosByStatus(completed = false).map { entities ->
+    override fun getActiveMemos(): Flow<List<Memo>> {
+        return memoDao.getMemosByStatus(completed = false).map { entities ->
             entities.map { it.toDomain() }
         }
     }
 
-    override suspend fun addTodo(title: String) {
-        val entity = TodoEntity(title = title)
-        todoDao.insert(entity)
+    override suspend fun addMemo(title: String) {
+        val entity = MemoEntity(title = title)
+        memoDao.insert(entity)
     }
 
-    override suspend fun toggleComplete(todo: Todo) {
-        val entity = todo.toEntity().copy(isCompleted = !todo.isCompleted)
-        todoDao.update(entity)
+    override suspend fun toggleComplete(memo: Memo) {
+        val entity = memo.toEntity().copy(isCompleted = !memo.isCompleted)
+        memoDao.update(entity)
     }
 
-    override suspend fun deleteTodo(todo: Todo) {
-        todoDao.delete(todo.toEntity())
+    override suspend fun deleteMemo(memo: Memo) {
+        memoDao.delete(memo.toEntity())
     }
 }
 
 // マッピング関数
-fun TodoEntity.toDomain() = Todo(
+fun MemoEntity.toDomain() = Memo(
     id = id,
     title = title,
     isCompleted = isCompleted,
     createdAt = createdAt
 )
 
-fun Todo.toEntity() = TodoEntity(
+fun Memo.toEntity() = MemoEntity(
     id = id,
     title = title,
     isCompleted = isCompleted,
@@ -237,11 +237,11 @@ fun Todo.toEntity() = TodoEntity(
 
 ```kotlin
 @HiltViewModel
-class TodoViewModel @Inject constructor(
-    private val repository: TodoRepository
+class MemoViewModel @Inject constructor(
+    private val repository: MemoRepository
 ) : ViewModel() {
 
-    val todos: StateFlow<List<Todo>> = repository.getAllTodos()
+    val memos: StateFlow<List<Memo>> = repository.getAllMemos()
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
@@ -255,25 +255,25 @@ class TodoViewModel @Inject constructor(
         _inputText.value = text
     }
 
-    fun addTodo() {
+    fun addMemo() {
         val text = _inputText.value.trim()
         if (text.isEmpty()) return
 
         viewModelScope.launch {
-            repository.addTodo(text)
+            repository.addMemo(text)
             _inputText.value = ""
         }
     }
 
-    fun toggleComplete(todo: Todo) {
+    fun toggleComplete(memo: Memo) {
         viewModelScope.launch {
-            repository.toggleComplete(todo)
+            repository.toggleComplete(memo)
         }
     }
 
-    fun deleteTodo(todo: Todo) {
+    fun deleteMemo(memo: Memo) {
         viewModelScope.launch {
-            repository.deleteTodo(todo)
+            repository.deleteMemo(memo)
         }
     }
 }
@@ -290,7 +290,7 @@ class TodoViewModel @Inject constructor(
 val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
-            "ALTER TABLE todos ADD COLUMN priority INTEGER NOT NULL DEFAULT 0"
+            "ALTER TABLE memos ADD COLUMN priority INTEGER NOT NULL DEFAULT 0"
         )
     }
 }

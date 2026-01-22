@@ -192,7 +192,7 @@ val event: SharedFlow<Event> = _event.asSharedFlow()
 ### FlowをStateFlowに変換
 
 ```kotlin
-val todos: StateFlow<List<Todo>> = repository.getTodosFlow()
+val memos: StateFlow<List<Memo>> = repository.getMemosFlow()
     .stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
@@ -216,7 +216,7 @@ val todos: StateFlow<List<Todo>> = repository.getTodosFlow()
 
 ```kotlin
 @Composable
-fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
+fun MemoScreen(viewModel: MemoViewModel = viewModel()) {
     // StateFlowをCompose Stateに変換
     val uiState by viewModel.uiState.collectAsState()
 
@@ -224,7 +224,7 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
     when {
         uiState.isLoading -> LoadingScreen()
         uiState.error != null -> ErrorScreen(uiState.error)
-        else -> TodoList(uiState.todos)
+        else -> MemoList(uiState.memos)
     }
 }
 ```
@@ -238,7 +238,7 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
 implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
 
 @Composable
-fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
+fun MemoScreen(viewModel: MemoViewModel = viewModel()) {
     // ライフサイクルを考慮して収集
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 }
@@ -309,14 +309,14 @@ viewModelScope.launch {
 ### Flowのエラーハンドリング
 
 ```kotlin
-repository.getTodos()
+repository.getMemos()
     .catch { e ->
         // エラーをキャッチしてUIに通知
         emit(emptyList())
         _error.emit(e.message)
     }
-    .collect { todos ->
-        _uiState.update { it.copy(todos = todos) }
+    .collect { memos ->
+        _uiState.update { it.copy(memos = memos) }
     }
 ```
 

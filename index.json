@@ -15,9 +15,12 @@
       "title": "Unit 1: プログラミングとAndroidの基礎",
       "items": [
         { "id": "setup", "title": "Android Studioのインストールと環境準備", "path": "chapters/01-setup.md", "estimatedMinutes": 90 },
+        { "id": "first-app", "title": "初めてのプロジェクト作成", "path": "chapters/02-first-app.md", "estimatedMinutes": 60 },
         { "id": "kotlin-basics", "title": "Kotlinプログラミングの基礎", "path": "chapters/02-kotlin-basics.md", "estimatedMinutes": 180 },
+        { "id": "kotlin-basics-summary", "title": "Kotlin基礎（要点まとめ）", "path": "chapters/05-kotlin-basics.md", "estimatedMinutes": 60 },
         { "id": "oop-fundamentals", "title": "オブジェクト指向プログラミング", "path": "chapters/02-oop-fundamentals.md", "estimatedMinutes": 120 },
         { "id": "android-fundamentals", "title": "Androidアプリの基本", "path": "chapters/03-android-fundamentals.md", "estimatedMinutes": 120 },
+        { "id": "compose-overview", "title": "Jetpack Composeの概要", "path": "chapters/03-compose.md", "estimatedMinutes": 60 },
         { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md", "estimatedMinutes": 150 },
         { "id": "project-start", "title": "ハンズオン：メモアプリを始める", "path": "chapters/04-project-start.md", "estimatedMinutes": 120 }
       ]
@@ -26,6 +29,8 @@
       "id": "unit2",
       "title": "Unit 2: アプリUIの構築",
       "items": [
+        { "id": "layout-basics", "title": "レイアウトの基本（Row/Column/Box）", "path": "chapters/04-layout.md", "estimatedMinutes": 60 },
+        { "id": "state-basics", "title": "状態管理の基礎（remember/mutableStateOf）", "path": "chapters/06-state.md", "estimatedMinutes": 60 },
         { "id": "state-interaction", "title": "状態管理とユーザーインタラクション", "path": "chapters/04-state-interaction.md", "estimatedMinutes": 120 },
         { "id": "lists", "title": "リスト表示とLazyColumn", "path": "chapters/05-lists-lazycolumn.md", "estimatedMinutes": 90 },
         { "id": "material-design", "title": "Material Design 3とテーマ", "path": "chapters/06-material-design.md", "estimatedMinutes": 90 }

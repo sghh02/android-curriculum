@@ -23,22 +23,22 @@
 
 ```kotlin
 @Composable
-fun TodoScreen() {
-    var todos by remember { mutableStateOf(listOf<String>()) }
+fun MemoScreen() {
+    var memos by remember { mutableStateOf(listOf<String>()) }
     var input by remember { mutableStateOf("") }
 
     // API呼び出し
     LaunchedEffect(Unit) {
-        val response = api.getTodos()  // ここでAPI呼び出し
-        todos = response
+        val response = api.getMemos()  // ここでAPI呼び出し
+        memos = response
     }
 
     Column {
         TextField(value = input, onValueChange = { input = it })
         Button(onClick = {
             // ここでDB保存
-            db.insert(Todo(input))
-            todos = todos + input
+            db.insert(Memo(input))
+            memos = memos + input
             input = ""
         }) {
             Text("追加")
@@ -194,36 +194,36 @@ fun MyScreen(viewModel: MyViewModel = viewModel()) {
 ### UI状態をdata classでまとめる
 
 ```kotlin
-data class TodoUiState(
-    val todos: List<Todo> = emptyList(),
+data class MemoUiState(
+    val memos: List<Memo> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
     val inputText: String = ""
 )
 
-class TodoViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(TodoUiState())
-    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
+class MemoViewModel : ViewModel() {
+    private val _uiState = MutableStateFlow(MemoUiState())
+    val uiState: StateFlow<MemoUiState> = _uiState.asStateFlow()
 
     fun onInputChange(text: String) {
         _uiState.update { it.copy(inputText = text) }
     }
 
-    fun addTodo() {
+    fun addMemo() {
         val text = _uiState.value.inputText
         if (text.isBlank()) return
 
         _uiState.update {
             it.copy(
-                todos = it.todos + Todo(text = text),
+                memos = it.memos + Memo(text = text),
                 inputText = ""
             )
         }
     }
 
-    fun removeTodo(todo: Todo) {
+    fun removeMemo(memo: Memo) {
         _uiState.update {
-            it.copy(todos = it.todos - todo)
+            it.copy(memos = it.memos - memo)
         }
     }
 }
@@ -233,7 +233,7 @@ class TodoViewModel : ViewModel() {
 
 ```kotlin
 @Composable
-fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
+fun MemoScreen(viewModel: MemoViewModel = viewModel()) {
     val uiState by viewModel.uiState.collectAsState()
 
     Column(modifier = Modifier.padding(16.dp)) {
@@ -241,12 +241,12 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
         OutlinedTextField(
             value = uiState.inputText,
             onValueChange = viewModel::onInputChange,
-            label = { Text("新しいTODO") },
+            label = { Text("新しいメモ") },
             modifier = Modifier.fillMaxWidth()
         )
 
         Button(
-            onClick = viewModel::addTodo,
+            onClick = viewModel::addMemo,
             enabled = uiState.inputText.isNotBlank()
         ) {
             Text("追加")
@@ -262,12 +262,12 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
             Text(text = error, color = Color.Red)
         }
 
-        // TODOリスト
+        // メモリスト
         LazyColumn {
-            items(uiState.todos) { todo ->
-                TodoItem(
-                    todo = todo,
-                    onDelete = { viewModel.removeTodo(todo) }
+            items(uiState.memos) { memo ->
+                MemoItem(
+                    memo = memo,
+                    onDelete = { viewModel.removeMemo(memo) }
                 )
             }
         }
@@ -289,22 +289,22 @@ User Action → ViewModel → State Update → UI Update
 
 ```kotlin
 // UIイベント（ボタンクリックなど）
-sealed interface TodoEvent {
-    data class OnInputChange(val text: String) : TodoEvent
-    object OnAddClick : TodoEvent
-    data class OnDeleteClick(val todo: Todo) : TodoEvent
-    data class OnToggleComplete(val todo: Todo) : TodoEvent
+sealed interface MemoEvent {
+    data class OnInputChange(val text: String) : MemoEvent
+    object OnAddClick : MemoEvent
+    data class OnDeleteClick(val memo: Memo) : MemoEvent
+    data class OnToggleComplete(val memo: Memo) : MemoEvent
 }
 
-class TodoViewModel : ViewModel() {
-    fun onEvent(event: TodoEvent) {
+class MemoViewModel : ViewModel() {
+    fun onEvent(event: MemoEvent) {
         when (event) {
-            is TodoEvent.OnInputChange -> {
+            is MemoEvent.OnInputChange -> {
                 _uiState.update { it.copy(inputText = event.text) }
             }
-            is TodoEvent.OnAddClick -> addTodo()
-            is TodoEvent.OnDeleteClick -> removeTodo(event.todo)
-            is TodoEvent.OnToggleComplete -> toggleComplete(event.todo)
+            is MemoEvent.OnAddClick -> addMemo()
+            is MemoEvent.OnDeleteClick -> removeMemo(event.memo)
+            is MemoEvent.OnToggleComplete -> toggleComplete(event.memo)
         }
     }
 }
@@ -313,9 +313,9 @@ class TodoViewModel : ViewModel() {
 ### 一回限りのイベント（Snackbar、画面遷移など）
 
 ```kotlin
-class TodoViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(TodoUiState())
-    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
+class MemoViewModel : ViewModel() {
+    private val _uiState = MutableStateFlow(MemoUiState())
+    val uiState: StateFlow<MemoUiState> = _uiState.asStateFlow()
 
     // 一回限りのイベント
     private val _event = MutableSharedFlow<UiEvent>()
@@ -326,9 +326,9 @@ class TodoViewModel : ViewModel() {
         object NavigateBack : UiEvent
     }
 
-    fun deleteTodo(todo: Todo) {
+    fun deleteMemo(memo: Memo) {
         viewModelScope.launch {
-            repository.delete(todo)
+            repository.delete(memo)
             _event.emit(UiEvent.ShowSnackbar("削除しました"))
         }
     }
@@ -336,7 +336,7 @@ class TodoViewModel : ViewModel() {
 
 // Composableでの受信
 @Composable
-fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
+fun MemoScreen(viewModel: MemoViewModel = viewModel()) {
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(Unit) {
@@ -374,40 +374,40 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
 
 ```kotlin
 // データモデル
-data class Todo(
+data class Memo(
     val id: Int = 0,
     val text: String,
     val isCompleted: Boolean = false
 )
 
 // Repositoryインターフェース
-interface TodoRepository {
-    fun getTodos(): Flow<List<Todo>>
-    suspend fun addTodo(todo: Todo)
-    suspend fun updateTodo(todo: Todo)
-    suspend fun deleteTodo(todo: Todo)
+interface MemoRepository {
+    fun getMemos(): Flow<List<Memo>>
+    suspend fun addMemo(memo: Memo)
+    suspend fun updateMemo(memo: Memo)
+    suspend fun deleteMemo(memo: Memo)
 }
 
 // 実装クラス
-class TodoRepositoryImpl(
-    private val todoDao: TodoDao
-) : TodoRepository {
-    override fun getTodos(): Flow<List<Todo>> {
-        return todoDao.getAll().map { entities ->
-            entities.map { it.toTodo() }
+class MemoRepositoryImpl(
+    private val memoDao: MemoDao
+) : MemoRepository {
+    override fun getMemos(): Flow<List<Memo>> {
+        return memoDao.getAll().map { entities ->
+            entities.map { it.toMemo() }
         }
     }
 
-    override suspend fun addTodo(todo: Todo) {
-        todoDao.insert(todo.toEntity())
+    override suspend fun addMemo(memo: Memo) {
+        memoDao.insert(memo.toEntity())
     }
 
-    override suspend fun updateTodo(todo: Todo) {
-        todoDao.update(todo.toEntity())
+    override suspend fun updateMemo(memo: Memo) {
+        memoDao.update(memo.toEntity())
     }
 
-    override suspend fun deleteTodo(todo: Todo) {
-        todoDao.delete(todo.toEntity())
+    override suspend fun deleteMemo(memo: Memo) {
+        memoDao.delete(memo.toEntity())
     }
 }
 ```
@@ -415,38 +415,38 @@ class TodoRepositoryImpl(
 ### ViewModelでの使用
 
 ```kotlin
-class TodoViewModel(
-    private val repository: TodoRepository
+class MemoViewModel(
+    private val repository: MemoRepository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(TodoUiState())
-    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(MemoUiState())
+    val uiState: StateFlow<MemoUiState> = _uiState.asStateFlow()
 
     init {
-        loadTodos()
+        loadMemos()
     }
 
-    private fun loadTodos() {
+    private fun loadMemos() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
 
-            repository.getTodos()
+            repository.getMemos()
                 .catch { e ->
                     _uiState.update {
                         it.copy(isLoading = false, error = e.message)
                     }
                 }
-                .collect { todos ->
+                .collect { memos ->
                     _uiState.update {
-                        it.copy(isLoading = false, todos = todos)
+                        it.copy(isLoading = false, memos = memos)
                     }
                 }
         }
     }
 
-    fun addTodo(text: String) {
+    fun addMemo(text: String) {
         viewModelScope.launch {
-            repository.addTodo(Todo(text = text))
+            repository.addMemo(Memo(text = text))
         }
     }
 }
@@ -497,26 +497,26 @@ class MyViewModel : ViewModel() {
 // Application クラスで依存関係を作成
 class MyApplication : Application() {
     val database by lazy { AppDatabase.create(this) }
-    val todoRepository by lazy { TodoRepositoryImpl(database.todoDao()) }
+    val memoRepository by lazy { MemoRepositoryImpl(database.memoDao()) }
 }
 
 // ViewModelFactory
-class TodoViewModelFactory(
-    private val repository: TodoRepository
+class MemoViewModelFactory(
+    private val repository: MemoRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return TodoViewModel(repository) as T
+        return MemoViewModel(repository) as T
     }
 }
 
 // Composableで使用
 @Composable
-fun TodoScreen() {
+fun MemoScreen() {
     val context = LocalContext.current
     val app = context.applicationContext as MyApplication
 
-    val viewModel: TodoViewModel = viewModel(
-        factory = TodoViewModelFactory(app.todoRepository)
+    val viewModel: MemoViewModel = viewModel(
+        factory = MemoViewModelFactory(app.memoRepository)
     )
     // ...
 }
@@ -552,23 +552,23 @@ object AppModule {
     }
 
     @Provides
-    fun provideTodoRepository(database: AppDatabase): TodoRepository {
-        return TodoRepositoryImpl(database.todoDao())
+    fun provideMemoRepository(database: AppDatabase): MemoRepository {
+        return MemoRepositoryImpl(database.memoDao())
     }
 }
 
 // ViewModel
 @HiltViewModel
-class TodoViewModel @Inject constructor(
-    private val repository: TodoRepository
+class MemoViewModel @Inject constructor(
+    private val repository: MemoRepository
 ) : ViewModel() {
     // ...
 }
 
 // Composable
 @Composable
-fun TodoScreen(
-    viewModel: TodoViewModel = hiltViewModel()
+fun MemoScreen(
+    viewModel: MemoViewModel = hiltViewModel()
 ) {
     // ...
 }
@@ -576,37 +576,37 @@ fun TodoScreen(
 
 ---
 
-## 実践：TODOアプリのアーキテクチャ
+## 実践：メモアプリのアーキテクチャ
 
 ```kotlin
 // UI State
-data class TodoUiState(
-    val todos: List<Todo> = emptyList(),
+data class MemoUiState(
+    val memos: List<Memo> = emptyList(),
     val isLoading: Boolean = false,
     val inputText: String = "",
-    val filter: TodoFilter = TodoFilter.ALL
+    val filter: MemoFilter = MemoFilter.ALL
 )
 
-enum class TodoFilter { ALL, ACTIVE, COMPLETED }
+enum class MemoFilter { ALL, ACTIVE, COMPLETED }
 
 // ViewModel
 @HiltViewModel
-class TodoViewModel @Inject constructor(
-    private val repository: TodoRepository
+class MemoViewModel @Inject constructor(
+    private val repository: MemoRepository
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(TodoUiState())
-    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(MemoUiState())
+    val uiState: StateFlow<MemoUiState> = _uiState.asStateFlow()
 
-    // フィルタリングされたTODO
-    val filteredTodos: StateFlow<List<Todo>> = combine(
-        repository.getTodos(),
+    // フィルタリングされたメモ
+    val filteredMemos: StateFlow<List<Memo>> = combine(
+        repository.getMemos(),
         _uiState.map { it.filter }
-    ) { todos, filter ->
+    ) { memos, filter ->
         when (filter) {
-            TodoFilter.ALL -> todos
-            TodoFilter.ACTIVE -> todos.filter { !it.isCompleted }
-            TodoFilter.COMPLETED -> todos.filter { it.isCompleted }
+            MemoFilter.ALL -> memos
+            MemoFilter.ACTIVE -> memos.filter { !it.isCompleted }
+            MemoFilter.COMPLETED -> memos.filter { it.isCompleted }
         }
     }.stateIn(
         scope = viewModelScope,
@@ -618,29 +618,29 @@ class TodoViewModel @Inject constructor(
         _uiState.update { it.copy(inputText = text) }
     }
 
-    fun addTodo() {
+    fun addMemo() {
         val text = _uiState.value.inputText.trim()
         if (text.isEmpty()) return
 
         viewModelScope.launch {
-            repository.addTodo(Todo(text = text))
+            repository.addMemo(Memo(text = text))
             _uiState.update { it.copy(inputText = "") }
         }
     }
 
-    fun toggleComplete(todo: Todo) {
+    fun toggleComplete(memo: Memo) {
         viewModelScope.launch {
-            repository.updateTodo(todo.copy(isCompleted = !todo.isCompleted))
+            repository.updateMemo(memo.copy(isCompleted = !memo.isCompleted))
         }
     }
 
-    fun deleteTodo(todo: Todo) {
+    fun deleteMemo(memo: Memo) {
         viewModelScope.launch {
-            repository.deleteTodo(todo)
+            repository.deleteMemo(memo)
         }
     }
 
-    fun setFilter(filter: TodoFilter) {
+    fun setFilter(filter: MemoFilter) {
         _uiState.update { it.copy(filter = filter) }
     }
 }

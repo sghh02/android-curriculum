@@ -273,18 +273,18 @@ LazyColumn(
 ```kotlin
 // NG: キーがないとアイテムの追加/削除で問題が起きる
 LazyColumn {
-    items(todos) { todo ->
-        TodoItem(todo)
+    items(memos) { memo ->
+        MemoItem(memo)
     }
 }
 
 // OK: 一意のキーを指定
 LazyColumn {
     items(
-        items = todos,
-        key = { todo -> todo.id }  // 一意のID
-    ) { todo ->
-        TodoItem(todo)
+        items = memos,
+        key = { memo -> memo.id }  // 一意のID
+    ) { memo ->
+        MemoItem(memo)
     }
 }
 ```

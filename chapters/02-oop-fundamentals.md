@@ -101,7 +101,7 @@ class Memo(
 
 // 実際のメモはオブジェクト（インスタンス）
 val memo1 = Memo("買い物リスト", "牛乳、卵", 1234567890)
-val memo2 = Memo("TODO", "課題を提出", 1234567891)
+val memo2 = Memo("やること", "課題を提出", 1234567891)
 ```
 
 ### オブジェクトとクラスの違い
@@ -121,7 +121,7 @@ class Memo(val title: String, val content: String)
 
 // 実際のオブジェクト（インスタンス）
 val memo1 = Memo("買い物", "牛乳")  // 1つ目のたい焼き
-val memo2 = Memo("TODO", "課題")   // 2つ目のたい焼き
+val memo2 = Memo("やること", "課題")   // 2つ目のたい焼き
 ```
 
 ---
@@ -136,7 +136,7 @@ val memo1Title = "買い物リスト"
 val memo1Content = "牛乳、卵、パン"
 val memo1CreatedAt = 1234567890L
 
-val memo2Title = "TODO"
+val memo2Title = "やること"
 val memo2Content = "課題を提出する"
 val memo2CreatedAt = 1234567891L
 
@@ -171,7 +171,7 @@ data class Memo(
 )
 
 val memo1 = Memo("買い物リスト", "牛乳、卵、パン", 1234567890L)
-val memo2 = Memo("TODO", "課題を提出する", 1234567891L)
+val memo2 = Memo("やること", "課題を提出する", 1234567891L)
 val memo3 = Memo("アイデア", "新しいアプリのアイデア", 1234567892L)
 
 // リストで管理できる
@@ -567,7 +567,7 @@ enum class Category(val displayName: String, val color: String) {
     WORK("仕事", "#FF6B6B"),
     PERSONAL("プライベート", "#4ECDC4"),
     IDEA("アイデア", "#FFE66D"),
-    TODO("TODO", "#95E1D3")
+    TASK("やること", "#95E1D3")
 }
 
 // Memoクラスにカテゴリを追加
@@ -932,7 +932,7 @@ object MemoFactory {
 
 // 使用例
 val memo1 = MemoFactory.createMemo("買い物", "牛乳、卵")
-val memo2 = MemoFactory.createMemo("TODO", "課題提出", Category.WORK)
+val memo2 = MemoFactory.createMemo("やること", "課題提出", Category.WORK)
 ```
 </details>
 
@@ -1040,7 +1040,7 @@ class MemoRepository(private val memos: List<Memo>) {
 // 使用例
 val memos = listOf(
     MemoFactory.createMemo("買い物リスト", "牛乳、卵、パン", Category.PERSONAL),
-    MemoFactory.createMemo("仕事TODO", "会議資料作成", Category.WORK),
+    MemoFactory.createMemo("仕事のやること", "会議資料作成", Category.WORK),
     MemoFactory.createMemo("アイデア", "新しいアプリ", Category.IDEA)
 )
 
@@ -1054,7 +1054,7 @@ val searchResults = repository.searchByKeyword("アプリ")
 
 // 複合検索
 val criteria = SearchCriteria(
-    titleKeyword = "TODO",
+    titleKeyword = "やること",
     category = Category.WORK
 )
 val results = repository.search(criteria)
