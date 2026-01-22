@@ -7,67 +7,67 @@
       "id": "unit0",
       "title": "Unit 0: AI時代の学習法",
       "items": [
-        { "id": "ai-learning", "title": "AI時代のAndroid学習法", "path": "chapters/00-ai-learning.md" }
+        { "id": "ai-learning", "title": "AI時代のAndroid学習法", "path": "chapters/00-ai-learning.md", "estimatedMinutes": 30 }
       ]
     },
     {
       "id": "unit1",
       "title": "Unit 1: プログラミングとAndroidの基礎",
       "items": [
-        { "id": "setup", "title": "Android Studioのインストールと環境準備", "path": "chapters/01-setup.md" },
-        { "id": "kotlin-basics", "title": "Kotlinプログラミングの基礎", "path": "chapters/02-kotlin-basics.md" },
-        { "id": "oop-fundamentals", "title": "オブジェクト指向プログラミング", "path": "chapters/02-oop-fundamentals.md" },
-        { "id": "android-fundamentals", "title": "Androidアプリの基本", "path": "chapters/03-android-fundamentals.md" },
-        { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md" },
-        { "id": "project-start", "title": "ハンズオン：メモアプリを始める", "path": "chapters/04-project-start.md" }
+        { "id": "setup", "title": "Android Studioのインストールと環境準備", "path": "chapters/01-setup.md", "estimatedMinutes": 90 },
+        { "id": "kotlin-basics", "title": "Kotlinプログラミングの基礎", "path": "chapters/02-kotlin-basics.md", "estimatedMinutes": 180 },
+        { "id": "oop-fundamentals", "title": "オブジェクト指向プログラミング", "path": "chapters/02-oop-fundamentals.md", "estimatedMinutes": 120 },
+        { "id": "android-fundamentals", "title": "Androidアプリの基本", "path": "chapters/03-android-fundamentals.md", "estimatedMinutes": 120 },
+        { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md", "estimatedMinutes": 150 },
+        { "id": "project-start", "title": "ハンズオン：メモアプリを始める", "path": "chapters/04-project-start.md", "estimatedMinutes": 120 }
       ]
     },
     {
       "id": "unit2",
       "title": "Unit 2: アプリUIの構築",
       "items": [
-        { "id": "state-interaction", "title": "状態管理とユーザーインタラクション", "path": "chapters/04-state-interaction.md" },
-        { "id": "lists", "title": "リスト表示とLazyColumn", "path": "chapters/05-lists-lazycolumn.md" },
-        { "id": "material-design", "title": "Material Design 3とテーマ", "path": "chapters/06-material-design.md" }
+        { "id": "state-interaction", "title": "状態管理とユーザーインタラクション", "path": "chapters/04-state-interaction.md", "estimatedMinutes": 120 },
+        { "id": "lists", "title": "リスト表示とLazyColumn", "path": "chapters/05-lists-lazycolumn.md", "estimatedMinutes": 90 },
+        { "id": "material-design", "title": "Material Design 3とテーマ", "path": "chapters/06-material-design.md", "estimatedMinutes": 90 }
       ]
     },
     {
       "id": "unit3",
       "title": "Unit 3: ナビゲーションとアーキテクチャ",
       "items": [
-        { "id": "navigation", "title": "ナビゲーション", "path": "chapters/07-navigation.md" },
-        { "id": "architecture", "title": "ViewModelとアーキテクチャ", "path": "chapters/08-architecture.md" }
+        { "id": "navigation", "title": "ナビゲーション", "path": "chapters/07-navigation.md", "estimatedMinutes": 90 },
+        { "id": "architecture", "title": "ViewModelとアーキテクチャ", "path": "chapters/08-architecture.md", "estimatedMinutes": 120 }
       ]
     },
     {
       "id": "unit4",
       "title": "Unit 4: 非同期処理とネットワーク",
       "items": [
-        { "id": "coroutines", "title": "Kotlin Coroutinesと非同期処理", "path": "chapters/09-data-layer.md" },
-        { "id": "network", "title": "ネットワーク通信（Retrofit）", "path": "chapters/10-network.md" }
+        { "id": "coroutines", "title": "Kotlin Coroutinesと非同期処理", "path": "chapters/09-data-layer.md", "estimatedMinutes": 120 },
+        { "id": "network", "title": "ネットワーク通信（Retrofit）", "path": "chapters/10-network.md", "estimatedMinutes": 120 }
       ]
     },
     {
       "id": "unit5",
       "title": "Unit 5: データ永続化",
       "items": [
-        { "id": "storage", "title": "データ保存（Room / DataStore）", "path": "chapters/11-storage.md" }
+        { "id": "storage", "title": "データ保存（Room / DataStore）", "path": "chapters/11-storage.md", "estimatedMinutes": 120 }
       ]
     },
     {
       "id": "unit6",
       "title": "Unit 6: 品質と運用",
       "items": [
-        { "id": "testing", "title": "テスト（ユニット/Compose UI）", "path": "chapters/12-testing.md" },
-        { "id": "performance", "title": "パフォーマンスと最適化", "path": "chapters/13-performance.md" },
-        { "id": "publishing", "title": "アプリ公開と運用", "path": "chapters/14-publishing.md" }
+        { "id": "testing", "title": "テスト（ユニット/Compose UI）", "path": "chapters/12-testing.md", "estimatedMinutes": 120 },
+        { "id": "performance", "title": "パフォーマンスと最適化", "path": "chapters/13-performance.md", "estimatedMinutes": 90 },
+        { "id": "publishing", "title": "アプリ公開と運用", "path": "chapters/14-publishing.md", "estimatedMinutes": 90 }
       ]
     },
     {
       "id": "unit7",
       "title": "Unit 7: 総合演習",
       "items": [
-        { "id": "project", "title": "総合演習：メモアプリ完成とリリース", "path": "chapters/15-project.md" }
+        { "id": "project", "title": "総合演習：メモアプリ完成とリリース", "path": "chapters/15-project.md", "estimatedMinutes": 180 }
       ]
     }
   ]
