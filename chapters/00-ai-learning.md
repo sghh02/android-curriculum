@@ -302,7 +302,3 @@ var count by mutableStateOf(0)  // どうなる？
 
 さあ、次の章から実際にAndroid開発を始めましょう。
 わからないことがあったら、遠慮なくAIに聞いてください。
-
----
-
-次章：[Android Studioのインストールと環境準備](./01-setup.md)

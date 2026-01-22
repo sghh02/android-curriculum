@@ -871,7 +871,3 @@ fun main() {
 
 Kotlinはまだまだ奥が深いですが、ここまでの知識でAndroidアプリ開発を始められます。
 わからないことはその都度AIに聞きながら進めましょう。
-
----
-
-次章：[Jetpack Composeの基本](./03-compose-basics.md)

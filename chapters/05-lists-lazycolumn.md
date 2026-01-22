@@ -644,7 +644,3 @@ LazyColumnで「もっと見る」ボタンを押したら
 
 リストはほぼすべてのアプリで使う重要な機能です。
 次の章ではMaterial Designでより美しいUIを作ります。
-
----
-
-次章：[Material Design 3とテーマ](./06-material-design.md)

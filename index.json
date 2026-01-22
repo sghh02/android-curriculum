@@ -1,7 +1,7 @@
 {
   "curriculumId": "android-basic",
   "title": "Androidアプリ開発基礎",
-  "description": "KotlinとJetpack Composeを使用した最新のAndroid開発を、AI活用の学習法と共に基礎から公開まで体系的に学びます。",
+  "description": "KotlinとJetpack Composeで「シンプルメモ」アプリを作りながら、基礎から公開まで体系的に学びます。AI活用で効率的に学習できます。",
   "chapters": [
     {
       "id": "unit0",
@@ -12,11 +12,14 @@
     },
     {
       "id": "unit1",
-      "title": "Unit 1: はじめてのAndroidアプリ",
+      "title": "Unit 1: プログラミングとAndroidの基礎",
       "items": [
         { "id": "setup", "title": "Android Studioのインストールと環境準備", "path": "chapters/01-setup.md" },
         { "id": "kotlin-basics", "title": "Kotlinプログラミングの基礎", "path": "chapters/02-kotlin-basics.md" },
-        { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md" }
+        { "id": "oop-fundamentals", "title": "オブジェクト指向プログラミング", "path": "chapters/02-oop-fundamentals.md" },
+        { "id": "android-fundamentals", "title": "Androidアプリの基本", "path": "chapters/03-android-fundamentals.md" },
+        { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md" },
+        { "id": "project-start", "title": "ハンズオン：メモアプリを始める", "path": "chapters/04-project-start.md" }
       ]
     },
     {
@@ -64,7 +67,7 @@
       "id": "unit7",
       "title": "Unit 7: 総合演習",
       "items": [
-        { "id": "project", "title": "総合演習：TODOアプリを作る", "path": "chapters/15-project.md" }
+        { "id": "project", "title": "総合演習：メモアプリ完成とリリース", "path": "chapters/15-project.md" }
       ]
     }
   ]

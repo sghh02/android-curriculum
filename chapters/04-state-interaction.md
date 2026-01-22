@@ -790,7 +790,3 @@ var text by rememberSaveable { mutableStateOf("") }
 
 状態管理は Compose の核心部分です。
 この概念をしっかり理解することで、複雑なアプリも作れるようになります。
-
----
-
-次章：[リスト表示とLazyColumn](./05-lists-lazycolumn.md)
