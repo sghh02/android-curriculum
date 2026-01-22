@@ -449,7 +449,3 @@ Coroutineで複数のAPI呼び出しを並列実行して、
 6. **エラーハンドリング** - try-catch、Result、catch
 
 Coroutineを使いこなすことで、スムーズなUXを提供できます。
-
----
-
-次章：[ネットワーク通信（Retrofit）](./10-network.md)

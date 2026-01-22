@@ -525,7 +525,3 @@ BottomNavigationでタブを切り替えても、
 5. **BottomNavigation連携** - タブナビゲーション
 
 次の章ではアプリのアーキテクチャを学びます。
-
----
-
-次章：[ViewModelとアーキテクチャ](./08-architecture.md)

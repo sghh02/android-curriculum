@@ -696,7 +696,3 @@ Android Studioプロジェクトに適用する方法を教えて。
 6. **Dynamic Color** - 壁紙からの自動カラー生成
 
 Material Designを活用することで、美しく使いやすいアプリを作れます。
-
----
-
-次章：[ナビゲーション](./07-navigation.md)
