@@ -19,7 +19,7 @@
         { "id": "oop-fundamentals", "title": "オブジェクト指向プログラミング", "path": "chapters/02-oop-fundamentals.md", "estimatedMinutes": 120 },
         { "id": "android-fundamentals", "title": "Androidアプリの基本", "path": "chapters/03-android-fundamentals.md", "estimatedMinutes": 120 },
         { "id": "compose-basics", "title": "Jetpack Composeの基本", "path": "chapters/03-compose-basics.md", "estimatedMinutes": 150 },
-        { "id": "project-start", "title": "ハンズオン：メモアプリを始める", "path": "chapters/04-project-start.md", "estimatedMinutes": 120 }
+        { "id": "project-start", "title": "ハンズオン：シンプルメモアプリを始める", "path": "chapters/04-project-start.md", "estimatedMinutes": 120 }
       ]
     },
     {
@@ -68,6 +68,17 @@
       "title": "Unit 7: 総合演習",
       "items": [
         { "id": "project", "title": "総合演習：メモアプリ完成とリリース", "path": "chapters/15-project.md", "estimatedMinutes": 180 }
+      ]
+    },
+    {
+      "id": "unit8",
+      "title": "Unit 8: 参考（クイックスタート）",
+      "items": [
+        { "id": "first-project", "title": "初めてのプロジェクト作成", "path": "chapters/02-first-app.md", "estimatedMinutes": 45 },
+        { "id": "compose-intro", "title": "Jetpack Composeとは", "path": "chapters/03-compose.md", "estimatedMinutes": 30 },
+        { "id": "layout-components", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md", "estimatedMinutes": 45 },
+        { "id": "kotlin-basics-android", "title": "Kotlin基礎（Android向け）", "path": "chapters/05-kotlin-basics.md", "estimatedMinutes": 60 },
+        { "id": "compose-state-basics", "title": "Composeの状態管理", "path": "chapters/06-state.md", "estimatedMinutes": 45 }
       ]
     }
   ]
