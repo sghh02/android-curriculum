@@ -14,6 +14,7 @@ Claude は、本リポジトリ内のファイルを **作成・編集する役�
   - カリキュラム全体の構造定義ファイル
   - 章・レッスンのメタ情報のみを記載
   - 厳密に正しい JSON であること
+  - `items` 内では `estimatedMinutes` を学習時間の目安（分）として付与可能
 
 - `*.md`  
   - 各レッスンの本文
@@ -42,7 +43,8 @@ Claude は、本リポジトリ内のファイルを **作成・編集する役�
         {
           "id": "一意なID",
           "title": "レッスン名",
-          "path": "relative/path/to/file.md"
+          "path": "relative/path/to/file.md",
+          "estimatedMinutes": 90
         }
       ]
     }
