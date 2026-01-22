@@ -1,12 +1,13 @@
 {
   "curriculumId": "android-basic",
   "title": "Androidアプリ開発基礎",
-  "description": "KotlinとJetpack Composeで「シンプルメモ」アプリを作りながら、基礎から公開まで体系的に学びます。AI活用で効率的に学習できます。",
+  "description": "KotlinとJetpack Composeで「シンプルメモ」アプリを作りながら、基礎から案件参画レベルまで体系的に学びます。AI活用で効率的に学習できます。",
   "chapters": [
     {
       "id": "unit0",
       "title": "Unit 0: AI時代の学習法",
       "items": [
+        { "id": "roadmap", "title": "学習ロードマップと到達基準（2年目を目指す）", "path": "chapters/00-roadmap.md", "estimatedMinutes": 20 },
         { "id": "ai-learning", "title": "AI時代のAndroid学習法", "path": "chapters/00-ai-learning.md", "estimatedMinutes": 30 }
       ]
     },
@@ -79,6 +80,42 @@
         { "id": "layout-components", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md", "estimatedMinutes": 45 },
         { "id": "kotlin-basics-android", "title": "Kotlin基礎（Android向け）", "path": "chapters/05-kotlin-basics.md", "estimatedMinutes": 60 },
         { "id": "compose-state-basics", "title": "Composeの状態管理", "path": "chapters/06-state.md", "estimatedMinutes": 45 }
+      ]
+    },
+    {
+      "id": "unit9",
+      "title": "Unit 9: 実務参画の基本",
+      "items": [
+        { "id": "onboarding", "title": "既存プロジェクト参画（読む・直す・壊さない）", "path": "chapters/26-onboarding.md", "estimatedMinutes": 150 },
+        { "id": "debugging", "title": "デバッグと調査（実務の型）", "path": "chapters/16-debugging.md", "estimatedMinutes": 150 },
+        { "id": "team-development", "title": "チーム開発（Git/PR/コードレビュー）", "path": "chapters/17-team-development.md", "estimatedMinutes": 90 },
+        { "id": "ci", "title": "CIで品質を担保する（Gradle/テスト/Lint）", "path": "chapters/18-ci.md", "estimatedMinutes": 90 }
+      ]
+    },
+    {
+      "id": "unit10",
+      "title": "Unit 10: ビルドとモジュール化",
+      "items": [
+        { "id": "gradle", "title": "Gradleと依存関係管理（実務編）", "path": "chapters/19-gradle.md", "estimatedMinutes": 150 },
+        { "id": "multi-module", "title": "マルチモジュール設計（単一→分割）", "path": "chapters/20-multi-module.md", "estimatedMinutes": 180 }
+      ]
+    },
+    {
+      "id": "unit11",
+      "title": "Unit 11: 実務で頻出の要件",
+      "items": [
+        { "id": "adaptive-ui", "title": "画面サイズ対応（スマホ/タブレット）", "path": "chapters/21-adaptive-ui.md", "estimatedMinutes": 120 },
+        { "id": "workmanager", "title": "WorkManager（バックグラウンド処理）", "path": "chapters/22-workmanager.md", "estimatedMinutes": 120 },
+        { "id": "compose-view-interop", "title": "ComposeとViewの相互運用", "path": "chapters/23-compose-view-interop.md", "estimatedMinutes": 90 },
+        { "id": "accessibility-i18n", "title": "アクセシビリティと多言語対応", "path": "chapters/24-accessibility-i18n.md", "estimatedMinutes": 90 },
+        { "id": "security-config", "title": "設定とセキュリティ（秘密情報/通信）", "path": "chapters/25-security-config.md", "estimatedMinutes": 90 }
+      ]
+    },
+    {
+      "id": "unit12",
+      "title": "Unit 12: 模擬案件（チケット演習）",
+      "items": [
+        { "id": "ticket-backlog", "title": "模擬案件バックログ（実務チケット集）", "path": "chapters/27-ticket-backlog.md", "estimatedMinutes": 60 }
       ]
     }
   ]
