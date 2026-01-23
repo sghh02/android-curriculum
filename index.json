@@ -72,17 +72,6 @@
       ]
     },
     {
-      "id": "unit8",
-      "title": "Unit 8: 参考（クイックスタート）",
-      "items": [
-        { "id": "first-project", "title": "初めてのプロジェクト作成", "path": "chapters/02-first-app.md", "estimatedMinutes": 45 },
-        { "id": "compose-intro", "title": "Jetpack Composeとは", "path": "chapters/03-compose.md", "estimatedMinutes": 30 },
-        { "id": "layout-components", "title": "基本的なレイアウトコンポーネント", "path": "chapters/04-layout.md", "estimatedMinutes": 45 },
-        { "id": "kotlin-basics-android", "title": "Kotlin基礎（Android向け）", "path": "chapters/05-kotlin-basics.md", "estimatedMinutes": 60 },
-        { "id": "compose-state-basics", "title": "Composeの状態管理", "path": "chapters/06-state.md", "estimatedMinutes": 45 }
-      ]
-    },
-    {
       "id": "unit9",
       "title": "Unit 9: 実務参画の基本",
       "items": [
