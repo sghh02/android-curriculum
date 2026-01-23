@@ -5,7 +5,11 @@ XMLではなくKotlinコードでUIを組み立てます。
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/03-android-fundamentals.md` を完了し、Activity/リソース/ライフサイクルの概要がわかる
+
+## この章でできるようになること
 
 - [ ] 宣言的UIの概念を理解する
 - [ ] @Composable関数を作成できる
@@ -56,7 +60,7 @@ fun Greeting(name: String, isVisible: Boolean) {
 
 ### 考え方のシフト
 
-```
+```text
 従来：UI部品を作って、後から変更を命令する
 Compose：状態に応じたUIを毎回「宣言」する
 ```
@@ -564,7 +568,7 @@ fun GreetingPreview(
 
 ### 完成イメージ
 
-```
+```text
 ┌─────────────────────────┐
 │  ┌───┐                  │
 │  │ 🖼 │  田中 太郎        │
@@ -660,19 +664,19 @@ Composeでわからないことがあったら、AIに質問しましょう。
 
 ### 質問例
 
-```
+```text
 【質問】
 Jetpack ComposeでRowの中の要素を両端に配置したい。
 左端にアイコン、右端にテキストを置きたいんだけど、どうすればいい？
 ```
 
-```
+```text
 【質問】
 Modifierの padding と background の順番で結果が変わるって聞いたけど、
 具体的にどう変わるの？図で説明して。
 ```
 
-```
+```text
 【コードレビューお願い】
 以下のComposeコード、もっと良い書き方ある？
 
@@ -685,7 +689,7 @@ Column {
 }
 ```
 
-```
+```text
 【質問】
 ComposeのCard内で画像を上部いっぱいに表示して、
 その下にテキストを配置するレイアウトを作りたい。
@@ -698,7 +702,7 @@ ComposeのCard内で画像を上部いっぱいに表示して、
 
 ### @Composableではない関数からComposableを呼び出している
 
-```
+```text
 エラー: @Composable invocations can only happen from the context of a @Composable function
 ```
 
@@ -776,6 +780,14 @@ fun Preview() {
 
 ---
 
+## 演習
+
+- [ ] シンプルメモアプリに「タイトル・本文の表示」だけの仮UIをComposeで作る（固定データでOK）
+- [ ] `Modifier` の順番（`padding` → `background` / `background` → `padding`）を変えて差を確認する
+- [ ] 1つのUI部品（カード/行など）をComposableに切り出し、Previewで確認する
+
+---
+
 ## まとめ
 
 この章では以下を学びました：
@@ -789,3 +801,17 @@ fun Preview() {
 
 Composeの基礎が身につきました。
 次の章では、ユーザー操作に応答する「状態管理」を学びます。
+
+---
+
+## ふりかえり
+
+- 宣言的UIは「状態」とどうつながっている？
+- Composableを分割するとき、どこで切ると読みやすかった？
+- いまの自分のシンプルメモUIで、まず部品化したいものは何？
+
+---
+
+## 次の章
+
+次は `chapters/04-project-start.md` に進み、シンプルメモアプリの開発を始めましょう。

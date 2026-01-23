@@ -5,7 +5,11 @@ Material Design 3（Material You）は、Googleの最新デザインシステム
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/05-lists-lazycolumn.md` を完了し、一覧UIの骨格がある
+
+## この章でできるようになること
 
 - [ ] Material Design 3の概念を理解する
 - [ ] テーマとカラースキームを設定できる
@@ -70,7 +74,7 @@ fun MyApp() {
 
 Android Studioでプロジェクトを作ると、`ui/theme/`フォルダに以下が生成されます：
 
-```
+```text
 ui/theme/
 ├── Color.kt      // カラー定義
 ├── Theme.kt      // テーマ設定
@@ -653,23 +657,31 @@ GoogleはMaterial 3のテーマを簡単に作成できるWebツールを提供�
 
 ### 質問例
 
-```
+```text
 【質問】
 Material Design 2とMaterial Design 3の違いを教えて。
 移行するときの注意点は？
 ```
 
-```
+```text
 【質問】
 ダークモード対応するとき、
 画像やアイコンの色はどう対応すればいい？
 ```
 
-```
+```text
 【質問】
 Material Theme Builderで作ったテーマを
 Android Studioプロジェクトに適用する方法を教えて。
 ```
+
+---
+
+## 演習
+
+- [ ] シンプルメモアプリのテーマ（色/タイポ）を決め、全画面で統一されるようにする
+- [ ] 空状態/エラー状態のUIをMaterial 3コンポーネントで整える（Button/Snackbar等）
+- [ ] ダークモードで崩れないことを確認し、必要なら色/コントラストを調整する
 
 ---
 
@@ -696,3 +708,17 @@ Android Studioプロジェクトに適用する方法を教えて。
 6. **Dynamic Color** - 壁紙からの自動カラー生成
 
 Material Designを活用することで、美しく使いやすいアプリを作れます。
+
+---
+
+## ふりかえり
+
+- テーマで「統一」できた部分はどこ？まだバラつく部分は？
+- ダークモードで一番崩れやすいのはどんな要素？
+- 次のユニットで、UIをどう分割していきたい？（Screen/Component/State）
+
+---
+
+## 次の章
+
+次は `chapters/03-unit3-guide.md` に進み、画面遷移とアーキテクチャの全体像を確認しましょう。

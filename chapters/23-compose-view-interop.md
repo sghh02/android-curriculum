@@ -5,7 +5,11 @@ Compose中心の案件でも、Viewベースのライブラリ（Map、WebView�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/22-workmanager.md` を完了し、発展要件を実装する前提がある
+
+## この章でできるようになること
 
 - [ ] Compose内でViewを表示できる（`AndroidView`）
 - [ ] View内でComposeを表示できる（`ComposeView`）
@@ -86,7 +90,7 @@ composeView.setContent {
 
 ---
 
-## ミニ課題
+## 演習
 
 - Compose画面内に `WebView`（例）を組み込む設計を考える
 - “更新される値”と“初回だけでよい値”を分類する
@@ -96,8 +100,22 @@ composeView.setContent {
 
 ## AIに聞いてみよう
 
-```
+```text
 【質問】
 Composeの画面に既存View（例: MapView/WebView）を埋め込みたい。
 再コンポーズで壊れない実装方針と、リーク対策を提案して。
 ```
+
+---
+
+## ふりかえり
+
+- Viewを「初回だけ作る」ために、どこで何を `remember` する？
+- 更新（update）と破棄（dispose）で、事故が起きやすいポイントは？
+- 既存ViewからComposeへ段階移行するなら、どこから始める？
+
+---
+
+## 次の章
+
+次は `chapters/24-accessibility-i18n.md` に進み、アクセシビリティと多言語対応を押さえましょう。

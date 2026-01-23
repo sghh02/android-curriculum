@@ -5,7 +5,12 @@ Composeアプリを動的にするには「状態（State）」の管理が必�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/02-unit2-guide.md` を読んでいる
+- `chapters/04-project-start.md` を完了し、シンプルメモアプリが起動できる
+
+## この章でできるようになること
 
 - [ ] 状態（State）の概念を理解する
 - [ ] remember と mutableStateOf を使える
@@ -574,19 +579,19 @@ fun SearchableList(items: List<String>) {
 
 ### 質問例
 
-```
+```text
 【質問】
 remember と rememberSaveable の違いは何？
 どっちをいつ使えばいいの？
 ```
 
-```
+```text
 【質問】
 State Hoisting（状態の巻き上げ）って何？
 なぜ必要なの？具体例で教えて。
 ```
 
-```
+```text
 【質問】
 以下のコードでカウンターが動かないのはなぜ？
 
@@ -599,7 +604,7 @@ fun Counter() {
 }
 ```
 
-```
+```text
 【コードレビューお願い】
 フォームの状態管理、このやり方で大丈夫？
 もっと良い方法ある？
@@ -611,7 +616,9 @@ var password by remember { mutableStateOf("") }
 
 ---
 
-## ハンズオン：TODOリスト入力を作る
+## 演習
+
+### TODOリスト入力を作る
 
 学んだ内容を使って、TODOの追加機能を作ってみましょう。
 
@@ -716,7 +723,7 @@ fun TodoInput() {
 
 ### 状態が更新されない
 
-```
+```text
 問題：ボタンを押しても画面が変わらない
 ```
 
@@ -790,3 +797,17 @@ var text by rememberSaveable { mutableStateOf("") }
 
 状態管理は Compose の核心部分です。
 この概念をしっかり理解することで、複雑なアプリも作れるようになります。
+
+---
+
+## ふりかえり
+
+- Stateは「どこに置く」と後で困らない？（Composable内/親/VM）
+- `remember` と `rememberSaveable` をどう使い分ける？
+- シンプルメモアプリで、次に状態として管理したいものは何？（入力/一覧/選択など）
+
+---
+
+## 次の章
+
+次は `chapters/05-lists-lazycolumn.md` に進み、一覧表示を作り込みましょう。

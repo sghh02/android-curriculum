@@ -5,7 +5,11 @@ WorkManagerは、Androidで“条件付きの確実な実行”を担う標準�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/21-adaptive-ui.md` を完了し、発展要件の進め方がわかる
+
+## この章でできるようになること
 
 - [ ] WorkManagerを使うべきケース/使わないケースを説明できる
 - [ ] OneTime / Periodic の使い分けができる
@@ -160,7 +164,7 @@ WorkManager.getInstance(context).enqueueUniqueWork(
 
 ---
 
-## ミニ課題
+## 演習
 
 シンプルメモアプリを想定し、以下を設計してください。
 
@@ -177,8 +181,22 @@ WorkManager.getInstance(context).enqueueUniqueWork(
 
 ## AIに聞いてみよう
 
-```
+```text
 【質問】
 WorkManagerで同期処理を作りたい。
 Workerを薄く保つ設計、リトライ戦略、重複防止（UniqueWork）の方針を提案して。
 ```
+
+---
+
+## ふりかえり
+
+- WorkManagerが向いている処理/向いていない処理は何？
+- 制約とUniqueWorkは、どんな事故を防ぐ？
+- リトライ設計で一番気をつけたいことは？
+
+---
+
+## 次の章
+
+次は `chapters/23-compose-view-interop.md` に進み、ComposeとViewの相互運用を押さえましょう。

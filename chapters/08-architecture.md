@@ -5,7 +5,11 @@
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/07-navigation.md` を完了し、画面遷移の骨格がある
+
+## この章でできるようになること
 
 - [ ] MVVMパターンを理解する
 - [ ] ViewModelで状態を管理できる
@@ -58,7 +62,7 @@ fun TodoScreen() {
 
 ## Android推奨アーキテクチャ
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │                UI Layer                 │
 │  (Composable + ViewModel)               │
@@ -281,7 +285,7 @@ fun TodoScreen(viewModel: TodoViewModel = viewModel()) {
 
 ### 単方向データフロー
 
-```
+```text
 User Action → ViewModel → State Update → UI Update
 ```
 
@@ -652,25 +656,33 @@ class TodoViewModel @Inject constructor(
 
 ### 質問例
 
-```
+```text
 【質問】
 ViewModelで状態を管理するとき、
 StateFlowとLiveDataどっちを使うべき？
 それぞれのメリット・デメリットを教えて。
 ```
 
-```
+```text
 【質問】
 UIイベント（Snackbar表示、画面遷移など）を
 ViewModelからUIに通知する方法は？
 SharedFlowとChannelの違いも教えて。
 ```
 
-```
+```text
 【質問】
 Hiltを使った依存性注入の設定方法を
 ステップバイステップで教えて。
 ```
+
+---
+
+## 演習
+
+- [ ] シンプルメモアプリにViewModelを導入し、UI State（Loading/Empty/Error含む）で状態を管理する
+- [ ] Repositoryを用意し、UIからデータ取得/保存の詳細を隠す
+- [ ] 可能ならHiltで依存を注入し、差し替え（Fake）できる形を意識する
 
 ---
 
@@ -698,3 +710,17 @@ Hiltを使った依存性注入の設定方法を
 6. **依存性注入** - テスタブルな設計
 
 適切なアーキテクチャにより、保守性が高く、テストしやすいアプリを作れます。
+
+---
+
+## ふりかえり
+
+- ViewModelに「入れてよいもの/入れないほうがよいもの」は何？
+- UI Stateに入れるべき状態は何？（Loading/Empty/Errorなど）
+- いまのシンプルメモで、責務が混ざっていそうな場所はどこ？
+
+---
+
+## 次の章
+
+次は `chapters/04-unit4-guide.md` に進み、非同期とネットワークの全体像を確認しましょう。

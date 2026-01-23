@@ -5,7 +5,11 @@
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/23-compose-view-interop.md` を完了し、発展要件の流れがわかる
+
+## この章でできるようになること
 
 - [ ] `contentDescription` とSemanticsの役割を説明できる
 - [ ] TalkBackで最低限使えるUIになっているか確認できる
@@ -78,7 +82,7 @@ Text(text = stringResource(R.string.memo_list_title))
 
 ---
 
-## ミニ課題
+## 演習
 
 - 主要画面のアイコンに `contentDescription` を付ける/不要なものは外す
 - 文字列を `strings.xml` に移し、Composeから参照する
@@ -88,8 +92,22 @@ Text(text = stringResource(R.string.memo_list_title))
 
 ## AIに聞いてみよう
 
-```
+```text
 【質問】
 この画面のアクセシビリティを改善したい。
 TalkBack観点の改善案と、Composeでの実装ポイントを挙げて。
 ```
+
+---
+
+## ふりかえり
+
+- `contentDescription` を付ける/付けない判断基準は？
+- 文字列直書きが、後でどんな事故につながる？
+- いまのアプリで、まず直したいa11y/i18nポイントはどこ？
+
+---
+
+## 次の章
+
+次は `chapters/25-security-config.md` に進み、設定とセキュリティの最低ラインを押さえましょう。

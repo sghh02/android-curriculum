@@ -5,7 +5,12 @@ Androidアプリ開発には公式IDEの **Android Studio** と、動作確認�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/01-unit1-guide.md` を読んでいる
+- つまずいたら `chapters/16-debugging.md` の「調査の型」を参照できる
+
+## この章でできるようになること
 
 - [ ] Android Studioをインストールして起動できる
 - [ ] エミュレータまたは実機でアプリを動かせる状態にする
@@ -75,7 +80,7 @@ Android Studioは、Googleが提供するAndroidアプリ開発の**公式統合
 
 ### Step 2：インストール（Windows）
 
-```
+```text
 1. ダウンロードした .exe ファイルを実行
 2. 「Next」をクリック
 3. インストール先を確認（デフォルトでOK）
@@ -86,7 +91,7 @@ Android Studioは、Googleが提供するAndroidアプリ開発の**公式統合
 
 ### Step 2：インストール（macOS）
 
-```
+```text
 1. ダウンロードした .dmg ファイルを開く
 2. Android Studio.app を Applications フォルダにドラッグ
 3. Applications から Android Studio を起動
@@ -145,7 +150,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 
 ### SDK Managerを開く
 
-```
+```text
 方法1: Welcome画面 → More Actions → SDK Manager
 方法2: プロジェクト画面 → Tools → SDK Manager
 方法3: 右上の歯車アイコン → SDK Manager
@@ -159,7 +164,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 - **Android 14.0 (API 34)** - 最新安定版
 - **Android 13.0 (API 33)** - 1つ前の安定版
 
-```
+```text
 [✓] Android 14.0 ("UpsideDownCake")
     [✓] Android SDK Platform 34
     [✓] Sources for Android 34
@@ -174,7 +179,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 - **Android Emulator**
 - **Android SDK Command-line Tools**
 
-```
+```text
 [✓] Android SDK Build-Tools 34
 [✓] Android SDK Command-line Tools (latest)
 [✓] Android Emulator
@@ -190,7 +195,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 ### AVD（Android Virtual Device）の作成
 
 1. **Device Managerを開く**
-   ```
+   ```text
    Welcome画面 → More Actions → Virtual Device Manager
    または
    Tools → Device Manager
@@ -221,7 +226,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 
 ### エミュレータを軽くするコツ
 
-```
+```text
 AVDの設定（鉛筆アイコン）→ Show Advanced Settings
 
 Graphics: Hardware - GLES 2.0
@@ -293,7 +298,7 @@ Android Studioの**Device Manager**または**実行ボタン横のデバイス�
 
 作成されたプロジェクトの構造を確認しましょう。
 
-```
+```text
 HelloAndroid/
 ├── app/
 │   ├── src/
@@ -365,7 +370,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 ### 質問例
 
-```
+```text
 【状況】
 Android Studioをインストールしました。
 
@@ -380,7 +385,7 @@ Windows 11, Intel Core i7
 HAXMをインストールする方法を教えてください。
 ```
 
-```
+```text
 【状況】
 Android Studioで新規プロジェクトを作成しました。
 
@@ -400,7 +405,7 @@ Gradleの同期でエラーが出ます。
 
 #### Intel CPU：HAXM関連
 
-```
+```text
 エラー: Intel HAXM is required to run this AVD
 ```
 
@@ -411,7 +416,7 @@ Gradleの同期でエラーが出ます。
 
 #### AMD CPU：Hypervisor関連
 
-```
+```text
 エラー: Android Emulator Hypervisor Driver is not installed
 ```
 
@@ -424,7 +429,7 @@ Gradleの同期でエラーが出ます。
 
 #### プロキシ環境の場合
 
-```
+```text
 エラー: Could not resolve dependencies
 ```
 
@@ -442,7 +447,7 @@ systemProp.https.proxyPort=8080
 
 #### JDKバージョンの問題
 
-```
+```text
 エラー: Unsupported Java version
 ```
 
@@ -514,3 +519,25 @@ adb devices
 
 環境構築は最初の大きなハードルですが、一度できれば後は楽になります。
 エラーが出たらAIに聞きながら解決していきましょう。
+
+---
+
+## 演習
+
+- [ ] 新規プロジェクトを作成し、エミュレータ/実機で起動できたスクショを残す
+- [ ] 「よくあるエラー」から1つ選び、原因と対処を自分の言葉でメモする
+- [ ] 学習用リポジトリにPRを作り、環境構築の完了を“証拠”として残す
+
+---
+
+## ふりかえり
+
+- 環境構築で一番時間がかかったポイントはどこ？
+- つまずいたとき、次に同じ状況になったらどう切り分ける？
+- 学習の成果物（PR/スクショ/メモ）を、どの頻度で残せそう？
+
+---
+
+## 次の章
+
+次は `chapters/02-kotlin-basics.md` に進み、Kotlinの基礎文法を固めましょう。

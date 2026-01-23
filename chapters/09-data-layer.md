@@ -5,7 +5,12 @@ Androidアプリでは、ネットワーク通信やデータベースアクセ�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/04-unit4-guide.md` を読んでいる
+- `chapters/08-architecture.md` を完了し、ViewModel/Repositoryの骨格がある
+
+## この章でできるようになること
 
 - [ ] Coroutineの基本概念を理解する
 - [ ] suspend関数を作成・呼び出せる
@@ -404,24 +409,32 @@ class SearchViewModel : ViewModel() {
 
 ### 質問例
 
-```
+```text
 【質問】
 Coroutineのlaunchとasyncの違いは何？
 どういう場面で使い分ける？
 ```
 
-```
+```text
 【質問】
 FlowとStateFlowの違いを教えて。
 いつどっちを使えばいい？
 ```
 
-```
+```text
 【質問】
 Coroutineで複数のAPI呼び出しを並列実行して、
 すべて完了したら結果をまとめて処理したい。
 どう書けばいい？
 ```
+
+---
+
+## 演習
+
+- [ ] ViewModelで `isLoading` / `error` を含むUI Stateを更新できるようにする
+- [ ] 非同期処理の失敗を `Result` や `sealed class` で表現し、UIで分岐できるようにする
+- [ ] 連打/多重実行を防ぐ（ボタン無効化やジョブ管理）方針を決めて実装する
 
 ---
 
@@ -449,3 +462,17 @@ Coroutineで複数のAPI呼び出しを並列実行して、
 6. **エラーハンドリング** - try-catch、Result、catch
 
 Coroutineを使いこなすことで、スムーズなUXを提供できます。
+
+---
+
+## ふりかえり
+
+- suspendとFlowの使い分けは、今の理解だとどうなっている？
+- 例外は“どこで”握ると安全？（Repository/UseCase/VM/UI）
+- いまのアプリで「二重実行」されやすい操作はどれ？
+
+---
+
+## 次の章
+
+次は `chapters/10-network.md` に進み、Retrofitで通信を組み込みましょう。

@@ -5,7 +5,12 @@
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/05-unit5-guide.md` を読んでいる
+- `chapters/10-network.md` を完了し、Repository経由でデータ取得できる
+
+## この章でできるようになること
 
 - [ ] Roomでデータベースを構築できる
 - [ ] Entity、DAO、Databaseを定義できる
@@ -575,25 +580,33 @@ class UsersViewModel(private val repository: UserRepository) : ViewModel() {
 
 ### 質問例
 
-```
+```text
 【質問】
 Roomでリレーション（1対多、多対多）を
 どうやって定義すればいい？
 @Relationの使い方を教えて。
 ```
 
-```
+```text
 【質問】
 DataStoreとSharedPreferencesの違いは？
 なぜDataStoreが推奨されてるの？
 ```
 
-```
+```text
 【質問】
 Roomのマイグレーションでカラムを削除したい。
 SQLiteはALTER TABLE DROP COLUMNをサポートしてないけど、
 どうすればいい？
 ```
+
+---
+
+## 演習
+
+- [ ] シンプルメモアプリの保存先をRoomにし、起動してもデータが残ることを確認する
+- [ ] 並び替え/フィルタ条件などの設定をDataStoreに保存し、復元できるようにする
+- [ ] 失敗時（DB例外/マイグレーション）に備え、エラー表示と復旧方針を決める
 
 ---
 
@@ -620,3 +633,17 @@ SQLiteはALTER TABLE DROP COLUMNをサポートしてないけど、
 6. **マイグレーション** - スキーマ変更
 
 次の章ではテストの書き方を学びます。
+
+---
+
+## ふりかえり
+
+- RoomとDataStoreは、それぞれ何を保存するのが適切？
+- オフラインで壊れやすい境界はどこ？（UI/VM/Data）
+- DB変更（マイグレーション）で一番怖い事故は何？
+
+---
+
+## 次の章
+
+次は `chapters/06-unit6-guide.md` に進み、品質（テスト/性能/公開）の全体像を確認しましょう。

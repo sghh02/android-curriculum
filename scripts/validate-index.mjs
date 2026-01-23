@@ -7,6 +7,56 @@ function readFirstH1(markdown) {
   return match ? match[1].trim() : null;
 }
 
+function firstNonEmptyLine(markdown) {
+  for (const line of markdown.split(/\r?\n/)) {
+    if (line.trim() !== "") return line;
+  }
+  return null;
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim() !== "";
+}
+
+function isNonNegativeNumber(value) {
+  return typeof value === "number" && Number.isFinite(value) && value >= 0;
+}
+
+function isPositiveNumber(value) {
+  return typeof value === "number" && Number.isFinite(value) && value > 0;
+}
+
+function isKebabCaseId(value) {
+  return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+}
+
+function escapeRegExp(str) {
+  return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function hasH2(markdown, headingText) {
+  const pattern = new RegExp(`^##\\s+${escapeRegExp(headingText)}\\s*$`, "m");
+  return pattern.test(markdown);
+}
+
+function fenceOpeningsWithoutLanguage(markdown) {
+  const lines = markdown.split(/\r?\n/);
+  const issues = [];
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!line.startsWith("```")) continue;
+    if (!inFence) {
+      const lang = line.slice(3).trim();
+      if (lang === "") issues.push(i + 1);
+      inFence = true;
+    } else {
+      inFence = false;
+    }
+  }
+  return issues;
+}
+
 function formatItemRef(item) {
   return `${item.unitId}/${item.itemId} (${item.path})`;
 }
@@ -14,6 +64,9 @@ function formatItemRef(item) {
 async function main() {
   const errors = [];
   const warnings = [];
+
+  const allowedDifficulties = new Set(["beginner", "intermediate", "advanced"]);
+  const allowedTypes = new Set(["guide", "lesson", "hands-on", "project", "reference"]);
 
   let index;
   try {
@@ -42,6 +95,15 @@ async function main() {
   const items = [];
   for (const chapter of chapters) {
     const unitId = chapter?.id ?? "(missing-unit-id)";
+    if (!isNonEmptyString(chapter?.id)) {
+      errors.push(`Unit ${unitId}: missing a non-empty string \`id\`.`);
+    } else if (!isKebabCaseId(chapter.id)) {
+      errors.push(`Unit ${unitId}: unit id must be kebab-case (got \`${chapter.id}\`).`);
+    }
+    if (!isNonEmptyString(chapter?.title)) {
+      errors.push(`Unit ${unitId}: missing a non-empty string \`title\`.`);
+    }
+
     const chapterItems = chapter?.items;
     if (!Array.isArray(chapterItems)) {
       errors.push(`Unit ${unitId}: missing or invalid \`items\` array.`);
@@ -53,6 +115,12 @@ async function main() {
         itemId: item?.id,
         title: item?.title,
         path: item?.path,
+        estimatedMinutes: item?.estimatedMinutes,
+        practiceMinutes: item?.practiceMinutes,
+        difficulty: item?.difficulty,
+        type: item?.type,
+        tags: item?.tags,
+        prerequisites: item?.prerequisites,
       });
     }
   }
@@ -65,12 +133,60 @@ async function main() {
       errors.push(`${item.unitId}: item is missing a non-empty string \`id\`.`);
       continue;
     }
+    if (!isKebabCaseId(item.itemId)) {
+      errors.push(`${formatItemRef(item)}: lesson id must be kebab-case (got \`${item.itemId}\`).`);
+    }
     if (typeof item.title !== "string" || item.title.trim() === "") {
       errors.push(`${formatItemRef(item)}: missing a non-empty string \`title\`.`);
     }
     if (typeof item.path !== "string" || item.path.trim() === "") {
       errors.push(`${formatItemRef(item)}: missing a non-empty string \`path\`.`);
       continue;
+    }
+    if (!isPositiveNumber(item.estimatedMinutes)) {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`estimatedMinutes\` (expected number > 0).`
+      );
+    }
+    if (!isNonNegativeNumber(item.practiceMinutes)) {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`practiceMinutes\` (expected number >= 0).`
+      );
+    }
+    if (!isNonEmptyString(item.type) || !allowedTypes.has(item.type)) {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`type\` (expected one of: ${[
+          ...allowedTypes,
+        ].join(", ")}).`
+      );
+    }
+    if (!isNonEmptyString(item.difficulty) || !allowedDifficulties.has(item.difficulty)) {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`difficulty\` (expected one of: ${[
+          ...allowedDifficulties,
+        ].join(", ")}).`
+      );
+    }
+    if (!Array.isArray(item.tags) || item.tags.length === 0 || !item.tags.every(isNonEmptyString)) {
+      errors.push(`${formatItemRef(item)}: missing or invalid \`tags\` (expected non-empty string[]).`);
+    } else {
+      const normalized = item.tags.map((t) => t.trim());
+      const unique = new Set(normalized);
+      if (unique.size !== normalized.length) {
+        errors.push(`${formatItemRef(item)}: \`tags\` contains duplicates.`);
+      }
+    }
+
+    if (!Array.isArray(item.prerequisites) || !item.prerequisites.every(isNonEmptyString)) {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`prerequisites\` (expected string[]).`
+      );
+    } else {
+      const normalized = item.prerequisites.map((x) => x.trim());
+      const unique = new Set(normalized);
+      if (unique.size !== normalized.length) {
+        errors.push(`${formatItemRef(item)}: \`prerequisites\` contains duplicates.`);
+      }
     }
 
     idToItems.set(item.itemId, (idToItems.get(item.itemId) ?? []).concat(item));
@@ -92,6 +208,20 @@ async function main() {
           .map((x) => `${x.unitId}/${x.itemId}`)
           .join(", ")}`
       );
+    }
+  }
+
+  const allItemIds = new Set(items.map((i) => i.itemId).filter(Boolean));
+  for (const item of items) {
+    if (!Array.isArray(item.prerequisites)) continue;
+    for (const prereqId of item.prerequisites) {
+      if (prereqId === item.itemId) {
+        errors.push(`${formatItemRef(item)}: \`prerequisites\` must not contain itself.`);
+        continue;
+      }
+      if (!allItemIds.has(prereqId)) {
+        errors.push(`${formatItemRef(item)}: \`prerequisites\` references unknown id \`${prereqId}\`.`);
+      }
     }
   }
 
@@ -120,6 +250,23 @@ async function main() {
         errors.push(
           `${formatItemRef(item)}: title mismatch (index: "${item.title}" vs H1: "${h1}").`
         );
+      }
+
+      const firstLine = firstNonEmptyLine(markdown);
+      if (!firstLine?.startsWith("# ")) {
+        warnings.push(`${formatItemRef(item)}: expected the first non-empty line to be a top-level H1.`);
+      }
+
+      const fenceLines = fenceOpeningsWithoutLanguage(markdown);
+      for (const lineNumber of fenceLines) {
+        warnings.push(`${formatItemRef(item)}: code fence missing language tag at line ${lineNumber}.`);
+      }
+
+      const expectedHeadings = ["前提", "この章でできるようになること", "演習", "ふりかえり", "次の章"];
+      for (const heading of expectedHeadings) {
+        if (!hasH2(markdown, heading)) {
+          warnings.push(`${formatItemRef(item)}: missing heading \`## ${heading}\`.`);
+        }
       }
     } catch {
       errors.push(`${formatItemRef(item)}: referenced file not found.`);

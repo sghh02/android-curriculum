@@ -5,7 +5,12 @@ Androidアプリがどのように動いているのか、基本的な仕組み�
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/02-oop-fundamentals.md` を完了し、クラス/責務の考え方がわかる
+- `chapters/01-setup.md` を完了し、Android Studioでプロジェクトを作って起動できる
+
+## この章でできるようになること
 
 - [ ] Androidアプリの基本構造を理解する
 - [ ] ActivityとComposeの関係がわかる
@@ -22,7 +27,7 @@ Androidアプリがどのように動いているのか、基本的な仕組み�
 
 **シンプルメモアプリのプロジェクト**を作成します。
 
-```
+```text
 SimpleMemoApp/
 ├── app/
 │   ├── src/
@@ -58,7 +63,7 @@ Androidアプリを作るには、**Android特有の仕組み**を理解する�
 
 ### この章で学ぶこと
 
-```
+```text
 Kotlinの知識
     ↓
 Android特有の仕組みを学ぶ（この章）
@@ -74,7 +79,7 @@ Android特有の仕組みを学ぶ（この章）
 
 Androidアプリは、いくつかの**コンポーネント**で構成されています。
 
-```
+```text
 Androidアプリ
 ├── Activity（画面）
 ├── Service（バックグラウンド処理）
@@ -92,7 +97,7 @@ Androidアプリ
 
 **Activity = 1つの画面**
 
-```
+```text
 メモアプリの例：
 - メモ一覧画面 → MemoListActivity
 - メモ作成画面 → MemoCreateActivity
@@ -191,7 +196,7 @@ class MainActivity : ComponentActivity() {
 
 **アプリの「状態の変化」**のこと。
 
-```
+```text
 起動 → 表示中 → 一時停止 → 再開 → 終了
 ```
 
@@ -241,7 +246,7 @@ class MainActivity : ComponentActivity() {
 
 ### ライフサイクルの流れ
 
-```
+```text
 アプリ起動
     ↓
 onCreate() → onStart() → onResume()
@@ -304,7 +309,7 @@ class MemoEditActivity : ComponentActivity() {
 
 **アプリで使う素材**のこと。
 
-```
+```text
 res/（リソースフォルダ）
 ├── drawable/   画像、アイコン
 ├── values/     文字列、色、サイズ
@@ -390,7 +395,7 @@ Color(0xFF6200EE)  // 直接指定も可能だが、テーマ推奨
 ### 画像リソース
 
 **配置：**
-```
+```text
 res/
 └── drawable/
     ├── ic_add.xml          ← ベクター画像
@@ -564,7 +569,7 @@ class SimpleMemoApplication : Application() {
 
 ### Android Studioで作成されるファイル
 
-```
+```text
 SimpleMemoApp/
 ├── app/
 │   ├── src/
@@ -652,7 +657,7 @@ dependencies {
 ### ステップ2：プロジェクト構造を確認
 
 Android Studioの左側のProject viewで確認：
-```
+```text
 app/src/main/
 ├── java/com/example/simplememo/
 │   └── MainActivity.kt
@@ -748,25 +753,25 @@ Android基礎でわからないことがあったら、AIに質問しましょ�
 
 ### 質問例
 
-```
+```text
 【質問】
 ActivityとFragmentの違いは何？
 どっちを使えばいいの？
 ```
 
-```
+```text
 【質問】
 ライフサイクルのonCreate、onStart、onResumeの違いがよくわからない。
 具体的にどういうタイミングで呼ばれるの？
 ```
 
-```
+```text
 【質問】
 AndroidManifest.xmlのexported="true"ってどういう意味？
 falseにするとどうなるの？
 ```
 
-```
+```text
 【エラー解決】
 アプリを実行したら以下のエラーが出た：
 
@@ -777,7 +782,7 @@ AndroidManifest.xml:15: Error: missing android:exported attribute
 
 ---
 
-## 演習問題
+## 演習
 
 ### 基礎レベル
 
@@ -964,7 +969,7 @@ class SimpleMemoApplication : Application() {
 画面回転時、Activityが一度破棄され、再作成されます。
 
 **実際の動き：**
-```
+```text
 onPause() → onStop() → onDestroy()
     ↓
 onCreate() → onStart() → onResume()
@@ -1028,7 +1033,7 @@ class MemoDetailActivity : ComponentActivity() { ... }
 ```
 
 **エラー：**
-```
+```text
 ActivityNotFoundException: Unable to find explicit activity class
 ```
 
@@ -1050,7 +1055,7 @@ val url = URL("https://api.example.com/memos")
 ```
 
 **エラー：**
-```
+```text
 SecurityException: Permission denied
 ```
 
@@ -1105,3 +1110,17 @@ SecurityException: Permission denied
 
 次の章からは、Jetpack Composeを使って実際のUIを作っていきます。
 この章で学んだAndroidの基礎知識が、これからの学習の土台になります。
+
+---
+
+## ふりかえり
+
+- Activityのライフサイクルで、今いちばん不安なメソッドはどれ？（onPause/onStopなど）
+- リソースとして管理することで、どんな変更がラクになる？
+- ComposeはActivityのどこで呼ばれて、どう表示される？
+
+---
+
+## 次の章
+
+次は `chapters/03-compose-basics.md` に進み、ComposeでUIを組み立てましょう。

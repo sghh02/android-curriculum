@@ -5,7 +5,12 @@
 
 ---
 
-## この章の目標
+## 前提
+
+- `chapters/03-compose-basics.md` を完了し、Composeで基本UIを組める
+- `chapters/03-android-fundamentals.md` を完了し、プロジェクト構造の概要がわかる
+
+## この章でできるようになること
 
 - [ ] シンプルメモアプリのプロジェクトを作成する
 - [ ] Memoデータクラスを設計・実装する
@@ -26,7 +31,7 @@
 - Memoデータクラスの定義
 - サンプルメモを表示
 
-```
+```text
 ┌─────────────────────┐
 │   シンプルメモ      │
 ├─────────────────────┤
@@ -47,7 +52,7 @@
 
 ### 学習の流れ
 
-```
+```text
 これまで：個別の知識を学んだ
 ├─ Kotlin文法
 ├─ オブジェクト指向
@@ -93,7 +98,7 @@
 
 Android Studioの左側で**Android**ビューに切り替え、以下を確認：
 
-```
+```text
 app/
 ├── manifests/
 │   └── AndroidManifest.xml
@@ -586,19 +591,19 @@ Color(android.graphics.Color.parseColor(memo.category.colorHex))
 
 ### 質問例
 
-```
+```text
 【質問】
 data classのcopy()メソッドって何？
 どういう時に使うの？
 ```
 
-```
+```text
 【質問】
 LazyColumnとColumnの違いは？
 どっちを使えばいいの？
 ```
 
-```
+```text
 【エラー解決】
 アプリを実行したら以下のエラーが出た：
 
@@ -607,7 +612,7 @@ Unresolved reference: R
 どうすれば直せる？
 ```
 
-```
+```text
 【コードレビューお願い】
 MemoCardのレイアウト、もっと見やすくできる？
 Material Design 3の原則に沿ってる？
@@ -615,7 +620,7 @@ Material Design 3の原則に沿ってる？
 
 ---
 
-## 演習問題
+## 演習
 
 ### 基礎レベル
 
@@ -975,3 +980,17 @@ fun MyComposable() {
 
 このアプリが、最終的に実用的なメモアプリへと進化していきます。
 楽しみながら学習を続けましょう！
+
+---
+
+## ふりかえり
+
+- `Memo` / `Category` の設計で迷った点はどこ？（責務/型/命名）
+- UIを作ってみて、Composableの分割はうまくできた？
+- 次に「状態管理」を入れるとき、どこが一番壊れそう？
+
+---
+
+## 次の章
+
+次は `chapters/02-unit2-guide.md` に進み、Unit 2でUIを仕上げる流れを確認しましょう。
