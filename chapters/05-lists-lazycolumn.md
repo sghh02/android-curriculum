@@ -7,7 +7,7 @@
 
 ## 前提
 
-- `chapters/04-state-interaction.md` を完了し、StateでUIを更新できる
+- [状態管理とユーザーインタラクション](chapters/04-state-interaction.md) を完了し、StateでUIを更新できる
 
 ## この章でできるようになること
 
@@ -693,4 +693,4 @@ LazyColumnで「もっと見る」ボタンを押したら
 
 ## 次の章
 
-次は `chapters/06-material-design.md` に進み、Material 3で見た目を整えましょう。
+次は [Material Design 3とテーマ](chapters/06-material-design.md) に進み、Material 3で見た目を整えましょう。

@@ -7,7 +7,7 @@
 
 ## 前提
 
-- `chapters/26-onboarding.md` を完了し、既存コードの追い方の型がある
+- [既存プロジェクト参画（読む・直す・壊さない）](chapters/26-onboarding.md) を完了し、既存コードの追い方の型がある
 
 ## この章でできるようになること
 
@@ -224,4 +224,4 @@
 
 ## 次の章
 
-次は `chapters/17-team-development.md` に進み、チーム開発（Git/PR/レビュー）の型を揃えましょう。
+次は [チーム開発（Git/PR/コードレビュー）](chapters/17-team-development.md) に進み、チーム開発（Git/PR/レビュー）の型を揃えましょう。

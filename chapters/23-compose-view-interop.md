@@ -7,7 +7,7 @@ Compose中心の案件でも、Viewベースのライブラリ（Map、WebView�
 
 ## 前提
 
-- `chapters/22-workmanager.md` を完了し、発展要件を実装する前提がある
+- [WorkManager（バックグラウンド処理）](chapters/22-workmanager.md) を完了し、発展要件を実装する前提がある
 
 ## この章でできるようになること
 
@@ -138,4 +138,4 @@ Composeの画面に既存View（例: MapView/WebView）を埋め込みたい。
 
 ## 次の章
 
-次は `chapters/24-accessibility-i18n.md` に進み、アクセシビリティと多言語対応を押さえましょう。
+次は [アクセシビリティと多言語対応](chapters/24-accessibility-i18n.md) に進み、アクセシビリティと多言語対応を押さえましょう。

@@ -18,8 +18,8 @@ Unit 9では、実務で避けて通れない **Gradle** と **モジュール�
 
 ## このユニットでやること（レッスン）
 
-- Gradle：`chapters/19-gradle.md`
-- マルチモジュール：`chapters/20-multi-module.md`
+- Gradle：[Gradleと依存関係管理（実務編）](chapters/19-gradle.md)
+- マルチモジュール：[マルチモジュール設計（単一→分割）](chapters/20-multi-module.md)
 
 ---
 
@@ -92,4 +92,4 @@ Unit 9では、実務で避けて通れない **Gradle** と **モジュール�
 
 ## 次の章
 
-次は `chapters/19-gradle.md` に進み、Gradleから始めましょう。
+次は [Gradleと依存関係管理（実務編）](chapters/19-gradle.md) に進み、Gradleから始めましょう。

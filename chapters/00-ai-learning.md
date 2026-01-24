@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/00-course-guide.md` を読み、学習の進め方（毎週の型）を決めている
-- わからない用語は `chapters/00-glossary.md` で都度つぶす
+- [コースガイド：6ヶ月でAndroid開発（Compose）を学ぶ](chapters/00-course-guide.md) を読み、学習の進め方（毎週の型）を決めている
+- わからない用語は [用語集（Android/Compose）](chapters/00-glossary.md) で都度つぶす
 
 ## この章でできるようになること
 
@@ -376,4 +376,4 @@ AIの提案を鵜呑みにしたくない。危ない点（保守性/パフォ�
 
 ## 次の章
 
-次は `chapters/00-glossary.md` に進み、頻出用語を押さえてから開発環境に進みましょう。
+次は [用語集（Android/Compose）](chapters/00-glossary.md) に進み、頻出用語を押さえてから開発環境に進みましょう。

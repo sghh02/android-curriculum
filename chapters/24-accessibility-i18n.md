@@ -7,7 +7,7 @@
 
 ## 前提
 
-- `chapters/23-compose-view-interop.md` を完了し、発展要件の流れがわかる
+- [ComposeとViewの相互運用](chapters/23-compose-view-interop.md) を完了し、発展要件の流れがわかる
 
 ## この章でできるようになること
 
@@ -130,4 +130,4 @@ TalkBack観点の改善案と、Composeでの実装ポイントを挙げて。
 
 ## 次の章
 
-次は `chapters/25-security-config.md` に進み、設定とセキュリティの最低ラインを押さえましょう。
+次は [設定とセキュリティ（秘密情報/通信）](chapters/25-security-config.md) に進み、設定とセキュリティの最低ラインを押さえましょう。

@@ -18,8 +18,8 @@ Unit 3では、画面が増えても破綻しないように、**画面遷移（
 
 ## このユニットでやること（レッスン）
 
-- 画面遷移：`chapters/07-navigation.md`
-- 設計：`chapters/08-architecture.md`
+- 画面遷移：[ナビゲーション](chapters/07-navigation.md)
+- 設計：[ViewModelとアーキテクチャ](chapters/08-architecture.md)
 
 ---
 
@@ -92,4 +92,4 @@ Unit 3では、画面が増えても破綻しないように、**画面遷移（
 
 ## 次の章
 
-次は `chapters/07-navigation.md` に進み、画面遷移を整えましょう。
+次は [ナビゲーション](chapters/07-navigation.md) に進み、画面遷移を整えましょう。

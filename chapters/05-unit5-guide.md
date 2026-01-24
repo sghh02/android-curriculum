@@ -18,7 +18,7 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## このユニットでやること（レッスン）
 
-- 永続化：`chapters/11-storage.md`
+- 永続化：[データ保存（Room / DataStore）](chapters/11-storage.md)
 
 ---
 
@@ -91,4 +91,4 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## 次の章
 
-次は `chapters/11-storage.md` に進み、永続化を入れましょう。
+次は [データ保存（Room / DataStore）](chapters/11-storage.md) に進み、永続化を入れましょう。

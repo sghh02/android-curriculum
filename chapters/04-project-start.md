@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/03-compose-basics.md` を完了し、Composeで基本UIを組める
-- `chapters/03-android-fundamentals.md` を完了し、プロジェクト構造の概要がわかる
+- [Jetpack Composeの基本](chapters/03-compose-basics.md) を完了し、Composeで基本UIを組める
+- [Androidアプリの基本](chapters/03-android-fundamentals.md) を完了し、プロジェクト構造の概要がわかる
 
 ## この章でできるようになること
 
@@ -1017,4 +1017,4 @@ fun MyComposable() {
 
 ## 次の章
 
-次は `chapters/02-unit2-guide.md` に進み、Unit 2でUIを仕上げる流れを確認しましょう。
+次は [Unit 2: アプリUIの構築（ガイド）](chapters/02-unit2-guide.md) に進み、Unit 2でUIを仕上げる流れを確認しましょう。

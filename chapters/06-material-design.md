@@ -7,7 +7,7 @@ Material Design 3（Material You）は、Googleの最新デザインシステム
 
 ## 前提
 
-- `chapters/05-lists-lazycolumn.md` を完了し、一覧UIの骨格がある
+- [リスト表示とLazyColumn](chapters/05-lists-lazycolumn.md) を完了し、一覧UIの骨格がある
 
 ## この章でできるようになること
 
@@ -745,4 +745,4 @@ Material Designを活用することで、美しく使いやすいアプリを�
 
 ## 次の章
 
-次は `chapters/03-unit3-guide.md` に進み、画面遷移とアーキテクチャの全体像を確認しましょう。
+次は [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) に進み、画面遷移とアーキテクチャの全体像を確認しましょう。

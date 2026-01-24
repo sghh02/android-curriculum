@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/03-unit3-guide.md` を読んでいる
-- `chapters/06-material-design.md` まで完了し、UIの骨格がある
+- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) を読んでいる
+- [Material Design 3とテーマ](chapters/06-material-design.md) まで完了し、UIの骨格がある
 
 ## この章でできるようになること
 
@@ -575,4 +575,4 @@ BottomNavigationでタブを切り替えても、
 
 ## 次の章
 
-次は `chapters/08-architecture.md` に進み、ViewModel/Repositoryで設計を固めましょう。
+次は [ViewModelとアーキテクチャ](chapters/08-architecture.md) に進み、ViewModel/Repositoryで設計を固めましょう。

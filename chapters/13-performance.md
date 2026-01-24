@@ -7,7 +7,7 @@
 
 ## 前提
 
-- `chapters/12-testing.md` を完了し、計測→改善→回帰防止の考え方がある
+- [テスト（ユニット/Compose UI）](chapters/12-testing.md) を完了し、計測→改善→回帰防止の考え方がある
 
 ## この章でできるようになること
 
@@ -142,4 +142,4 @@ val filtered by remember(query, memos) {
 
 ## 次の章
 
-次は `chapters/14-publishing.md` に進み、リリース前後の運用を押さえましょう。
+次は [アプリ公開と運用](chapters/14-publishing.md) に進み、リリース前後の運用を押さえましょう。

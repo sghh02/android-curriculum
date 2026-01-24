@@ -7,7 +7,7 @@ WorkManagerは、Androidで“条件付きの確実な実行”を担う標準�
 
 ## 前提
 
-- `chapters/21-adaptive-ui.md` を完了し、発展要件の進め方がわかる
+- [画面サイズ対応（スマホ/タブレット）](chapters/21-adaptive-ui.md) を完了し、発展要件の進め方がわかる
 
 ## この章でできるようになること
 
@@ -219,4 +219,4 @@ Workerを薄く保つ設計、リトライ戦略、重複防止（UniqueWork）�
 
 ## 次の章
 
-次は `chapters/23-compose-view-interop.md` に進み、ComposeとViewの相互運用を押さえましょう。
+次は [ComposeとViewの相互運用](chapters/23-compose-view-interop.md) に進み、ComposeとViewの相互運用を押さえましょう。

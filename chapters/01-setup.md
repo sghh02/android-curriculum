@@ -7,8 +7,8 @@ Androidアプリ開発には公式IDEの **Android Studio** と、動作確認�
 
 ## 前提
 
-- `chapters/01-unit1-guide.md` を読んでいる
-- つまずいたら `chapters/16-debugging.md` の「調査の型」を参照できる
+- [Unit 1: プログラミングとAndroidの基礎（ガイド）](chapters/01-unit1-guide.md) を読んでいる
+- つまずいたら [デバッグと調査（実務の型）](chapters/16-debugging.md) の「調査の型」を参照できる
 
 ## この章でできるようになること
 
@@ -564,4 +564,4 @@ adb devices
 
 ## 次の章
 
-次は `chapters/02-kotlin-basics.md` に進み、Kotlinの基礎文法を固めましょう。
+次は [Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md) に進み、Kotlinの基礎文法を固めましょう。

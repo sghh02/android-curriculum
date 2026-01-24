@@ -7,8 +7,8 @@ Androidアプリでは、ネットワーク通信やデータベースアクセ�
 
 ## 前提
 
-- `chapters/04-unit4-guide.md` を読んでいる
-- `chapters/08-architecture.md` を完了し、ViewModel/Repositoryの骨格がある
+- [Unit 4: 非同期処理とネットワーク（ガイド）](chapters/04-unit4-guide.md) を読んでいる
+- [ViewModelとアーキテクチャ](chapters/08-architecture.md) を完了し、ViewModel/Repositoryの骨格がある
 
 ## この章でできるようになること
 
@@ -498,4 +498,4 @@ Coroutineを使いこなすことで、スムーズなUXを提供できます。
 
 ## 次の章
 
-次は `chapters/10-network.md` に進み、Retrofitで通信を組み込みましょう。
+次は [ネットワーク通信（Retrofit）](chapters/10-network.md) に進み、Retrofitで通信を組み込みましょう。

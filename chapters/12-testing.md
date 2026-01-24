@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/06-unit6-guide.md` を読んでいる
-- `chapters/11-storage.md` まで完了し、永続化を含むアプリの骨格がある
+- [Unit 6: 品質と運用（ガイド）](chapters/06-unit6-guide.md) を読んでいる
+- [データ保存（Room / DataStore）](chapters/11-storage.md) まで完了し、永続化を含むアプリの骨格がある
 
 ## この章でできるようになること
 
@@ -209,4 +209,4 @@ runTest + TestDispatcher で安定させる手順を教えて。
 
 ## 次の章
 
-次は `chapters/13-performance.md` に進み、計測→改善の基本を押さえましょう。
+次は [パフォーマンスと最適化](chapters/13-performance.md) に進み、計測→改善の基本を押さえましょう。

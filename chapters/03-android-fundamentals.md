@@ -7,8 +7,8 @@ Androidアプリがどのように動いているのか、基本的な仕組み�
 
 ## 前提
 
-- `chapters/02-oop-fundamentals.md` を完了し、クラス/責務の考え方がわかる
-- `chapters/01-setup.md` を完了し、Android Studioでプロジェクトを作って起動できる
+- [オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md) を完了し、クラス/責務の考え方がわかる
+- [Android Studioのインストールと環境準備](chapters/01-setup.md) を完了し、Android Studioでプロジェクトを作って起動できる
 
 ## この章でできるようになること
 
@@ -1147,4 +1147,4 @@ SecurityException: Permission denied
 
 ## 次の章
 
-次は `chapters/03-compose-basics.md` に進み、ComposeでUIを組み立てましょう。
+次は [Jetpack Composeの基本](chapters/03-compose-basics.md) に進み、ComposeでUIを組み立てましょう。

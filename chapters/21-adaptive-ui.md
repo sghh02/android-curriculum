@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/10-unit10-guide.md` を読んでいる
-- `chapters/20-multi-module.md` は任意（分割しているなら境界を意識する）
+- [Unit 10: 実務で頻出の要件（ガイド）](chapters/10-unit10-guide.md) を読んでいる
+- [マルチモジュール設計（単一→分割）](chapters/20-multi-module.md) は任意（分割しているなら境界を意識する）
 
 ## この章でできるようになること
 
@@ -159,4 +159,4 @@ Composeでタブレット対応をしたい。
 
 ## 次の章
 
-次は `chapters/22-workmanager.md` に進み、バックグラウンド処理を押さえましょう。
+次は [WorkManager（バックグラウンド処理）](chapters/22-workmanager.md) に進み、バックグラウンド処理を押さえましょう。

@@ -18,9 +18,9 @@ Unit 6では、実務で必ず求められる **テスト・パフォーマン�
 
 ## このユニットでやること（レッスン）
 
-- テスト：`chapters/12-testing.md`
-- パフォーマンス：`chapters/13-performance.md`
-- 公開と運用：`chapters/14-publishing.md`
+- テスト：[テスト（ユニット/Compose UI）](chapters/12-testing.md)
+- パフォーマンス：[パフォーマンスと最適化](chapters/13-performance.md)
+- 公開と運用：[アプリ公開と運用](chapters/14-publishing.md)
 
 ---
 
@@ -93,4 +93,4 @@ Unit 6では、実務で必ず求められる **テスト・パフォーマン�
 
 ## 次の章
 
-次は `chapters/12-testing.md` に進み、テストから始めましょう。
+次は [テスト（ユニット/Compose UI）](chapters/12-testing.md) に進み、テストから始めましょう。

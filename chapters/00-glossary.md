@@ -122,4 +122,4 @@
 
 ## 次の章
 
-次は `chapters/01-unit1-guide.md` に進み、Unit 1の進め方を確認してから開発環境を整えましょう。
+次は [Unit 1: プログラミングとAndroidの基礎（ガイド）](chapters/01-unit1-guide.md) に進み、Unit 1の進め方を確認してから開発環境を整えましょう。

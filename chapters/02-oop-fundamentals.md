@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/02-kotlin-basics.md` を完了し、Kotlinの基本（関数/クラス/Nullable）がわかる
-- つまずいたら `chapters/00-glossary.md` で用語を確認できる
+- [Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md) を完了し、Kotlinの基本（関数/クラス/Nullable）がわかる
+- つまずいたら [用語集（Android/Compose）](chapters/00-glossary.md) で用語を確認できる
 
 ## この章でできるようになること
 
@@ -1211,4 +1211,4 @@ class MemoFileService {
 
 ## 次の章
 
-次は `chapters/03-android-fundamentals.md` に進み、Androidアプリの基本（Activity/ライフサイクル等）を押さえましょう。
+次は [Androidアプリの基本](chapters/03-android-fundamentals.md) に進み、Androidアプリの基本（Activity/ライフサイクル等）を押さえましょう。

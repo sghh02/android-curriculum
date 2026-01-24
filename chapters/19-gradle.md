@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/09-unit9-guide.md` を読んでいる
-- `chapters/18-ci.md` を完了し、GradleタスクをCIで回す前提がある
+- [Unit 9: ビルドとモジュール化（ガイド）](chapters/09-unit9-guide.md) を読んでいる
+- [CIで品質を担保する（Gradle/テスト/Lint）](chapters/18-ci.md) を完了し、GradleタスクをCIで回す前提がある
 
 ## この章でできるようになること
 
@@ -199,4 +199,4 @@ dependencies {
 
 ## 次の章
 
-次は `chapters/20-multi-module.md` に進み、単一→マルチモジュールの設計方針を学びましょう。
+次は [マルチモジュール設計（単一→分割）](chapters/20-multi-module.md) に進み、単一→マルチモジュールの設計方針を学びましょう。

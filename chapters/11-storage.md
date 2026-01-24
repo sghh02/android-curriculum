@@ -7,8 +7,8 @@
 
 ## 前提
 
-- `chapters/05-unit5-guide.md` を読んでいる
-- `chapters/10-network.md` を完了し、Repository経由でデータ取得できる
+- [Unit 5: データ永続化（ガイド）](chapters/05-unit5-guide.md) を読んでいる
+- [ネットワーク通信（Retrofit）](chapters/10-network.md) を完了し、Repository経由でデータ取得できる
 
 ## この章でできるようになること
 
@@ -669,4 +669,4 @@ SQLiteはALTER TABLE DROP COLUMNをサポートしてないけど、
 
 ## 次の章
 
-次は `chapters/06-unit6-guide.md` に進み、品質（テスト/性能/公開）の全体像を確認しましょう。
+次は [Unit 6: 品質と運用（ガイド）](chapters/06-unit6-guide.md) に進み、品質（テスト/性能/公開）の全体像を確認しましょう。

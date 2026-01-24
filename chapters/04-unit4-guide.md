@@ -18,8 +18,8 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## このユニットでやること（レッスン）
 
-- 非同期/データ層：`chapters/09-data-layer.md`
-- ネットワーク：`chapters/10-network.md`
+- 非同期/データ層：[Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md)
+- ネットワーク：[ネットワーク通信（Retrofit）](chapters/10-network.md)
 
 ---
 
@@ -92,4 +92,4 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## 次の章
 
-次は `chapters/09-data-layer.md` に進み、非同期とデータ層から固めましょう。
+次は [Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md) に進み、非同期とデータ層から固めましょう。

@@ -18,11 +18,11 @@ Unit 10では、実務で“よく要求される”けれど初心者が詰ま�
 
 ## このユニットでやること（レッスン）
 
-- 画面サイズ対応：`chapters/21-adaptive-ui.md`
-- バックグラウンド処理：`chapters/22-workmanager.md`
-- ComposeとViewの相互運用：`chapters/23-compose-view-interop.md`
-- アクセシビリティと多言語：`chapters/24-accessibility-i18n.md`
-- 設定とセキュリティ：`chapters/25-security-config.md`
+- 画面サイズ対応：[画面サイズ対応（スマホ/タブレット）](chapters/21-adaptive-ui.md)
+- バックグラウンド処理：[WorkManager（バックグラウンド処理）](chapters/22-workmanager.md)
+- ComposeとViewの相互運用：[ComposeとViewの相互運用](chapters/23-compose-view-interop.md)
+- アクセシビリティと多言語：[アクセシビリティと多言語対応](chapters/24-accessibility-i18n.md)
+- 設定とセキュリティ：[設定とセキュリティ（秘密情報/通信）](chapters/25-security-config.md)
 
 ---
 
@@ -95,4 +95,4 @@ Unit 10では、実務で“よく要求される”けれど初心者が詰ま�
 
 ## 次の章
 
-次は `chapters/21-adaptive-ui.md` に進み、画面サイズ対応から始めましょう。
+次は [画面サイズ対応（スマホ/タブレット）](chapters/21-adaptive-ui.md) に進み、画面サイズ対応から始めましょう。

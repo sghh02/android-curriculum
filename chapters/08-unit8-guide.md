@@ -18,10 +18,10 @@ Unit 8では、実務で価値が出やすい **「読む・直す・壊さな�
 
 ## このユニットでやること（レッスン）
 
-- 参画初週の動き方：`chapters/26-onboarding.md`
-- デバッグと調査：`chapters/16-debugging.md`
-- チーム開発：`chapters/17-team-development.md`
-- CI：`chapters/18-ci.md`
+- 参画初週の動き方：[既存プロジェクト参画（読む・直す・壊さない）](chapters/26-onboarding.md)
+- デバッグと調査：[デバッグと調査（実務の型）](chapters/16-debugging.md)
+- チーム開発：[チーム開発（Git/PR/コードレビュー）](chapters/17-team-development.md)
+- CI：[CIで品質を担保する（Gradle/テスト/Lint）](chapters/18-ci.md)
 
 ---
 
@@ -36,7 +36,7 @@ Unit 8では、実務で価値が出やすい **「読む・直す・壊さな�
 
 ## 演習
 
-- [ ] `chapters/27-ticket-backlog.md` からSチケットを1つ選び、PRで完了させる
+- [ ] [模擬案件バックログ（実務チケット集）](chapters/27-ticket-backlog.md) からSチケットを1つ選び、PRで完了させる
 - [ ] PRに「再現/確認手順」「原因」「修正方針」「テスト」を書く
 - [ ] CIで `test` / `lint` / `assemble` を回し、失敗したら直す
 
@@ -95,4 +95,4 @@ Unit 8では、実務で価値が出やすい **「読む・直す・壊さな�
 
 ## 次の章
 
-次は `chapters/26-onboarding.md` に進み、既存プロジェクトの読み方から始めましょう。
+次は [既存プロジェクト参画（読む・直す・壊さない）](chapters/26-onboarding.md) に進み、既存プロジェクトの読み方から始めましょう。

@@ -7,7 +7,7 @@
 
 ## 前提
 
-- `chapters/09-data-layer.md` を完了し、Coroutine/Flowで非同期処理できる
+- [Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md) を完了し、Coroutine/Flowで非同期処理できる
 
 ## この章でできるようになること
 
@@ -567,4 +567,4 @@ APIからのレスポンスが
 
 ## 次の章
 
-次は `chapters/05-unit5-guide.md` に進み、永続化（Room/DataStore）の全体像を確認しましょう。
+次は [Unit 5: データ永続化（ガイド）](chapters/05-unit5-guide.md) に進み、永続化（Room/DataStore）の全体像を確認しましょう。

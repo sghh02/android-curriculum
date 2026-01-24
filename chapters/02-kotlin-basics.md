@@ -7,8 +7,8 @@ Android開発では**Kotlin**というプログラミング言語を使います
 
 ## 前提
 
-- `chapters/01-setup.md` を完了し、Android Studioでプロジェクトを開ける
-- つまずいたら `chapters/00-glossary.md` で用語を確認できる
+- [Android Studioのインストールと環境準備](chapters/01-setup.md) を完了し、Android Studioでプロジェクトを開ける
+- つまずいたら [用語集（Android/Compose）](chapters/00-glossary.md) で用語を確認できる
 
 ## この章でできるようになること
 
@@ -915,4 +915,4 @@ Kotlinはまだまだ奥が深いですが、ここまでの知識でAndroidア�
 
 ## 次の章
 
-次は `chapters/02-oop-fundamentals.md` に進み、クラス設計の考え方を押さえましょう。
+次は [オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md) に進み、クラス設計の考え方を押さえましょう。

@@ -6,8 +6,8 @@ Unit 1では、**開発環境の準備 → Kotlin基礎 → Android/Compose基�
 
 ## 前提
 
-- `chapters/00-course-guide.md` を読んで、学習の進め方（毎週の型）を決めている
-- わからない用語は `chapters/00-glossary.md` で都度つぶす
+- [コースガイド：6ヶ月でAndroid開発（Compose）を学ぶ](chapters/00-course-guide.md) を読んで、学習の進め方（毎週の型）を決めている
+- わからない用語は [用語集（Android/Compose）](chapters/00-glossary.md) で都度つぶす
 
 ## この章でできるようになること
 
@@ -19,12 +19,12 @@ Unit 1では、**開発環境の準備 → Kotlin基礎 → Android/Compose基�
 
 ## このユニットでやること（レッスン）
 
-- 環境構築：`chapters/01-setup.md`
-- Kotlin基礎：`chapters/02-kotlin-basics.md`
-- OOP基礎：`chapters/02-oop-fundamentals.md`
-- Androidの基本：`chapters/03-android-fundamentals.md`
-- Composeの基本：`chapters/03-compose-basics.md`
-- ハンズオン開始：`chapters/04-project-start.md`
+- 環境構築：[Android Studioのインストールと環境準備](chapters/01-setup.md)
+- Kotlin基礎：[Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md)
+- OOP基礎：[オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md)
+- Androidの基本：[Androidアプリの基本](chapters/03-android-fundamentals.md)
+- Composeの基本：[Jetpack Composeの基本](chapters/03-compose-basics.md)
+- ハンズオン開始：[ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md)
 
 ---
 
@@ -104,4 +104,4 @@ Unit 1では、**開発環境の準備 → Kotlin基礎 → Android/Compose基�
 
 ## 次の章
 
-次は `chapters/01-setup.md` に進み、環境構築から始めましょう。
+次は [Android Studioのインストールと環境準備](chapters/01-setup.md) に進み、環境構築から始めましょう。

@@ -7,7 +7,7 @@ XMLではなくKotlinコードでUIを組み立てます。
 
 ## 前提
 
-- `chapters/03-android-fundamentals.md` を完了し、Activity/リソース/ライフサイクルの概要がわかる
+- [Androidアプリの基本](chapters/03-android-fundamentals.md) を完了し、Activity/リソース/ライフサイクルの概要がわかる
 
 ## この章でできるようになること
 
@@ -838,4 +838,4 @@ Composeの基礎が身につきました。
 
 ## 次の章
 
-次は `chapters/04-project-start.md` に進み、シンプルメモアプリの開発を始めましょう。
+次は [ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md) に進み、シンプルメモアプリの開発を始めましょう。
