@@ -484,10 +484,12 @@ class SettingsViewModel @Inject constructor(
 
 ## DataStore - 設定画面の実装
 
+`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](chapters/08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
+
 ```kotlin
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel = hiltViewModel()) {
-    val settings by viewModel.settings.collectAsState()
+    val settings by viewModel.settings.collectAsStateWithLifecycle()
 
     Column(modifier = Modifier.padding(16.dp)) {
         Text(

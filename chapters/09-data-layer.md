@@ -217,7 +217,9 @@ val memos: StateFlow<List<Memo>> = repository.getMemosFlow()
 
 ## Composeでの使用
 
-### collectAsState
+### collectAsState（簡易）
+
+まずは `collectAsState()` でも動きますが、実務では次の `collectAsStateWithLifecycle()` を推奨します。
 
 ```kotlin
 @Composable

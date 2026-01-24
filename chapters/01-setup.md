@@ -279,7 +279,7 @@ Android Studioの**Device Manager**または**実行ボタン横のデバイス�
 | Package name | com.example.helloandroid | 一意の識別子 |
 | Save location | 任意 | プロジェクトの保存先 |
 | Language | **Kotlin** | 必ずKotlinを選択 |
-| Minimum SDK | API 24 | Android 7.0以上対応 |
+| Minimum SDK | API <min-sdk> | 迷ったら24（Android 7.0） |
 | Build configuration | Kotlin DSL | 推奨 |
 
 ### Step 3：プロジェクトを開く

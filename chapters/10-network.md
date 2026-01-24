@@ -224,10 +224,12 @@ class UsersViewModel(
 
 ## UIの実装
 
+`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](chapters/08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
+
 ```kotlin
 @Composable
 fun UsersScreen(viewModel: UsersViewModel = viewModel()) {
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
         topBar = {
@@ -427,7 +429,7 @@ fun UserDetailScreen(
     userId: Int,
     viewModel: UserDetailViewModel = viewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     LaunchedEffect(userId) {
         viewModel.loadUser(userId)

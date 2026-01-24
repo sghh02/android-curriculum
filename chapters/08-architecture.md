@@ -99,6 +99,7 @@ fun MemoScreen() {
 // build.gradle.kts
 dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:<version>")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:<version>")
 }
 ```
 
@@ -125,12 +126,14 @@ class CounterViewModel : ViewModel() {
 
 ### Composableでの使用
 
+StateFlowは `collectAsStateWithLifecycle()` でComposeのStateに変換します（バックグラウンドでは自動で収集を止めます）。
+
 ```kotlin
 @Composable
 fun CounterScreen(
     viewModel: CounterViewModel = viewModel()
 ) {
-    val count by viewModel.count.collectAsState()
+    val count by viewModel.count.collectAsStateWithLifecycle()
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -176,7 +179,7 @@ class MyViewModel : ViewModel() {
 // Composableで使用
 @Composable
 fun MyScreen(viewModel: MyViewModel = viewModel()) {
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     // ...
 }
 ```
@@ -255,7 +258,7 @@ class MemoViewModel : ViewModel() {
 ```kotlin
 @Composable
 fun MemoScreen(viewModel: MemoViewModel = viewModel()) {
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Column(modifier = Modifier.padding(16.dp)) {
         // 入力欄

@@ -607,7 +607,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.simplememo"
-        minSdk = 24
+        minSdk = <min-sdk>
         targetSdk = <api-level>
         versionCode = 1
         versionName = "1.0"
@@ -652,7 +652,7 @@ dependencies {
    - Name: `SimpleMemo`
    - Package name: `com.example.simplememo`
    - Language: `Kotlin`
-   - Minimum SDK: `API 24`
+   - Minimum SDK: `API <min-sdk>（迷ったら24）`
    - Build configuration language: `Kotlin DSL`
 
 ### ステップ2：プロジェクト構造を確認

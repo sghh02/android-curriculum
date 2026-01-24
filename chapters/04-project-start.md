@@ -90,7 +90,7 @@
    - **Package name**: `com.example.simplememo`
    - **Save location**: 任意の場所
    - **Language**: `Kotlin`
-   - **Minimum SDK**: `API 24 (Android 7.0)`
+   - **Minimum SDK**: `API <min-sdk>（迷ったら24）`
    - **Build configuration language**: `Kotlin DSL (build.gradle.kts)`
 5. **Finish**をクリック
 
