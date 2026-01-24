@@ -29,22 +29,22 @@
 // build.gradle.kts
 dependencies {
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:<version>")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:<version>")
 
     // Kotlin Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:<version>")
 
     // OkHttp（ログ出力用）
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:<version>")
 
     // Coil（画像読み込み）
-    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("io.coil-kt:coil-compose:<version>")
 }
 
 // プラグイン
 plugins {
-    kotlin("plugin.serialization") version "1.9.21"
+    kotlin("plugin.serialization") version "<version>"
 }
 ```
 

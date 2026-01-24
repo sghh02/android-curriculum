@@ -26,7 +26,7 @@
 
 | 用途 | 推奨 |
 |------|------|
-| 構造化データ（TODO、ユーザー情報など） | **Room** |
+| 構造化データ（メモ、ユーザー情報など） | **Room** |
 | キー/値ペア（設定、フラグなど） | **DataStore** |
 | 大量データ | **Room** |
 | シンプルな値 | **DataStore** |
@@ -40,13 +40,13 @@
 ```kotlin
 // build.gradle.kts
 plugins {
-    id("com.google.devtools.ksp") version "1.9.21-1.0.16"
+    id("com.google.devtools.ksp")
 }
 
 dependencies {
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")  // Coroutine/Flow対応
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:<version>")
+    implementation("androidx.room:room-ktx:<version>")  // Coroutine/Flow対応
+    ksp("androidx.room:room-compiler:<version>")
 }
 ```
 
@@ -55,19 +55,27 @@ dependencies {
 ## Room - Entity（テーブル定義）
 
 ```kotlin
-@Entity(tableName = "todos")
-data class TodoEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+import java.util.UUID
+
+@Entity(tableName = "memos")
+data class MemoEntity(
+    @PrimaryKey
+    val id: String = UUID.randomUUID().toString(),
 
     @ColumnInfo(name = "title")
     val title: String,
 
-    @ColumnInfo(name = "is_completed")
-    val isCompleted: Boolean = false,
+    @ColumnInfo(name = "content")
+    val content: String,
+
+    @ColumnInfo(name = "is_archived")
+    val isArchived: Boolean = false,
 
     @ColumnInfo(name = "created_at")
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+
+    @ColumnInfo(name = "updated_at")
+    val updatedAt: Long = System.currentTimeMillis()
 )
 
 // 複数のプライマリキー
@@ -95,49 +103,49 @@ data class UserEntity(
 
 ```kotlin
 @Dao
-interface TodoDao {
+interface MemoDao {
     // 全件取得（Flow）
-    @Query("SELECT * FROM todos ORDER BY created_at DESC")
-    fun getAllTodos(): Flow<List<TodoEntity>>
+    @Query("SELECT * FROM memos ORDER BY updated_at DESC")
+    fun getAllMemos(): Flow<List<MemoEntity>>
 
     // 条件付き取得
-    @Query("SELECT * FROM todos WHERE is_completed = :completed")
-    fun getTodosByStatus(completed: Boolean): Flow<List<TodoEntity>>
+    @Query("SELECT * FROM memos WHERE is_archived = :archived ORDER BY updated_at DESC")
+    fun getMemosByArchived(archived: Boolean): Flow<List<MemoEntity>>
 
     // 単一取得
-    @Query("SELECT * FROM todos WHERE id = :id")
-    suspend fun getTodoById(id: Int): TodoEntity?
+    @Query("SELECT * FROM memos WHERE id = :id")
+    suspend fun getMemoById(id: String): MemoEntity?
 
     // 挿入（IDを返す）
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(todo: TodoEntity): Long
+    suspend fun insert(memo: MemoEntity): Long
 
     // 複数挿入
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(todos: List<TodoEntity>)
+    suspend fun insertAll(memos: List<MemoEntity>)
 
     // 更新
     @Update
-    suspend fun update(todo: TodoEntity)
+    suspend fun update(memo: MemoEntity)
 
     // 削除
     @Delete
-    suspend fun delete(todo: TodoEntity)
+    suspend fun delete(memo: MemoEntity)
 
     // IDで削除
-    @Query("DELETE FROM todos WHERE id = :id")
-    suspend fun deleteById(id: Int)
+    @Query("DELETE FROM memos WHERE id = :id")
+    suspend fun deleteById(id: String)
 
     // 全削除
-    @Query("DELETE FROM todos")
+    @Query("DELETE FROM memos")
     suspend fun deleteAll()
 
-    // 完了済みを削除
-    @Query("DELETE FROM todos WHERE is_completed = 1")
-    suspend fun deleteCompleted()
+    // アーカイブ済みを削除
+    @Query("DELETE FROM memos WHERE is_archived = 1")
+    suspend fun deleteArchived()
 
     // カウント
-    @Query("SELECT COUNT(*) FROM todos WHERE is_completed = 0")
+    @Query("SELECT COUNT(*) FROM memos WHERE is_archived = 0")
     fun getActiveCount(): Flow<Int>
 }
 ```
@@ -148,12 +156,12 @@ interface TodoDao {
 
 ```kotlin
 @Database(
-    entities = [TodoEntity::class],
+    entities = [MemoEntity::class],
     version = 1,
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun todoDao(): TodoDao
+    abstract fun memoDao(): MemoDao
 
     companion object {
         @Volatile
@@ -181,58 +189,74 @@ abstract class AppDatabase : RoomDatabase() {
 ## Room - Repository実装
 
 ```kotlin
-interface TodoRepository {
-    fun getAllTodos(): Flow<List<Todo>>
-    fun getActiveTodos(): Flow<List<Todo>>
-    suspend fun addTodo(title: String)
-    suspend fun toggleComplete(todo: Todo)
-    suspend fun deleteTodo(todo: Todo)
+data class Memo(
+    val id: String,
+    val title: String,
+    val content: String,
+    val isArchived: Boolean = false,
+    val createdAt: Long,
+    val updatedAt: Long
+)
+
+interface MemoRepository {
+    fun getAllMemos(): Flow<List<Memo>>
+    fun getActiveMemos(): Flow<List<Memo>>
+    suspend fun addMemo(title: String, content: String)
+    suspend fun toggleArchive(memo: Memo)
+    suspend fun deleteMemo(memo: Memo)
 }
 
-class TodoRepositoryImpl(
-    private val todoDao: TodoDao
-) : TodoRepository {
+class MemoRepositoryImpl(
+    private val memoDao: MemoDao
+) : MemoRepository {
 
-    override fun getAllTodos(): Flow<List<Todo>> {
-        return todoDao.getAllTodos().map { entities ->
+    override fun getAllMemos(): Flow<List<Memo>> {
+        return memoDao.getAllMemos().map { entities ->
             entities.map { it.toDomain() }
         }
     }
 
-    override fun getActiveTodos(): Flow<List<Todo>> {
-        return todoDao.getTodosByStatus(completed = false).map { entities ->
+    override fun getActiveMemos(): Flow<List<Memo>> {
+        return memoDao.getMemosByArchived(archived = false).map { entities ->
             entities.map { it.toDomain() }
         }
     }
 
-    override suspend fun addTodo(title: String) {
-        val entity = TodoEntity(title = title)
-        todoDao.insert(entity)
+    override suspend fun addMemo(title: String, content: String) {
+        val entity = MemoEntity(title = title, content = content)
+        memoDao.insert(entity)
     }
 
-    override suspend fun toggleComplete(todo: Todo) {
-        val entity = todo.toEntity().copy(isCompleted = !todo.isCompleted)
-        todoDao.update(entity)
+    override suspend fun toggleArchive(memo: Memo) {
+        val entity = memo.toEntity().copy(
+            isArchived = !memo.isArchived,
+            updatedAt = System.currentTimeMillis()
+        )
+        memoDao.update(entity)
     }
 
-    override suspend fun deleteTodo(todo: Todo) {
-        todoDao.delete(todo.toEntity())
+    override suspend fun deleteMemo(memo: Memo) {
+        memoDao.delete(memo.toEntity())
     }
 }
 
 // マッピング関数
-fun TodoEntity.toDomain() = Todo(
+fun MemoEntity.toDomain() = Memo(
     id = id,
     title = title,
-    isCompleted = isCompleted,
-    createdAt = createdAt
+    content = content,
+    isArchived = isArchived,
+    createdAt = createdAt,
+    updatedAt = updatedAt
 )
 
-fun Todo.toEntity() = TodoEntity(
+fun Memo.toEntity() = MemoEntity(
     id = id,
     title = title,
-    isCompleted = isCompleted,
-    createdAt = createdAt
+    content = content,
+    isArchived = isArchived,
+    createdAt = createdAt,
+    updatedAt = updatedAt
 )
 ```
 
@@ -242,43 +266,52 @@ fun Todo.toEntity() = TodoEntity(
 
 ```kotlin
 @HiltViewModel
-class TodoViewModel @Inject constructor(
-    private val repository: TodoRepository
+class MemoViewModel @Inject constructor(
+    private val repository: MemoRepository
 ) : ViewModel() {
 
-    val todos: StateFlow<List<Todo>> = repository.getAllTodos()
+    val memos: StateFlow<List<Memo>> = repository.getAllMemos()
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = emptyList()
         )
 
-    private val _inputText = MutableStateFlow("")
-    val inputText: StateFlow<String> = _inputText.asStateFlow()
+    private val _title = MutableStateFlow("")
+    val title: StateFlow<String> = _title.asStateFlow()
 
-    fun onInputChange(text: String) {
-        _inputText.value = text
+    private val _content = MutableStateFlow("")
+    val content: StateFlow<String> = _content.asStateFlow()
+
+    fun onTitleChange(value: String) {
+        _title.value = value
     }
 
-    fun addTodo() {
-        val text = _inputText.value.trim()
-        if (text.isEmpty()) return
+    fun onContentChange(value: String) {
+        _content.value = value
+    }
+
+    fun addMemo() {
+        val title = _title.value.trim()
+        val content = _content.value.trim()
+        if (title.isEmpty()) return
 
         viewModelScope.launch {
-            repository.addTodo(text)
-            _inputText.value = ""
+            repository.addMemo(title = title, content = content)
+            _title.value = ""
+            _content.value = ""
         }
     }
 
-    fun toggleComplete(todo: Todo) {
+    fun toggleArchive(memo: Memo) {
         viewModelScope.launch {
-            repository.toggleComplete(todo)
+            repository.toggleArchive(memo)
         }
     }
 
-    fun deleteTodo(todo: Todo) {
+    fun deleteMemo(memo: Memo) {
         viewModelScope.launch {
-            repository.deleteTodo(todo)
+            repository.deleteMemo(memo)
         }
     }
 }
@@ -295,7 +328,7 @@ class TodoViewModel @Inject constructor(
 val MIGRATION_1_2 = object : Migration(1, 2) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL(
-            "ALTER TABLE todos ADD COLUMN priority INTEGER NOT NULL DEFAULT 0"
+            "ALTER TABLE memos ADD COLUMN updated_at INTEGER NOT NULL DEFAULT 0"
         )
     }
 }
@@ -327,7 +360,7 @@ Room.databaseBuilder(context, AppDatabase::class.java, "app_database")
 ```kotlin
 // build.gradle.kts
 dependencies {
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:<version>")
 }
 ```
 

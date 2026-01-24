@@ -29,7 +29,7 @@
 ```kotlin
 // build.gradle.kts (app)
 dependencies {
-    implementation("androidx.navigation:navigation-compose:2.7.6")
+    implementation("androidx.navigation:navigation-compose:<version>")
 }
 ```
 
@@ -224,11 +224,11 @@ Kotlin 2.0以降では、型安全なナビゲーションが使えます。
 ```kotlin
 // build.gradle.kts
 plugins {
-    kotlin("plugin.serialization") version "2.0.0"
+    kotlin("plugin.serialization") version "<version>"
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:<version>")
 }
 ```
 

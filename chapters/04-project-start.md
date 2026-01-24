@@ -119,20 +119,20 @@ app/
 
 ```kotlin
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation("androidx.core:core-ktx:<version>")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:<version>")
+    implementation("androidx.activity:activity-compose:<version>")
 
     // Jetpack Compose
-    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+    implementation(platform("androidx.compose:compose-bom:<version>"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
 
     // テスト
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation("junit:junit:<version>")
+    androidTestImplementation("androidx.test.ext:junit:<version>")
 }
 ```
 
@@ -173,7 +173,7 @@ enum class Category(
     WORK("仕事", "#FF6B6B"),
     PERSONAL("プライベート", "#4ECDC4"),
     IDEA("アイデア", "#FFE66D"),
-    TODO("TODO", "#95E1D3");
+    TASK("タスク", "#95E1D3");
 
     companion object {
         fun fromDisplayName(name: String): Category {
@@ -283,14 +283,14 @@ object SampleData {
                 category = Category.IDEA
             ),
             Memo(
-                title = "今週のTODO",
+                title = "今週のタスク",
                 content = """
                     - プログラミング課題を完成させる
                     - 本を2冊読む
                     - ジムに3回行く
                     - 部屋の掃除
                 """.trimIndent(),
-                category = Category.TODO
+                category = Category.TASK
             ),
             Memo(
                 title = "読書メモ",
@@ -662,7 +662,7 @@ enum class Category(
     WORK("仕事", "#FF6B6B"),
     PERSONAL("プライベート", "#4ECDC4"),
     IDEA("アイデア", "#FFE66D"),
-    TODO("TODO", "#95E1D3"),
+    TASK("タスク", "#95E1D3"),
     STUDY("学習", "#FFA07A");  // 追加
 
     companion object {

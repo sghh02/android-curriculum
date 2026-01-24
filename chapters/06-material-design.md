@@ -39,7 +39,7 @@ Material Design 3（MD3/Material You）は、2021年にGoogleが発表した最�
 ```kotlin
 // build.gradle.kts
 dependencies {
-    implementation("androidx.compose.material3:material3:1.2.0")
+    implementation("androidx.compose.material3:material3:<version>")
 }
 ```
 

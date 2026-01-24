@@ -642,22 +642,22 @@ var password by remember { mutableStateOf("") }
 
 ## 演習
 
-### TODOリスト入力を作る
+### メモ入力フォームを作る
 
-学んだ内容を使って、TODOの追加機能を作ってみましょう。
+学んだ内容を使って、メモの追加機能を作ってみましょう。
 
 ### 要件
 
-1. テキスト入力欄がある
-2. 「追加」ボタンを押すとリストに追加される
-3. 空のテキストは追加できない
-4. 追加後、入力欄がクリアされる
+1. タイトル入力欄と本文入力欄がある
+2. 「保存」ボタンを押すとリストに追加される
+3. タイトルが空なら保存できない
+4. 保存後、入力欄がクリアされる
 
 ### チャレンジしてみよう
 
 ```kotlin
 @Composable
-fun TodoInput() {
+fun MemoInput() {
     // ここにコードを書いてみよう
 }
 ```
@@ -665,51 +665,61 @@ fun TodoInput() {
 ### 解答例
 
 ```kotlin
+data class Memo(
+    val title: String,
+    val content: String
+)
+
 @Composable
-fun TodoInput() {
-    var inputText by remember { mutableStateOf("") }
-    var todos by remember { mutableStateOf(listOf<String>()) }
+fun MemoInput() {
+    var title by remember { mutableStateOf("") }
+    var content by remember { mutableStateOf("") }
+    var memos by remember { mutableStateOf(listOf<Memo>()) }
 
     Column(modifier = Modifier.padding(16.dp)) {
-        // 入力エリア
-        Row(
+        OutlinedTextField(
+            value = title,
+            onValueChange = { title = it },
+            label = { Text("タイトル") },
             modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+            singleLine = true
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = content,
+            onValueChange = { content = it },
+            label = { Text("本文") },
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(
+            onClick = {
+                if (title.isNotBlank()) {
+                    memos = memos + Memo(title = title.trim(), content = content.trim())
+                    title = ""
+                    content = ""
+                }
+            },
+            enabled = title.isNotBlank()
         ) {
-            OutlinedTextField(
-                value = inputText,
-                onValueChange = { inputText = it },
-                label = { Text("新しいTODO") },
-                modifier = Modifier.weight(1f),
-                singleLine = true
-            )
-
-            Spacer(modifier = Modifier.width(8.dp))
-
-            Button(
-                onClick = {
-                    if (inputText.isNotBlank()) {
-                        todos = todos + inputText.trim()
-                        inputText = ""
-                    }
-                },
-                enabled = inputText.isNotBlank()
-            ) {
-                Text("追加")
-            }
+            Text("保存")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // TODOリスト
-        if (todos.isEmpty()) {
+        // メモ一覧
+        if (memos.isEmpty()) {
             Text(
-                text = "TODOがありません",
+                text = "メモがありません",
                 color = Color.Gray,
                 modifier = Modifier.padding(16.dp)
             )
         } else {
-            todos.forEachIndexed { index, todo ->
+            memos.forEachIndexed { index, memo ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -722,10 +732,20 @@ fun TodoInput() {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(todo)
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(text = memo.title)
+                            if (memo.content.isNotBlank()) {
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = memo.content,
+                                    color = Color.Gray,
+                                    maxLines = 1
+                                )
+                            }
+                        }
                         IconButton(
                             onClick = {
-                                todos = todos.filterIndexed { i, _ -> i != index }
+                                memos = memos.filterIndexed { i, _ -> i != index }
                             }
                         ) {
                             Icon(
