@@ -262,7 +262,14 @@ async function main() {
         warnings.push(`${formatItemRef(item)}: code fence missing language tag at line ${lineNumber}.`);
       }
 
-      const expectedHeadings = ["前提", "この章でできるようになること", "演習", "ふりかえり", "次の章"];
+      const expectedHeadings = [
+        "前提",
+        "この章でできるようになること",
+        "AIに聞いてみよう",
+        "演習",
+        "ふりかえり",
+        "次の章",
+      ];
       for (const heading of expectedHeadings) {
         if (!hasH2(markdown, heading)) {
           warnings.push(`${formatItemRef(item)}: missing heading \`## ${heading}\`.`);
