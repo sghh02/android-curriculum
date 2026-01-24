@@ -603,12 +603,12 @@ plugins {
 
 android {
     namespace = "com.example.simplememo"
-    compileSdk = 34
+    compileSdk = <api-level>
 
     defaultConfig {
         applicationId = "com.example.simplememo"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = <api-level>
         versionCode = 1
         versionName = "1.0"
     }

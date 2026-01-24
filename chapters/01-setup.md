@@ -162,14 +162,14 @@ Android StudioでSDK（Software Development Kit）を管理します。
 #### SDK Platformsタブ
 
 以下をインストール：
-- **Android 14.0 (API 34)** - 最新安定版
-- **Android 13.0 (API 33)** - 1つ前の安定版
+- **最新の安定版（API xx）**
+- **1つ前の安定版（API xx-1）**
 
 ```text
-[✓] Android 14.0 ("UpsideDownCake")
-    [✓] Android SDK Platform 34
-    [✓] Sources for Android 34
-    [✓] Google APIs Intel x86_64 Atom System Image
+[✓] Android（最新の安定版）
+    [✓] Android SDK Platform（API xx）
+    [✓] Sources for Android（API xx）  ※任意
+    [✓] Google APIs x86_64 System Image
 ```
 
 #### SDK Toolsタブ
@@ -181,7 +181,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 - **Android SDK Command-line Tools**
 
 ```text
-[✓] Android SDK Build-Tools 34
+[✓] Android SDK Build-Tools（latest）
 [✓] Android SDK Command-line Tools (latest)
 [✓] Android Emulator
 [✓] Android SDK Platform-Tools
@@ -210,7 +210,7 @@ Android StudioでSDK（Software Development Kit）を管理します。
 
 4. **システムイメージを選択**
    - **Recommended**タブから選択
-   - **API 34** の **x86_64** を選択
+   - **最新の安定版（API xx）** の **x86_64** を選択
    - 「Download」リンクがある場合はダウンロード
 
 5. **AVD名を設定**
