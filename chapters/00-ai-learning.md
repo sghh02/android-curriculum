@@ -165,7 +165,10 @@ git status
 git diff
 
 # 戻す
-git checkout -- ファイル名
+git restore ファイル名
+
+# ステージから外す（add を取り消す）
+git restore --staged ファイル名
 
 # GitHubに送る
 git push

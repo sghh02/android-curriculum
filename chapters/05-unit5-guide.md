@@ -6,7 +6,7 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## 前提
 
-- Unit 4まで完了し、Repository経由でデータを扱える
+- [Unit 4: 非同期処理とネットワーク（ガイド）](chapters/04-unit4-guide.md) まで完了し、Repository経由でデータを扱える
 
 ## この章でできるようになること
 

@@ -6,7 +6,7 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## 前提
 
-- Unit 3まで完了し、画面遷移とViewModelの骨格がある
+- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) まで完了し、画面遷移とViewModelの骨格がある
 
 ## この章でできるようになること
 

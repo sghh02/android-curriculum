@@ -57,6 +57,31 @@ function fenceOpeningsWithoutLanguage(markdown) {
   return issues;
 }
 
+function hasUnclosedFence(markdown) {
+  const lines = markdown.split(/\r?\n/);
+  let inFence = false;
+  for (const line of lines) {
+    if (!line.startsWith("```")) continue;
+    inFence = !inFence;
+  }
+  return inFence;
+}
+
+function countTopLevelH1OutsideFences(markdown) {
+  const lines = markdown.split(/\r?\n/);
+  let inFence = false;
+  let count = 0;
+  for (const line of lines) {
+    if (line.startsWith("```")) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    if (/^#\s+/.test(line)) count += 1;
+  }
+  return count;
+}
+
 function formatItemRef(item) {
   return `${item.unitId}/${item.itemId} (${item.path})`;
 }
@@ -193,6 +218,13 @@ async function main() {
     pathToItems.set(item.path, (pathToItems.get(item.path) ?? []).concat(item));
   }
 
+  const pathToTitle = new Map();
+  for (const item of items) {
+    if (typeof item.path === "string" && typeof item.title === "string") {
+      pathToTitle.set(item.path, item.title);
+    }
+  }
+
   for (const [itemId, group] of idToItems.entries()) {
     if (group.length > 1) {
       errors.push(
@@ -224,6 +256,49 @@ async function main() {
       }
     }
   }
+
+  // Prerequisites ordering and cycles.
+  const itemIdToOrder = new Map(items.map((item, index) => [item.itemId, index]));
+  for (const item of items) {
+    if (!Array.isArray(item.prerequisites)) continue;
+    for (const prereqId of item.prerequisites) {
+      const prereqOrder = itemIdToOrder.get(prereqId);
+      const itemOrder = itemIdToOrder.get(item.itemId);
+      if (prereqOrder == null || itemOrder == null) continue;
+      if (prereqOrder > itemOrder) {
+        warnings.push(
+          `${formatItemRef(item)}: prerequisite \`${prereqId}\` appears after this lesson in index.json.`
+        );
+      }
+    }
+  }
+
+  const visiting = new Set();
+  const visited = new Set();
+  const stack = [];
+
+  function dfs(itemId) {
+    if (visited.has(itemId)) return;
+    if (visiting.has(itemId)) {
+      const start = stack.indexOf(itemId);
+      const cycle = stack.slice(start).concat(itemId);
+      errors.push(`Prerequisite cycle detected: ${cycle.join(" -> ")}`);
+      return;
+    }
+    visiting.add(itemId);
+    stack.push(itemId);
+
+    const item = items.find((x) => x.itemId === itemId);
+    if (item && Array.isArray(item.prerequisites)) {
+      for (const prereqId of item.prerequisites) dfs(prereqId);
+    }
+
+    stack.pop();
+    visiting.delete(itemId);
+    visited.add(itemId);
+  }
+
+  for (const itemId of allItemIds) dfs(itemId);
 
   for (const item of items) {
     if (typeof item.path !== "string" || item.path.trim() === "") continue;
@@ -257,9 +332,54 @@ async function main() {
         warnings.push(`${formatItemRef(item)}: expected the first non-empty line to be a top-level H1.`);
       }
 
+      const h1Count = countTopLevelH1OutsideFences(markdown);
+      if (h1Count !== 1) {
+        warnings.push(`${formatItemRef(item)}: expected exactly one top-level H1 in Markdown.`);
+      }
+
       const fenceLines = fenceOpeningsWithoutLanguage(markdown);
       for (const lineNumber of fenceLines) {
         warnings.push(`${formatItemRef(item)}: code fence missing language tag at line ${lineNumber}.`);
+      }
+
+      if (hasUnclosedFence(markdown)) {
+        warnings.push(`${formatItemRef(item)}: code fence is not closed (unmatched \`\`\`).`);
+      }
+
+      // Ensure internal chapter links use the sidebar title as link text.
+      {
+        const lines = markdown.split(/\r?\n/);
+        let inFence = false;
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (line.startsWith("```")) {
+            inFence = !inFence;
+            continue;
+          }
+          if (inFence) continue;
+
+          const linkMatches = line.matchAll(/\[([^\]]+)\]\((chapters\/[^)\s]+?\.md)\)/g);
+          for (const match of linkMatches) {
+            const label = match[1].trim();
+            const target = match[2].trim();
+            const expected = pathToTitle.get(target);
+            if (!expected) continue;
+            if (label !== expected) {
+              warnings.push(
+                `${formatItemRef(item)}: link text should match sidebar title ([${expected}](${target})) at line ${i + 1}.`
+              );
+            }
+          }
+
+          // Disallow visible raw chapter paths (students shouldn't see file names).
+          const stripped = line.replace(/\[[^\]]*\]\((chapters\/[^)\s]+?\.md)\)/g, "");
+          const rawMatch = stripped.match(/chapters\/[^\s)]+?\.md/);
+          if (rawMatch) {
+            warnings.push(
+              `${formatItemRef(item)}: avoid showing raw chapter path \`${rawMatch[0]}\` at line ${i + 1} (use a title link).`
+            );
+          }
+        }
       }
 
       const expectedHeadings = [

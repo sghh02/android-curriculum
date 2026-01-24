@@ -6,7 +6,7 @@ Unit 8では、実務で価値が出やすい **「読む・直す・壊さな�
 
 ## 前提
 
-- 総合演習まで終えて、アプリの全体像（UI/VM/Repository/DB/Network）がわかっている
+- [Unit 7: 総合演習（ガイド）](chapters/07-unit7-guide.md) まで完了し、アプリの全体像（UI/VM/Repository/DB/Network）がわかっている
 
 ## この章でできるようになること
 

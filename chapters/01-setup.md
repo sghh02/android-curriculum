@@ -134,7 +134,8 @@ sudo mv android-studio /opt/
      - Android SDK
      - Android SDK Platform
      - Android Virtual Device
-     - Intel HAXM（Intel CPU）/ Android Emulator Hypervisor Driver（AMD CPU）
+     - Android Emulator（SDK Tools）
+     - （Windows）ハードウェアアクセラレーション用の設定/ドライバ（Windows Hypervisor Platform / Android Emulator Hypervisor Driver など）
 
 5. **License Agreement**
    - すべてのライセンスに「Accept」
@@ -400,13 +401,13 @@ Android Studioをインストールしました。
 
 【問題】
 エミュレータが起動しません。
-「Intel HAXM is not installed」というエラーが出ます。
+「hardware acceleration が必要」などのエラーが出ます。
 
 【PC環境】
 Windows 11, Intel Core i7
 
 【教えてほしいこと】
-HAXMをインストールする方法を教えてください。
+WindowsでAndroid Emulatorを動かすために、BIOS設定/Windowsの機能/SDK Managerのどこを確認すべきか、最短の手順で教えてください。
 ```
 
 ```text
@@ -415,7 +416,7 @@ Android Studioで新規プロジェクトを作成しました。
 
 【問題】
 Gradleの同期でエラーが出ます。
-「Could not resolve com.android.tools.build:gradle:8.1.0」
+「Could not resolve com.android.tools.build:gradle:...」
 
 【教えてほしいこと】
 このエラーの原因と解決方法を教えてください。
@@ -427,27 +428,20 @@ Gradleの同期でエラーが出ます。
 
 ### エミュレータが起動しない
 
-#### Intel CPU：HAXM関連
+#### ハードウェアアクセラレーション関連（Windows）
 
 ```text
-エラー: Intel HAXM is required to run this AVD
+エラー例: This AVD requires hardware acceleration
 ```
 
 **解決方法：**
-1. BIOSで**Intel VT-x**を有効化
-2. SDK Manager → SDK Tools → Intel x86 Emulator Accelerator (HAXM installer) をインストール
-3. PCを再起動
+1. BIOSで仮想化を有効化（Intel VT-x / AMD-V / SVM Mode など）
+2. Windowsの機能で **Windows Hypervisor Platform** を有効化（再起動が必要）
+3. SDK Manager → SDK Tools で **Android Emulator** を最新に更新
+4. それでもダメなら、SDK Tools の **Android Emulator Hypervisor Driver**（環境により名称が異なる）をインストール（管理者権限が必要な場合あり）
+5. 会社PCなどで仮想化が使えない場合は、実機（USBデバッグ）で動作確認する
 
-#### AMD CPU：Hypervisor関連
-
-```text
-エラー: Android Emulator Hypervisor Driver is not installed
-```
-
-**解決方法：**
-1. BIOSで**AMD-V / SVM Mode**を有効化
-2. Windowsの場合：「Windowsの機能」→「Hyper-V」を無効化
-3. SDK Manager → Android Emulator Hypervisor Driver for AMD Processors をインストール
+※ `HAXM` が出てくる手順は古い場合があります。まずは上の手順（Hypervisor/Windows Hypervisor Platform）を優先してください。
 
 ### Gradleの同期エラー
 
