@@ -39,6 +39,29 @@ function hasH2(markdown, headingText) {
   return pattern.test(markdown);
 }
 
+function extractH2Section(markdown, headingText) {
+  const lines = markdown.split(/\r?\n/);
+  const headingPattern = new RegExp(`^##\\s+${escapeRegExp(headingText)}\\s*$`);
+
+  let start = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (headingPattern.test(lines[i])) {
+      start = i;
+      break;
+    }
+  }
+  if (start === -1) return null;
+
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (lines[i].startsWith("## ")) {
+      end = i;
+      break;
+    }
+  }
+  return lines.slice(start, end).join("\n");
+}
+
 function fenceOpeningsWithoutLanguage(markdown) {
   const lines = markdown.split(/\r?\n/);
   const issues = [];
@@ -142,6 +165,7 @@ async function main() {
         path: item?.path,
         estimatedMinutes: item?.estimatedMinutes,
         practiceMinutes: item?.practiceMinutes,
+        hasAssignment: item?.hasAssignment,
         difficulty: item?.difficulty,
         type: item?.type,
         tags: item?.tags,
@@ -171,6 +195,11 @@ async function main() {
     if (!isPositiveNumber(item.estimatedMinutes)) {
       errors.push(
         `${formatItemRef(item)}: missing or invalid \`estimatedMinutes\` (expected number > 0).`
+      );
+    }
+    if (typeof item.hasAssignment !== "boolean") {
+      errors.push(
+        `${formatItemRef(item)}: missing or invalid \`hasAssignment\` (expected boolean).`
       );
     }
     if (!isNonNegativeNumber(item.practiceMinutes)) {
@@ -346,6 +375,28 @@ async function main() {
         warnings.push(`${formatItemRef(item)}: code fence is not closed (unmatched \`\`\`).`);
       }
 
+      // Ensure assignment/completion section exists, and branch naming follows the curriculum rule.
+      if (typeof item.hasAssignment === "boolean") {
+        if (item.hasAssignment) {
+          const section = extractH2Section(markdown, "課題提出");
+          if (!section) {
+            errors.push(`${formatItemRef(item)}: missing required section \`## 課題提出\`.`);
+          } else {
+            const expectedBranch = `feature/${path.basename(item.path, ".md")}`;
+            if (!section.includes(expectedBranch)) {
+              errors.push(
+                `${formatItemRef(item)}: \`## 課題提出\` must include branch name \`${expectedBranch}\`.`
+              );
+            }
+          }
+        } else {
+          const section = extractH2Section(markdown, "完了記録");
+          if (!section) {
+            errors.push(`${formatItemRef(item)}: missing required section \`## 完了記録\`.`);
+          }
+        }
+      }
+
       // Ensure internal chapter links use the sidebar title as link text.
       {
         const lines = markdown.split(/\r?\n/);
@@ -358,22 +409,39 @@ async function main() {
           }
           if (inFence) continue;
 
-          const linkMatches = line.matchAll(/\[([^\]]+)\]\((chapters\/[^)\s]+?\.md)\)/g);
+          const linkMatches = line.matchAll(
+            /\[([^\]]+)\]\(((?:\.\/|chapters\/)[^)\s]+?\.md)\)/g
+          );
           for (const match of linkMatches) {
             const label = match[1].trim();
             const target = match[2].trim();
-            const expected = pathToTitle.get(target);
-            if (!expected) continue;
+            const canonical = target.startsWith("./") ? `chapters/${target.slice(2)}` : target;
+            const expected = pathToTitle.get(canonical);
+            if (!expected) {
+              errors.push(
+                `${formatItemRef(item)}: link target \`${target}\` does not match any lesson path in index.json (expected a \`./NN-*.md\` chapter link) at line ${i + 1}.`
+              );
+              continue;
+            }
             if (label !== expected) {
+              const recommendedTarget = `./${path.basename(canonical)}`;
               warnings.push(
-                `${formatItemRef(item)}: link text should match sidebar title ([${expected}](${target})) at line ${i + 1}.`
+                `${formatItemRef(item)}: link text should match sidebar title ([${expected}](${recommendedTarget})) at line ${i + 1}.`
+              );
+            }
+            if (target.startsWith("chapters/")) {
+              errors.push(
+                `${formatItemRef(item)}: use relative links like \`./${path.basename(canonical)}\` instead of \`${target}\` at line ${i + 1}.`
               );
             }
           }
 
           // Disallow visible raw chapter paths (students shouldn't see file names).
-          const stripped = line.replace(/\[[^\]]*\]\((chapters\/[^)\s]+?\.md)\)/g, "");
-          const rawMatch = stripped.match(/chapters\/[^\s)]+?\.md/);
+          const stripped = line.replace(
+            /\[[^\]]*\]\(((?:\.\/|chapters\/)[^)\s]+?\.md)\)/g,
+            ""
+          );
+          const rawMatch = stripped.match(/(?:chapters\/|\.\/)[^\s)]+?\.md/);
           if (rawMatch) {
             warnings.push(
               `${formatItemRef(item)}: avoid showing raw chapter path \`${rawMatch[0]}\` at line ${i + 1} (use a title link).`

@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md) を完了し、Kotlinの基本（関数/クラス/Nullable）がわかる
-- つまずいたら [用語集（Android/Compose）](chapters/00-glossary.md) で用語を確認できる
+- [Kotlinプログラミングの基礎](./02-kotlin-basics.md) を完了し、Kotlinの基本（関数/クラス/Nullable）がわかる
+- つまずいたら [用語集（Android/Compose）](./00-glossary.md) で用語を確認できる
 
 ## この章でできるようになること
 
@@ -1201,6 +1201,17 @@ class MemoFileService {
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/02-oop-fundamentals` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 「責務（責任）」を1つのクラスに詰め込むと、何が起きる？
@@ -1211,4 +1222,4 @@ class MemoFileService {
 
 ## 次の章
 
-次は [Androidアプリの基本](chapters/03-android-fundamentals.md) に進み、Androidアプリの基本（Activity/ライフサイクル等）を押さえましょう。
+次は [Androidアプリの基本](./03-android-fundamentals.md) に進み、Androidアプリの基本（Activity/ライフサイクル等）を押さえましょう。

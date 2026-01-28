@@ -7,8 +7,8 @@ Composeアプリを動的にするには「状態（State）」の管理が必�
 
 ## 前提
 
-- [Unit 2: アプリUIの構築（ガイド）](chapters/02-unit2-guide.md) を読んでいる
-- [ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md) を完了し、シンプルメモアプリが起動できる
+- [Unit 2: アプリUIの構築（ガイド）](./02-unit2-guide.md) を読んでいる
+- [ハンズオン：シンプルメモアプリを始める](./04-project-start.md) を完了し、シンプルメモアプリが起動できる
 
 ## この章でできるようになること
 
@@ -844,6 +844,17 @@ var text by rememberSaveable { mutableStateOf("") }
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/04-state-interaction` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - Stateは「どこに置く」と後で困らない？（Composable内/親/VM）
@@ -854,4 +865,4 @@ var text by rememberSaveable { mutableStateOf("") }
 
 ## 次の章
 
-次は [リスト表示とLazyColumn](chapters/05-lists-lazycolumn.md) に進み、一覧表示を作り込みましょう。
+次は [リスト表示とLazyColumn](./05-lists-lazycolumn.md) に進み、一覧表示を作り込みましょう。

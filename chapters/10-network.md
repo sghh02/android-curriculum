@@ -7,7 +7,7 @@
 
 ## 前提
 
-- [Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md) を完了し、Coroutine/Flowで非同期処理できる
+- [Kotlin Coroutinesと非同期処理](./09-data-layer.md) を完了し、Coroutine/Flowで非同期処理できる
 
 ## この章でできるようになること
 
@@ -224,7 +224,7 @@ class UsersViewModel(
 
 ## UIの実装
 
-`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](chapters/08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
+`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](./08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
 
 ```kotlin
 @Composable
@@ -559,6 +559,17 @@ APIからのレスポンスが
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/10-network` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - エラーは“どこで”握ると一番安全？（API/Repository/VM/UI）
@@ -569,4 +580,4 @@ APIからのレスポンスが
 
 ## 次の章
 
-次は [Unit 5: データ永続化（ガイド）](chapters/05-unit5-guide.md) に進み、永続化（Room/DataStore）の全体像を確認しましょう。
+次は [Unit 5: データ永続化（ガイド）](./05-unit5-guide.md) に進み、永続化（Room/DataStore）の全体像を確認しましょう。

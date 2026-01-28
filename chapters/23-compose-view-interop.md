@@ -7,7 +7,7 @@ Compose中心の案件でも、Viewベースのライブラリ（Map、WebView�
 
 ## 前提
 
-- [WorkManager（バックグラウンド処理）](chapters/22-workmanager.md) を完了し、発展要件を実装する前提がある
+- [WorkManager（バックグラウンド処理）](./22-workmanager.md) を完了し、発展要件を実装する前提がある
 
 ## この章でできるようになること
 
@@ -128,6 +128,17 @@ Composeの画面に既存View（例: MapView/WebView）を埋め込みたい。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/23-compose-view-interop` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - Viewを「初回だけ作る」ために、どこで何を `remember` する？
@@ -138,4 +149,4 @@ Composeの画面に既存View（例: MapView/WebView）を埋め込みたい。
 
 ## 次の章
 
-次は [アクセシビリティと多言語対応](chapters/24-accessibility-i18n.md) に進み、アクセシビリティと多言語対応を押さえましょう。
+次は [アクセシビリティと多言語対応](./24-accessibility-i18n.md) に進み、アクセシビリティと多言語対応を押さえましょう。

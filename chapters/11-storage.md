@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 5: データ永続化（ガイド）](chapters/05-unit5-guide.md) を読んでいる
-- [ネットワーク通信（Retrofit）](chapters/10-network.md) を完了し、Repository経由でデータ取得できる
+- [Unit 5: データ永続化（ガイド）](./05-unit5-guide.md) を読んでいる
+- [ネットワーク通信（Retrofit）](./10-network.md) を完了し、Repository経由でデータ取得できる
 
 ## この章でできるようになること
 
@@ -484,7 +484,7 @@ class SettingsViewModel @Inject constructor(
 
 ## DataStore - 設定画面の実装
 
-`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](chapters/08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
+`collectAsStateWithLifecycle()` が使えない場合は、[ViewModelとアーキテクチャ](./08-architecture.md) のセットアップ（`lifecycle-runtime-compose`）を確認してください。
 
 ```kotlin
 @Composable
@@ -694,6 +694,17 @@ SQLiteはALTER TABLE DROP COLUMNをサポートしてないけど、
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/11-storage` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - RoomとDataStoreは、それぞれ何を保存するのが適切？
@@ -704,4 +715,4 @@ SQLiteはALTER TABLE DROP COLUMNをサポートしてないけど、
 
 ## 次の章
 
-次は [Unit 6: 品質と運用（ガイド）](chapters/06-unit6-guide.md) に進み、品質（テスト/性能/公開）の全体像を確認しましょう。
+次は [Unit 6: 品質と運用（ガイド）](./06-unit6-guide.md) に進み、品質（テスト/性能/公開）の全体像を確認しましょう。

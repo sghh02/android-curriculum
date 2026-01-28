@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 7: 総合演習（ガイド）](chapters/07-unit7-guide.md) を読んでいる
-- [アプリ公開と運用](chapters/14-publishing.md) を完了し、Release/チェックリストの考え方がわかる
+- [Unit 7: 総合演習（ガイド）](./07-unit7-guide.md) を読んでいる
+- [アプリ公開と運用](./14-publishing.md) を完了し、Release/チェックリストの考え方がわかる
 
 ## この章でできるようになること
 
@@ -100,12 +100,12 @@
 
 時間が許すなら、Unit 9〜11 の内容をこのアプリに入れると一気に実務レベルが上がります。
 
-- マルチモジュール化（`core`/`feature` 分割）: [マルチモジュール設計（単一→分割）](chapters/20-multi-module.md)
-- タブレット対応（2ペイン）: [画面サイズ対応（スマホ/タブレット）](chapters/21-adaptive-ui.md)
-- バックアップ同期（WorkManager）: [WorkManager（バックグラウンド処理）](chapters/22-workmanager.md)
-- View相互運用（WebView等）: [ComposeとViewの相互運用](chapters/23-compose-view-interop.md)
-- アクセシビリティ/多言語: [アクセシビリティと多言語対応](chapters/24-accessibility-i18n.md)
-- 秘密情報/ログ/権限: [設定とセキュリティ（秘密情報/通信）](chapters/25-security-config.md)
+- マルチモジュール化（`core`/`feature` 分割）: [マルチモジュール設計（単一→分割）](./20-multi-module.md)
+- タブレット対応（2ペイン）: [画面サイズ対応（スマホ/タブレット）](./21-adaptive-ui.md)
+- バックアップ同期（WorkManager）: [WorkManager（バックグラウンド処理）](./22-workmanager.md)
+- View相互運用（WebView等）: [ComposeとViewの相互運用](./23-compose-view-interop.md)
+- アクセシビリティ/多言語: [アクセシビリティと多言語対応](./24-accessibility-i18n.md)
+- 秘密情報/ログ/権限: [設定とセキュリティ（秘密情報/通信）](./25-security-config.md)
 
 ---
 
@@ -115,7 +115,7 @@
 - [ ] 権限が最小限になっている
 - [ ] 入力・回転・バックグラウンド復帰でクラッシュしない
 - [ ] `release` ビルドで動作確認する
-- [ ] 公開手順は [アプリ公開と運用](chapters/14-publishing.md) を参照する
+- [ ] 公開手順は [アプリ公開と運用](./14-publishing.md) を参照する
 
 ---
 
@@ -194,6 +194,17 @@
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/15-project` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 一番難しかったチケットは何？原因は仕様/設計/実装のどこ？
@@ -204,4 +215,4 @@
 
 ## 次の章
 
-次は [Unit 8: 実務参画の基本（ガイド）](chapters/08-unit8-guide.md) に進み、実務で強い「読む・直す・壊さない」を鍛えましょう。
+次は [Unit 8: 実務参画の基本（ガイド）](./08-unit8-guide.md) に進み、実務で強い「読む・直す・壊さない」を鍛えましょう。

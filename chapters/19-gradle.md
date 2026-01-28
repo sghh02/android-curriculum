@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 9: ビルドとモジュール化（ガイド）](chapters/09-unit9-guide.md) を読んでいる
-- [CIで品質を担保する（Gradle/テスト/Lint）](chapters/18-ci.md) を完了し、GradleタスクをCIで回す前提がある
+- [Unit 9: ビルドとモジュール化（ガイド）](./09-unit9-guide.md) を読んでいる
+- [CIで品質を担保する（Gradle/テスト/Lint）](./18-ci.md) を完了し、GradleタスクをCIで回す前提がある
 
 ## この章でできるようになること
 
@@ -189,6 +189,17 @@ dependencies {
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/19-gradle` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 依存追加のとき、最初に確認する“3点セット”は何？（plugin/dep/versionなど）
@@ -199,4 +210,4 @@ dependencies {
 
 ## 次の章
 
-次は [マルチモジュール設計（単一→分割）](chapters/20-multi-module.md) に進み、単一→マルチモジュールの設計方針を学びましょう。
+次は [マルチモジュール設計（単一→分割）](./20-multi-module.md) に進み、単一→マルチモジュールの設計方針を学びましょう。

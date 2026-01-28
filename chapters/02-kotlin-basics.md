@@ -7,8 +7,8 @@ Android開発では**Kotlin**というプログラミング言語を使います
 
 ## 前提
 
-- [Android Studioのインストールと環境準備](chapters/01-setup.md) を完了し、Android Studioでプロジェクトを開ける
-- つまずいたら [用語集（Android/Compose）](chapters/00-glossary.md) で用語を確認できる
+- [Android Studioのインストールと環境準備](./01-setup.md) を完了し、Android Studioでプロジェクトを開ける
+- つまずいたら [用語集（Android/Compose）](./00-glossary.md) で用語を確認できる
 
 ## この章でできるようになること
 
@@ -905,6 +905,17 @@ Kotlinはまだまだ奥が深いですが、ここまでの知識でAndroidア�
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/02-kotlin-basics` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 今日いちばん「使えそう」と思った構文/機能はどれ？（when/collection操作など）
@@ -915,4 +926,4 @@ Kotlinはまだまだ奥が深いですが、ここまでの知識でAndroidア�
 
 ## 次の章
 
-次は [オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md) に進み、クラス設計の考え方を押さえましょう。
+次は [オブジェクト指向プログラミング](./02-oop-fundamentals.md) に進み、クラス設計の考え方を押さえましょう。

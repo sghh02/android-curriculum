@@ -6,7 +6,7 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## 前提
 
-- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) まで完了し、画面遷移とViewModelの骨格がある
+- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](./03-unit3-guide.md) まで完了し、画面遷移とViewModelの骨格がある
 
 ## この章でできるようになること
 
@@ -18,8 +18,8 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## このユニットでやること（レッスン）
 
-- 非同期/データ層：[Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md)
-- ネットワーク：[ネットワーク通信（Retrofit）](chapters/10-network.md)
+- 非同期/データ層：[Kotlin Coroutinesと非同期処理](./09-data-layer.md)
+- ネットワーク：[ネットワーク通信（Retrofit）](./10-network.md)
 
 ---
 
@@ -82,6 +82,13 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ---
 
+## 完了記録
+
+この章には提出課題はありません。
+学習が完了したら、スプレッドシートに **完了日** のみ記入してください。
+
+---
+
 ## ふりかえり
 
 - suspend関数とFlowの使い分けは？
@@ -92,4 +99,4 @@ Unit 4では、実務で必須の **非同期処理（Coroutines/Flow）** と *
 
 ## 次の章
 
-次は [Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md) に進み、非同期とデータ層から固めましょう。
+次は [Kotlin Coroutinesと非同期処理](./09-data-layer.md) に進み、非同期とデータ層から固めましょう。

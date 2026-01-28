@@ -18,7 +18,8 @@
           "estimatedMinutes": 20,
           "practiceMinutes": 0,
           "prerequisites": [],
-          "tags": ["guide", "planning"]
+          "tags": ["guide", "planning"],
+          "hasAssignment": false
         },
         {
           "id": "roadmap",
@@ -29,7 +30,8 @@
           "estimatedMinutes": 20,
           "practiceMinutes": 0,
           "prerequisites": ["course-guide"],
-          "tags": ["guide", "roadmap"]
+          "tags": ["guide", "roadmap"],
+          "hasAssignment": false
         },
         {
           "id": "ai-learning",
@@ -40,7 +42,8 @@
           "estimatedMinutes": 30,
           "practiceMinutes": 0,
           "prerequisites": ["course-guide"],
-          "tags": ["ai", "learning"]
+          "tags": ["ai", "learning"],
+          "hasAssignment": false
         },
         {
           "id": "glossary",
@@ -51,7 +54,8 @@
           "estimatedMinutes": 20,
           "practiceMinutes": 0,
           "prerequisites": ["course-guide"],
-          "tags": ["reference", "glossary"]
+          "tags": ["reference", "glossary"],
+          "hasAssignment": false
         }
       ]
     },
@@ -70,7 +74,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["course-guide", "glossary"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "setup",
@@ -81,7 +86,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 90,
           "prerequisites": ["unit1-guide"],
-          "tags": ["setup", "android-studio"]
+          "tags": ["setup", "android-studio"],
+          "hasAssignment": false
         },
         {
           "id": "kotlin-basics",
@@ -92,7 +98,8 @@
           "estimatedMinutes": 180,
           "practiceMinutes": 240,
           "prerequisites": ["setup"],
-          "tags": ["kotlin"]
+          "tags": ["kotlin"],
+          "hasAssignment": true
         },
         {
           "id": "oop-fundamentals",
@@ -103,7 +110,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["kotlin-basics"],
-          "tags": ["kotlin", "oop"]
+          "tags": ["kotlin", "oop"],
+          "hasAssignment": true
         },
         {
           "id": "android-fundamentals",
@@ -114,7 +122,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 120,
           "prerequisites": ["oop-fundamentals"],
-          "tags": ["android"]
+          "tags": ["android"],
+          "hasAssignment": true
         },
         {
           "id": "compose-basics",
@@ -125,7 +134,8 @@
           "estimatedMinutes": 150,
           "practiceMinutes": 180,
           "prerequisites": ["android-fundamentals"],
-          "tags": ["compose", "ui"]
+          "tags": ["compose", "ui"],
+          "hasAssignment": true
         },
         {
           "id": "project-start",
@@ -136,7 +146,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 240,
           "prerequisites": ["compose-basics"],
-          "tags": ["project", "simple-memo", "compose"]
+          "tags": ["project", "simple-memo", "compose"],
+          "hasAssignment": true
         }
       ]
     },
@@ -155,7 +166,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["project-start"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "state-interaction",
@@ -166,7 +178,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["unit2-guide"],
-          "tags": ["compose", "state"]
+          "tags": ["compose", "state"],
+          "hasAssignment": true
         },
         {
           "id": "lists",
@@ -177,7 +190,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 120,
           "prerequisites": ["state-interaction"],
-          "tags": ["compose", "list"]
+          "tags": ["compose", "list"],
+          "hasAssignment": true
         },
         {
           "id": "material-design",
@@ -188,7 +202,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 120,
           "prerequisites": ["lists"],
-          "tags": ["compose", "material3", "theme"]
+          "tags": ["compose", "material3", "theme"],
+          "hasAssignment": true
         }
       ]
     },
@@ -207,7 +222,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["material-design"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "navigation",
@@ -218,7 +234,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 120,
           "prerequisites": ["unit3-guide"],
-          "tags": ["compose", "navigation"]
+          "tags": ["compose", "navigation"],
+          "hasAssignment": true
         },
         {
           "id": "architecture",
@@ -229,7 +246,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["navigation"],
-          "tags": ["architecture", "viewmodel", "repository", "hilt"]
+          "tags": ["architecture", "viewmodel", "repository", "hilt"],
+          "hasAssignment": true
         }
       ]
     },
@@ -248,7 +266,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["architecture"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "coroutines",
@@ -259,7 +278,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["unit4-guide"],
-          "tags": ["coroutines", "flow"]
+          "tags": ["coroutines", "flow"],
+          "hasAssignment": true
         },
         {
           "id": "network",
@@ -270,7 +290,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["coroutines"],
-          "tags": ["network", "retrofit", "okhttp"]
+          "tags": ["network", "retrofit", "okhttp"],
+          "hasAssignment": true
         }
       ]
     },
@@ -289,7 +310,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["network"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "storage",
@@ -300,7 +322,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["unit5-guide"],
-          "tags": ["room", "datastore"]
+          "tags": ["room", "datastore"],
+          "hasAssignment": true
         }
       ]
     },
@@ -319,7 +342,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["storage"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "testing",
@@ -330,7 +354,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["unit6-guide"],
-          "tags": ["testing"]
+          "tags": ["testing"],
+          "hasAssignment": true
         },
         {
           "id": "performance",
@@ -341,7 +366,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 90,
           "prerequisites": ["testing"],
-          "tags": ["performance"]
+          "tags": ["performance"],
+          "hasAssignment": true
         },
         {
           "id": "publishing",
@@ -352,7 +378,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 90,
           "prerequisites": ["performance"],
-          "tags": ["publishing", "release"]
+          "tags": ["publishing", "release"],
+          "hasAssignment": true
         }
       ]
     },
@@ -371,7 +398,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["publishing"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "project",
@@ -382,7 +410,8 @@
           "estimatedMinutes": 180,
           "practiceMinutes": 600,
           "prerequisites": ["unit7-guide"],
-          "tags": ["project", "simple-memo"]
+          "tags": ["project", "simple-memo"],
+          "hasAssignment": true
         }
       ]
     },
@@ -401,7 +430,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["project"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "onboarding",
@@ -412,7 +442,8 @@
           "estimatedMinutes": 150,
           "practiceMinutes": 60,
           "prerequisites": ["unit8-guide"],
-          "tags": ["onboarding"]
+          "tags": ["onboarding"],
+          "hasAssignment": true
         },
         {
           "id": "debugging",
@@ -423,7 +454,8 @@
           "estimatedMinutes": 150,
           "practiceMinutes": 120,
           "prerequisites": ["onboarding"],
-          "tags": ["debugging"]
+          "tags": ["debugging"],
+          "hasAssignment": true
         },
         {
           "id": "team-development",
@@ -434,7 +466,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
           "prerequisites": ["debugging"],
-          "tags": ["git", "team-dev"]
+          "tags": ["git", "team-dev"],
+          "hasAssignment": true
         },
         {
           "id": "ci",
@@ -445,7 +478,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
           "prerequisites": ["team-development"],
-          "tags": ["ci", "quality"]
+          "tags": ["ci", "quality"],
+          "hasAssignment": true
         }
       ]
     },
@@ -464,7 +498,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["ci"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "gradle",
@@ -475,7 +510,8 @@
           "estimatedMinutes": 150,
           "practiceMinutes": 120,
           "prerequisites": ["unit9-guide"],
-          "tags": ["gradle", "build"]
+          "tags": ["gradle", "build"],
+          "hasAssignment": true
         },
         {
           "id": "multi-module",
@@ -486,7 +522,8 @@
           "estimatedMinutes": 180,
           "practiceMinutes": 180,
           "prerequisites": ["gradle"],
-          "tags": ["multi-module", "architecture"]
+          "tags": ["multi-module", "architecture"],
+          "hasAssignment": true
         }
       ]
     },
@@ -505,7 +542,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["multi-module"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "adaptive-ui",
@@ -516,7 +554,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["unit10-guide"],
-          "tags": ["adaptive-ui", "compose"]
+          "tags": ["adaptive-ui", "compose"],
+          "hasAssignment": true
         },
         {
           "id": "workmanager",
@@ -527,7 +566,8 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["adaptive-ui"],
-          "tags": ["workmanager"]
+          "tags": ["workmanager"],
+          "hasAssignment": true
         },
         {
           "id": "compose-view-interop",
@@ -538,7 +578,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
           "prerequisites": ["workmanager"],
-          "tags": ["interop", "compose"]
+          "tags": ["interop", "compose"],
+          "hasAssignment": true
         },
         {
           "id": "accessibility-i18n",
@@ -549,7 +590,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
           "prerequisites": ["compose-view-interop"],
-          "tags": ["accessibility", "i18n"]
+          "tags": ["accessibility", "i18n"],
+          "hasAssignment": true
         },
         {
           "id": "security-config",
@@ -560,7 +602,8 @@
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
           "prerequisites": ["accessibility-i18n"],
-          "tags": ["security", "config"]
+          "tags": ["security", "config"],
+          "hasAssignment": true
         }
       ]
     },
@@ -579,7 +622,8 @@
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
           "prerequisites": ["security-config"],
-          "tags": ["guide"]
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "ticket-backlog",
@@ -590,7 +634,8 @@
           "estimatedMinutes": 60,
           "practiceMinutes": 600,
           "prerequisites": ["unit11-guide"],
-          "tags": ["project", "practice", "tickets"]
+          "tags": ["project", "practice", "tickets"],
+          "hasAssignment": true
         }
       ]
     }

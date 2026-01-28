@@ -7,8 +7,8 @@ Androidアプリでは、ネットワーク通信やデータベースアクセ�
 
 ## 前提
 
-- [Unit 4: 非同期処理とネットワーク（ガイド）](chapters/04-unit4-guide.md) を読んでいる
-- [ViewModelとアーキテクチャ](chapters/08-architecture.md) を完了し、ViewModel/Repositoryの骨格がある
+- [Unit 4: 非同期処理とネットワーク（ガイド）](./04-unit4-guide.md) を読んでいる
+- [ViewModelとアーキテクチャ](./08-architecture.md) を完了し、ViewModel/Repositoryの骨格がある
 
 ## この章でできるようになること
 
@@ -490,6 +490,17 @@ Coroutineを使いこなすことで、スムーズなUXを提供できます。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/09-data-layer` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - suspendとFlowの使い分けは、今の理解だとどうなっている？
@@ -500,4 +511,4 @@ Coroutineを使いこなすことで、スムーズなUXを提供できます。
 
 ## 次の章
 
-次は [ネットワーク通信（Retrofit）](chapters/10-network.md) に進み、Retrofitで通信を組み込みましょう。
+次は [ネットワーク通信（Retrofit）](./10-network.md) に進み、Retrofitで通信を組み込みましょう。

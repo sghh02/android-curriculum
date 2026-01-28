@@ -7,8 +7,8 @@ Androidアプリがどのように動いているのか、基本的な仕組み�
 
 ## 前提
 
-- [オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md) を完了し、クラス/責務の考え方がわかる
-- [Android Studioのインストールと環境準備](chapters/01-setup.md) を完了し、Android Studioでプロジェクトを作って起動できる
+- [オブジェクト指向プログラミング](./02-oop-fundamentals.md) を完了し、クラス/責務の考え方がわかる
+- [Android Studioのインストールと環境準備](./01-setup.md) を完了し、Android Studioでプロジェクトを作って起動できる
 
 ## この章でできるようになること
 
@@ -1138,6 +1138,17 @@ SecurityException: Permission denied
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/03-android-fundamentals` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - Activityのライフサイクルで、今いちばん不安なメソッドはどれ？（onPause/onStopなど）
@@ -1148,4 +1159,4 @@ SecurityException: Permission denied
 
 ## 次の章
 
-次は [Jetpack Composeの基本](chapters/03-compose-basics.md) に進み、ComposeでUIを組み立てましょう。
+次は [Jetpack Composeの基本](./03-compose-basics.md) に進み、ComposeでUIを組み立てましょう。

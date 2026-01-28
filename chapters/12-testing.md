@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 6: 品質と運用（ガイド）](chapters/06-unit6-guide.md) を読んでいる
-- [データ保存（Room / DataStore）](chapters/11-storage.md) まで完了し、永続化を含むアプリの骨格がある
+- [Unit 6: 品質と運用（ガイド）](./06-unit6-guide.md) を読んでいる
+- [データ保存（Room / DataStore）](./11-storage.md) まで完了し、永続化を含むアプリの骨格がある
 
 ## この章でできるようになること
 
@@ -199,6 +199,17 @@ runTest + TestDispatcher で安定させる手順を教えて。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/12-testing` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 今のアプリで「テストで守るべき核」はどこ？
@@ -209,4 +220,4 @@ runTest + TestDispatcher で安定させる手順を教えて。
 
 ## 次の章
 
-次は [パフォーマンスと最適化](chapters/13-performance.md) に進み、計測→改善の基本を押さえましょう。
+次は [パフォーマンスと最適化](./13-performance.md) に進み、計測→改善の基本を押さえましょう。

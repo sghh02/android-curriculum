@@ -6,7 +6,7 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## 前提
 
-- [Unit 4: 非同期処理とネットワーク（ガイド）](chapters/04-unit4-guide.md) まで完了し、Repository経由でデータを扱える
+- [Unit 4: 非同期処理とネットワーク（ガイド）](./04-unit4-guide.md) まで完了し、Repository経由でデータを扱える
 
 ## この章でできるようになること
 
@@ -18,7 +18,7 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## このユニットでやること（レッスン）
 
-- 永続化：[データ保存（Room / DataStore）](chapters/11-storage.md)
+- 永続化：[データ保存（Room / DataStore）](./11-storage.md)
 
 ---
 
@@ -81,6 +81,13 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ---
 
+## 完了記録
+
+この章には提出課題はありません。
+学習が完了したら、スプレッドシートに **完了日** のみ記入してください。
+
+---
+
 ## ふりかえり
 
 - 「DBを直接UIから触らない」理由は何？
@@ -91,4 +98,4 @@ Unit 5では、アプリの価値を支える **永続化（Room/DataStore）** 
 
 ## 次の章
 
-次は [データ保存（Room / DataStore）](chapters/11-storage.md) に進み、永続化を入れましょう。
+次は [データ保存（Room / DataStore）](./11-storage.md) に進み、永続化を入れましょう。

@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Jetpack Composeの基本](chapters/03-compose-basics.md) を完了し、Composeで基本UIを組める
-- [Androidアプリの基本](chapters/03-android-fundamentals.md) を完了し、プロジェクト構造の概要がわかる
+- [Jetpack Composeの基本](./03-compose-basics.md) を完了し、Composeで基本UIを組める
+- [Androidアプリの基本](./03-android-fundamentals.md) を完了し、プロジェクト構造の概要がわかる
 
 ## この章でできるようになること
 
@@ -1007,6 +1007,17 @@ fun MyComposable() {
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/04-project-start` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - `Memo` / `Category` の設計で迷った点はどこ？（責務/型/命名）
@@ -1017,4 +1028,4 @@ fun MyComposable() {
 
 ## 次の章
 
-次は [Unit 2: アプリUIの構築（ガイド）](chapters/02-unit2-guide.md) に進み、Unit 2でUIを仕上げる流れを確認しましょう。
+次は [Unit 2: アプリUIの構築（ガイド）](./02-unit2-guide.md) に進み、Unit 2でUIを仕上げる流れを確認しましょう。

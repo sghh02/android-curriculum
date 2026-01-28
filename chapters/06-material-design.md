@@ -7,7 +7,7 @@ Material Design 3（Material You）は、Googleの最新デザインシステム
 
 ## 前提
 
-- [リスト表示とLazyColumn](chapters/05-lists-lazycolumn.md) を完了し、一覧UIの骨格がある
+- [リスト表示とLazyColumn](./05-lists-lazycolumn.md) を完了し、一覧UIの骨格がある
 
 ## この章でできるようになること
 
@@ -735,6 +735,17 @@ Material Designを活用することで、美しく使いやすいアプリを�
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/06-material-design` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - テーマで「統一」できた部分はどこ？まだバラつく部分は？
@@ -745,4 +756,4 @@ Material Designを活用することで、美しく使いやすいアプリを�
 
 ## 次の章
 
-次は [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) に進み、画面遷移とアーキテクチャの全体像を確認しましょう。
+次は [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](./03-unit3-guide.md) に進み、画面遷移とアーキテクチャの全体像を確認しましょう。

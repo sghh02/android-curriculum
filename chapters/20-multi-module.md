@@ -7,7 +7,7 @@
 
 ## 前提
 
-- [Gradleと依存関係管理（実務編）](chapters/19-gradle.md) を完了し、依存関係の追加/読み方がわかる
+- [Gradleと依存関係管理（実務編）](./19-gradle.md) を完了し、依存関係の追加/読み方がわかる
 
 ## この章でできるようになること
 
@@ -164,6 +164,17 @@ dependencies {
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/20-multi-module` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 分割は「いつ」やるべき？判断基準は？
@@ -174,4 +185,4 @@ dependencies {
 
 ## 次の章
 
-次は [Unit 10: 実務で頻出の要件（ガイド）](chapters/10-unit10-guide.md) に進み、実務で頻出の要件の全体像を確認しましょう。
+次は [Unit 10: 実務で頻出の要件（ガイド）](./10-unit10-guide.md) に進み、実務で頻出の要件の全体像を確認しましょう。
