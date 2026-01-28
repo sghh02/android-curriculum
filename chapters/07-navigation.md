@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) を読んでいる
-- [Material Design 3とテーマ](chapters/06-material-design.md) まで完了し、UIの骨格がある
+- [Unit 3: ナビゲーションとアーキテクチャ（ガイド）](./03-unit3-guide.md) を読んでいる
+- [Material Design 3とテーマ](./06-material-design.md) まで完了し、UIの骨格がある
 
 ## この章でできるようになること
 
@@ -565,6 +565,17 @@ BottomNavigationでタブを切り替えても、
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/07-navigation` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 画面遷移に「引数でIDを渡す」設計のメリットは？
@@ -575,4 +586,4 @@ BottomNavigationでタブを切り替えても、
 
 ## 次の章
 
-次は [ViewModelとアーキテクチャ](chapters/08-architecture.md) に進み、ViewModel/Repositoryで設計を固めましょう。
+次は [ViewModelとアーキテクチャ](./08-architecture.md) に進み、ViewModel/Repositoryで設計を固めましょう。

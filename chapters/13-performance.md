@@ -7,7 +7,7 @@
 
 ## 前提
 
-- [テスト（ユニット/Compose UI）](chapters/12-testing.md) を完了し、計測→改善→回帰防止の考え方がある
+- [テスト（ユニット/Compose UI）](./12-testing.md) を完了し、計測→改善→回帰防止の考え方がある
 
 ## この章でできるようになること
 
@@ -132,6 +132,17 @@ val filtered by remember(query, memos) {
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/13-performance` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 「計測なし最適化」が危険な理由は何？
@@ -142,4 +153,4 @@ val filtered by remember(query, memos) {
 
 ## 次の章
 
-次は [アプリ公開と運用](chapters/14-publishing.md) に進み、リリース前後の運用を押さえましょう。
+次は [アプリ公開と運用](./14-publishing.md) に進み、リリース前後の運用を押さえましょう。

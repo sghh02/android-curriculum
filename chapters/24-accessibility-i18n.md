@@ -7,7 +7,7 @@
 
 ## 前提
 
-- [ComposeとViewの相互運用](chapters/23-compose-view-interop.md) を完了し、発展要件の流れがわかる
+- [ComposeとViewの相互運用](./23-compose-view-interop.md) を完了し、発展要件の流れがわかる
 
 ## この章でできるようになること
 
@@ -120,6 +120,17 @@ TalkBack観点の改善案と、Composeでの実装ポイントを挙げて。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/24-accessibility-i18n` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - `contentDescription` を付ける/付けない判断基準は？
@@ -130,4 +141,4 @@ TalkBack観点の改善案と、Composeでの実装ポイントを挙げて。
 
 ## 次の章
 
-次は [設定とセキュリティ（秘密情報/通信）](chapters/25-security-config.md) に進み、設定とセキュリティの最低ラインを押さえましょう。
+次は [設定とセキュリティ（秘密情報/通信）](./25-security-config.md) に進み、設定とセキュリティの最低ラインを押さえましょう。

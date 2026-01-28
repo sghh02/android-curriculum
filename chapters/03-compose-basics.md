@@ -7,7 +7,7 @@ XMLではなくKotlinコードでUIを組み立てます。
 
 ## 前提
 
-- [Androidアプリの基本](chapters/03-android-fundamentals.md) を完了し、Activity/リソース/ライフサイクルの概要がわかる
+- [Androidアプリの基本](./03-android-fundamentals.md) を完了し、Activity/リソース/ライフサイクルの概要がわかる
 
 ## この章でできるようになること
 
@@ -828,6 +828,17 @@ Composeの基礎が身につきました。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/03-compose-basics` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 宣言的UIは「状態」とどうつながっている？
@@ -838,4 +849,4 @@ Composeの基礎が身につきました。
 
 ## 次の章
 
-次は [ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md) に進み、シンプルメモアプリの開発を始めましょう。
+次は [ハンズオン：シンプルメモアプリを始める](./04-project-start.md) に進み、シンプルメモアプリの開発を始めましょう。

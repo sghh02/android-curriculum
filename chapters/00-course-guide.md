@@ -66,7 +66,7 @@
 週6時間でも、**遅れる前提**で設計すると完走率が上がります。
 
 - おすすめ：Week 4 / 8 / 12 / 16 / 20 / 24 を「バッファ週」にする
-- 使い道：遅れの解消、復習、演習の深掘り、[模擬案件バックログ（実務チケット集）](chapters/27-ticket-backlog.md) のSチケットを1つ
+- 使い道：遅れの解消、復習、演習の深掘り、[模擬案件バックログ（実務チケット集）](./27-ticket-backlog.md) のSチケットを1つ
 
 ---
 
@@ -76,45 +76,45 @@
 
 ### Month 1（Week 1〜4）：環境構築と基礎
 
-- Week 1：[コースガイド：6ヶ月でAndroid開発（Compose）を学ぶ](chapters/00-course-guide.md) / [学習ロードマップと到達基準（6ヶ月で基礎→実務の入口）](chapters/00-roadmap.md) / [AI時代のAndroid学習法](chapters/00-ai-learning.md) / [用語集（Android/Compose）](chapters/00-glossary.md) / [Unit 1: プログラミングとAndroidの基礎（ガイド）](chapters/01-unit1-guide.md) / [Android Studioのインストールと環境準備](chapters/01-setup.md)
-- Week 2：[Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md)（前半）+ 演習
-- Week 3：[Kotlinプログラミングの基礎](chapters/02-kotlin-basics.md)（後半）/ [オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md)（前半）
-- Week 4（バッファ）：[オブジェクト指向プログラミング](chapters/02-oop-fundamentals.md)（後半）/ [Androidアプリの基本](chapters/03-android-fundamentals.md) / 追いつき
+- Week 1：[コースガイド：6ヶ月でAndroid開発（Compose）を学ぶ](./00-course-guide.md) / [学習ロードマップと到達基準（6ヶ月で基礎→実務の入口）](./00-roadmap.md) / [AI時代のAndroid学習法](./00-ai-learning.md) / [用語集（Android/Compose）](./00-glossary.md) / [Unit 1: プログラミングとAndroidの基礎（ガイド）](./01-unit1-guide.md) / [Android Studioのインストールと環境準備](./01-setup.md)
+- Week 2：[Kotlinプログラミングの基礎](./02-kotlin-basics.md)（前半）+ 演習
+- Week 3：[Kotlinプログラミングの基礎](./02-kotlin-basics.md)（後半）/ [オブジェクト指向プログラミング](./02-oop-fundamentals.md)（前半）
+- Week 4（バッファ）：[オブジェクト指向プログラミング](./02-oop-fundamentals.md)（後半）/ [Androidアプリの基本](./03-android-fundamentals.md) / 追いつき
 
 ### Month 2（Week 5〜8）：ComposeでUIを作る
 
-- Week 5：[Jetpack Composeの基本](chapters/03-compose-basics.md) / [ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md)
-- Week 6：[Unit 2: アプリUIの構築（ガイド）](chapters/02-unit2-guide.md) / [状態管理とユーザーインタラクション](chapters/04-state-interaction.md)
-- Week 7：[リスト表示とLazyColumn](chapters/05-lists-lazycolumn.md) / [Material Design 3とテーマ](chapters/06-material-design.md)
-- Week 8（バッファ）：[Unit 3: ナビゲーションとアーキテクチャ（ガイド）](chapters/03-unit3-guide.md) / [ナビゲーション](chapters/07-navigation.md) / 追いつき（UI/遷移の整理）
+- Week 5：[Jetpack Composeの基本](./03-compose-basics.md) / [ハンズオン：シンプルメモアプリを始める](./04-project-start.md)
+- Week 6：[Unit 2: アプリUIの構築（ガイド）](./02-unit2-guide.md) / [状態管理とユーザーインタラクション](./04-state-interaction.md)
+- Week 7：[リスト表示とLazyColumn](./05-lists-lazycolumn.md) / [Material Design 3とテーマ](./06-material-design.md)
+- Week 8（バッファ）：[Unit 3: ナビゲーションとアーキテクチャ（ガイド）](./03-unit3-guide.md) / [ナビゲーション](./07-navigation.md) / 追いつき（UI/遷移の整理）
 
 ### Month 3（Week 9〜12）：アーキテクチャと非同期・通信
 
-- Week 9：[ViewModelとアーキテクチャ](chapters/08-architecture.md)
-- Week 10：[Unit 4: 非同期処理とネットワーク（ガイド）](chapters/04-unit4-guide.md) / [Kotlin Coroutinesと非同期処理](chapters/09-data-layer.md)
-- Week 11：[ネットワーク通信（Retrofit）](chapters/10-network.md)
-- Week 12（バッファ）：ここまでの総復習 + [模擬案件バックログ（実務チケット集）](chapters/27-ticket-backlog.md) からSチケットを1つ
+- Week 9：[ViewModelとアーキテクチャ](./08-architecture.md)
+- Week 10：[Unit 4: 非同期処理とネットワーク（ガイド）](./04-unit4-guide.md) / [Kotlin Coroutinesと非同期処理](./09-data-layer.md)
+- Week 11：[ネットワーク通信（Retrofit）](./10-network.md)
+- Week 12（バッファ）：ここまでの総復習 + [模擬案件バックログ（実務チケット集）](./27-ticket-backlog.md) からSチケットを1つ
 
 ### Month 4（Week 13〜16）：永続化と品質
 
-- Week 13：[Unit 5: データ永続化（ガイド）](chapters/05-unit5-guide.md) / [データ保存（Room / DataStore）](chapters/11-storage.md)
-- Week 14：[Unit 6: 品質と運用（ガイド）](chapters/06-unit6-guide.md) / [テスト（ユニット/Compose UI）](chapters/12-testing.md)
-- Week 15：[パフォーマンスと最適化](chapters/13-performance.md)
-- Week 16（バッファ）：[アプリ公開と運用](chapters/14-publishing.md) + Release確認 + Sチケットを1つ
+- Week 13：[Unit 5: データ永続化（ガイド）](./05-unit5-guide.md) / [データ保存（Room / DataStore）](./11-storage.md)
+- Week 14：[Unit 6: 品質と運用（ガイド）](./06-unit6-guide.md) / [テスト（ユニット/Compose UI）](./12-testing.md)
+- Week 15：[パフォーマンスと最適化](./13-performance.md)
+- Week 16（バッファ）：[アプリ公開と運用](./14-publishing.md) + Release確認 + Sチケットを1つ
 
 ### Month 5（Week 17〜20）：実務の進め方とリリース
 
-- Week 17：[Unit 7: 総合演習（ガイド）](chapters/07-unit7-guide.md) / [総合演習：メモアプリ完成とリリース](chapters/15-project.md)（仕上げ）
-- Week 18：[Unit 8: 実務参画の基本（ガイド）](chapters/08-unit8-guide.md) / [既存プロジェクト参画（読む・直す・壊さない）](chapters/26-onboarding.md) / [デバッグと調査（実務の型）](chapters/16-debugging.md)
-- Week 19：[チーム開発（Git/PR/コードレビュー）](chapters/17-team-development.md) / [CIで品質を担保する（Gradle/テスト/Lint）](chapters/18-ci.md) / [Unit 9: ビルドとモジュール化（ガイド）](chapters/09-unit9-guide.md)
-- Week 20（バッファ）：[Gradleと依存関係管理（実務編）](chapters/19-gradle.md) / 追いつき
+- Week 17：[Unit 7: 総合演習（ガイド）](./07-unit7-guide.md) / [総合演習：メモアプリ完成とリリース](./15-project.md)（仕上げ）
+- Week 18：[Unit 8: 実務参画の基本（ガイド）](./08-unit8-guide.md) / [既存プロジェクト参画（読む・直す・壊さない）](./26-onboarding.md) / [デバッグと調査（実務の型）](./16-debugging.md)
+- Week 19：[チーム開発（Git/PR/コードレビュー）](./17-team-development.md) / [CIで品質を担保する（Gradle/テスト/Lint）](./18-ci.md) / [Unit 9: ビルドとモジュール化（ガイド）](./09-unit9-guide.md)
+- Week 20（バッファ）：[Gradleと依存関係管理（実務編）](./19-gradle.md) / 追いつき
 
 ### Month 6（Week 21〜24）：発展要件 + 総合演習
 
-- Week 21：[マルチモジュール設計（単一→分割）](chapters/20-multi-module.md)
-- Week 22：[Unit 10: 実務で頻出の要件（ガイド）](chapters/10-unit10-guide.md) / [画面サイズ対応（スマホ/タブレット）](chapters/21-adaptive-ui.md)
-- Week 23：[WorkManager（バックグラウンド処理）](chapters/22-workmanager.md) / [ComposeとViewの相互運用](chapters/23-compose-view-interop.md)
-- Week 24（バッファ）：[アクセシビリティと多言語対応](chapters/24-accessibility-i18n.md) / [設定とセキュリティ（秘密情報/通信）](chapters/25-security-config.md) / [Unit 11: 模擬案件（チケット演習）（ガイド）](chapters/11-unit11-guide.md) / [模擬案件バックログ（実務チケット集）](chapters/27-ticket-backlog.md)（チケットを回す）/ 卒業チェック更新
+- Week 21：[マルチモジュール設計（単一→分割）](./20-multi-module.md)
+- Week 22：[Unit 10: 実務で頻出の要件（ガイド）](./10-unit10-guide.md) / [画面サイズ対応（スマホ/タブレット）](./21-adaptive-ui.md)
+- Week 23：[WorkManager（バックグラウンド処理）](./22-workmanager.md) / [ComposeとViewの相互運用](./23-compose-view-interop.md)
+- Week 24（バッファ）：[アクセシビリティと多言語対応](./24-accessibility-i18n.md) / [設定とセキュリティ（秘密情報/通信）](./25-security-config.md) / [Unit 11: 模擬案件（チケット演習）（ガイド）](./11-unit11-guide.md) / [模擬案件バックログ（実務チケット集）](./27-ticket-backlog.md)（チケットを回す）/ 卒業チェック更新
 
 ---
 
@@ -177,6 +177,13 @@
 
 ---
 
+## 完了記録
+
+この章には提出課題はありません。
+学習が完了したら、スプレッドシートに **完了日** のみ記入してください。
+
+---
+
 ## ふりかえり
 
 - 週6時間を「いつ」「何回」に分けると継続できそう？
@@ -187,4 +194,4 @@
 
 ## 次の章
 
-次は [学習ロードマップと到達基準（6ヶ月で基礎→実務の入口）](chapters/00-roadmap.md) を読んで、到達基準（チェックリスト）を把握しましょう。
+次は [学習ロードマップと到達基準（6ヶ月で基礎→実務の入口）](./00-roadmap.md) を読んで、到達基準（チェックリスト）を把握しましょう。

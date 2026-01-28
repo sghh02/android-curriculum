@@ -6,7 +6,7 @@ Unit 2では、Composeで「使える画面」を組み立てるために必要�
 
 ## 前提
 
-- [ハンズオン：シンプルメモアプリを始める](chapters/04-project-start.md) まで完了し、シンプルメモアプリが起動できる
+- [ハンズオン：シンプルメモアプリを始める](./04-project-start.md) まで完了し、シンプルメモアプリが起動できる
 
 ## この章でできるようになること
 
@@ -18,9 +18,9 @@ Unit 2では、Composeで「使える画面」を組み立てるために必要�
 
 ## このユニットでやること（レッスン）
 
-- 状態と入力：[状態管理とユーザーインタラクション](chapters/04-state-interaction.md)
-- 一覧：[リスト表示とLazyColumn](chapters/05-lists-lazycolumn.md)
-- テーマ：[Material Design 3とテーマ](chapters/06-material-design.md)
+- 状態と入力：[状態管理とユーザーインタラクション](./04-state-interaction.md)
+- 一覧：[リスト表示とLazyColumn](./05-lists-lazycolumn.md)
+- テーマ：[Material Design 3とテーマ](./06-material-design.md)
 
 ---
 
@@ -83,6 +83,13 @@ Unit 2では、Composeで「使える画面」を組み立てるために必要�
 
 ---
 
+## 完了記録
+
+この章には提出課題はありません。
+学習が完了したら、スプレッドシートに **完了日** のみ記入してください。
+
+---
+
 ## ふりかえり
 
 - 「状態」をどこに置くと、後で困らない？
@@ -93,4 +100,4 @@ Unit 2では、Composeで「使える画面」を組み立てるために必要�
 
 ## 次の章
 
-次は [状態管理とユーザーインタラクション](chapters/04-state-interaction.md) に進み、Stateから押さえましょう。
+次は [状態管理とユーザーインタラクション](./04-state-interaction.md) に進み、Stateから押さえましょう。

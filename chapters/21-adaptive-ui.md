@@ -7,8 +7,8 @@
 
 ## 前提
 
-- [Unit 10: 実務で頻出の要件（ガイド）](chapters/10-unit10-guide.md) を読んでいる
-- [マルチモジュール設計（単一→分割）](chapters/20-multi-module.md) は任意（分割しているなら境界を意識する）
+- [Unit 10: 実務で頻出の要件（ガイド）](./10-unit10-guide.md) を読んでいる
+- [マルチモジュール設計（単一→分割）](./20-multi-module.md) は任意（分割しているなら境界を意識する）
 
 ## この章でできるようになること
 
@@ -149,6 +149,17 @@ Composeでタブレット対応をしたい。
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/21-adaptive-ui` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - 2ペインで一番事故りやすい「状態」は何？どこに置く？
@@ -159,4 +170,4 @@ Composeでタブレット対応をしたい。
 
 ## 次の章
 
-次は [WorkManager（バックグラウンド処理）](chapters/22-workmanager.md) に進み、バックグラウンド処理を押さえましょう。
+次は [WorkManager（バックグラウンド処理）](./22-workmanager.md) に進み、バックグラウンド処理を押さえましょう。

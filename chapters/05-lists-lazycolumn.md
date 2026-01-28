@@ -7,7 +7,7 @@
 
 ## 前提
 
-- [状態管理とユーザーインタラクション](chapters/04-state-interaction.md) を完了し、StateでUIを更新できる
+- [状態管理とユーザーインタラクション](./04-state-interaction.md) を完了し、StateでUIを更新できる
 
 ## この章でできるようになること
 
@@ -683,6 +683,17 @@ LazyColumnで「もっと見る」ボタンを押したら
 
 ---
 
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記の演習を完了する
+2. GitHub で `feature/05-lists-lazycolumn` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+
+---
+
 ## ふりかえり
 
 - `key` を付けないと起きる不具合は何だった？
@@ -693,4 +704,4 @@ LazyColumnで「もっと見る」ボタンを押したら
 
 ## 次の章
 
-次は [Material Design 3とテーマ](chapters/06-material-design.md) に進み、Material 3で見た目を整えましょう。
+次は [Material Design 3とテーマ](./06-material-design.md) に進み、Material 3で見た目を整えましょう。
