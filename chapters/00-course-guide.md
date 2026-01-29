@@ -125,6 +125,18 @@
 - [ ] `SimpleMemo`（学習用）をGitで管理する（Private推奨）
 - [ ] PRテンプレ（目的/変更内容/スクショ/テスト/リスク）を用意する
 
+#### （初回だけ）developブランチを作る（main→develop→push）
+
+このカリキュラムでは、提出PRの取り込み先（base）は `develop` を前提にします。  
+GitHubに `develop` ブランチが無い場合は、最初の1回だけ `main` から作ってpushしておきましょう。
+
+```bash
+git checkout main
+git pull
+git checkout -b develop
+git push -u origin develop
+```
+
 ### 演習2：毎週の成果物の定義を決める
 
 - [ ] 週1回はPRを出す（小さくてOK）
