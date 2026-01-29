@@ -1,5 +1,7 @@
 # データ保存（Room / DataStore）
 
+> 提出ブランチ：`feature/11-storage`（PRのbase：`main`）
+
 オフラインでも使えるアプリには、ローカルへのデータ保存が必要です。
 この章では、RoomとDataStoreを使ったデータ永続化を学びます。
 

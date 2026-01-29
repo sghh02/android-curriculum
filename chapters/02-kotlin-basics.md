@@ -1,5 +1,7 @@
 # Kotlinプログラミングの基礎
 
+> 提出ブランチ：`feature/02-kotlin-basics`（PRのbase：`main`）
+
 Android開発では**Kotlin**というプログラミング言語を使います。
 この章では、Android開発に必要なKotlinの基礎を学びます。
 

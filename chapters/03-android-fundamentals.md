@@ -1,5 +1,7 @@
 # Androidアプリの基本
 
+> 提出ブランチ：`feature/03-android-fundamentals`（PRのbase：`main`）
+
 Androidアプリがどのように動いているのか、基本的な仕組みを理解します。
 この章では、Android特有の概念を学び、アプリ開発の土台を固めます。
 

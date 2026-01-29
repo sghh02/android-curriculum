@@ -1,5 +1,7 @@
 # WorkManager（バックグラウンド処理）
 
+> 提出ブランチ：`feature/22-workmanager`（PRのbase：`main`）
+
 案件では「バックグラウンドで同期したい」「定期実行したい」「失敗したらリトライしたい」がよく出ます。
 WorkManagerは、Androidで“条件付きの確実な実行”を担う標準的な選択肢です。
 

@@ -1,5 +1,7 @@
 # ナビゲーション
 
+> 提出ブランチ：`feature/07-navigation`（PRのbase：`main`）
+
 複数の画面を持つアプリには、画面間を移動する仕組みが必要です。
 この章では、Jetpack ComposeのNavigationを学びます。
 
