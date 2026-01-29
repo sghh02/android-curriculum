@@ -1,5 +1,7 @@
 # ViewModelとアーキテクチャ
 
+> 提出ブランチ：`feature/08-architecture`（PRのbase：`develop`）
+
 大規模なアプリを作るには、適切な設計（アーキテクチャ）が必要です。
 この章では、Androidの推奨アーキテクチャとViewModelを学びます。
 

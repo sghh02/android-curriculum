@@ -1,5 +1,7 @@
 # Material Design 3とテーマ
 
+> 提出ブランチ：`feature/06-material-design`（PRのbase：`develop`）
+
 Material Design 3（Material You）は、Googleの最新デザインシステムです。
 この章では、美しく一貫性のあるUIを作る方法を学びます。
 

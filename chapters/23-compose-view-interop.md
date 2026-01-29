@@ -1,5 +1,7 @@
 # ComposeとViewの相互運用
 
+> 提出ブランチ：`feature/23-compose-view-interop`（PRのbase：`develop`）
+
 Compose中心の案件でも、Viewベースのライブラリ（Map、WebView、広告、古いUI部品）と共存することは普通にあります。
 この章では、ComposeとViewを同じアプリで扱うための最低限の知識をまとめます。
 
