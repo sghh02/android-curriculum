@@ -1,6 +1,6 @@
 # Kotlin Coroutinesと非同期処理
 
-> 提出ブランチ：`feature/09-data-layer`（PRのbase：`main`）
+> 提出ブランチ：`feature/09-data-layer`（PRのbase：`develop`）
 
 Androidアプリでは、ネットワーク通信やデータベースアクセスなど時間のかかる処理を行います。
 この章では、Kotlin Coroutinesを使った非同期処理を学びます。

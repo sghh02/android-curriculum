@@ -1,6 +1,6 @@
 # ネットワーク通信（Retrofit）
 
-> 提出ブランチ：`feature/10-network`（PRのbase：`main`）
+> 提出ブランチ：`feature/10-network`（PRのbase：`develop`）
 
 多くのアプリはサーバーからデータを取得します。
 この章では、Retrofitを使ったAPI通信を学びます。

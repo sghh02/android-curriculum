@@ -1,6 +1,6 @@
 # オブジェクト指向プログラミング
 
-> 提出ブランチ：`feature/02-oop-fundamentals`（PRのbase：`main`）
+> 提出ブランチ：`feature/02-oop-fundamentals`（PRのbase：`develop`）
 
 プログラムを「オブジェクト」という単位で組み立てる考え方を学びます。
 これはAndroid開発だけでなく、すべての現代的なプログラミングに必須の概念です。

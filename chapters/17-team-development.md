@@ -1,6 +1,6 @@
 # チーム開発（Git/PR/コードレビュー）
 
-> 提出ブランチ：`feature/17-team-development`（PRのbase：`main`）
+> 提出ブランチ：`feature/17-team-development`（PRのbase：`develop`）
 
 案件参画でまず求められるのは「Androidが書ける」より、**チームの流儀で安全に変更できる**ことです。
 この章では、実務で最低限必要な Git/PR/レビュー の型をまとめます。

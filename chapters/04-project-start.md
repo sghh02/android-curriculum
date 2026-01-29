@@ -1,6 +1,6 @@
 # ハンズオン：シンプルメモアプリを始める
 
-> 提出ブランチ：`feature/04-project-start`（PRのbase：`main`）
+> 提出ブランチ：`feature/04-project-start`（PRのbase：`develop`）
 
 これまで学んだKotlin、オブジェクト指向、Androidの基礎を活かして、
 実際に**シンプルメモアプリ**の開発を始めます。

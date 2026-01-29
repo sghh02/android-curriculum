@@ -1,6 +1,6 @@
 # Jetpack Composeの基本
 
-> 提出ブランチ：`feature/03-compose-basics`（PRのbase：`main`）
+> 提出ブランチ：`feature/03-compose-basics`（PRのbase：`develop`）
 
 Jetpack Composeは、Androidの**宣言的UIフレームワーク**です。
 XMLではなくKotlinコードでUIを組み立てます。

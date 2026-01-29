@@ -1,6 +1,6 @@
 # 状態管理とユーザーインタラクション
 
-> 提出ブランチ：`feature/04-state-interaction`（PRのbase：`main`）
+> 提出ブランチ：`feature/04-state-interaction`（PRのbase：`develop`）
 
 Composeアプリを動的にするには「状態（State）」の管理が必要です。
 この章では、ユーザー操作に応答するアプリの作り方を学びます。

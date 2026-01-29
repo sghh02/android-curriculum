@@ -1,6 +1,6 @@
 # リスト表示とLazyColumn
 
-> 提出ブランチ：`feature/05-lists-lazycolumn`（PRのbase：`main`）
+> 提出ブランチ：`feature/05-lists-lazycolumn`（PRのbase：`develop`）
 
 多くのアプリではデータの一覧を表示します。
 この章では、Composeで効率的にリストを表示する方法を学びます。

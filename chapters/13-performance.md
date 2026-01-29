@@ -1,6 +1,6 @@
 # パフォーマンスと最適化
 
-> 提出ブランチ：`feature/13-performance`（PRのbase：`main`）
+> 提出ブランチ：`feature/13-performance`（PRのbase：`develop`）
 
 実務では「たまに重い」「端末によってカクつく」「しばらく使うと落ちる」が一番つらいです。
 この章では、Compose中心のアプリで **“どこを見て、どう直すか”** の型を身につけます。

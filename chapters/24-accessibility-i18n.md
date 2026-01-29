@@ -1,6 +1,6 @@
 # アクセシビリティと多言語対応
 
-> 提出ブランチ：`feature/24-accessibility-i18n`（PRのbase：`main`）
+> 提出ブランチ：`feature/24-accessibility-i18n`（PRのbase：`develop`）
 
 実務では「動くUI」だけでなく、**誰でも使えるUI**が求められます。
 アクセシビリティ（a11y）と多言語対応（i18n）は、後から入れるとコストが跳ねます。最初から最低限を押さえましょう。
