@@ -120,7 +120,7 @@
 
 ### 演習1：学習リポジトリを用意する
 
-- [ ] `SimpleMemo`（学習用）をGitで管理する（Private推奨）
+- [ ] `SimpleMemo`（学習用）をGitで管理する（Public推奨：AIレビューが参照できるように）
 - [ ] PRテンプレ（目的/変更内容/確認手順/リスク）を用意する
 
 #### （初回だけ）developブランチを作る（main→develop→push）
@@ -134,6 +134,17 @@ git pull
 git checkout -b develop
 git push -u origin develop
 ```
+
+#### 進捗管理シート（テンプレ）を作成する
+
+進捗管理は Google スプレッドシートで行います。
+
+- テンプレ: https://docs.google.com/spreadsheets/d/1m3eho5Wc32egX5P-19TCavpoYoOziGFKRxKE8kZ1qj0/edit?usp=sharing
+- 手順
+  1. テンプレを開く → `ファイル` → `コピーを作成`（自分用を作る）
+  2. このビューアーの「学習ロードマップ作成」から CSV をダウンロード
+  3. スプレッドシートで `ファイル` → `インポート` → CSV を読み込む（おすすめ：現在のシートを置き換え）
+  4. シート名を自分の名前に変更
 
 ### 演習2：毎週の成果物の定義を決める
 
