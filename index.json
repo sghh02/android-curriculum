@@ -195,18 +195,6 @@
           "hasAssignment": false
         },
         {
-          "id": "kotlin-basics",
-          "title": "Kotlinプログラミングの基礎（復習・参照用）",
-          "path": "chapters/02-kotlin-basics.md",
-          "type": "reference",
-          "difficulty": "beginner",
-          "estimatedMinutes": 60,
-          "practiceMinutes": 0,
-          "prerequisites": ["unit2-guide"],
-          "tags": ["kotlin", "reference"],
-          "hasAssignment": false
-        },
-        {
           "id": "oop-fundamentals",
           "title": "オブジェクト指向プログラミング",
           "path": "chapters/02-oop-fundamentals.md",
@@ -388,7 +376,7 @@
         {
           "id": "unit4-guide",
           "title": "Unit 4: ナビゲーションとアーキテクチャ（ガイド）",
-          "path": "chapters/03-unit3-guide.md",
+          "path": "chapters/04-unit4-guide.md",
           "type": "guide",
           "difficulty": "beginner",
           "estimatedMinutes": 10,

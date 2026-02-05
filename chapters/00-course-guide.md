@@ -87,16 +87,16 @@
 ### Month 1（Week 1〜4）：環境構築と基礎
 
 - Week 1：[コースガイド：6ヶ月でAndroid開発（Compose）を学ぶ](./00-course-guide.md) / [学習ロードマップと到達基準（6ヶ月で基礎→実務の入口）](./00-roadmap.md) / [AI時代のAndroid学習法](./00-ai-learning.md) / [用語集（Android/Compose）](./00-glossary.md) / [Unit 1: プログラミングとAndroidの基礎（ガイド）](./01-unit1-guide.md) / [Android Studioのインストールと環境準備](./01-setup.md)
-- Week 2：[Kotlinプログラミングの基礎](./02-kotlin-basics.md)（前半）+ 演習
-- Week 3：[Kotlinプログラミングの基礎](./02-kotlin-basics.md)（後半）/ [オブジェクト指向プログラミング](./02-oop-fundamentals.md)（前半）
-- Week 4（バッファ）：[オブジェクト指向プログラミング](./02-oop-fundamentals.md)（後半）/ [Androidアプリの基本](./03-android-fundamentals.md) / 追いつき
+- Week 2：[Kotlin入門（変数と関数）](./01-kotlin-variables-functions.md) / [Kotlin入門（制御構文）](./01-kotlin-control-flow.md) + 演習
+- Week 3：[最初のAndroidアプリを作ろう](./01-first-app.md) / [基本レイアウト](./01-basic-layout.md) / [プロジェクト：名刺アプリ](./01-project-business-card.md)
+- Week 4（バッファ）：[オブジェクト指向プログラミング](./02-oop-fundamentals.md) / [サイコロアプリ](./02-dice-roller.md) / 追いつき
 
 ### Month 2（Week 5〜8）：ComposeでUIを作る
 
-- Week 5：[Jetpack Composeの基本](./03-compose-basics.md) / [ハンズオン：シンプルメモアプリを始める](./04-project-start.md)
-- Week 6：[Unit 2: アプリUIの構築（ガイド）](./02-unit2-guide.md) / [状態管理とユーザーインタラクション](./04-state-interaction.md)
+- Week 5：[チップ計算アプリ](./02-tip-calculator.md) / [プロジェクト：Art Spaceアプリ](./02-project-art-space.md)
+- Week 6：[Androidアプリの基本](./03-android-fundamentals.md) / [Jetpack Composeの基本](./03-compose-basics.md)
 - Week 7：[リスト表示とLazyColumn](./05-lists-lazycolumn.md) / [Material Design 3とテーマ](./06-material-design.md)
-- Week 8（バッファ）：[Unit 3: ナビゲーションとアーキテクチャ（ガイド）](./03-unit3-guide.md) / [ナビゲーション](./07-navigation.md) / 追いつき（UI/遷移の整理）
+- Week 8（バッファ）：[ハンズオン：シンプルメモアプリを始める](./04-project-start.md) / 追いつき（UI/遷移の整理）
 
 ### Month 3（Week 9〜12）：アーキテクチャと非同期・通信
 
