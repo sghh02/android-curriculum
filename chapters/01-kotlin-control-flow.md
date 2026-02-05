@@ -26,7 +26,7 @@
 
 | Codelab | 内容 | 所要時間 |
 |---------|------|----------|
-| [Kotlinで条件を記述する](https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals-and-booleans?hl=ja) | if/when/Boolean | 60分 |
+| [Kotlinで条件を記述する](https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals?hl=ja) | if/when/Boolean | 60分 |
 
 > 💡 **ヒント**: Codelabの内容を理解したら、下の概念説明で復習しましょう。
 
