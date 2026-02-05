@@ -1,7 +1,7 @@
 {
   "curriculumId": "android-basic",
   "title": "Androidアプリ開発基礎",
-  "description": "KotlinとJetpack Composeで「シンプルメモ」アプリを作りながら、初心者が6ヶ月で基礎〜実務の入口まで体系的に学びます。AI活用で効率的に学習できます。",
+  "description": "KotlinとJetpack Composeで「シンプルメモ」アプリを作りながら、初心者が6ヶ月で基礎〜実務の入口まで体系的に学びます。Google公式Codelabを活用したハイブリッド学習で、つまずきポイントも徹底サポート。",
   "chapters": [
     {
       "id": "unit0",
@@ -61,13 +61,14 @@
     },
     {
       "id": "unit1",
-      "title": "Unit 1: プログラミングとAndroidの基礎",
-      "goal": "環境構築〜Kotlin/Android/Composeの基礎で“動くアプリ”を作り始める",
-      "outcomes": ["Android Studioで開発できる", "Kotlinの基礎でコードが書ける", "Composeで基本UIを作れる"],
+      "title": "Unit 1: Kotlin入門と最初のAndroidアプリ",
+      "goal": "Kotlinの基礎を段階的に習得し、最初のAndroidアプリを作れるようになる",
+      "outcomes": ["Kotlinの変数・関数・制御構文を使える", "Android Studioで開発できる", "Composeで基本UIを作れる", "名刺アプリを完成できる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-1?hl=ja",
       "items": [
         {
           "id": "unit1-guide",
-          "title": "Unit 1: プログラミングとAndroidの基礎（ガイド）",
+          "title": "Unit 1: Kotlin入門と最初のAndroidアプリ（ガイド）",
           "path": "chapters/01-unit1-guide.md",
           "type": "guide",
           "difficulty": "beginner",
@@ -78,6 +79,38 @@
           "hasAssignment": false
         },
         {
+          "id": "kotlin-variables-functions",
+          "title": "Kotlin入門（変数と関数）",
+          "path": "chapters/01-kotlin-variables-functions.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 60,
+          "practiceMinutes": 120,
+          "prerequisites": ["unit1-guide"],
+          "tags": ["kotlin", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-first-program?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-variables?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-functions?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "kotlin-control-flow",
+          "title": "Kotlin入門（制御構文）",
+          "path": "chapters/01-kotlin-control-flow.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 45,
+          "practiceMinutes": 75,
+          "prerequisites": ["kotlin-variables-functions"],
+          "tags": ["kotlin", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals-and-booleans?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
           "id": "setup",
           "title": "Android Studioのインストールと環境準備",
           "path": "chapters/01-setup.md",
@@ -85,21 +118,81 @@
           "difficulty": "beginner",
           "estimatedMinutes": 90,
           "practiceMinutes": 90,
-          "prerequisites": ["unit1-guide"],
-          "tags": ["setup", "android-studio"],
+          "prerequisites": ["kotlin-control-flow"],
+          "tags": ["setup", "android-studio", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio?hl=ja"
+          ],
           "hasAssignment": false
         },
         {
-          "id": "kotlin-basics",
-          "title": "Kotlinプログラミングの基礎",
-          "path": "chapters/02-kotlin-basics.md",
+          "id": "first-app",
+          "title": "最初のAndroidアプリを作ろう",
+          "path": "chapters/01-first-app.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 180,
-          "practiceMinutes": 240,
+          "estimatedMinutes": 60,
+          "practiceMinutes": 90,
           "prerequisites": ["setup"],
-          "tags": ["kotlin"],
+          "tags": ["android", "compose", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-emulator?hl=ja"
+          ],
           "hasAssignment": true
+        },
+        {
+          "id": "basic-layout",
+          "title": "基本レイアウト（Text, Image, Box）",
+          "path": "chapters/01-basic-layout.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 60,
+          "practiceMinutes": 90,
+          "prerequisites": ["first-app"],
+          "tags": ["compose", "ui", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-text-composables?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-add-images?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "project-business-card",
+          "title": "プロジェクト：名刺アプリを作ろう",
+          "path": "chapters/01-project-business-card.md",
+          "type": "project",
+          "difficulty": "beginner",
+          "estimatedMinutes": 60,
+          "practiceMinutes": 120,
+          "prerequisites": ["basic-layout"],
+          "tags": ["project", "compose", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-composables-practice-problems?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-business-card?hl=ja"
+          ],
+          "hasAssignment": true
+        }
+      ]
+    },
+    {
+      "id": "unit2",
+      "title": "Unit 2: Kotlinの基礎とインタラクティブUI",
+      "goal": "Kotlinのより深い知識と、ユーザー操作に反応するインタラクティブなUIを作れるようになる",
+      "outcomes": ["クラスとオブジェクト指向を理解する", "状態管理（remember/mutableStateOf）ができる", "ボタン、TextField、Switchを使える", "Art Spaceアプリを完成できる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-2?hl=ja",
+      "items": [
+        {
+          "id": "unit2-guide",
+          "title": "Unit 2: Kotlinの基礎とインタラクティブUI（ガイド）",
+          "path": "chapters/02-unit2-guide.md",
+          "type": "guide",
+          "difficulty": "beginner",
+          "estimatedMinutes": 10,
+          "practiceMinutes": 0,
+          "prerequisites": ["project-business-card"],
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "oop-fundamentals",
@@ -107,11 +200,98 @@
           "path": "chapters/02-oop-fundamentals.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 180,
-          "prerequisites": ["kotlin-basics"],
-          "tags": ["kotlin", "oop"],
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
+          "prerequisites": ["unit2-guide"],
+          "tags": ["kotlin", "oop", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-function-types-and-lambda?hl=ja"
+          ],
           "hasAssignment": true
+        },
+        {
+          "id": "dice-roller",
+          "title": "サイコロアプリを作ろう",
+          "path": "chapters/02-dice-roller.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 60,
+          "practiceMinutes": 90,
+          "prerequisites": ["oop-fundamentals"],
+          "tags": ["compose", "state", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-using-the-debugger?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "state-interaction",
+          "title": "状態管理とユーザーインタラクション",
+          "path": "chapters/04-state-interaction.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
+          "prerequisites": ["dice-roller"],
+          "tags": ["compose", "state", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "tip-calculator",
+          "title": "チップ計算アプリを作ろう",
+          "path": "chapters/02-tip-calculator.md",
+          "type": "lesson",
+          "difficulty": "beginner",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
+          "prerequisites": ["state-interaction"],
+          "tags": ["compose", "textfield", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-calculate-tip?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "project-art-space",
+          "title": "プロジェクト：Art Spaceアプリを作ろう",
+          "path": "chapters/02-project-art-space.md",
+          "type": "project",
+          "difficulty": "beginner",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 180,
+          "prerequisites": ["tip-calculator"],
+          "tags": ["project", "compose", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-click-behavior?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-art-space?hl=ja"
+          ],
+          "hasAssignment": true
+        }
+      ]
+    },
+    {
+      "id": "unit3",
+      "title": "Unit 3: リスト表示とMaterial Design",
+      "goal": "スクロールリストとMaterial Designでプロらしい見た目を作れるようになる",
+      "outcomes": ["LazyColumnでリスト表示できる", "Material 3でテーマを適用できる", "アニメーションを追加できる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-3?hl=ja",
+      "items": [
+        {
+          "id": "unit3-guide",
+          "title": "Unit 3: リスト表示とMaterial Design（ガイド）",
+          "path": "chapters/03-unit3-guide.md",
+          "type": "guide",
+          "difficulty": "beginner",
+          "estimatedMinutes": 10,
+          "practiceMinutes": 0,
+          "prerequisites": ["project-art-space"],
+          "tags": ["guide"],
+          "hasAssignment": false
         },
         {
           "id": "android-fundamentals",
@@ -119,10 +299,14 @@
           "path": "chapters/03-android-fundamentals.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 120,
-          "prerequisites": ["oop-fundamentals"],
-          "tags": ["android"],
+          "estimatedMinutes": 90,
+          "practiceMinutes": 90,
+          "prerequisites": ["unit3-guide"],
+          "tags": ["android", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-collections?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-higher-order-functions?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -131,54 +315,10 @@
           "path": "chapters/03-compose-basics.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 150,
-          "practiceMinutes": 180,
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
           "prerequisites": ["android-fundamentals"],
           "tags": ["compose", "ui"],
-          "hasAssignment": true
-        },
-        {
-          "id": "project-start",
-          "title": "ハンズオン：シンプルメモアプリを始める",
-          "path": "chapters/04-project-start.md",
-          "type": "hands-on",
-          "difficulty": "beginner",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 240,
-          "prerequisites": ["compose-basics"],
-          "tags": ["project", "simple-memo", "compose"],
-          "hasAssignment": true
-        }
-      ]
-    },
-    {
-      "id": "unit2",
-      "title": "Unit 2: アプリUIの構築",
-      "goal": "状態管理/リスト/テーマで、使えるUIを組み立てる",
-      "outcomes": ["StateでUIを更新できる", "LazyColumnで一覧を作れる", "Material 3で見た目を整えられる"],
-      "items": [
-        {
-          "id": "unit2-guide",
-          "title": "Unit 2: アプリUIの構築（ガイド）",
-          "path": "chapters/02-unit2-guide.md",
-          "type": "guide",
-          "difficulty": "beginner",
-          "estimatedMinutes": 10,
-          "practiceMinutes": 0,
-          "prerequisites": ["project-start"],
-          "tags": ["guide"],
-          "hasAssignment": false
-        },
-        {
-          "id": "state-interaction",
-          "title": "状態管理とユーザーインタラクション",
-          "path": "chapters/04-state-interaction.md",
-          "type": "lesson",
-          "difficulty": "beginner",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 180,
-          "prerequisites": ["unit2-guide"],
-          "tags": ["compose", "state"],
           "hasAssignment": true
         },
         {
@@ -187,10 +327,13 @@
           "path": "chapters/05-lists-lazycolumn.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 90,
-          "practiceMinutes": 120,
-          "prerequisites": ["state-interaction"],
-          "tags": ["compose", "list"],
+          "estimatedMinutes": 60,
+          "practiceMinutes": 90,
+          "prerequisites": ["compose-basics"],
+          "tags": ["compose", "list", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-add-scrollable-list?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -199,29 +342,46 @@
           "path": "chapters/06-material-design.md",
           "type": "lesson",
           "difficulty": "beginner",
-          "estimatedMinutes": 90,
-          "practiceMinutes": 120,
+          "estimatedMinutes": 60,
+          "practiceMinutes": 90,
           "prerequisites": ["lists"],
-          "tags": ["compose", "material3", "theme"],
+          "tags": ["compose", "material3", "theme", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-animation?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "project-start",
+          "title": "ハンズオン：シンプルメモアプリを始める",
+          "path": "chapters/04-project-start.md",
+          "type": "hands-on",
+          "difficulty": "beginner",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 180,
+          "prerequisites": ["material-design"],
+          "tags": ["project", "simple-memo", "compose"],
           "hasAssignment": true
         }
       ]
     },
     {
-      "id": "unit3",
-      "title": "Unit 3: ナビゲーションとアーキテクチャ",
+      "id": "unit4",
+      "title": "Unit 4: ナビゲーションとアーキテクチャ",
       "goal": "画面遷移と設計（UI/VM/Data）を分離し、拡張できる骨格を作る",
       "outcomes": ["Navigationで画面遷移できる", "ViewModel + UI Stateで状態管理できる", "Repository/DIの目的を説明できる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-4?hl=ja",
       "items": [
         {
-          "id": "unit3-guide",
-          "title": "Unit 3: ナビゲーションとアーキテクチャ（ガイド）",
-          "path": "chapters/03-unit3-guide.md",
+          "id": "unit4-guide",
+          "title": "Unit 4: ナビゲーションとアーキテクチャ（ガイド）",
+          "path": "chapters/04-unit4-guide.md",
           "type": "guide",
           "difficulty": "beginner",
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
-          "prerequisites": ["material-design"],
+          "prerequisites": ["project-start"],
           "tags": ["guide"],
           "hasAssignment": false
         },
@@ -233,8 +393,12 @@
           "difficulty": "beginner",
           "estimatedMinutes": 90,
           "practiceMinutes": 120,
-          "prerequisites": ["unit3-guide"],
-          "tags": ["compose", "navigation"],
+          "prerequisites": ["unit4-guide"],
+          "tags": ["compose", "navigation", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-test-cupcake?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -246,26 +410,46 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["navigation"],
-          "tags": ["architecture", "viewmodel", "repository", "hilt"],
+          "tags": ["architecture", "viewmodel", "repository", "hilt", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "adaptive-ui",
+          "title": "画面サイズ対応（スマホ/タブレット）",
+          "path": "chapters/21-adaptive-ui.md",
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
+          "prerequisites": ["architecture"],
+          "tags": ["adaptive-ui", "compose", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens?hl=ja"
+          ],
           "hasAssignment": true
         }
       ]
     },
     {
-      "id": "unit4",
-      "title": "Unit 4: 非同期処理とネットワーク",
+      "id": "unit5",
+      "title": "Unit 5: 非同期処理とネットワーク",
       "goal": "止まらないUIと、失敗に強い通信を作る",
       "outcomes": ["Coroutines/Flowで非同期処理できる", "RetrofitでAPIを呼べる", "エラー表示とリトライ導線を設計できる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-5?hl=ja",
       "items": [
         {
-          "id": "unit4-guide",
-          "title": "Unit 4: 非同期処理とネットワーク（ガイド）",
+          "id": "unit5-guide",
+          "title": "Unit 5: 非同期処理とネットワーク（ガイド）",
           "path": "chapters/04-unit4-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
           "estimatedMinutes": 10,
           "practiceMinutes": 0,
-          "prerequisites": ["architecture"],
+          "prerequisites": ["adaptive-ui"],
           "tags": ["guide"],
           "hasAssignment": false
         },
@@ -277,8 +461,12 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
-          "prerequisites": ["unit4-guide"],
-          "tags": ["coroutines", "flow"],
+          "prerequisites": ["unit5-guide"],
+          "tags": ["coroutines", "flow", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-kotlin-playground?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-android-studio?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -290,20 +478,26 @@
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
           "prerequisites": ["coroutines"],
-          "tags": ["network", "retrofit", "okhttp"],
+          "tags": ["network", "retrofit", "okhttp", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-load-images?hl=ja"
+          ],
           "hasAssignment": true
         }
       ]
     },
     {
-      "id": "unit5",
-      "title": "Unit 5: データ永続化",
+      "id": "unit6",
+      "title": "Unit 6: データ永続化",
       "goal": "アプリを閉じてもデータが残る状態を作る",
       "outcomes": ["RoomでCRUDできる", "DataStoreで設定を保存できる", "オフラインでも破綻しない設計にできる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-6?hl=ja",
       "items": [
         {
-          "id": "unit5-guide",
-          "title": "Unit 5: データ永続化（ガイド）",
+          "id": "unit6-guide",
+          "title": "Unit 6: データ永続化（ガイド）",
           "path": "chapters/05-unit5-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -321,21 +515,27 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
-          "prerequisites": ["unit5-guide"],
-          "tags": ["room", "datastore"],
+          "prerequisites": ["unit6-guide"],
+          "tags": ["room", "datastore", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-sql?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-update-data-room?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-datastore?hl=ja"
+          ],
           "hasAssignment": true
         }
       ]
     },
     {
-      "id": "unit6",
-      "title": "Unit 6: 品質と運用",
+      "id": "unit7",
+      "title": "Unit 7: 品質と運用",
       "goal": "動くを壊れないに変え、リリースできる状態にする",
       "outcomes": ["最低限のテストを書ける", "計測して改善できる", "リリース前チェックを回せる"],
       "items": [
         {
-          "id": "unit6-guide",
-          "title": "Unit 6: 品質と運用（ガイド）",
+          "id": "unit7-guide",
+          "title": "Unit 7: 品質と運用（ガイド）",
           "path": "chapters/06-unit6-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -353,8 +553,26 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 120,
           "practiceMinutes": 180,
-          "prerequisites": ["unit6-guide"],
-          "tags": ["testing"],
+          "prerequisites": ["unit7-guide"],
+          "tags": ["testing", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-write-automated-tests?hl=ja"
+          ],
+          "hasAssignment": true
+        },
+        {
+          "id": "workmanager",
+          "title": "WorkManager（バックグラウンド処理）",
+          "path": "chapters/22-workmanager.md",
+          "type": "lesson",
+          "difficulty": "advanced",
+          "estimatedMinutes": 90,
+          "practiceMinutes": 120,
+          "prerequisites": ["testing"],
+          "tags": ["workmanager", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-workmanager?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -365,7 +583,7 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 90,
           "practiceMinutes": 90,
-          "prerequisites": ["testing"],
+          "prerequisites": ["workmanager"],
           "tags": ["performance"],
           "hasAssignment": true
         },
@@ -384,14 +602,14 @@
       ]
     },
     {
-      "id": "unit7",
-      "title": "Unit 7: 総合演習",
+      "id": "unit8",
+      "title": "Unit 8: 総合演習",
       "goal": "ここまでの学びを統合し、完成形に近づける",
       "outcomes": ["チケット分割で積み上げられる", "DoDを満たすアプリを仕上げられる", "実務で説明できる成果物を作れる"],
       "items": [
         {
-          "id": "unit7-guide",
-          "title": "Unit 7: 総合演習（ガイド）",
+          "id": "unit8-guide",
+          "title": "Unit 8: 総合演習（ガイド）",
           "path": "chapters/07-unit7-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -409,21 +627,21 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 180,
           "practiceMinutes": 600,
-          "prerequisites": ["unit7-guide"],
+          "prerequisites": ["unit8-guide"],
           "tags": ["project", "simple-memo"],
           "hasAssignment": true
         }
       ]
     },
     {
-      "id": "unit8",
-      "title": "Unit 8: 実務参画の基本",
+      "id": "unit9",
+      "title": "Unit 9: 実務参画の基本",
       "goal": "読む・直す・壊さない（調査/修正/回帰防止/チーム開発）を身につける",
       "outcomes": ["既存コードを読む型を持てる", "デバッグの型で切り分けできる", "PR/CIで安全に変更できる"],
       "items": [
         {
-          "id": "unit8-guide",
-          "title": "Unit 8: 実務参画の基本（ガイド）",
+          "id": "unit9-guide",
+          "title": "Unit 9: 実務参画の基本（ガイド）",
           "path": "chapters/08-unit8-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -441,7 +659,7 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 150,
           "practiceMinutes": 60,
-          "prerequisites": ["unit8-guide"],
+          "prerequisites": ["unit9-guide"],
           "tags": ["onboarding"],
           "hasAssignment": true
         },
@@ -484,14 +702,14 @@
       ]
     },
     {
-      "id": "unit9",
-      "title": "Unit 9: ビルドとモジュール化",
+      "id": "unit10",
+      "title": "Unit 10: ビルドとモジュール化",
       "goal": "Gradleを読み、依存関係とモジュール分割の方針を作る",
       "outcomes": ["Gradle設定を説明できる", "依存関係管理を提案できる", "分割の段階移行を計画できる"],
       "items": [
         {
-          "id": "unit9-guide",
-          "title": "Unit 9: ビルドとモジュール化（ガイド）",
+          "id": "unit10-guide",
+          "title": "Unit 10: ビルドとモジュール化（ガイド）",
           "path": "chapters/09-unit9-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -509,7 +727,7 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 150,
           "practiceMinutes": 120,
-          "prerequisites": ["unit9-guide"],
+          "prerequisites": ["unit10-guide"],
           "tags": ["gradle", "build"],
           "hasAssignment": true
         },
@@ -528,14 +746,15 @@
       ]
     },
     {
-      "id": "unit10",
-      "title": "Unit 10: 実務で頻出の要件",
-      "goal": "端末差/バックグラウンド/相互運用/アクセシビリティ/セキュリティの基礎を押さえる",
-      "outcomes": ["端末差に耐えるUIを作れる", "バックグラウンド処理の基本を説明できる", "漏えい/事故を避ける方針を持てる"],
+      "id": "unit11",
+      "title": "Unit 11: 実務で頻出の要件",
+      "goal": "端末差/相互運用/アクセシビリティ/セキュリティの基礎を押さえる",
+      "outcomes": ["端末差に耐えるUIを作れる", "ComposeとViewの相互運用ができる", "漏えい/事故を避ける方針を持てる"],
+      "officialCourse": "https://developer.android.com/courses/android-basics-compose/unit-8?hl=ja",
       "items": [
         {
-          "id": "unit10-guide",
-          "title": "Unit 10: 実務で頻出の要件（ガイド）",
+          "id": "unit11-guide",
+          "title": "Unit 11: 実務で頻出の要件（ガイド）",
           "path": "chapters/10-unit10-guide.md",
           "type": "guide",
           "difficulty": "advanced",
@@ -546,30 +765,6 @@
           "hasAssignment": false
         },
         {
-          "id": "adaptive-ui",
-          "title": "画面サイズ対応（スマホ/タブレット）",
-          "path": "chapters/21-adaptive-ui.md",
-          "type": "lesson",
-          "difficulty": "intermediate",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 180,
-          "prerequisites": ["unit10-guide"],
-          "tags": ["adaptive-ui", "compose"],
-          "hasAssignment": true
-        },
-        {
-          "id": "workmanager",
-          "title": "WorkManager（バックグラウンド処理）",
-          "path": "chapters/22-workmanager.md",
-          "type": "lesson",
-          "difficulty": "advanced",
-          "estimatedMinutes": 120,
-          "practiceMinutes": 180,
-          "prerequisites": ["adaptive-ui"],
-          "tags": ["workmanager"],
-          "hasAssignment": true
-        },
-        {
           "id": "compose-view-interop",
           "title": "ComposeとViewの相互運用",
           "path": "chapters/23-compose-view-interop.md",
@@ -577,8 +772,12 @@
           "difficulty": "advanced",
           "estimatedMinutes": 90,
           "practiceMinutes": 60,
-          "prerequisites": ["workmanager"],
-          "tags": ["interop", "compose"],
+          "prerequisites": ["unit11-guide"],
+          "tags": ["interop", "compose", "codelab"],
+          "officialCodelabs": [
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-views?hl=ja",
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-views-interop?hl=ja"
+          ],
           "hasAssignment": true
         },
         {
@@ -608,14 +807,14 @@
       ]
     },
     {
-      "id": "unit11",
-      "title": "Unit 11: 模擬案件（チケット演習）",
+      "id": "unit12",
+      "title": "Unit 12: 模擬案件（チケット演習）",
       "goal": "実務の型でチケットを回し、要件→実装→回帰防止まで通す",
       "outcomes": ["チケットを分割して進められる", "受け入れ条件/確認手順を書ける", "回帰防止を入れられる"],
       "items": [
         {
-          "id": "unit11-guide",
-          "title": "Unit 11: 模擬案件（チケット演習）（ガイド）",
+          "id": "unit12-guide",
+          "title": "Unit 12: 模擬案件（チケット演習）（ガイド）",
           "path": "chapters/11-unit11-guide.md",
           "type": "guide",
           "difficulty": "intermediate",
@@ -633,7 +832,7 @@
           "difficulty": "intermediate",
           "estimatedMinutes": 60,
           "practiceMinutes": 600,
-          "prerequisites": ["unit11-guide"],
+          "prerequisites": ["unit12-guide"],
           "tags": ["project", "practice", "tickets"],
           "hasAssignment": true
         }
