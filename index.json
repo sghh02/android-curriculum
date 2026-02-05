@@ -106,7 +106,7 @@
           "prerequisites": ["kotlin-variables-functions"],
           "tags": ["kotlin", "codelab"],
           "officialCodelabs": [
-            "https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals-and-booleans?hl=ja"
+            "https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals?hl=ja"
           ],
           "hasAssignment": true
         },
