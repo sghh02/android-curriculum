@@ -208,7 +208,7 @@ runTest + TestDispatcher で安定させる手順を教えて。
 1. 上記の演習を完了する
 2. GitHub で `feature/12-testing` ブランチを作成し、PRを作成
 3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
-4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+4. 問題がなければ、進捗ダッシュボードで **PR URL** と **完了日** を記録
 
 ---
 
