@@ -188,7 +188,7 @@ class MainActivity : ComponentActivity() {
 | **プレビュー** | 遅い | 速い |
 | **Google推奨** | 過去 | **現在・未来** |
 
-このカリキュラムでは、**Jetpack Compose**を使います。
+このプログラムでは、**Jetpack Compose**を使います。
 
 ---
 
