@@ -1,13 +1,13 @@
 {
   "artboards": [
-    { "file": "Main.dc.html",         "x": 0,    "y": 0,    "w": 1280, "h": 720, "title": "01 表紙", "print": "fixed" },
-    { "file": "Overview.dc.html",     "x": 1380, "y": 0,    "w": 1280, "h": 720, "title": "02 案件概要", "print": "fixed" },
-    { "file": "Product.dc.html",      "x": 2760, "y": 0,    "w": 1280, "h": 720, "title": "03 プロダクトの現在地", "print": "fixed" },
-    { "file": "Invitation.dc.html",   "x": 0,    "y": 880,  "w": 1280, "h": 720, "title": "04 開発テーマ① 紹介から受診まで", "print": "fixed" },
-    { "file": "HomeCare.dc.html",     "x": 1380, "y": 880,  "w": 1280, "h": 720, "title": "05 開発テーマ② 在宅の経過", "print": "fixed" },
-    { "file": "Scope.dc.html",        "x": 2760, "y": 880,  "w": 1280, "h": 720, "title": "06 作業内容", "print": "fixed" },
-    { "file": "Profile.dc.html",      "x": 0,    "y": 1760, "w": 1280, "h": 720, "title": "07 求める人物像", "print": "fixed" },
-    { "file": "InterviewDay.dc.html", "x": 1380, "y": 1760, "w": 1280, "h": 720, "title": "08 面談当日のご案内", "print": "fixed" }
+    { "file": "Main.dc.html",        "x": 0,    "y": 0,    "w": 1280, "h": 720, "title": "01 表紙", "print": "fixed" },
+    { "file": "Overview.dc.html",    "x": 1380, "y": 0,    "w": 1280, "h": 720, "title": "02 案件概要", "print": "fixed" },
+    { "file": "Product.dc.html",     "x": 2760, "y": 0,    "w": 1280, "h": 720, "title": "03 プロダクトの現在地", "print": "fixed" },
+    { "file": "Invitation.dc.html",  "x": 0,    "y": 880,  "w": 1280, "h": 720, "title": "04 テーマ① 診療予約アプリ（リリース済み）", "print": "fixed" },
+    { "file": "HomeCare.dc.html",    "x": 1380, "y": 880,  "w": 1280, "h": 720, "title": "05 テーマ② 在宅の経過共有（おおむね完了）", "print": "fixed" },
+    { "file": "HomeNursing.dc.html", "x": 2760, "y": 880,  "w": 1280, "h": 720, "title": "06 テーマ③ 在宅介護向け（これから）", "print": "fixed" },
+    { "file": "Scope.dc.html",       "x": 0,    "y": 1760, "w": 1280, "h": 720, "title": "07 作業内容", "print": "fixed" },
+    { "file": "Profile.dc.html",     "x": 1380, "y": 1760, "w": 1280, "h": 720, "title": "08 求める人物像", "print": "fixed" }
   ],
   "launch": { "view": "canvas" }
 }
