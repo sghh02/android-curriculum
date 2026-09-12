@@ -10,31 +10,31 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約190分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約190分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | Android Studio をダウンロードしてインストールする | 約60分 |  |
-| 2 | Codelab | 初めての Android アプリを作成する | 約60分 |  |
-| 3 | Codelab | Android Emulator で初めてのアプリを実行する | 約30分 |  |
-| 4 | Codelab | Android デバイスを接続する方法 | 約30分 |  |
+| 1 | レッスン | Android Studio をダウンロードしてインストールする | 約60分 |  |
+| 2 | レッスン | 初めての Android アプリを作成する | 約60分 |  |
+| 3 | レッスン | Android Emulator で初めてのアプリを実行する | 約30分 |  |
+| 4 | レッスン | Android デバイスを接続する方法 | 約30分 |  |
 | 5 | クイズ | [テスト: Android Studio](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-2/android-basics-compose-unit-1-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Android Studio をダウンロードしてインストールする
 
 
 ### 1. 始める前に
 
-この Codelab では、Android Studio をインストールします。
+このレッスンでは、Android Studio をインストールします。
 
 Android Studio は Google が開発し配布する、Android アプリ開発用の公式の統合開発環境（IDE）です。IDE はソフトウェア デベロッパーによるソフトウェア（この場合は Android プラットフォーム向けのアプリ）の設計、ビルド、実行、テストを可能にするツールを備えています。Android Studio は IntelliJ IDEA を基盤として使用しています。Android プラグインがプリインストールされており、Android プラットフォーム向けに改良が加えられています。
 
@@ -372,9 +372,9 @@ cd android-studio/bin
 
 ### 1. 始める前に
 
-[Android Studio](https://developer.android.com/studio) をパソコンにインストールしていない場合は、インストールします。Android Studio の実行に必要なシステム要件（ダウンロード ページの下部に記載されています）をパソコンが満たしていることを確認します。設定の手順について詳しくは、Codelab の「Android Studio のダウンロードとインストール」をご覧ください。
+[Android Studio](https://developer.android.com/studio) をパソコンにインストールしていない場合は、インストールします。Android Studio の実行に必要なシステム要件（ダウンロード ページの下部に記載されています）をパソコンが満たしていることを確認します。設定の手順について詳しくは、レッスンの「Android Studio のダウンロードとインストール」をご覧ください。
 
-この Codelab では、Android Studio に用意されているプロジェクト テンプレートを使用して、初めての Android アプリを作成します。Kotlin と Jetpack Compose を使用して、アプリをカスタマイズします。なお、Android Studio は更新されて UI が変更されることがあるため、ご使用の Android Studio がこの Codelab のスクリーンショットと多少異なっていても問題ありません。
+このレッスンでは、Android Studio に用意されているプロジェクト テンプレートを使用して、初めての Android アプリを作成します。Kotlin と Jetpack Compose を使用して、アプリをカスタマイズします。なお、Android Studio は更新されて UI が変更されることがあるため、ご使用の Android Studio がこのレッスンのスクリーンショットと多少異なっていても問題ありません。
 
 #### 前提条件
 
@@ -396,7 +396,7 @@ cd android-studio/bin
 
 - 自己紹介をカスタマイズできるアプリ
 
-この Codelab が完了すると、アプリは次のようになります（ただし、ご自身の名前でカスタマイズします）。
+このレッスンが完了すると、アプリは次のようになります（ただし、ご自身の名前でカスタマイズします）。
 
 ![](./images/basic-android-kotlin-compose-first-app/13957184d295b16f.png)
 
@@ -406,7 +406,7 @@ cd android-studio/bin
 
 ### 2. テンプレートを使用してプロジェクトを作成する
 
-この Codelab では、Android Studio に用意されている **Empty Activity** プロジェクト テンプレートを使用して Android アプリを作成します。
+このレッスンでは、Android Studio に用意されている **Empty Activity** プロジェクト テンプレートを使用して Android アプリを作成します。
 
 Android Studio でプロジェクトを作成するには:
 
@@ -429,7 +429,7 @@ Android Studio のプロジェクト テンプレートは、ある種のアプ�
 5. [**Next**] をクリックします。[**New Project**] ダイアログが開き、プロジェクトを設定するためのフィールドが表示されます。
 6. プロジェクトを次のように設定します。
 
-[**Name**] フィールドは、プロジェクトの名前を入力するために使用します。この Codelab では「Greeting Card」と入力します。
+[**Name**] フィールドは、プロジェクトの名前を入力するために使用します。このレッスンでは「Greeting Card」と入力します。
 
 [**Package name**] フィールドはそのままにしておきます。ファイル構造の中でどのようにファイルが整理されるかを示しています。この場合、パッケージ名は `com.example.greetingcard` です。
 
@@ -533,7 +533,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 ```
 
-関数については以前に学習しました（復習が必要な場合は「Kotlin で関数を作成して使用する」の codelab をご覧ください）。ただし、コンポーズ可能な関数には異なる点がいくつかあります。
+関数については以前に学習しました（復習が必要な場合は「Kotlin で関数を作成して使用する」のレッスンをご覧ください）。ただし、コンポーズ可能な関数には異なる点がいくつかあります。
 
 ![](./images/basic-android-kotlin-compose-first-app/178c1b8d480aefe2.png)
 
@@ -706,7 +706,7 @@ import com.example.greetingcard.ui.theme.GreetingCardTheme
 
 ![](./images/basic-android-kotlin-compose-first-app/3a709cb72da0f83d.png)
 
-9. サーフェスの色を選択します。この Codelab では**シアン**を使用しますが、好きな色を選択できます。
+9. サーフェスの色を選択します。このレッスンでは**シアン**を使用しますが、好きな色を選択できます。
 
 ```kotlin
 @Composable
@@ -823,7 +823,7 @@ fun GreetingPreview() {
 
 これで、Android Studio について学び、Compose で初めての Android アプリを作成できました。
 
-この Codelab は、「Compose を用いた Android アプリ開発の基礎」コースの一部です。エミュレータまたは実機でアプリを実行する方法については、このパスウェイの次の Codelab をご覧ください。
+このレッスンは、「Compose を用いた Android アプリ開発の基礎」コースの一部です。エミュレータまたは実機でアプリを実行する方法については、このパスウェイの次のレッスンをご覧ください。
 
 #### 概要
 
@@ -846,7 +846,7 @@ fun GreetingPreview() {
 
 ### 1. 始める前に
 
-この Codelab では、初めての Android アプリを作成する Codelab で作成したグリーティング カードアプリを取り上げ、Android Virtual Device（AVD）をセットアップして、Android Emulator でコードの動作を確認します。
+このレッスンでは、初めての Android アプリを作成するレッスンで作成したグリーティング カードアプリを取り上げ、Android Virtual Device（AVD）をセットアップして、Android Emulator でコードの動作を確認します。
 
 #### 前提条件
 
@@ -866,11 +866,11 @@ fun GreetingPreview() {
 
 ### 2. Code-Along 動画を見る（省略可）
 
-コースの講師が Codelab を完了する様子を視聴する場合は、以下の動画を再生してください。
+コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
 
 動画を拡大して全画面表示にすることをおすすめします。動画プレーヤーの**全画面表示**アイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-emulator/adba01179d2b6579.png) をクリックすると、Android Studio が表示され、コードをよりはっきりと確認できます。
 
-このステップは省略可能です。動画をスキップして、すぐに Codelab の学習を開始することもできます。
+このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
 
 ### 3. Android Emulator でアプリを実行する
 
@@ -973,7 +973,7 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 
 ### 1. 始める前に
 
-この Codelab では、Android Studio でアプリを実際の Android デバイスに接続する方法について説明します。デバイスはケーブルでも Wi-Fi でも接続できます。この Codelab は両方のケースに対応します。Android Studio は更新されて UI が変更されることがあるため、実際の Android Studio と画面が多少異なっていても問題ありません。
+このレッスンでは、Android Studio でアプリを実際の Android デバイスに接続する方法について説明します。デバイスはケーブルでも Wi-Fi でも接続できます。このレッスンは両方のケースに対応します。Android Studio は更新されて UI が変更されることがあるため、実際の Android Studio と画面が多少異なっていても問題ありません。
 
 #### 前提条件
 
@@ -996,11 +996,11 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 
 ### 2. Code-Along 動画を見る（省略可）
 
-コースの講師が Codelab を完了する様子を視聴する場合は、以下の動画を再生してください。
+コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
 
 動画を拡大して全画面表示にすることをおすすめします（動画の右下隅のアイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-connect-device/adba01179d2b6579.png) を使用します）。そうすれば、Android Studio とコードがもっとはっきり見えるようになります。
 
-このステップは省略可能です。動画をスキップして、すぐに Codelab の学習を開始することもできます。
+このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
 
 ### 3. USB デバッグを有効にする
 
@@ -1124,7 +1124,19 @@ Android デバイスで Android Studio からアプリを実行するには:
 
 > この章で作った「Happy Birthday」プロジェクトは次章で拡張します。学習用リポジトリの `unit1/` 配下に置いておくと次章の提出がスムーズです。
 
-## 8. チェックリスト
+## 8. AIに質問する（この章の例）
+
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「Android Studio のインストールで「Gradle sync failed」と出た。原因の切り分け手順を順番に教えて（エラー全文: ここに貼る／OS: ここに書く）」
+「エミュレータが重くて動かない。PC のスペックは（ここに書く）。軽くする設定と、実機接続との比較を教えて」
+「Android Studio の画面で「Project」「Logcat」「Run」がどこにあるか、初心者向けに説明して」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 9. チェックリスト
 
 - [ ] Android Studio をインストールし、最初のプロジェクトを作成できる
 - [ ] エミュレータ（または実機）でアプリを起動できる

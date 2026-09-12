@@ -10,34 +10,34 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約280分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約280分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | WorkManager によるバックグラウンド処理 | 約120分 |  |
-| 2 | Codelab | 高度な WorkManager とテスト | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 3 | Codelab | 演習: Water Me アプリを作成する | 約150分 | **提出対象** |
+| 1 | レッスン | WorkManager によるバックグラウンド処理 | 約120分 |  |
+| 2 | レッスン | 高度な WorkManager とテスト | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 3 | レッスン | 演習: Water Me アプリを作成する | 約150分 | **提出対象** |
 | 4 | クイズ | [テスト: WorkManager](https://developer.android.com/courses/quizzes/android-basics-compose-unit-7-pathway-1/android-basics-compose-unit-7-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. WorkManager によるバックグラウンド処理
 
 
 ### 1. 始める前に
 
-この Codelab では、遅延可能なバックグラウンド処理用のライブラリで、下位互換性、柔軟性、シンプルさを兼ね備えた [WorkManager](https://developer.android.com/arch/work) を取り上げます。`WorkManager` は、Android 上で遅延可能な処理を確実に実行するための推奨タスク スケジューラです。
+このレッスンでは、遅延可能なバックグラウンド処理用のライブラリで、下位互換性、柔軟性、シンプルさを兼ね備えた [WorkManager](https://developer.android.com/arch/work) を取り上げます。`WorkManager` は、Android 上で遅延可能な処理を確実に実行するための推奨タスク スケジューラです。
 
 #### 前提条件
 
-- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow) と [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) に関する知識。これらのクラスを初めて使用する場合は、Compose での ViewModel と状態 Codelab（特に ViewModel と状態関連）、または Room によるデータの読み取りと更新 Codelab（特に Flow と StateFlow 関連）をご確認ください。
+- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow) と [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) に関する知識。これらのクラスを初めて使用する場合は、Compose での ViewModel と状態レッスン（特に ViewModel と状態関連）、または Room によるデータの読み取りと更新レッスン（特に Flow と StateFlow 関連）をご確認ください。
 - リポジトリと依存関係注入に関する知識。確認するには、リポジトリと手動 DI を追加するをご覧ください。
 - アプリにコルーチンを実装する能力
 
@@ -64,7 +64,7 @@ Codelab の進め方は次の通りです。
 
 最近のスマートフォンは、写真撮影の性能が良すぎるくらいです。神秘的な被写体を撮影すると確実にぼけるという時代は終わりました。
 
-この Codelab では、写真にぼかしを入れて結果をファイルに保存するアプリ、Blur-O-Matic を作成します。[ネッシーのような怪物か、おもちゃの潜水艦か](https://en.wikipedia.org/wiki/Loch_Ness_Monster#%22Surgeon's_photograph%22_(1934))、Blur-O-Matic を使えば、誰にもわからなくります。
+このレッスンでは、写真にぼかしを入れて結果をファイルに保存するアプリ、Blur-O-Matic を作成します。[ネッシーのような怪物か、おもちゃの潜水艦か](https://en.wikipedia.org/wiki/Loch_Ness_Monster#%22Surgeon's_photograph%22_(1934))、Blur-O-Matic を使えば、誰にもわからなくります。
 
 | ![](./images/basic-android-kotlin-compose-workmanager/2bdb6fdc2567e96.png) | ![](./images/basic-android-kotlin-compose-workmanager/10c653bb5b84c4b2.png) |
 |---|---|
@@ -73,7 +73,7 @@ Codelab の進め方は次の通りです。
 
 現時点では、ぼかし加工はされず、最終的な画像も保存されません。
 
-この Codelab では、アプリに WorkManager を追加し、画像のぼかし加工で作成された一時ファイルをクリーンアップするワーカー、画像をぼかし加工するワーカー、最終的な画像を保存して [**See File**] ボタンをクリックすると表示できるワーカーを作成します。また、バックグラウンド処理のステータスを監視し、それに応じてアプリの UI を更新する方法も学習します。
+このレッスンでは、アプリに WorkManager を追加し、画像のぼかし加工で作成された一時ファイルをクリーンアップするワーカー、画像をぼかし加工するワーカー、最終的な画像を保存して [**See File**] ボタンをクリックすると表示できるワーカーを作成します。また、バックグラウンド処理のステータスを監視し、それに応じてアプリの UI を更新する方法も学習します。
 
 ### 3. Blur-O-Matic スターター アプリを確認する
 
@@ -113,7 +113,7 @@ Blur-o-matic アプリのコードは、こちらの [GitHub](https://github.com
 - `WorkerUtils`: コンビニエンス メソッドです。後で `Notifications` を表示し、ビットマップをファイルに保存するコードを作成するために使用します。
 - `BlurViewModel`: このビューモデルは、アプリの状態を保存し、リポジトリとやり取りします。
 - `WorkManagerBluromaticRepository`: WorkManager でバックグラウンド処理を開始するクラスです。
-- `Constants`: Codelab で使用する定数が含まれる静的クラスです。
+- `Constants`: レッスンで使用する定数が含まれる静的クラスです。
 - `BluromaticScreen`: UI 用のコンポーズ可能な関数が含まれ、`BlurViewModel` とやり取りします。これらのコンポーズ可能な関数は、画像を表示し、希望のぼかしレベルを選択するためのラジオボタンを含んでいます。
 
 ### 4. WorkManager とは
@@ -143,7 +143,7 @@ WorkManager の使用が適したタスクの例を以下に示します。
 - 画像に対するフィルタの適用と保存
 - ローカルデータとネットワークとの定期的な同期
 
-WorkManager は、メインスレッドを離れてタスクを実行する方法の一つですが、あらゆる種類のメインスレッド外のタスクに対応できるわけではありません。別の方法として、以前の Codelab で説明した[コルーチン](https://developer.android.com/kotlin/coroutines)もあります。
+WorkManager は、メインスレッドを離れてタスクを実行する方法の一つですが、あらゆる種類のメインスレッド外のタスクに対応できるわけではありません。別の方法として、以前のレッスンで説明した[コルーチン](https://developer.android.com/kotlin/coroutines)もあります。
 
 WorkManager の用途について詳しくは、[バックグラウンド処理ガイド](https://d.android.com/guide/background/)をご覧ください。
 
@@ -403,7 +403,7 @@ override suspend fun doWork(): Result {
 
 この Worker は非常に短時間で実行されるため、コードに遅延を追加して低速な処理をエミュレートすることをおすすめします。
 
-20. `withContext()` のラムダ内に、`delay()` ユーティリティ関数の呼び出しを追加して定数 `DELAY_TIME_MILLIS` を渡します。この呼び出しは、この Codelab 用に遅延を通知メッセージ間に入れるためのものです。
+20. `withContext()` のラムダ内に、`delay()` ユーティリティ関数の呼び出しを追加して定数 `DELAY_TIME_MILLIS` を渡します。この呼び出しは、このレッスン用に遅延を通知メッセージ間に入れるためのものです。
 
 ```kotlin
 import com.example.bluromatic.DELAY_TIME_MILLIS
@@ -721,7 +721,7 @@ WorkManager の処理チェーンを使用すると、上記の機能を追加�
 2. 作成された Kotlin クラスに `CleanupWorker` という名前を付けます。
 3. 次のコード例のように、CleanupWorker.kt のコードをコピーします。
 
-ファイル操作はこの Codelab の範囲外ですので、`CleanupWorker` に以下のコードをコピーして構いません。
+ファイル操作はこのレッスンの範囲外ですので、`CleanupWorker` に以下のコードをコピーして構いません。
 
 **workers/CleanupWorker.kt**
 
@@ -799,7 +799,7 @@ class CleanupWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ct
 2. 作成された Kotlin クラスに `SaveImageToFileWorker` という名前を付けます。
 3. 次のサンプルコードのように、SaveImageToFileWorker.kt のコードをコピーします。
 
-ファイル操作はこの Codelab の範囲外ですので、`SaveImageToFileWorker` に以下のコードをコピーして構いません。用意されているコードで、`resourceUri` と `output` の値をキー `KEY_IMAGE_URI` で取得、保存する方法を確認してください。この処理は、以前に入力データ オブジェクトと出力データ オブジェクト用に作成したコードとよく似ています。
+ファイル操作はこのレッスンの範囲外ですので、`SaveImageToFileWorker` に以下のコードをコピーして構いません。用意されているコードで、`resourceUri` と `output` の値をキー `KEY_IMAGE_URI` で取得、保存する方法を確認してください。この処理は、以前に入力データ オブジェクトと出力データ オブジェクト用に作成したコードとよく似ています。
 
 **workers/SaveImageToFileWorker.kt**
 
@@ -974,7 +974,7 @@ continuation.enqueue()
 
 ### 12. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下のコマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下のコマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-workmanager.git
@@ -984,7 +984,7 @@ $ git checkout intermediate
 
 または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。
 
-この Codelab の解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-workmanager/tree/intermediate) で表示します。
+このレッスンの解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-workmanager/tree/intermediate) で表示します。
 
 ### 13. まとめ
 
@@ -995,7 +995,7 @@ $ git checkout intermediate
 - 入出力パラメータ
 - 処理チェーンによる `WorkRequest` の連結
 
-WorkManager は、この Codelab で取り上げたもの以外にも、繰り返し処理、テスト支援ライブラリ、並列処理リクエスト、入力マージツールなど、多くの機能をサポートしています。
+WorkManager は、このレッスンで取り上げたもの以外にも、繰り返し処理、テスト支援ライブラリ、並列処理リクエスト、入力マージツールなど、多くの機能をサポートしています。
 
 詳しくは、[WorkManager でタスクのスケジュールを設定する](http://d.android.com/topic/libraries/architecture/workmanager/)をご覧ください。
 
@@ -1016,7 +1016,7 @@ WorkManager について学習しながら、Worker クラスで処理を定義�
 
 #### 前提条件
 
-- [高度な WorkManager とテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-verify-background-work) Codelab の「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること。
+- [高度な WorkManager とテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-verify-background-work) レッスンの「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -1116,7 +1116,7 @@ override suspend fun doWork(): Result {
 
 ### 5. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下のコマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下のコマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-waterme.git
@@ -1126,26 +1126,38 @@ $ git checkout main
 
 または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。
 
-この Codelab の解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-waterme/tree/main) で表示します。
+このレッスンの解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-waterme/tree/main) で表示します。
 
 ## 5. つまずきやすいポイント
 
 - 通知が出ないときは、Android 13 以降の **通知パーミッション**（`POST_NOTIFICATIONS`）を確認しましょう。
 - Water Me アプリの「リマインダー」は、実行時刻をエミュレータの時刻設定で早送りせず、短い遅延（数十秒）でまず動作確認するのがコツです。
 
-## 6. 提出物
+## 6. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit7/WaterMe/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「WorkManager を使うべき場面と、コルーチンで十分な場面の違いを説明して」
+「通知が表示されない。Android 13 以降の通知パーミッションを含め、確認すべき点を順番に挙げて」
+「演習: Water Me アプリ で、遅延つきの `WorkRequest` を作る書き方を、方針→ヒントの順で教えて」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 7. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit7/WaterMe/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - 演習: Water Me アプリを作成する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 7. チェックリスト
+## 8. チェックリスト
 
 - [ ] WorkManager を使う場面（アプリを閉じても実行したい処理）を説明できる
 - [ ] `Worker` を作り、`WorkRequest` で実行・連結・制約付きの実行ができる

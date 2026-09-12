@@ -11,30 +11,30 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約265分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約265分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | スクロール可能なリストを追加する | 約90分 | **提出対象** |
-| 2 | Codelab | アプリアイコンを変更する | 約45分 |  |
-| 3 | Codelab | 演習: グリッドを作成する | 約120分 | **提出対象** |
+| 1 | レッスン | スクロール可能なリストを追加する | 約90分 | **提出対象** |
+| 2 | レッスン | アプリアイコンを変更する | 約45分 |  |
+| 3 | レッスン | 演習: グリッドを作成する | 約120分 | **提出対象** |
 | 4 | クイズ | [テスト: スクロール可能なリストを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-2/android-basics-compose-unit-3-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. スクロール可能なリストを追加する（提出対象）
 
 
 ### 1. 始める前に
 
-この Codelab では、Jetpack Compose を使用してアプリでスクロール可能なリストを作成する方法を学びます。
+このレッスンでは、Jetpack Compose を使用してアプリでスクロール可能なリストを作成する方法を学びます。
 
 アファメーションのリストを日常をポジティブにする美しい画像とともに表示する **Affirmations** アプリを取り扱います。
 
@@ -535,7 +535,7 @@ fun AffirmationsApp() {
 
 ### 4. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-affirmations.git
@@ -583,7 +583,7 @@ $ git checkout intermediate
 
 そのため Android プラットフォームでは、API レベル 26 で**アダプティブ アイコン**のサポートが導入されました。アプリにアダプティブ アイコンを実装すると、デバイスのディスプレイに合わせてランチャー アイコンを調整し、幅広いデバイスに対応できるようになります。
 
-この Codelab には、**Affirmations** アプリのランチャー アイコン用の画像ソースファイルが用意されています。Android Studio の **Image Asset Studio** というツールを使用して、ランチャー アイコンのさまざまなバージョンを生成します。学習した内容は、その後他のアプリのアプリアイコンにも応用できます。
+このレッスンには、**Affirmations** アプリのランチャー アイコン用の画像ソースファイルが用意されています。Android Studio の **Image Asset Studio** というツールを使用して、ランチャー アイコンのさまざまなバージョンを生成します。学習した内容は、その後他のアプリのアプリアイコンにも応用できます。
 
 ![Affirmations アプリのランチャー アイコンの画像](./images/basic-android-kotlin-compose-training-change-app-icon/7ddbfb08a71c2742.png)
 
@@ -619,7 +619,7 @@ Android Studio で `basic-android-kotlin-compose-training-affirmations` フォ�
 > **スターター コードのブランチ名:**`intermediate`
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
-2. ブランチ名が Codelab で指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
+2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
 
 ![](./images/basic-android-kotlin-compose-training-change-app-icon/1e4c0d2c081a8fd2.png)
 
@@ -932,7 +932,7 @@ Android は基本的に、アダプティブ アイコンをサポートして�
 
 ### 6. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-affirmations.git
@@ -947,7 +947,7 @@ $ git checkout main
 解答コードを確認する場合は、[GitHub で表示します](https://github.com/google-developer-training/basic-android-kotlin-compose-training-affirmations)。
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
-2. ブランチ名が Codelab で指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
+2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
 
 ![](./images/basic-android-kotlin-compose-training-change-app-icon/1e4c0d2c081a8fd2.png)
 
@@ -1009,7 +1009,7 @@ $ git checkout main
 
 お疲れさまでした。スクロール可能なリストを使用する最初のアプリを作成しました。今度は、学んだことを実践してみましょう。
 
-この演習では、スクロール可能なリストを作成する際に必要なコンポーネントの作成に焦点を当てます。具体的には、スクロール可能なリストを追加する Codelab で学んだ成果に基づき、その知識を応用してスクロール可能なグリッドを作成します。
+この演習では、スクロール可能なリストを作成する際に必要なコンポーネントの作成に焦点を当てます。具体的には、スクロール可能なリストを追加するレッスンで学んだ成果に基づき、その知識を応用してスクロール可能なグリッドを作成します。
 
 一部のセクションでは、これまでに学んだことがないコンポーザブルまたは修飾子を使用する必要があります。その場合は、各問題で参照できる**リファレンス**をご覧ください。馴染みのない修飾子、プロパティ、コンポーザブルに関するドキュメントへのリンクがあります。ドキュメントを読み、そのコンセプトをアプリに取り入れる方法を確認してください。ドキュメントの内容を理解する能力は、知識を深めるために身につける必要がある重要なスキルです。
 
@@ -1017,7 +1017,7 @@ $ git checkout main
 
 #### 前提条件
 
-- スクロール可能なリストを追加する Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- スクロール可能なリストを追加するレッスンを通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -1165,11 +1165,11 @@ object DataSource {
 - [リストとグリッド](https://developer.android.com/jetpack/compose/lists#grids)
 - [固定グリッドセル](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/grid/GridCells.Fixed)
 - [リスト: コンテンツの間隔](https://developer.android.com/jetpack/compose/lists#content-spacing)
-- Codelab: スクロール可能なリストを追加する
+- レッスン: スクロール可能なリストを追加する
 
 ### 7. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、次の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-courses.git
@@ -1186,20 +1186,32 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 - `Column` と `LazyColumn` の違い（全部作るか、見える分だけ作るか）を説明できるようにしましょう。
 - リストの 1 行を別のコンポーザブル関数に切り出す（`AffirmationCard` など）と、コードが読みやすくなり AI レビューも通りやすくなります。
 
-## 7. 提出物
+## 7. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit3/Affirmations/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「`Column` と `LazyColumn` の違いを、パフォーマンスの観点で説明して」
+「`LazyColumn` に `data class` のリストを渡してカードを並べたい。1 行分のコンポーザブルを切り出す設計を、方針→ヒントの順で教えて」
+「演習: グリッドを作成する で `LazyVerticalGrid` の列数指定で迷っている。`GridCells.Fixed` と `GridCells.Adaptive` の違いを教えて」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 8. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit3/Affirmations/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - スクロール可能なリストを追加する
 - 演習: グリッドを作成する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 8. チェックリスト
+## 9. チェックリスト
 
 - [ ] `LazyColumn` / `LazyVerticalGrid` でデータのリストを表示できる
 - [ ] データクラスのリストからカード UI を生成できる

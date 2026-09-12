@@ -11,30 +11,30 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約235分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約235分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
-| 2 | Codelab | Android Studio でデバッガを使用する | 約45分 |  |
-| 3 | Codelab | 練習: クリック動作 | 約90分 | **提出対象** |
+| 1 | レッスン | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
+| 2 | レッスン | Android Studio でデバッガを使用する | 約45分 |  |
+| 3 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
 | 4 | クイズ | [テスト: アプリにボタンを追加する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-2/android-basics-compose-unit-2-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. インタラクティブな Dice Roller アプリを作成する（提出対象）
 
 
 ### 1. 始める前に
 
-この Codelab では、ユーザーが `Button` コンポーザブルをタップしてサイコロを振る、インタラクティブな **Dice Roller** アプリを作成します。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
+このレッスンでは、ユーザーが `Button` コンポーザブルをタップしてサイコロを振る、インタラクティブな **Dice Roller** アプリを作成します。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
 
 Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し、`Button` コンポーザブルがタップされたときの動作を処理するビジネス ロジックを作成します。
 
@@ -59,7 +59,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 - Android Studio がインストールされているパソコン
 
-この Codelab が完了すると、アプリは次のようになります。
+このレッスンが完了すると、アプリは次のようになります。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/3e9a9f44c6c84634.png)
 
@@ -176,7 +176,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 2. `DiceWithButtonAndImage()` コンポーザブルに修飾子パラメータが設定されたため、コンポーザブルが呼び出されたときに修飾子を渡します。`DiceWithButtonAndImage()` 関数のメソッド シグネチャが変更されたため、呼び出されたときに、必要な装飾を行った `Modifier` オブジェクトを渡す必要があります。`Modifier` クラスは、`DiceRollerApp()` 関数でコンポーザブルの装飾（動作の追加）を行います。この場合、`DiceWithButtonAndImage()` 関数に渡す `Modifier` オブジェクトに重要な装飾を追加します。
 
-デフォルトがあるのに、どうしてわざわざ `Modifier` 引数を渡す必要があるのか、と思うかもしれません。これは、コンポーザブルが再コンポーズされる可能性があるためです。つまり実質、`@Composable` メソッドのコードブロックが再実行されます。`Modifier` オブジェクトがコードブロック内で作成された場合、再作成される可能性があるため、効率的ではありません。再コンポーズについては、この Codelab で後ほど説明します。
+デフォルトがあるのに、どうしてわざわざ `Modifier` 引数を渡す必要があるのか、と思うかもしれません。これは、コンポーザブルが再コンポーズされる可能性があるためです。つまり実質、`@Composable` メソッドのコードブロックが再実行されます。`Modifier` オブジェクトがコードブロック内で作成された場合、再作成される可能性があるため、効率的ではありません。再コンポーズについては、このレッスンで後ほど説明します。
 
 **`MainActivity.kt`**
 
@@ -186,7 +186,7 @@ DiceWithButtonAndImage(modifier = Modifier)
 
 3. `Modifier` オブジェクトに [`fillMaxSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).fillMaxSize(kotlin.Float)) メソッドを連結して、レイアウトが画面全体に表示されるようにします。
 
-このメソッドは、利用可能なスペースをコンポーネントで埋めることを指定します。この Codelab ではこれまでに、完成した Dice Roller アプリの UI のスクリーンショットを確認しました。注目すべき特徴は、サイコロとボタンが画面の中央に配置されていることです。[`wrapContentSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).wrapContentSize(androidx.compose.ui.Alignment,kotlin.Boolean)) メソッドは、利用可能なスペースが少なくとも内部のコンポーネントと同じ大きさである必要があるということを指定します。ただし `fillMaxSize()` メソッドを使用しているため、利用可能なスペースよりレイアウト内部のコンポーネントが小さい場合は、[`Alignment`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Alignment) オブジェクトを `wrapContentSize()` メソッドに渡して、利用可能なスペース内でコンポーネントをどのように配置するかを指定できます。
+このメソッドは、利用可能なスペースをコンポーネントで埋めることを指定します。このレッスンではこれまでに、完成した Dice Roller アプリの UI のスクリーンショットを確認しました。注目すべき特徴は、サイコロとボタンが画面の中央に配置されていることです。[`wrapContentSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).wrapContentSize(androidx.compose.ui.Alignment,kotlin.Boolean)) メソッドは、利用可能なスペースが少なくとも内部のコンポーネントと同じ大きさである必要があるということを指定します。ただし `fillMaxSize()` メソッドを使用しているため、利用可能なスペースよりレイアウト内部のコンポーネントが小さい場合は、[`Alignment`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Alignment) オブジェクトを `wrapContentSize()` メソッドに渡して、利用可能なスペース内でコンポーネントをどのように配置するかを指定できます。
 
 **`MainActivity.kt`**
 
@@ -375,7 +375,7 @@ Image(
 )
 ```
 
-> **注:** 上に示したコンテンツの説明は、暫定的なプレースホルダです。これは、この Codelab の後のセクションで更新します。
+> **注:** 上に示したコンテンツの説明は、暫定的なプレースホルダです。これは、このレッスンの後のセクションで更新します。
 
 これで、必要な UI コンポーネントがすべて揃いました。しかし、`Button` と `Image` が少し詰まっています。
 
@@ -513,7 +513,7 @@ Image(
 
 ### 8. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、次の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller.git
@@ -524,7 +524,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 解答コードを確認する場合は、[GitHub で表示します](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller)。
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
-2. ブランチ名が Codelab で指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
+2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/1e4c0d2c081a8fd2.png)
 
@@ -582,7 +582,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 ### 1. 始める前に
 
-この Codelab では、Android Studio のデバッガを使用して、Dice Roller アプリを実行したときの動作を調べる方法について説明します。
+このレッスンでは、Android Studio のデバッガを使用して、Dice Roller アプリを実行したときの動作を調べる方法について説明します。
 
 デバッガは、Android アプリを動かすコードの実行を検査し、バグを修正できるようにするために不可欠なツールです。コードの実行を一時停止するポイントを指定し、変数、メソッド、その他のコードの側面を手動で操作できます。
 
@@ -590,7 +590,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 - Android Studio に関する基本的な知識があること
 - Android Studio で基本的な Jetpack Compose アプリを作成、実行できること
-- インタラクティブな Dice Roller アプリを作成する Codelab を修了していること
+- インタラクティブな Dice Roller アプリを作成するレッスンを修了していること
 
 #### 学習内容
 
@@ -606,11 +606,11 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 ### 2. Code-Along 動画を見る（省略可）
 
-コースの講師が Codelab を完了する様子を視聴する場合は、以下の動画を再生してください。
+コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
 
 動画を拡大して全画面表示にすることをおすすめします（動画の右下隅のアイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-intro-debugger/adba01179d2b6579.png) を使用します）。そうすれば、Android Studio とコードがもっとはっきり見えるようになります。
 
-このステップは省略可能です。動画をスキップして、すぐに Codelab の学習を開始することもできます。
+このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
 
 ### 3. スターター コードを取得する
 
@@ -656,7 +656,7 @@ $ cd basic-android-kotlin-compose-training-dice-roller
 
 ![](./images/basic-android-kotlin-compose-intro-debugger/adad34e172cbc49a.png)
 
-アプリにデバッガをアタッチしましたが、その意味やデバッガでできることついては、この Codelab で後ほど説明します。次に、デバッガをアタッチしたアプリを起動する方法を学びます。
+アプリにデバッガをアタッチしましたが、その意味やデバッガでできることついては、このレッスンで後ほど説明します。次に、デバッガをアタッチしたアプリを起動する方法を学びます。
 
 #### **デバッガで**アプリを実行する
 
@@ -682,7 +682,7 @@ $ cd basic-android-kotlin-compose-training-dice-roller
 
 #### **Debug** **ペイン**
 
-[**Debug**] ペインの上部に多数のボタンがありますが、こうしたボタンは今のところあまり意味をなさず、ほとんどがグレー表示され、クリックできません。このセクションでは、デバッガでよく使用する機能について説明します。この Codelab では、その他のボタンについても必要に応じて説明します。
+[**Debug**] ペインの上部に多数のボタンがありますが、こうしたボタンは今のところあまり意味をなさず、ほとんどがグレー表示され、クリックできません。このセクションでは、デバッガでよく使用する機能について説明します。このレッスンでは、その他のボタンについても必要に応じて説明します。
 
 デバッガを初めて起動すると、[**Debug**] ペインに複数のボタンが表示されます。[**Debug**] ペインの上部には、[**Debugger**] ボタンと [**Console**] ボタンが表示されます。
 
@@ -724,7 +724,7 @@ Android Studio でブレークポイントを設定するには、特定のコ�
 
 - [**Debug**] ペインのボタンの多くがクリックできるようになります。
 - [**Frames**] ペインには、ブレークポイントが設定されている行への参照がハイライト表示されるなど、多くの情報が表示されます。
-- [**Variables**] ペインには、項目の数が表示されますが、このアプリには変数があまりないため、現時点でこの Codelab の範囲内に関連のある情報はあまりありません。ただし、変数を検査する機能は、実行時にコード内で起きることについての情報が得られるため、デバッガに不可欠な機能です。この Codelab では、変数を検査する方法について後ほど詳しく説明します。
+- [**Variables**] ペインには、項目の数が表示されますが、このアプリには変数があまりないため、現時点でこのレッスンの範囲内に関連のある情報はあまりありません。ただし、変数を検査する機能は、実行時にコード内で起きることについての情報が得られるため、デバッガに不可欠な機能です。このレッスンでは、変数を検査する方法について後ほど詳しく説明します。
 
 デバイスまたはエミュレータでアプリを見ると、あるコード行でアプリが一時停止しているため、画面は空白になっています。具体的には、実行がブレークポイントで停止し、UI がまだレンダリングされていません。
 
@@ -811,7 +811,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 #### **変数を検査する**
 
-この Codelab で前に [**Variables**] ペインについて簡単に説明しました。このペインでは、ペインに表示された変数を検査してアプリの問題をデバッグする方法について詳しく知ることができます。
+このレッスンで前に [**Variables**] ペインについて簡単に説明しました。このペインでは、ペインに表示された変数を検査してアプリの問題をデバッグする方法について詳しく知ることができます。
 
 変数を検査する手順は次のとおりです。
 
@@ -910,7 +910,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 
 1. アプリの[画像の ZIP ファイル](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade/raw/main/lemonade_images.zip)をダウンロードします。
 2. ZIP ファイルをダブルクリックします。このステップでは、画像がフォルダに展開されます。
-3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、インタラクティブな Dice Roller アプリを作成する Codelab で確認してください。
+3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンで確認してください。
 
 プロジェクト フォルダは次のスクリーンショットのように、`lemon_drink.xml`、`lemon_restart.xml`、`lemon_squeeze.xml`、`lemon_tree.xml` のアセットが **res > drawable** ディレクトリに表示されるようにしてください。
 
@@ -939,7 +939,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 - `Glass of lemonade`
 - `Empty glass`
 
-アプリで文字列リソースを宣言する方法がわからない場合は、インタラクティブな Dice Roller アプリを作成する Codelab または[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+アプリで文字列リソースを宣言する方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
 
 #### **レモネードを作る手順**
 
@@ -1302,20 +1302,32 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 - 「ボタンを押しても画面が変わらない」場合、変数が `remember { mutableStateOf(...) }` になっているかを最初に疑いましょう。
 - デバッガの **ブレークポイント** は今後ずっと使う道具です。この章で「止めて、変数を見て、1 行ずつ進める」を一度体験してください。
 
-## 7. 提出物
+## 7. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「ボタンを押しても画面が変わらない。`remember` と `mutableStateOf` の役割を説明したうえで、自分のコードのどこが問題か確認質問をして（コード: ここに貼る）」
+「Android Studio のデバッガで、ブレークポイントを置いて変数を見る手順を初心者向けに説明して」
+「練習: クリック動作 で詰まった。答えを丸ごとではなく、方針→ヒント→確認質問の順で教えて」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 8. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - インタラクティブな Dice Roller アプリを作成する
 - 練習: クリック動作
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 8. チェックリスト
+## 9. チェックリスト
 
 - [ ] `Button` の `onClick` でユーザー操作に反応するアプリを作れる
 - [ ] `remember` と `mutableStateOf` で画面の状態を持てる

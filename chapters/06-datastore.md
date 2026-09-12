@@ -10,22 +10,22 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約130分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約130分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | DataStore を使用して設定をローカルに保存する | 約120分 | **提出対象** |
-| 2 | Codelab | プロジェクト: フライト検索アプリを作成する | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 1 | レッスン | DataStore を使用して設定をローカルに保存する | 約120分 | **提出対象** |
+| 2 | レッスン | プロジェクト: フライト検索アプリを作成する | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
 | 3 | クイズ | [テスト: DataStore](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-3/android-basics-compose-unit-6-pathway-3?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. DataStore を使用して設定をローカルに保存する（提出対象）
 
@@ -39,13 +39,13 @@ Codelab の進め方は次の通りです。
 - `Preferences DataStore` は Key-Value ペアを格納します。値は、`String`、`Boolean`、`Integer` などの Kotlin の基本データ型にできます。複雑なデータセットは保存されません。定義済みのスキーマは必要ありません。`Preferences Datastore` の主なユースケースは、ユーザー設定をデバイスに保存することです。
 - `Proto DataStore` はカスタムデータ型を格納します。proto 定義をオブジェクト構造にマッピングする事前定義スキーマが必要です。
 
-この Codelab では `Preferences DataStore` についてのみ説明します。`Proto DataStore` の詳細については、[DataStore](https://developer.android.com/topic/libraries/architecture/datastore) のドキュメントをご覧ください。
+このレッスンでは `Preferences DataStore` についてのみ説明します。`Proto DataStore` の詳細については、[DataStore](https://developer.android.com/topic/libraries/architecture/datastore) のドキュメントをご覧ください。
 
-`Preferences DataStore` は、ユーザー管理の設定を保存する優れた方法です。この Codelab では、`DataStore` を実装してこれを行う方法について学びます。
+`Preferences DataStore` は、ユーザー管理の設定を保存する優れた方法です。このレッスンでは、`DataStore` を実装してこれを行う方法について学びます。
 
 #### 前提条件:
 
-- Room によるデータの読み取りと更新の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること
+- Room によるデータの読み取りと更新のレッスンを通じて、「Compose での Android の基礎」コースワークを完了していること
 
 #### 必要なもの
 
@@ -59,11 +59,11 @@ Dessert Release アプリには、Android リリースのリストが表示さ�
 
 ![](./images/basic-android-kotlin-compose-datastore/b6e4bd0e50915b81.png) ![](./images/basic-android-kotlin-compose-datastore/24a261db4cf2c6b8.png)
 
-現在の状態では、アプリはレイアウトの選択を保持しません。アプリを閉じてもレイアウトの選択は保存されず、設定はデフォルトの選択に戻ります。この Codelab では、`DataStore` を Dessert Release アプリに追加し、これを使用してレイアウトの選択設定を保存します。
+現在の状態では、アプリはレイアウトの選択を保持しません。アプリを閉じてもレイアウトの選択は保存されず、設定はデフォルトの選択に戻ります。このレッスンでは、`DataStore` を Dessert Release アプリに追加し、これを使用してレイアウトの選択設定を保存します。
 
 ### 2. スターター コードをダウンロードする
 
-次のリンクをクリックして、この Codelab のコードをすべてダウンロードします。
+次のリンクをクリックして、このレッスンのコードをすべてダウンロードします。
 
 また、必要に応じて、GitHub から Dessert Release コードのクローンを作成することもできます。
 
@@ -226,7 +226,7 @@ val isLinearLayout: Flow<Boolean> = dataStore.data
 
 ### 5. DataStore を初期化する
 
-この Codelab では、依存関係挿入を手動で処理する必要があります。したがって、`UserPreferencesRepository` クラスに `Preferences DataStore` を手動で指定する必要があります。`DataStore` を `UserPreferencesRepository` に挿入する手順は次のとおりです。
+このレッスンでは、依存関係挿入を手動で処理する必要があります。したがって、`UserPreferencesRepository` クラスに `Preferences DataStore` を手動で指定する必要があります。`DataStore` を `UserPreferencesRepository` に挿入する手順は次のとおりです。
 
 1. `dessertrelease` パッケージを見つけます。
 2. このディレクトリ内に `DessertReleaseApplication` という新しいクラスを作成し、`Application` クラスを実装します。これは DataStore のコンテナです。
@@ -430,7 +430,7 @@ val uiState: StateFlow<DessertReleaseUiState> =
 
 ### 7. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-dessert-release.git
@@ -448,19 +448,31 @@ $ git checkout main
 
 - DataStore は「ダークテーマ ON/OFF」「最後に開いたタブ」のような小さな設定に向いています。一覧データを入れたくなったら Room を使います。
 
-## 5. 提出物
+## 5. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit6/DessertRelease/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「Room と DataStore の使い分けを、具体例つきで説明して」
+「Preferences DataStore に Boolean を保存して読み出す最小のコードを、方針→ヒントの順で教えて」
+「DataStore の値を `Flow` で受け取って Compose に反映する流れを説明して」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 6. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit6/DessertRelease/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - DataStore を使用して設定をローカルに保存する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 6. チェックリスト
+## 7. チェックリスト
 
 - [ ] Preferences DataStore で Key-Value の設定値を保存・読み出しできる
 - [ ] Room と DataStore の使い分け（構造化データか、単純な設定か）を説明できる
