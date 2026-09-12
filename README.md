@@ -15,5 +15,6 @@ node scripts/validate-index.mjs
 ## Structure
 
 - `index.json`: プログラム構造（Unit/lesson）
-- `chapters/*.md`: レッスン本文
+- `chapters/*.md`: レッスン本文（公式 Codelab の本文を日本語のまま埋め込み。CC BY 4.0）
+- `chapters/images/<codelab-slug>/`: Codelab の画像（公式サイトからダウンロード）
 - `index.html` / `app.js` / `styles.css`: ローカル確認用ビューア
