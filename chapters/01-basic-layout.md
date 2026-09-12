@@ -28,12 +28,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. テキスト コンポーザブルを使用してシンプルなアプリを作成する
 
-<!-- codelab:basic-android-kotlin-compose-text-composables -->
-出典: [テキスト コンポーザブルを使用してシンプルなアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-text-composables?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -882,8 +880,6 @@ Happy Birthday アプリを作成しました。
 
 ## 4. Android アプリに画像を追加する
 
-<!-- codelab:basic-android-kotlin-compose-add-images -->
-出典: [Android アプリに画像を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-images?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1544,8 +1540,6 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 ## 5. 練習問題: Compose の基本
 
-<!-- codelab:basic-android-kotlin-compose-composables-practice-problems -->
-出典: [実践: Compose の基本](https://developer.android.com/codelabs/basic-android-kotlin-compose-composables-practice-problems?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1710,8 +1704,6 @@ UI 仕様は次のとおりです。
 
 ## 6. プロジェクト: 名刺アプリを作成する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-business-card -->
-出典: [プロジェクト: 名刺アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-business-card?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

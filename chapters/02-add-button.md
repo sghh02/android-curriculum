@@ -27,12 +27,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. インタラクティブな Dice Roller アプリを作成する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-build-a-dice-roller-app -->
-出典: [インタラクティブな Dice Roller アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -581,8 +579,6 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 ## 4. Android Studio でデバッガを使用する
 
-<!-- codelab:basic-android-kotlin-compose-intro-debugger -->
-出典: [Android Studio のデバッガを使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-intro-debugger?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -851,8 +847,6 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 ## 5. 練習: クリック動作（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-button-click-practice-problem -->
-出典: [実践: クリック動作](https://developer.android.com/codelabs/basic-android-kotlin-compose-button-click-practice-problem?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

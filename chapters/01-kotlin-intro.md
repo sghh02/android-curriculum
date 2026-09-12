@@ -29,12 +29,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. 始める前に
 
-<!-- codelab:basic-android-kotlin-compose-before-you-begin -->
-出典: [始める前に](https://developer.android.com/codelabs/basic-android-kotlin-compose-before-you-begin?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -66,8 +64,6 @@ Google Android チーム講師一同
 
 ## 4. 初めての Kotlin プログラム
 
-<!-- codelab:basic-android-kotlin-compose-first-program -->
-出典: [初めての Kotlin プログラム](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-program?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -642,8 +638,6 @@ Kotlin でシンプルなプログラムを作成して実行し、出力され�
 
 ## 5. Kotlin で変数を作成して使用する
 
-<!-- codelab:basic-android-kotlin-compose-variables -->
-出典: [Kotlin で変数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-variables?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1674,8 +1668,6 @@ fun main() {
 
 ## 6. Kotlin で関数を作成して使用する
 
-<!-- codelab:basic-android-kotlin-compose-functions -->
-出典: [Kotlin で関数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-functions?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -2147,8 +2139,6 @@ Happy Birthday, Rover! You are now 2 years old!
 
 ## 7. 練習問題: Kotlin の基本（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-intro-kotlin-practice-problems -->
-出典: [練習問題: Kotlin の基本](https://developer.android.com/codelabs/basic-android-kotlin-compose-intro-kotlin-practice-problems?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
