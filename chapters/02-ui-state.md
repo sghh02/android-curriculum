@@ -28,12 +28,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Compose の状態の概要
 
-<!-- codelab:basic-android-kotlin-compose-using-state -->
-出典: [Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -929,8 +927,6 @@ $ git checkout state
 
 ## 4. カスタムのチップを計算する
 
-<!-- codelab:basic-android-kotlin-compose-calculate-tip -->
-出典: [カスタムのチップ金額を計算する](https://developer.android.com/codelabs/basic-android-kotlin-compose-calculate-tip?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1656,8 +1652,6 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 ## 5. 自動テストを作成する
 
-<!-- codelab:basic-android-kotlin-compose-write-automated-tests -->
-出典: [自動テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-write-automated-tests?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -2172,8 +2166,6 @@ $ git checkout test_solution
 
 ## 6. プロジェクト: アートスペース アプリを作成する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-art-space -->
-出典: [アートスペース アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-art-space?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

@@ -27,12 +27,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Android Studio をダウンロードしてインストールする
 
-<!-- codelab:basic-android-kotlin-compose-install-android-studio -->
-出典: [Android Studio のダウンロードとインストール](https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -371,8 +369,6 @@ cd android-studio/bin
 
 ## 4. 初めての Android アプリを作成する
 
-<!-- codelab:basic-android-kotlin-compose-first-app -->
-出典: [初めての Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -847,8 +843,6 @@ fun GreetingPreview() {
 
 ## 5. Android Emulator で初めてのアプリを実行する
 
-<!-- codelab:basic-android-kotlin-compose-emulator -->
-出典: [Android Emulator で初めてのアプリを実行する](https://developer.android.com/codelabs/basic-android-kotlin-compose-emulator?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -976,8 +970,6 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 
 ## 6. Android デバイスを接続する方法
 
-<!-- codelab:basic-android-kotlin-compose-connect-device -->
-出典: [Android デバイスを接続する方法](https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

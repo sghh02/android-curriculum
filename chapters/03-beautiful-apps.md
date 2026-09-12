@@ -29,12 +29,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Jetpack Compose でのマテリアル テーマ設定
 
-<!-- codelab:basic-android-kotlin-compose-material-theming -->
-出典: [Jetpack Compose でのマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1278,8 +1276,6 @@ $ git checkout material
 
 ## 4. Jetpack Compose でのシンプルなアニメーション
 
-<!-- codelab:basic-android-kotlin-compose-woof-animation -->
-出典: [Jetpack Compose でのシンプルなアニメーション](https://developer.android.com/codelabs/basic-android-kotlin-compose-woof-animation?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1992,8 +1988,6 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 ## 5. ユーザー補助機能のテスト
 
-<!-- codelab:basic-android-kotlin-compose-test-accessibility -->
-出典: [ユーザー補助機能のテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-accessibility?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. はじめに
 
@@ -2222,8 +2216,6 @@ fun IconButton(
 
 ## 6. 演習: スーパーヒーローのアプリを作成する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-practice-superheroes -->
-出典: [演習: スーパーヒーローのアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-superheroes?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

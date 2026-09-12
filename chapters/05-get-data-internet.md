@@ -27,12 +27,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Kotlin Playground でのコルーチンの概要
 
-<!-- codelab:basic-android-kotlin-compose-coroutines-kotlin-playground -->
-出典: [Kotlin のプレイグラウンドのコルーチンの概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-kotlin-playground?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1151,8 +1149,6 @@ Kotlin のコルーチン コードは、構造化された同時実行の原則
 
 ## 4. Android Studio でのコルーチンの概要
 
-<!-- codelab:basic-android-kotlin-compose-coroutines-android-studio -->
-出典: [Android Studio のコルーチンの概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-android-studio?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1757,8 +1753,6 @@ cd basic-android-kotlin-compose-training-race-tracker
 
 ## 5. インターネットからデータを取得する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-getting-data-internet -->
-出典: [インターネットからデータを取得する](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

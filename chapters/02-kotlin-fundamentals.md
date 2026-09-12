@@ -29,12 +29,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Kotlin で条件を記述する
 
-<!-- codelab:basic-android-kotlin-compose-conditionals -->
-出典: [Kotlin で条件を記述する](https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1075,8 +1073,6 @@ fun main() {
 
 ## 4. Kotlin で null 可能性を使用する
 
-<!-- codelab:basic-android-kotlin-compose-nullability -->
-出典: [Kotlin で null 可能性を使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-nullability?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1747,8 +1743,6 @@ The number of characters in your favorite actor's name is 9.
 
 ## 5. Kotlin でクラスとオブジェクトを使用する
 
-<!-- codelab:basic-android-kotlin-compose-classes-and-objects -->
-出典: [Kotlin でクラスとオブジェクトを使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -3709,8 +3703,6 @@ Google Light turned on. The brightness level is 2.
 
 ## 6. Kotlin で関数型とラムダ式を使用する
 
-<!-- codelab:basic-android-kotlin-compose-function-types-and-lambda -->
-出典: [Kotlin で関数型とラムダ式を使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-function-types-and-lambda?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. はじめに
 
@@ -4352,8 +4344,6 @@ No treats!
 
 ## 7. 演習: Kotlin の基礎（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-kotlin-fundamentals-practice-problems -->
-出典: [演習: Kotlin の基礎](https://developer.android.com/codelabs/basic-android-kotlin-compose-kotlin-fundamentals-practice-problems?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 

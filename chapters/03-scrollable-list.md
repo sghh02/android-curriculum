@@ -27,12 +27,10 @@ Codelab の進め方は次の通りです。
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
 4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合は、公式ページ（各見出しの「出典」リンク）も確認してください。
+> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. スクロール可能なリストを追加する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-training-add-scrollable-list -->
-出典: [スクロール可能なリストを追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-add-scrollable-list?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -564,8 +562,6 @@ $ git checkout intermediate
 
 ## 4. アプリアイコンを変更する
 
-<!-- codelab:basic-android-kotlin-compose-training-change-app-icon -->
-出典: [アプリアイコンを変更する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-change-app-icon?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
@@ -1008,8 +1004,6 @@ $ git checkout main
 
 ## 5. 演習: グリッドを作成する（提出対象）
 
-<!-- codelab:basic-android-kotlin-compose-practice-grid -->
-出典: [演習: グリッドを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-grid?hl=ja)（Google Developers, CC BY 4.0）
 
 ### 1. 始める前に
 
