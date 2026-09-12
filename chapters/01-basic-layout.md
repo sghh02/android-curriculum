@@ -1,6 +1,5 @@
 # 第3章: 基本的なレイアウトを作成する
 
-> ユニット 1「初めての Android アプリ」 パスウェイ 3
 > 提出ブランチ: `feature/01-basic-layout`
 
 ## 1. この章のゴール
@@ -19,16 +18,16 @@
 | 2 | レッスン | Android アプリに画像を追加する | 約60分 |  |
 | 3 | レッスン | 練習問題: Compose の基本 | 約90分 |  |
 | 4 | レッスン | プロジェクト: 名刺アプリを作成する | 約120分 | **提出対象** |
-| 5 | クイズ | [テスト: 基本的なレイアウトを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-3/Build-a-basic-layout?hl=ja) | 約15分 | 公式サイトで受ける |
+| 5 | クイズ | [テスト: 基本的なレイアウトを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-3/Build-a-basic-layout?hl=ja) | 約15分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. テキスト コンポーザブルを使用してシンプルなアプリを作成する
 
@@ -245,7 +244,7 @@ fun drawProfileImage(image: ImageAsset) {}
 
 ### 4. Android Studio のデザインペイン
 
-[Android Studio](https://developer.android.com/studio) では、アプリを Android デバイスまたはエミュレータにインストールしなくても、コンポーズ可能な関数を IDE 内でプレビューできます。前のパスウェイで学習したように、アプリがどのように表示されるかについては、Android Studio の [**Design**] ペインでプレビューが可能です。
+[Android Studio](https://developer.android.com/studio) では、アプリを Android デバイスまたはエミュレータにインストールしなくても、コンポーズ可能な関数を IDE 内でプレビューできます。前の章で学習したように、アプリがどのように表示されるかについては、Android Studio の [**Design**] ペインでプレビューが可能です。
 
 ![](./images/basic-android-kotlin-compose-text-composables/2bb27291fa8c8ecc.png)
 
@@ -1850,7 +1849,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] `Text` / `Image` コンポーザブルと `Column` / `Row` / `Box` で画面を組める
 - [ ] `Modifier` で余白・サイズ・配置を調整できる
 - [ ] プロジェクト「名刺アプリ」を自分の情報で完成させられる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit1/BusinessCard/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

@@ -1,6 +1,5 @@
 # 第10章: アーキテクチャ コンポーネント
 
-> ユニット 4「ナビゲーションとアプリ アーキテクチャ」 パスウェイ 1
 > 提出ブランチ: `feature/04-architecture-components`
 
 ## 1. この章のゴール
@@ -19,16 +18,16 @@
 | 2 | レッスン | Compose での ViewModel と状態 | 約120分 |  |
 | 3 | レッスン | ViewModel をテストする単体テストを作成する | 約60分 |  |
 | 4 | レッスン | 演習: Dessert Clicker に ViewModel を追加する | 約120分 | **提出対象** |
-| 5 | クイズ | [テスト: アーキテクチャ コンポーネント](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-1/android-basics-compose-unit-4-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
+| 5 | クイズ | [テスト: アーキテクチャ コンポーネント](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-1/android-basics-compose-unit-4-pathway-1?hl=ja) | 約15分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. アクティビティのライフサイクルのステージ
 
@@ -614,7 +613,7 @@ $ git checkout starter
 
 #### スターター コードのチュートリアル
 
-スターター コードには、あらかじめデザインされたゲーム画面のレイアウトが用意されています。このパスウェイでは、ゲームロジックを実装します。アーキテクチャ コンポーネントを使用して、推奨されるアプリ アーキテクチャを実装し、上記の問題を解決します。作業の土台とするファイルの一部について簡単に説明します。
+スターター コードには、あらかじめデザインされたゲーム画面のレイアウトが用意されています。この章では、ゲームロジックを実装します。アーキテクチャ コンポーネントを使用して、推奨されるアプリ アーキテクチャを実装し、上記の問題を解決します。作業の土台とするファイルの一部について簡単に説明します。
 
 **WordsData.kt**
 
@@ -1913,7 +1912,7 @@ $ git checkout viewmodel
 - [アプリ アーキテクチャ ガイド | Android デベロッパー](https://developer.android.com/topic/architecture)
 - [UI レイヤ | Android デベロッパー](https://developer.android.com/topic/architecture/ui-layer)
 - [単方向データフローで状態を管理する | Android デベロッパー](https://developer.android.com/topic/architecture/ui-layer#udf)
-- 学習パスウェイ: 最新の Android アプリ アーキテクチャ
+- 章: 最新の Android アプリ アーキテクチャ
 
 ## 5. ViewModel をテストする単体テストを作成する
 
@@ -2813,7 +2812,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] Activity のライフサイクル（onCreate / onStart / onResume …）を説明できる
 - [ ] `ViewModel` と `StateFlow` で UI 状態を管理できる
 - [ ] ViewModel のユニットテストを書ける
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit4/DessertClicker/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

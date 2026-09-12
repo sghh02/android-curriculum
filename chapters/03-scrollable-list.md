@@ -1,6 +1,5 @@
 # 第8章: スクロール可能なリストを作成する
 
-> ユニット 3「リストの表示とマテリアル デザインの使用」 パスウェイ 2
 > 提出ブランチ: `feature/03-scrollable-list`
 
 ## 1. この章のゴール
@@ -18,16 +17,16 @@
 | 1 | レッスン | スクロール可能なリストを追加する | 約90分 | **提出対象** |
 | 2 | レッスン | アプリアイコンを変更する | 約45分 |  |
 | 3 | レッスン | 演習: グリッドを作成する | 約120分 | **提出対象** |
-| 4 | クイズ | [テスト: スクロール可能なリストを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-2/android-basics-compose-unit-3-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
+| 4 | クイズ | [テスト: スクロール可能なリストを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-2/android-basics-compose-unit-3-pathway-2?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. スクロール可能なリストを追加する（提出対象）
 
@@ -1216,7 +1215,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] `LazyColumn` / `LazyVerticalGrid` でデータのリストを表示できる
 - [ ] データクラスのリストからカード UI を生成できる
 - [ ] アプリアイコン（Adaptive Icon）を差し替えられる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit3/Affirmations/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

@@ -1,6 +1,5 @@
 # 第19章: ビュー内の Android ビューと Compose
 
-> ユニット 8「Compose とビュー」 パスウェイ 1
 > 提出ブランチ: `feature/08-views`
 
 ## 1. この章のゴール
@@ -16,16 +15,16 @@
 |---|---|---|---|---|
 | 1 | レッスン | ビューで Android アプリを作成する | 約150分 |  |
 | 2 | レッスン | Compose を以前のアプリに追加する | 約120分 | **提出対象** |
-| 3 | クイズ | [テスト: Android ビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-1/android-basics-compose-unit-8-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
+| 3 | クイズ | [テスト: Android ビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-1/android-basics-compose-unit-8-pathway-1?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. ビューで Android アプリを作成する
 
@@ -976,7 +975,7 @@ PR 本文には次の 3 点を書いてください。
 
 - [ ] XML レイアウト・Fragment・RecyclerView など従来の View システムの基本を説明できる
 - [ ] View ベースの既存アプリに `ComposeView` でコンポーザブルを追加できる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit8/Juice/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

@@ -1,6 +1,5 @@
 # 第16章: Room を使用してデータを永続化する
 
-> ユニット 6「データの永続化」 パスウェイ 2
 > 提出ブランチ: `feature/06-room`
 
 ## 1. この章のゴール
@@ -19,16 +18,16 @@
 | 2 | レッスン | Room を使用してデータを永続化する | 約150分 |  |
 | 3 | レッスン | Room によるデータの読み取りと更新 | 約120分 |  |
 | 4 | レッスン | 演習: Bus Schedule アプリを作成する | 約150分 | **提出対象** |
-| 5 | クイズ | [テスト: Room](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-2/android-basics-compose-unit-6-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
+| 5 | クイズ | [テスト: Room](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-2/android-basics-compose-unit-6-pathway-2?hl=ja) | 約15分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Room を使用してデータを永続化する
 
@@ -79,7 +78,7 @@
 | ![在庫アイテムが表示されたスマートフォンの画面](./images/basic-android-kotlin-compose-persisting-data-room/dff66d262bbd788e.png) | ![スマートフォンに表示された [Add Item] 画面](./images/basic-android-kotlin-compose-persisting-data-room/7008448fe6aba0a2.png) | ![アイテムの詳細が入力された [Add Item] 画面](./images/basic-android-kotlin-compose-persisting-data-room/bae9fd572d154881.png) |
 |---|---|---|
 
-> **注**: 上のスクリーンショットは、このレッスンの最後ではなく、パスウェイの最後におけるアプリの最終バージョンのスクリーンショットです。このスクリーンショットは、アプリの最終バージョンの概要を示しています。
+> **注**: 上のスクリーンショットは、このレッスンの最後ではなく、章の最後におけるアプリの最終バージョンのスクリーンショットです。このスクリーンショットは、アプリの最終バージョンの概要を示しています。
 
 ### 3. スターター アプリの概要
 
@@ -2311,7 +2310,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] Room の Entity / DAO / Database の役割を説明できる
 - [ ] アプリを再起動してもデータが残る CRUD アプリを作れる
 - [ ] `Flow` でデータベースの変更を UI に自動反映できる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit6/BusSchedule/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

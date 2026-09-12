@@ -1,6 +1,5 @@
 # 第17章: DataStore でキーを使用してデータにアクセスし保存する
 
-> ユニット 6「データの永続化」 パスウェイ 3
 > 提出ブランチ: `feature/06-datastore`
 
 ## 1. この章のゴール
@@ -16,16 +15,16 @@
 |---|---|---|---|---|
 | 1 | レッスン | DataStore を使用して設定をローカルに保存する | 約120分 | **提出対象** |
 | 2 | レッスン | プロジェクト: フライト検索アプリを作成する | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 3 | クイズ | [テスト: DataStore](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-3/android-basics-compose-unit-6-pathway-3?hl=ja) | 約10分 | 公式サイトで受ける |
+| 3 | クイズ | [テスト: DataStore](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-3/android-basics-compose-unit-6-pathway-3?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. DataStore を使用して設定をローカルに保存する（提出対象）
 
@@ -476,7 +475,7 @@ PR 本文には次の 3 点を書いてください。
 
 - [ ] Preferences DataStore で Key-Value の設定値を保存・読み出しできる
 - [ ] Room と DataStore の使い分け（構造化データか、単純な設定か）を説明できる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit6/DessertRelease/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

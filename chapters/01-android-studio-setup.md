@@ -1,7 +1,5 @@
 # 第2章: Android Studio をセットアップする
 
-> ユニット 1「初めての Android アプリ」 パスウェイ 2
-
 ## 1. この章のゴール
 
 - Android Studio をインストールし、最初のプロジェクトを作成できる
@@ -18,16 +16,16 @@
 | 2 | レッスン | 初めての Android アプリを作成する | 約60分 |  |
 | 3 | レッスン | Android Emulator で初めてのアプリを実行する | 約30分 |  |
 | 4 | レッスン | Android デバイスを接続する方法 | 約30分 |  |
-| 5 | クイズ | [テスト: Android Studio](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-2/android-basics-compose-unit-1-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
+| 5 | クイズ | [テスト: Android Studio](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-2/android-basics-compose-unit-1-pathway-2?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Android Studio をダウンロードしてインストールする
 
@@ -734,7 +732,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 1. `modifier` にサイズ `24.dp` のパディングを追加します。
 
-> **注:** 密度非依存ピクセル（`dp`）については次のパスウェイで取り上げますが、今すぐ確認する場合は[レイアウト - マテリアル デザイン 3](https://m3.material.io/foundations/layout/understanding-layout/spacing#abccd6ce-1092-4ad0-9351-de75aeae0edf) の記事をご覧ください。
+> **注:** 密度非依存ピクセル（`dp`）については次の章で取り上げますが、今すぐ確認する場合は[レイアウト - マテリアル デザイン 3](https://m3.material.io/foundations/layout/understanding-layout/spacing#abccd6ce-1092-4ad0-9351-de75aeae0edf) の記事をご覧ください。
 
 ```kotlin
 @Composable
@@ -823,7 +821,7 @@ fun GreetingPreview() {
 
 これで、Android Studio について学び、Compose で初めての Android アプリを作成できました。
 
-このレッスンは、「Compose を用いた Android アプリ開発の基礎」コースの一部です。エミュレータまたは実機でアプリを実行する方法については、このパスウェイの次のレッスンをご覧ください。
+このレッスンは、「Compose を用いた Android アプリ開発の基礎」コースの一部です。エミュレータまたは実機でアプリを実行する方法については、この章の次のレッスンをご覧ください。
 
 #### 概要
 
@@ -864,15 +862,7 @@ fun GreetingPreview() {
 
 - Android Studio がインストールされているパソコン
 
-### 2. Code-Along 動画を見る（省略可）
-
-コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
-
-動画を拡大して全画面表示にすることをおすすめします。動画プレーヤーの**全画面表示**アイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-emulator/adba01179d2b6579.png) をクリックすると、Android Studio が表示され、コードをよりはっきりと確認できます。
-
-このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
-
-### 3. Android Emulator でアプリを実行する
+### 2. Android Emulator でアプリを実行する
 
 このタスクでは、[デバイス マネージャ](http://developer.android.com/tools/devices/managing-avds.html)を使用して Android Virtual Device（AVD）を作成します。AVD は、パソコンで動作して特定の種類の Android デバイスの設定を模擬する、モバイル デバイスのソフトウェア バージョンです。エミュレータともいいます。スマートフォン、タブレット、テレビ、スマートウォッチ、Android Auto デバイスなど、どのデバイスにも対応します。ここではグリーティング カードアプリを実行するために AVD を使用します。
 
@@ -950,7 +940,7 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 
 これで仮想デバイスが稼働した状態になりました。アプリが起動すると、背景色と挨拶文が画面に表示されます。
 
-### 4. まとめ
+### 3. まとめ
 
 お疲れさまでした。Android Emulator でアプリを実行できました。
 
@@ -994,15 +984,7 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 
 > **注:**お使いのパソコン、Android デバイスの USB ポートの種類や、必要な対応ケーブルを確認するには、[USB](https://en.wikipedia.org/wiki/USB) をご覧ください。
 
-### 2. Code-Along 動画を見る（省略可）
-
-コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
-
-動画を拡大して全画面表示にすることをおすすめします（動画の右下隅のアイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-connect-device/adba01179d2b6579.png) を使用します）。そうすれば、Android Studio とコードがもっとはっきり見えるようになります。
-
-このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
-
-### 3. USB デバッグを有効にする
+### 2. USB デバッグを有効にする
 
 Android Studio が Android デバイスと通信できるようにするには、デバイスの開発者向けオプションの設定で USB デバッグを有効にする必要があります。
 
@@ -1038,7 +1020,7 @@ Android Studio を Windows にインストールした場合は、実機でア�
 
 完了すると、ドライバ ファイルが `android_sdk\extras\google\usb_driver` ディレクトリにダウンロードされます。これで、デバイスを接続して Android Studio からアプリを実行できるようになりました。
 
-### 4. ケーブルを使用して Android デバイスでアプリを実行する
+### 3. ケーブルを使用して Android デバイスでアプリを実行する
 
 デバイスを Android Studio に接続する方法は 2 つあります。ケーブルによる方法と、Wi-Fi による方法です。どちらを選択しても構いません。
 
@@ -1059,7 +1041,7 @@ Android デバイスで Android Studio からアプリを実行するには:
 
 5. お使いのデバイスに搭載されている Android プラットフォームが Android Studio にインストールされておらず、必要なプラットフォームをインストールするかどうかを尋ねるメッセージが表示された場合、**[Install] > [Continue] > [Finish]** をクリックします。Android Studio によってそのデバイスにアプリがインストールされて実行されます。
 
-### 5. Wi-Fi を使用して Android デバイスでアプリを実行する
+### 4. Wi-Fi を使用して Android デバイスでアプリを実行する
 
 ケーブルがない場合は、Wi-Fi を使用してデバイスに接続し、アプリを実行することもできます。
 
@@ -1093,14 +1075,14 @@ Android デバイスで Android Studio からアプリを実行するには:
 
 > **注:**別のデバイスをペア設定する場合、またはパソコンからこのデバイスを削除する場合は、デバイスで [**ワイヤレス デバッグ**] に移動し、[**ペア設定済みのデバイス**] でワークステーション名をタップして、[**削除**] を選択します。
 
-### 6. トラブルシューティング
+### 5. トラブルシューティング
 
 - パソコンに Linux または Windows が搭載されており、実際の Android デバイスでアプリを実行できない場合は、[ハードウェア デバイス上でのアプリの実行](http://developer.android.com/tools/device.html)をご覧ください。
 - パソコンに Windows が搭載されており、エミュレータのインストールがうまくできない場合は、お使いのデバイスに適した USB ドライバについて、[OEM USB ドライバのインストール](http://developer.android.com/tools/extras/oem-usb.html)をご覧ください。
 - Android Studio でデバイスが認識されない場合は、USB ケーブルを挿し直すか、Android Studio を再起動してみます。
 - それでもパソコンでデバイスが検出されない場合や、デバイスが未認証であると宣言される場合は、まず USB ケーブルを抜きます。次にデバイスで、**[設定] > [開発者向けオプション] > [USB デバッグの許可の取り消し]** をタップします。パソコンにデバイスを再接続します。許可を求めるメッセージが表示されたら、許可します。
 
-### 7. まとめ
+### 6. まとめ
 
 実際の Android デバイスを使用して Android Studio でアプリを実行する方法を学びました。
 
@@ -1141,7 +1123,7 @@ Android デバイスで Android Studio からアプリを実行するには:
 - [ ] Android Studio をインストールし、最初のプロジェクトを作成できる
 - [ ] エミュレータ（または実機）でアプリを起動できる
 - [ ] 「プロジェクトの場所」「Run ボタン」「Logcat」がどこにあるか分かる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 
 ---
 

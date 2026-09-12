@@ -2,7 +2,7 @@
 
 Android 学習用プログラム（Markdown）です。`index.json` が目次・メタ情報、`chapters/` が本文になります。
 
-Google 公式コース [Compose を用いた Android アプリ開発の基礎](https://developer.android.com/courses/android-basics-compose/course?hl=ja) を教材にし、**公式コースの 1 パスウェイ = 1 章** で構成しています。各章に「やるレッスン」「やらなくてOK な項目」「提出物」を整理しています。
+各章に「ゴール」「やるレッスン」「やらなくてOK な項目」「提出物」「AI への質問例」を整理し、レッスン本文（日本語・画像付き）を埋め込んでいます。
 
 ## Validate
 
@@ -15,6 +15,10 @@ node scripts/validate-index.mjs
 ## Structure
 
 - `index.json`: プログラム構造（Unit/lesson）
-- `chapters/*.md`: レッスン本文（公式レッスンの本文を日本語のまま埋め込み。CC BY 4.0）
-- `chapters/images/<codelab-slug>/`: レッスンの画像（公式サイトからダウンロード）
+- `chapters/*.md`: レッスン本文
+- `chapters/images/<lesson-slug>/`: レッスンの画像
 - `index.html` / `app.js` / `styles.css`: ローカル確認用ビューア
+
+## License note
+
+`chapters/` に埋め込んだレッスン本文と画像は、Google Developers の「Android Basics with Compose」コース（CC BY 4.0、コードサンプルは Apache 2.0）を基にしています。

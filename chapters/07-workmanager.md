@@ -1,6 +1,5 @@
 # 第18章: WorkManager でタスクのスケジュールを設定する
 
-> ユニット 7「WorkManager」 パスウェイ 1
 > 提出ブランチ: `feature/07-workmanager`
 
 ## 1. この章のゴール
@@ -17,16 +16,16 @@
 | 1 | レッスン | WorkManager によるバックグラウンド処理 | 約120分 |  |
 | 2 | レッスン | 高度な WorkManager とテスト | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
 | 3 | レッスン | 演習: Water Me アプリを作成する | 約150分 | **提出対象** |
-| 4 | クイズ | [テスト: WorkManager](https://developer.android.com/courses/quizzes/android-basics-compose-unit-7-pathway-1/android-basics-compose-unit-7-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
+| 4 | クイズ | [テスト: WorkManager](https://developer.android.com/courses/quizzes/android-basics-compose-unit-7-pathway-1/android-basics-compose-unit-7-pathway-1?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. WorkManager によるバックグラウンド処理
 
@@ -1161,7 +1160,7 @@ PR 本文には次の 3 点を書いてください。
 
 - [ ] WorkManager を使う場面（アプリを閉じても実行したい処理）を説明できる
 - [ ] `Worker` を作り、`WorkRequest` で実行・連結・制約付きの実行ができる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit7/WaterMe/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---
