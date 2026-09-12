@@ -1,6 +1,5 @@
 # 第14章: インターネットから画像を読み込んで表示する
 
-> ユニット 5「インターネットに接続する」 パスウェイ 2
 > 提出ブランチ: `feature/05-load-images`
 
 ## 1. この章のゴール
@@ -19,16 +18,16 @@
 | 2 | レッスン | インターネットから画像を読み込んで表示する | 約90分 |  |
 | 3 | レッスン | 練習: Amphibians アプリを作成する | 約180分 | **提出対象** |
 | 4 | レッスン | プロジェクト: Bookshelf アプリの作成 | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 5 | クイズ | [テスト: 画像を読み込んで表示する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-2/android-basics-compose-unit-5-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
+| 5 | クイズ | [テスト: 画像を読み込んで表示する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-2/android-basics-compose-unit-5-pathway-2?hl=ja) | 約15分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. リポジトリと手動依存関係挿入を追加する
 
@@ -1749,7 +1748,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] Repository パターンでデータ取得を UI から分離できる
 - [ ] 手動の依存関係注入（`AppContainer`）を説明できる
 - [ ] Coil で URL から画像を読み込んで表示できる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit5/Amphibians/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

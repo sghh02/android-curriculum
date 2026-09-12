@@ -1,6 +1,5 @@
 # 第5章: アプリにボタンを追加する
 
-> ユニット 2「アプリ UI を作成する」 パスウェイ 2
 > 提出ブランチ: `feature/02-add-button`
 
 ## 1. この章のゴール
@@ -18,16 +17,16 @@
 | 1 | レッスン | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
 | 2 | レッスン | Android Studio でデバッガを使用する | 約45分 |  |
 | 3 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
-| 4 | クイズ | [テスト: アプリにボタンを追加する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-2/android-basics-compose-unit-2-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
+| 4 | クイズ | [テスト: アプリにボタンを追加する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-2/android-basics-compose-unit-2-pathway-2?hl=ja) | 約10分 | リンク先で受ける |
 
 このプログラムの進め方は次の通りです。
 
 1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
+4. 章末のクイズ（リンク先）を受けて、間違えた項目をレッスンで読み直す
 
-> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> 画面が最新の Android Studio と異なる場合があります。
 
 ## 3. インタラクティブな Dice Roller アプリを作成する（提出対象）
 
@@ -604,15 +603,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 - Android Studio がインストールされているパソコン
 - Compose での Dice Roller アプリの解答コード
 
-### 2. Code-Along 動画を見る（省略可）
-
-コースの講師がレッスンを完了する様子を視聴する場合は、以下の動画を再生してください。
-
-動画を拡大して全画面表示にすることをおすすめします（動画の右下隅のアイコン ![正方形の 4 つの角が強調表示されたこの記号は、全画面モードを表します。](./images/basic-android-kotlin-compose-intro-debugger/adba01179d2b6579.png) を使用します）。そうすれば、Android Studio とコードがもっとはっきり見えるようになります。
-
-このステップは省略可能です。動画をスキップして、すぐにレッスンの学習を開始することもできます。
-
-### 3. スターター コードを取得する
+### 2. スターター コードを取得する
 
 まず、コードをダウンロードします。
 
@@ -627,7 +618,7 @@ $ cd basic-android-kotlin-compose-training-dice-roller
 
 コードは [**GitHub リポジトリ**](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller)で確認できます。
 
-### 4. デバッガを実行する
+### 3. デバッガを実行する
 
 アプリとともにデバッガを実行する方法は 2 つあります。
 
@@ -678,7 +669,7 @@ $ cd basic-android-kotlin-compose-training-dice-roller
 
 デバッガの起動方法について理解したところで、次はその使用方法について説明します。
 
-### 5. デバッガを使用する
+### 4. デバッガを使用する
 
 #### **Debug** **ペイン**
 
@@ -829,7 +820,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 ![](./images/basic-android-kotlin-compose-intro-debugger/a869ec4ba3b66fbf.png)
 
-### 6. まとめ
+### 5. まとめ
 
 お疲れさまでした。Android Studio のデバッガを使用しました。
 
@@ -850,7 +841,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 ### 1. 始める前に
 
-このパスウェイで、アプリにボタンを追加する方法と、アプリをボタンクリックに応答するように変更する方法を学習しました。次は、アプリを作成して、学んだことを実践しましょう。
+この章で、アプリにボタンを追加する方法と、アプリをボタンクリックに応答するように変更する方法を学習しました。次は、アプリを作成して、学んだことを実践しましょう。
 
 作成するのは Lemonade アプリというアプリです。まず、Lemonade アプリの要件を確認し、アプリの外観と動作を把握しましょう。挑戦したい人は、自力で作成してもかまいません。行き詰まっても、以降のセクションに目を通せば、問題を分割して段階的に進める方法のヒントや指針が得られます。
 
@@ -1088,7 +1079,7 @@ Android Studio でこのコードを入力したら、`LemonApp()` コンポー�
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/adbf0d217e1ac77d.png)
 
-このパスウェイの前半で、ボタンをクリック可能にする方法を学習しました。Lemonade アプリの場合は、`Button` コンポーザブルがありません。しかし、`clickable` 修飾子を指定すれば、ボタンだけでなく任意のコンポーザブルをクリック可能にできます。例については、[クリック可能](https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).clickable(kotlin.Boolean,kotlin.String,androidx.compose.ui.semantics.Role,kotlin.Function0))のドキュメントのページを確認してください。
+この章の前半で、ボタンをクリック可能にする方法を学習しました。Lemonade アプリの場合は、`Button` コンポーザブルがありません。しかし、`clickable` 修飾子を指定すれば、ボタンだけでなく任意のコンポーザブルをクリック可能にできます。例については、[クリック可能](https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).clickable(kotlin.Boolean,kotlin.String,androidx.compose.ui.semantics.Role,kotlin.Function0))のドキュメントのページを確認してください。
 
 画像がクリックされたときには、何をすべきでしょうか。この動作を実装するコードは簡単でないため、以前に学習したアプリに戻ります。
 
@@ -1332,7 +1323,7 @@ PR 本文には次の 3 点を書いてください。
 - [ ] `Button` の `onClick` でユーザー操作に反応するアプリを作れる
 - [ ] `remember` と `mutableStateOf` で画面の状態を持てる
 - [ ] Android Studio のデバッガで変数の中身を確認できる
-- [ ] パスウェイ末尾のクイズに合格した
+- [ ] 章末のクイズに合格した
 - [ ] 提出物が `unit2/DiceRoller/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---

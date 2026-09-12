@@ -1,7 +1,7 @@
 {
   "curriculumId": "android-curriculum",
   "title": "Androidアプリ開発基礎（Compose）",
-  "description": "Google 公式コース「Compose を用いた Android アプリ開発の基礎」を教材に、パスウェイ単位で Codelab を進めて PR で提出するプログラム。難易度の高いプロジェクトは省き、必要なものだけに絞っています。",
+  "description": "Kotlin と Jetpack Compose で、UI・画面遷移・通信・データ保存・バックグラウンド処理まで Android アプリ開発の土台を身につけるプログラム。レッスンごとにアプリを作り、PR で提出します。",
   "chapters": [
     {
       "id": "unit0",
@@ -24,7 +24,7 @@
           "id": "kotlin-intro",
           "title": "第1章: Kotlin の概要",
           "path": "chapters/01-kotlin-intro.md",
-          "estimatedMinutes": 235,
+          "estimatedMinutes": 225,
           "hasAssignment": true
         },
         {
