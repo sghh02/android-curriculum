@@ -11,31 +11,31 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約345分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約345分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | テキスト コンポーザブルを使用してシンプルなアプリを作成する | 約60分 |  |
-| 2 | Codelab | Android アプリに画像を追加する | 約60分 |  |
-| 3 | Codelab | 練習問題: Compose の基本 | 約90分 |  |
-| 4 | Codelab | プロジェクト: 名刺アプリを作成する | 約120分 | **提出対象** |
+| 1 | レッスン | テキスト コンポーザブルを使用してシンプルなアプリを作成する | 約60分 |  |
+| 2 | レッスン | Android アプリに画像を追加する | 約60分 |  |
+| 3 | レッスン | 練習問題: Compose の基本 | 約90分 |  |
+| 4 | レッスン | プロジェクト: 名刺アプリを作成する | 約120分 | **提出対象** |
 | 5 | クイズ | [テスト: 基本的なレイアウトを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-3/Build-a-basic-layout?hl=ja) | 約15分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. テキスト コンポーザブルを使用してシンプルなアプリを作成する
 
 
 ### 1. 始める前に
 
-この Codelab では、Jetpack Compose を使用して、誕生日メッセージを画面上に表示するシンプルな Android アプリを作成します。
+このレッスンでは、Jetpack Compose を使用して、誕生日メッセージを画面上に表示するシンプルな Android アプリを作成します。
 
 #### 前提条件
 
@@ -77,7 +77,7 @@ Codelab の進め方は次の通りです。
 
 ![](./images/basic-android-kotlin-compose-text-composables/d8299bfc1a82cd57.png)
 
-この Happy Birthday アプリを Empty Activity テンプレートで作成すると、基本的な Android アプリのリソースが設定され、画面に「**Hello Android!**」というメッセージが表示されます。この Codelab では、メッセージの配置方法、そのテキストを誕生日祝いのメッセージに変更する方法、さらにメッセージを追加して書式を設定する方法を説明します。
+この Happy Birthday アプリを Empty Activity テンプレートで作成すると、基本的な Android アプリのリソースが設定され、画面に「**Hello Android!**」というメッセージが表示されます。このレッスンでは、メッセージの配置方法、そのテキストを誕生日祝いのメッセージに変更する方法、さらにメッセージを追加して書式を設定する方法を説明します。
 
 #### ユーザー インターフェース（UI）とは
 
@@ -104,7 +104,7 @@ Codelab の進め方は次の通りです。
 | ![おすすめのアプリを表示](./images/basic-android-kotlin-compose-text-composables/dcb5e11ef39aa76d.png) | ![](./images/basic-android-kotlin-compose-text-composables/f3835a9ffa17a7c.png) |
 |---|---|
 
-この Codelab では、`Text` 要素というテキストを表示する UI 要素を使用します。
+このレッスンでは、`Text` 要素というテキストを表示する UI 要素を使用します。
 
 ### 3. Jetpack Compose とは
 
@@ -128,7 +128,7 @@ Jetpack Compose は、Android UI を構築するための最新のツールキ�
 
 ![コンポーズ可能な関数の構造を示す図。接頭辞文字 @ のアノテーションはコンポーズ可能で、その後に関数宣言が続く。](./images/basic-android-kotlin-compose-text-composables/87fe1e19ff89ee9c.png)
 
-次のコード スニペットは、アノテーション付きのプロパティの例を示しています。これらのサンプルは、この Codelab の後半で使用します。
+次のコード スニペットは、アノテーション付きのプロパティの例を示しています。これらのサンプルは、このレッスンの後半で使用します。
 
 ```kotlin
 // Example code, do not copy it over
@@ -285,7 +285,7 @@ fun BirthdayCardPreview() {
 
 ![](./images/basic-android-kotlin-compose-text-composables/907e7542c84daf9f.png)
 
-> **重要**: `@Preview` アノテーションを使用して `BirthdayCardPreview()` 関数に追加したコードは、Android Studio の [**Design**] ペインでのプレビュー専用です。これらの変更はアプリには反映されません。アプリに変更を加える方法については、後ほどこの Codelab で説明します。
+> **重要**: `@Preview` アノテーションを使用して `BirthdayCardPreview()` 関数に追加したコードは、Android Studio の [**Design**] ペインでのプレビュー専用です。これらの変更はアプリには反映されません。アプリに変更を加える方法については、後ほどこのレッスンで説明します。
 
 ### 5. 新しいテキスト要素を追加する
 
@@ -293,7 +293,7 @@ fun BirthdayCardPreview() {
 
 #### 新しいコンポーズ可能な関数を追加する
 
-1. `MainActivity.kt` ファイルで、`Greeting()` 関数の定義を削除します。この Codelab の後半で、独自に作成した関数を追加して誕生日祝いのメッセージを表示します。
+1. `MainActivity.kt` ファイルで、`Greeting()` 関数の定義を削除します。このレッスンの後半で、独自に作成した関数を追加して誕生日祝いのメッセージを表示します。
 
 **次のコードを削除**します。
 
@@ -513,7 +513,7 @@ UI 階層は包含を基本としています。つまり、1 つのコンポー
 
 ![](./images/basic-android-kotlin-compose-text-composables/9270b7e10f954dcb.png)
 
-Compose には、基本的な標準レイアウト要素として、[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1))、[`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1))、[`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1)) の 3 つのコンポーザブルがあります。`Box` コンポーザブルについては、次の Codelab で詳しく説明します。
+Compose には、基本的な標準レイアウト要素として、[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1))、[`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1))、[`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1)) の 3 つのコンポーザブルがあります。`Box` コンポーザブルについては、次のレッスンで詳しく説明します。
 
 ![縦に並べられた 3 つの要素を示す Column と横に配置された 3 つの要素を示す Row](./images/basic-android-kotlin-compose-text-composables/d7df7c362f507d6b.png)
 
@@ -685,7 +685,7 @@ class MainActivity : ComponentActivity() {
 
 #### 挨拶メッセージを中央に配置する
 
-1. 挨拶メッセージを画面の中央に揃えるには、`verticalArrangement` というパラメータを追加し、`Arrangement.Center` に設定します。`verticalArrangement` については、後の Codelab で詳しく説明します。
+1. 挨拶メッセージを画面の中央に揃えるには、`verticalArrangement` というパラメータを追加し、`Arrangement.Center` に設定します。`verticalArrangement` については、後のレッスンで詳しく説明します。
 
 ```kotlin
 @Composable
@@ -860,7 +860,7 @@ fun BirthdayCardPreview() {
 
 Happy Birthday アプリを作成しました。
 
-次の Codelab では、アプリに画像を追加し、テキスト要素の配置を変更してアプリの見た目を整えます。
+次のレッスンでは、アプリに画像を追加し、テキスト要素の配置を変更してアプリの見た目を整えます。
 
 #### 概要
 
@@ -883,7 +883,7 @@ Happy Birthday アプリを作成しました。
 
 ### 1. 始める前に
 
-この Codelab では、`Image` コンポーザブルを使用してアプリに画像を追加する方法を学びます。
+このレッスンでは、`Image` コンポーザブルを使用してアプリに画像を追加する方法を学びます。
 
 #### 前提条件
 
@@ -903,13 +903,13 @@ Happy Birthday アプリを作成しました。
 #### 必要なもの
 
 - Android Studio がインストールされているパソコン
-- テキスト コンポーザブルを使用してシンプルなアプリを作成する Codelab で作成したアプリ
+- テキスト コンポーザブルを使用してシンプルなアプリを作成するレッスンで作成したアプリ
 
 ### 2. アプリをセットアップする
 
 #### アプリを設定する
 
-Android Studio で、前の Codelab で作成した Happy Birthday プロジェクトを開きます。
+Android Studio で、前のレッスンで作成した Happy Birthday プロジェクトを開きます。
 
 アプリを実行すると、次のスクリーンショットのようになります。
 
@@ -1130,7 +1130,7 @@ fun BirthdayCardPreview() {
 
 ### 4. Box レイアウトを追加する
 
-Compose には、基本的な標準レイアウト要素として、[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1))、[`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1))、[`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1)) の 3 つのコンポーザブルがあります。[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) コンポーザブルと [`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)) コンポーザブルについては前の Codelab で学習したので、ここでは `Box` コンポーザブルについて詳しく学びます。
+Compose には、基本的な標準レイアウト要素として、[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1))、[`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1))、[`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1)) の 3 つのコンポーザブルがあります。[`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) コンポーザブルと [`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Row.composable#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)) コンポーザブルについては前のレッスンで学習したので、ここでは `Box` コンポーザブルについて詳しく学びます。
 
 [`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Box.composable#Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,kotlin.Boolean,kotlin.Function1)) レイアウトは、Compose の標準レイアウト要素の一つです。`Box` レイアウトは、要素を別の要素の上に重ねるときに使用します。また、`Box` レイアウトを使用すると、それに含まれる要素の配置も設定することもできます。
 
@@ -1279,7 +1279,7 @@ Image(
 
 修飾子は、Jetpack Compose UI 要素の装飾や、その動作の追加に使用されます。たとえば、行やテキスト、ボタンに、背景やパディング、動作を追加できます。このような設定をするには、コンポーザブルまたはレイアウトが修飾子をパラメータとして受け取る必要があります。
 
-前回の Codelab で修飾子について説明した際には、パディング修飾子（`Modifier.padding`）を使用して、`Text` コンポーザブルの周囲に空白を追加しました。修飾子には多くの機能がありますが、それらは今回と以降で説明します。
+前回のレッスンで修飾子について説明した際には、パディング修飾子（`Modifier.padding`）を使用して、`Text` コンポーザブルの周囲に空白を追加しました。修飾子には多くの機能がありますが、それらは今回と以降で説明します。
 
 たとえば、次の `Text` コンポーザブルには背景を緑色にする `Modifier` 引数があります。
 
@@ -1310,7 +1310,7 @@ Alignment プロパティは、子要素をレイアウトの先頭、中央、�
 
 ### 6. テキストの配置を調整する
 
-このタスクでは、前の Codelab でアプリにテキストを配置するために追加したコードを確認します。
+このタスクでは、前のレッスンでアプリにテキストを配置するために追加したコードを確認します。
 
 1. `MainActivity.kt` ファイルで、`GreetingText()` 関数までスクロールします。この列の `verticalArrangement` プロパティは `Arrangement.Center` に設定されています。テキスト コンテンツは画面の中央に配置されます。
 
@@ -1379,7 +1379,7 @@ modifier = Modifier
 
 #### Translation
 
-アプリを作成する際には、どこかの時点で別の言語に翻訳される可能性があることを知っておいてください。前の Codelab で学んだように、`String` というデータ型は `"Happy Birthday Sam!"` のような文字の並びです。
+アプリを作成する際には、どこかの時点で別の言語に翻訳される可能性があることを知っておいてください。前のレッスンで学んだように、`String` というデータ型は `"Happy Birthday Sam!"` のような文字の並びです。
 
 「ハードコード」された文字列とは、アプリのコードに直接書き込まれた文字列です。ハードコードされた文字列を使用すると、アプリを他の言語に翻訳するのが難しくなり、アプリの文字列を別の場所で再利用するのが難しくなります。この問題は、文字列をリソース ファイルに抽出することで解決できます。具体的には、文字列をコード内にハードコードする代わりに別のファイルに格納して、文字列リソースに名前を付けます。文字列を使用するときには、この名前を使用するようにします。文字列を変更したり、他の言語に翻訳したりしても、名前は変わりません。
 
@@ -1502,7 +1502,7 @@ GitHub は、デベロッパーがソフトウェア プロジェクトのコー
 
 GitHub には、プロジェクトの表示や管理ができるウェブサイトもあります。次の GitHub のリンクを使用すると、Happy Birdthday プロジェクトのファイルをオンラインで閲覧したり、パソコンにダウンロードしたりできます。
 
-この Codelab の完成したコードをダウンロードするには、次の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-birthday-card-app.git
@@ -1516,7 +1516,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 #### GitHub におけるブランチ
 
-ブランチとは何かを理解する前に、リポジトリ（リポ）とは何かを理解しておきましょう。リポジトリとは、プロジェクト全体（ディレクトリとファイル）であり、そのクローン（コピー）をパソコンに作成します。ブランチとは、リポジトリのあるバージョン、つまり独立した開発の系統のことです。たとえば、このコースの *starter* ブランチは、Codelab の間のコード作成に使用したバージョンかもしれません。*main* ブランチまたは *solution* ブランチは、Codelab の最後となるバージョンであり、完全な解答コードが入っているものです。
+ブランチとは何かを理解する前に、リポジトリ（リポ）とは何かを理解しておきましょう。リポジトリとは、プロジェクト全体（ディレクトリとファイル）であり、そのクローン（コピー）をパソコンに作成します。ブランチとは、リポジトリのあるバージョン、つまり独立した開発の系統のことです。たとえば、このコースの *starter* ブランチは、レッスンの間のコード作成に使用したバージョンかもしれません。*main* ブランチまたは *solution* ブランチは、レッスンの最後となるバージョンであり、完全な解答コードが入っているものです。
 
 リポジトリには複数のブランチを作ることができます。つまり、リポジトリには複数バージョンのコードがあります。
 
@@ -1561,8 +1561,8 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 #### 前提条件
 
-- 「テキスト コンポーザブルを使用してシンプルなアプリを作成する」Codelab を完了している
-- 「Android アプリに画像を追加する」Codelab を完了している
+- 「テキスト コンポーザブルを使用してシンプルなアプリを作成する」レッスンを完了している
+- 「Android アプリに画像を追加する」レッスンを完了している
 - Android Studio の最新バージョン
 - Kotlin プログラミング言語に関する基本的な知識
 - Android Studio でデフォルトのテンプレートを使用して Android プロジェクトを作成できる
@@ -1707,9 +1707,9 @@ UI 仕様は次のとおりです。
 
 ### 1. 始める前に
 
-このユニットで学習した内容を活用して、独自の名刺アプリを作成します。これまでの Codelab では手順の説明を行っていましたが、ここでは、これまでに学習したコンセプトを基に構築可能なものに関するガイドラインと提案のみを提示しています。限られた指示のもと、創造性を発揮して自主的にアプリを作成することをおすすめします。
+このユニットで学習した内容を活用して、独自の名刺アプリを作成します。これまでのレッスンでは手順の説明を行っていましたが、ここでは、これまでに学習したコンセプトを基に構築可能なものに関するガイドラインと提案のみを提示しています。限られた指示のもと、創造性を発揮して自主的にアプリを作成することをおすすめします。
 
-自分でアプリを作成するのは難しいことですが、十分な練習を積んできているので心配はいりません。この新しい状況で、習得したスキルを活用できます。アプリの特定部分の実装方法がわからない場合は、いつでも前の Codelab を参照できます。
+自分でアプリを作成するのは難しいことですが、十分な練習を積んできているので心配はいりません。この新しい状況で、習得したスキルを活用できます。アプリの特定部分の実装方法がわからない場合は、いつでも前のレッスンを参照できます。
 
 このアプリを自分で作成する中で直面する問題を解決すると、学習速度が上がり、関連するコンセプトを忘れにくくなります。また、アプリは完全にカスタマイズされているため、自分に合わせて自由に変更し、友人や家族に見せることもできます。
 
@@ -1784,7 +1784,7 @@ UI 仕様は次のとおりです。
 
 `Image` コンポーザブル
 
-- `contentDescription` パラメータは必ず入力してください。前の Codelab で触れたように、TalkBack では `contentDescription` パラメータを使用してアプリのユーザー補助機能を強化しています。`Image` コンポーザブルが装飾目的にのみ使用されている場合、または `Image` コンポーザブルを説明する `Text` 要素がある場合は、`contentDescription` パラメータを `null` に設定できます。また、`modifier` パラメータに `height` 修飾子と `width` 修飾子を指定して、画像のサイズをカスタマイズすることもできます。
+- `contentDescription` パラメータは必ず入力してください。前のレッスンで触れたように、TalkBack では `contentDescription` パラメータを使用してアプリのユーザー補助機能を強化しています。`Image` コンポーザブルが装飾目的にのみ使用されている場合、または `Image` コンポーザブルを説明する `Text` 要素がある場合は、`contentDescription` パラメータを `null` に設定できます。また、`modifier` パラメータに `height` 修飾子と `width` 修飾子を指定して、画像のサイズをカスタマイズすることもできます。
 
 `Icon` コンポーザブル
 
@@ -1821,19 +1821,31 @@ Text("Example", color = Color(0xFF3ddc84))
 - 画像は `res/drawable` に置き、`painterResource(R.drawable.xxx)` で読み込みます。ファイル名は小文字・数字・アンダースコアのみです。
 - 名刺アプリは **正解が一つではありません**。要件（名前・肩書き・連絡先が見える）を満たしていれば、デザインは自由です。
 
-## 8. 提出物
+## 8. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit1/BusinessCard/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「`Column` と `Row` と `Box` の違いを、図に描くイメージで説明して」
+「名刺アプリで名前を画面中央、連絡先を画面下に置きたい。`Modifier` の使い方を、答えを丸ごとではなく方針→ヒントの順で教えて」
+「このレイアウトのコードをレビューして。コンポーザブルの分け方と命名の改善点を教えて（コード: ここに貼る）」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 9. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit1/BusinessCard/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - プロジェクト: 名刺アプリを作成する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 9. チェックリスト
+## 10. チェックリスト
 
 - [ ] `Text` / `Image` コンポーザブルと `Column` / `Row` / `Box` で画面を組める
 - [ ] `Modifier` で余白・サイズ・配置を調整できる

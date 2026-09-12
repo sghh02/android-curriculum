@@ -11,23 +11,23 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約375分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約375分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | Compose で画面間を移動する | 約150分 |  |
-| 2 | Codelab | Cupcake アプリをテストする | 約60分 |  |
-| 3 | Codelab | 演習: ナビゲーションを追加する | 約150分 | **提出対象** |
+| 1 | レッスン | Compose で画面間を移動する | 約150分 |  |
+| 2 | レッスン | Cupcake アプリをテストする | 約60分 |  |
+| 3 | レッスン | 演習: ナビゲーションを追加する | 約150分 | **提出対象** |
 | 4 | クイズ | [テスト: Jetpack Compose でのナビゲーション](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-2/android-basics-compose-unit-4-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Compose で画面間を移動する
 
@@ -39,7 +39,7 @@ Codelab の進め方は次の通りです。
 | ![](./images/basic-android-kotlin-compose-navigation/fa955a02eea01b57.png) | ![](./images/basic-android-kotlin-compose-navigation/4cbe48d4d7de26ff.png) | ![](./images/basic-android-kotlin-compose-navigation/bd6d050e9b0be97e.png) |
 |---|---|---|
 
-最新の Android 開発では、マルチスクリーン アプリの作成に Jetpack Navigation コンポーネントを使用します。Navigation Compose コンポーネントを使用すると、ユーザー インターフェースを作成する場合と同様に、宣言型のアプローチによって Compose でマルチスクリーン アプリを簡単に作成できます。この Codelab では、複雑化するアプリにおけるおすすめの方法を示しつつ、Navigation Compose コンポーネントの基本、AppBar をレスポンシブにする方法、インテントを使用してアプリ間でデータを送信する方法を紹介します。
+最新の Android 開発では、マルチスクリーン アプリの作成に Jetpack Navigation コンポーネントを使用します。Navigation Compose コンポーネントを使用すると、ユーザー インターフェースを作成する場合と同様に、宣言型のアプローチによって Compose でマルチスクリーン アプリを簡単に作成できます。このレッスンでは、複雑化するアプリにおけるおすすめの方法を示しつつ、Navigation Compose コンポーネントの基本、AppBar をレスポンシブにする方法、インテントを使用してアプリ間でデータを送信する方法を紹介します。
 
 #### 前提条件
 
@@ -77,7 +77,7 @@ $ git checkout starter
 
 > **注:**スターター コードは、ダウンロードしたリポジトリの `starter` ブランチにあります。
 
-この Codelab のスターター コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/tree/starter) で表示します。
+このレッスンのスターター コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/tree/starter) で表示します。
 
 ### 3. アプリの内容
 
@@ -147,7 +147,7 @@ Navigation コンポーネントは主に 3 つの部分から構成されてい
 - **NavGraph:**コンポーザブルのデスティネーションをマッピングして移動できるようにします。
 - **NavHost:**NavGraph の現在のデスティネーションを表示するコンテナとして機能するコンポーザブル。
 
-この Codelab では、NavController と NavHost に焦点を当てます。NavHost 内で、Cupcake アプリの NavGraph のデスティネーションを定義します。
+このレッスンでは、NavController と NavHost に焦点を当てます。NavHost 内で、Cupcake アプリの NavGraph のデスティネーションを定義します。
 
 #### アプリ内のデスティネーションのルートを定義する
 
@@ -887,7 +887,7 @@ import android.content.Intent
 val intent = Intent(Intent.ACTION_SEND)
 ```
 
-この `Intent` オブジェクトは一度構成するだけで済むため、後続する数行のコードは、前の Codelab で学習した `apply()` 関数を使用してさらに簡潔にできます。
+この `Intent` オブジェクトは一度構成するだけで済むため、後続する数行のコードは、前のレッスンで学習した `apply()` 関数を使用してさらに簡潔にできます。
 
 5. 新しく作成したインテントに対して `apply()` を呼び出し、ラムダ式を渡します。
 
@@ -969,7 +969,7 @@ onSendButtonClicked = { subject: String, summary: String ->
 
 ### 7. アプリバーがナビゲーションに反応するようにする
 
-アプリは機能し、どの画面間でも移動できるようにもなりましたが、この Codelab の冒頭で示したスクリーンショットと比べると欠けているものがまだいくつかあります。アプリバーは自動的にはナビゲーションに反応しません。アプリが新しいルートに移動したときにタイトルが更新されず、必要に応じてタイトルの前に「上へ」ボタンが表示されることもありません。
+アプリは機能し、どの画面間でも移動できるようにもなりましたが、このレッスンの冒頭で示したスクリーンショットと比べると欠けているものがまだいくつかあります。アプリバーは自動的にはナビゲーションに反応しません。アプリが新しいルートに移動したときにタイトルが更新されず、必要に応じてタイトルの前に「上へ」ボタンが表示されることもありません。
 
 > **注:**システムの「戻る」ボタンは、Android オペレーティング システムによって提供され、画面の下部に配置されます。
 > 
@@ -1096,7 +1096,7 @@ navigateUp = { navController.navigateUp() }
 
 ### 8. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake.git
@@ -1108,7 +1108,7 @@ $ git checkout navigation
 
 > **注:**解答コードは、ダウンロードしたリポジトリの `navigation` ブランチにあります。
 
-この Codelab の解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/tree/navigation) で表示します。
+このレッスンの解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake/tree/navigation) で表示します。
 
 ### 9. 概要
 
@@ -1128,14 +1128,14 @@ $ git checkout navigation
 
 ### 1. はじめに
 
-「Compose で画面間を移動する」Codelab では、Jetpack Navigation Compose コンポーネントを使用して、Compose アプリにナビゲーションを追加する方法を学習しました。
+「Compose で画面間を移動する」レッスンでは、Jetpack Navigation Compose コンポーネントを使用して、Compose アプリにナビゲーションを追加する方法を学習しました。
 
-Cupcake アプリには複数の画面があり、ユーザーは移動し、さまざまなアクションを行えます。このアプリは、自動テストのスキルを磨くのに適しています。この Codelab では、Cupcake アプリの UI テストをいくつか作成し、テスト カバレッジを最大化する方法について学習します。
+Cupcake アプリには複数の画面があり、ユーザーは移動し、さまざまなアクションを行えます。このアプリは、自動テストのスキルを磨くのに適しています。このレッスンでは、Cupcake アプリの UI テストをいくつか作成し、テスト カバレッジを最大化する方法について学習します。
 
 #### 前提条件
 
 - 関数型、ラムダ、スコープ関数など、Kotlin 言語に精通していること
-- 「Compose で画面間を移動する」Codelab を完了していること
+- 「Compose で画面間を移動する」レッスンを完了していること
 
 #### 学習内容
 
@@ -1212,7 +1212,7 @@ androidTestImplementation("androidx.test.ext:junit:1.1.5")
 
 ### 4. ナビゲーション ホストをセットアップする
 
-以前 Codelab では、Compose での UI テストには Compose テストルールが必要であることを学習しました。Jetpack Navigation のテストも同様です。ただしナビゲーションをテストする場合は、Compose テストルールによる追加のセットアップが必要です。
+以前レッスンでは、Compose での UI テストには Compose テストルールが必要であることを学習しました。Jetpack Navigation のテストも同様です。ただしナビゲーションをテストする場合は、Compose テストルールによる追加のセットアップが必要です。
 
 Compose Navigation をテストする場合、アプリコードと同じ `NavHostController` にはアクセスできません。ただし、`TestNavHostController` を使用し、このナビゲーション コントローラでテストルールを構成することはできます。このセクションでは、ナビゲーション テストのテストルールを構成、再利用する方法について説明します。
 
@@ -1380,7 +1380,7 @@ fun cupcakeNavHost_verifyStartDestination() {
 }
 ```
 
-多くのテストでは、UI コンポーネントの操作も必要になります。この Codelab ではリソース文字列を使用して、こうしたコンポーネントを見つけることがよくあります。コンポーザブルにアクセスするには、リソース文字列と `Context.getString()` メソッドを使用します。詳しくは、[こちら](https://developer.android.com/reference/android/content/Context#getString(int))をご覧ください。Compose で UI テストを記述する場合、このメソッドの実装は次のようになります。
+多くのテストでは、UI コンポーネントの操作も必要になります。このレッスンではリソース文字列を使用して、こうしたコンポーネントを見つけることがよくあります。コンポーザブルにアクセスするには、リソース文字列と `Context.getString()` メソッドを使用します。詳しくは、[こちら](https://developer.android.com/reference/android/content/Context#getString(int))をご覧ください。Compose で UI テストを記述する場合、このメソッドの実装は次のようになります。
 
 ```kotlin
 composeTestRule.onNodeWithText(composeTestRule.activity.getString(R.string.my_string)
@@ -1815,7 +1815,7 @@ fun selectOptionScreen_verifyContent() {
 
 ### 7. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、次の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-cupcake.git
@@ -1840,13 +1840,13 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 お疲れさまでした。Jetpack Compose で複数の画面間を移動する最初のアプリを作成しました。今度は、学んだことを実践してみましょう。
 
-この演習では、複数の画面コンポーザブルを持つアプリにナビゲーションを追加するために必要なコンポーネントの作成に焦点を当てます。この教材では、Compose を使用して画面間を移動する Codelab で学習した成果に基づき、その知識を応用して、既存のアプリにナビゲーションを追加します。
+この演習では、複数の画面コンポーザブルを持つアプリにナビゲーションを追加するために必要なコンポーネントの作成に焦点を当てます。この教材では、Compose を使用して画面間を移動するレッスンで学習した成果に基づき、その知識を応用して、既存のアプリにナビゲーションを追加します。
 
 解答コードは最後に掲載されていますが、演習に取り組んでから解答を確認するようにしてください。解答はアプリを実装する方法の一つとして捉えてください。
 
 #### 前提条件
 
-- Compose を使用して画面間を移動する Codelab を通じて「Compose での Android の基礎」コースワークを完了していること
+- Compose を使用して画面間を移動するレッスンを通じて「Compose での Android の基礎」コースワークを完了していること
 
 #### 必要なもの
 
@@ -1949,19 +1949,31 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 - 画面の名前は `enum class` で管理すると、文字列のタイプミスによるクラッシュを防げます。
 - 「戻る」で意図しない画面に行くときは、`popBackStack` / `popUpTo` の指定を疑いましょう。
 
-## 7. 提出物
+## 7. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit4/Lunchtray/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「`NavHost` `NavController` `composable()` の関係を、初心者向けに図解して」
+「戻るボタンで意図しない画面に戻ってしまう。`popBackStack` と `popUpTo` の違いを説明したうえで、自分のコードの問題点を確認して（コード: ここに貼る）」
+「演習: ナビゲーションを追加する で、画面の名前を `enum class` で管理する書き方を、方針→ヒントの順で教えて」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 8. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit4/Lunchtray/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - 演習: ナビゲーションを追加する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 8. チェックリスト
+## 9. チェックリスト
 
 - [ ] `NavHost` と `NavController` で複数画面を切り替えられる
 - [ ] 画面間でデータを受け渡し、戻る操作を正しく扱える

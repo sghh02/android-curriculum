@@ -11,31 +11,31 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約405分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約405分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | アクティビティのライフサイクルのステージ | 約90分 |  |
-| 2 | Codelab | Compose での ViewModel と状態 | 約120分 |  |
-| 3 | Codelab | ViewModel をテストする単体テストを作成する | 約60分 |  |
-| 4 | Codelab | 演習: Dessert Clicker に ViewModel を追加する | 約120分 | **提出対象** |
+| 1 | レッスン | アクティビティのライフサイクルのステージ | 約90分 |  |
+| 2 | レッスン | Compose での ViewModel と状態 | 約120分 |  |
+| 3 | レッスン | ViewModel をテストする単体テストを作成する | 約60分 |  |
+| 4 | レッスン | 演習: Dessert Clicker に ViewModel を追加する | 約120分 | **提出対象** |
 | 5 | クイズ | [テスト: アーキテクチャ コンポーネント](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-1/android-basics-compose-unit-4-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. アクティビティのライフサイクルのステージ
 
 
 ### 1. 始める前に
 
-この Codelab では、Android の基本的な要素であるアクティビティのライフサイクルについて学習します。
+このレッスンでは、Android の基本的な要素であるアクティビティのライフサイクルについて学習します。
 
 アクティビティは、その存続期間にわたってさまざまな状態に遷移し、場合によっては元の状態に戻ります。この状態の遷移を、アクティビティのライフサイクルといいます。
 
@@ -67,7 +67,7 @@ Android デベロッパーは、アクティビティのライフサイクルを
 
 ### 2. アプリの概要
 
-この Codelab では、Dessert Clicker というスターター アプリを使用します。Dessert Clicker では、ユーザーが画面上のデザートをタップするたびに、そのデザートが「購入」されます。アプリは以下について、レイアウトの値を更新します。
+このレッスンでは、Dessert Clicker というスターター アプリを使用します。Dessert Clicker では、ユーザーが画面上のデザートをタップするたびに、そのデザートが「購入」されます。アプリは以下について、レイアウトの値を更新します。
 
 - 「購入された」デザートの数
 - 「購入済み」のデザートの総収益
@@ -104,7 +104,7 @@ Android Studio で `basic-android-kotlin-compose-training-dessert-clicker` フ�
 
 > **注:** `onRestart()` メソッドのアスタリスクは、状態が **Created** と **Started** の間を遷移するたびにこのメソッドが呼び出されるわけではないことを示しています。`onStop()` が呼び出され、その後アクティビティが再開された場合にのみ呼び出されます。
 
-Android がオーバーライド可能なコールバックを呼び出すタイミングと、各コールバック メソッドで行われる処理を理解することは重要ですが、どちらの図も複雑でわかりにくくなっています。この Codelab では、それぞれの状態とコールバックの概要に触れるだけでなく、追究して Android アクティビティのライフサイクルについて理解を深めます。
+Android がオーバーライド可能なコールバックを呼び出すタイミングと、各コールバック メソッドで行われる処理を理解することは重要ですが、どちらの図も複雑でわかりにくくなっています。このレッスンでは、それぞれの状態とコールバックの概要に触れるだけでなく、追究して Android アクティビティのライフサイクルについて理解を深めます。
 
 #### ステップ 1: `onCreate()` メソッドを確認してロギングを追加する
 
@@ -210,7 +210,7 @@ override fun onStart() {
 2024-04-26 14:55:41.674  5386-5386  MainActivity            com.example.dessertclicker           D  onStart Called
 ```
 
-> **注:**デバイスでライフサイクル コールバックを試してみると、デバイスを回転させたときに異常な動作が発生することがあります。この動作については、この Codelab で後ほど説明します。
+> **注:**デバイスでライフサイクル コールバックを試してみると、デバイスを回転させたときに異常な動作が発生することがあります。この動作については、このレッスンで後ほど説明します。
 
 #### ステップ 3: ログ ステートメントを追加する
 
@@ -296,7 +296,7 @@ Dessert Clicker アプリをロギング用にセットアップできたとこ�
 
 Android OS は、コードがアクティビティの [`finish()`](https://developer.android.com/reference/android/app/Activity.html#finish()) メソッドを呼び出すか、ユーザーがアプリを強制終了した場合に、アクティビティを終了することがあります。たとえばユーザーは、履歴画面でアプリを強制終了または終了できます。アプリが長時間画面に表示されていない場合、OS が独自にアクティビティをシャットダウンすることもあります。これにより、Android はバッテリー消費を抑え、アプリが使用していたリソースを回収して他のアプリで使用できるようにします。これらは、Android システムがアクティビティを破棄する理由のほんの一部です。Android システムが警告を表示せずにアクティビティを破棄するケースもあります。
 
-> **注:**この Codelab で後述する `onCreate()` と `onDestroy()` は、1 つのアクティビティ インスタンスの存続期間中に 1 回だけ呼び出されます。`onCreate()` は、アプリを初めて初期化するために呼び出され、`onDestroy()` は、アクティビティで使用可能になっていたオブジェクトを無効化、終了、または破棄し、メモリなどのリソースを使用し続けないようにするために呼び出されます。
+> **注:**このレッスンで後述する `onCreate()` と `onDestroy()` は、1 つのアクティビティ インスタンスの存続期間中に 1 回だけ呼び出されます。`onCreate()` は、アプリを初めて初期化するために呼び出され、`onDestroy()` は、アクティビティで使用可能になっていたオブジェクトを無効化、終了、または破棄し、メモリなどのリソースを使用し続けないようにするために呼び出されます。
 
 #### ユースケース 2: アクティビティ間の移動
 
@@ -442,7 +442,7 @@ Composition は、初回のコンポーズとその後の再コンポーズに�
 
 Compose が再コンポーズをトラッキングし、トリガーするには、状態がいつ変化したのかを把握する必要があります。オブジェクトの状態をトラッキングするよう Compose に指示するには、オブジェクトの型を [`State`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/State) または [`MutableState`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState) にする必要があります。`State` 型は不変であり、読み取りのみが可能です。`MutableState` 型は可変であり、読み取りと書き込みが可能です。
 
-`MutableState` については、以前の Codelab の [Lemonade アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade)と [Tip Time アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator)ですでに確認、使用しました。
+`MutableState` については、以前のレッスンの [Lemonade アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade)と [Tip Time アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator)ですでに確認、使用しました。
 
 可変変数 `revenue` を作成するには、`mutableStateOf` を使用して宣言します。`0` は初期のデフォルト値です。
 
@@ -462,7 +462,7 @@ var revenue by remember { mutableStateOf(0) }
 
 Compose は再コンポーズ時に収益の状態を記憶しますが、構成の変更の際はこの状態を保持しません。構成の変更の際に Compose が状態を保持するようにするには、`rememberSaveable` を使用する必要があります。
 
-その他の演習と詳細については、Compose の状態の概要 Codelab をご覧ください。
+その他の演習と詳細については、Compose の状態の概要レッスンをご覧ください。
 
 #### `rememberSaveable` を使用して構成の変更をまたいで値を保存する
 
@@ -545,13 +545,13 @@ var currentDessertImageId by rememberSaveable {
 
 ### 1. 始める前に
 
-以前の Codelab では、アクティビティのライフサイクルと、関連するライフサイクルの構成変更にともなう問題について学習しました。構成変更が発生したときには、`rememberSaveable` を使用する、またはインスタンスの状態を保存するなどの方法で、アプリのデータを保存できます。ただし、これらの方法で問題が発生する場合があります。ほとんどの場合には `rememberSaveable` を使用できますが、その場合は、コンポーザブルの中や周辺のロジックを維持することになります。アプリが大きくなったときには、データとロジックをコンポーザブルから分離する必要があります。この Codelab では、Android Jetpack ライブラリ、`ViewModel`、Android アプリのアーキテクチャ ガイドラインを利用して、アプリを設計し、構成変更後もアプリデータを維持する堅牢な方法について学びます。
+以前のレッスンでは、アクティビティのライフサイクルと、関連するライフサイクルの構成変更にともなう問題について学習しました。構成変更が発生したときには、`rememberSaveable` を使用する、またはインスタンスの状態を保存するなどの方法で、アプリのデータを保存できます。ただし、これらの方法で問題が発生する場合があります。ほとんどの場合には `rememberSaveable` を使用できますが、その場合は、コンポーザブルの中や周辺のロジックを維持することになります。アプリが大きくなったときには、データとロジックをコンポーザブルから分離する必要があります。このレッスンでは、Android Jetpack ライブラリ、`ViewModel`、Android アプリのアーキテクチャ ガイドラインを利用して、アプリを設計し、構成変更後もアプリデータを維持する堅牢な方法について学びます。
 
 [Android Jetpack](https://developer.android.com/jetpack) ライブラリは、優れた Android アプリの開発を支援するライブラリ集です。このライブラリ集を使用すると、ベスト プラクティスに沿って開発を進めながら、ボイラープレート コードを作成する手間を省き、複雑なタスクを簡素化できるので、アプリのロジックなどのコードの重要な部分に集中できます。
 
 「アプリ アーキテクチャ」は、アプリの設計ルールの集まりです。アーキテクチャは、住宅の設計図とほぼ同じで、アプリに構造を与えます。優れたアプリ アーキテクチャを採用すれば、コードの堅牢性、柔軟性、スケーラビリティ、テスト性、保守性を長年にわたって維持できます。[アプリ アーキテクチャ ガイド](https://developer.android.com/topic/libraries/architecture)で、アプリ アーキテクチャに関する推奨事項と推奨されるベスト プラクティスを紹介しています。
 
-この Codelab では、Android Jetpack ライブラリのアーキテクチャ コンポーネントの一つである [`ViewModel`](https://developer.android.com/topic/libraries/architecture/viewmodel) を利用して、アプリデータを保存する方法について学びます。フレームワークが構成変更やその他のイベント中にアクティビティを破棄して再作成しても、保存されているデータは失われません。ただし、プロセスの終了が原因でアクティビティが破棄された場合、データは失われます。`ViewModel` は迅速にアクティビティを再作成することによってデータをキャッシュに保存しているだけなのです。
+このレッスンでは、Android Jetpack ライブラリのアーキテクチャ コンポーネントの一つである [`ViewModel`](https://developer.android.com/topic/libraries/architecture/viewmodel) を利用して、アプリデータを保存する方法について学びます。フレームワークが構成変更やその他のイベント中にアクティビティを破棄して再作成しても、保存されているデータは失われません。ただし、プロセスの終了が原因でアクティビティが破棄された場合、データは失われます。`ViewModel` は迅速にアクティビティを再作成することによってデータをキャッシュに保存しているだけなのです。
 
 #### 前提条件
 
@@ -610,7 +610,7 @@ $ git checkout starter
 
 アプリにバグがあることがわかります。スクランブルされた単語は表示されませんが、「scrambleun」とハードコードされ、ボタンをタップしても何も起こりません。
 
-この Codelab では、Android アプリ アーキテクチャを使用してゲーム機能を実装します。
+このレッスンでは、Android アプリ アーキテクチャを使用してゲーム機能を実装します。
 
 #### スターター コードのチュートリアル
 
@@ -685,7 +685,7 @@ fun GameStatus(score: Int, modifier: Modifier = Modifier) {
 
 ![](./images/basic-android-kotlin-compose-viewmodel-and-state/b6ddb1f07f10df0c.png)
 
-以下の `GameLayout` のコードには、スクランブルされた単語のテキスト、手順のテキスト、ユーザーが単語を入力するテキスト フィールド `OutlinedTextField` の 3 つの子要素が `Card` 内で 1 つの列になって含まれています。現時点では、スクランブルされた単語は「`scrambleun`」とハードコードされています。この Codelab の後半では、`WordsData.kt` ファイルの単語を表示する機能を実装します。
+以下の `GameLayout` のコードには、スクランブルされた単語のテキスト、手順のテキスト、ユーザーが単語を入力するテキスト フィールド `OutlinedTextField` の 3 つの子要素が `Card` 内で 1 つの列になって含まれています。現時点では、スクランブルされた単語は「`scrambleun`」とハードコードされています。このレッスンの後半では、`WordsData.kt` ファイルの単語を表示する機能を実装します。
 
 ```kotlin
 // No need to copy, this is included in the starter code.
@@ -742,7 +742,7 @@ fun GameLayout(modifier: Modifier = Modifier) {
 }
 ```
 
-`OutlinedTextField` コンポーザブルは、以前の Codelab で作成したアプリの `TextField` コンポーザブルに似ています。
+`OutlinedTextField` コンポーザブルは、以前のレッスンで作成したアプリの `TextField` コンポーザブルに似ています。
 
 テキスト フィールドには次の 2 種類があります。
 
@@ -753,7 +753,7 @@ fun GameLayout(modifier: Modifier = Modifier) {
 
 枠線付きテキスト フィールドは、塗りつぶしテキスト フィールドに比べて視覚的な強調が控えめになっています。多数のテキスト項目が配置されるフォームなどに表示される場合は、強調が控えめになってレイアウトがシンプルになります。
 
-スターター コードでは、ユーザーが推測を入力しても `OutlinedTextField` が更新されません。この機能は、この Codelab で更新します。
+スターター コードでは、ユーザーが推測を入力しても `OutlinedTextField` が更新されません。この機能は、このレッスンで更新します。
 
 **GameScreen**
 
@@ -819,11 +819,11 @@ fun GameScreen() {
 }
 ```
 
-スターター コードでは、ボタンのクリック イベントが実装されていません。これらのイベントは、この Codelab で実装します。
+スターター コードでは、ボタンのクリック イベントが実装されていません。これらのイベントは、このレッスンで実装します。
 
 **FinalScoreDialog**
 
-`FinalScoreDialog` コンポーザブルは、ダイアログ（ユーザーにプロンプトを表示する小さなウィンドウ）を表示します。ここでは、[**Play Again**] か [**Exit**] を選択できます。この Codelab の後半で、このダイアログをゲームの最後に表示するロジックを実装します。
+`FinalScoreDialog` コンポーザブルは、ダイアログ（ユーザーにプロンプトを表示する小さなウィンドウ）を表示します。ここでは、[**Play Again**] か [**Exit**] を選択できます。このレッスンの後半で、このダイアログをゲームの最後に表示するロジックを実装します。
 
 ![](./images/basic-android-kotlin-compose-viewmodel-and-state/dba2d9ea62aaa982.png)
 
@@ -1768,7 +1768,7 @@ data class GameUiState(
 
 このタスクでは、`isGameOver` データを ViewModel から `GameScreen` へと下方に渡し、それを使用してゲームの終了と再開の選択肢があるアラート ダイアログを表示します。
 
-ダイアログは、ユーザーによる意思決定や追加情報の入力を求める小さなウィンドウです。通常、ダイアログは画面全体に表示されるのではなく、また続行するにはユーザーが操作を行う必要があります。Android には、さまざまな種類のダイアログが用意されています。この Codelab では、アラート ダイアログについて学習します。
+ダイアログは、ユーザーによる意思決定や追加情報の入力を求める小さなウィンドウです。通常、ダイアログは画面全体に表示されるのではなく、また続行するにはユーザーが操作を行う必要があります。Android には、さまざまな種類のダイアログが用意されています。このレッスンでは、アラート ダイアログについて学習します。
 
 ##### アラート ダイアログの構造
 
@@ -1875,7 +1875,7 @@ fun resetGame() {
 
 ### 10. デバイスの回転の状態
 
-以前の Codelab で、Android での構成変更について学習しました。構成変更があると、Android がアクティビティをゼロから再起動して、ライフサイクルの起動コールバックをすべて実行します。
+以前のレッスンで、Android での構成変更について学習しました。構成変更があると、Android がアクティビティをゼロから再起動して、ライフサイクルの起動コールバックをすべて実行します。
 
 [`ViewModel`](https://developer.android.com/topic/libraries/architecture/viewmodel) は、Android フレームワークがアクティビティを破棄して再作成したときにも破棄されないアプリ関連のデータを格納します。`ViewModel` オブジェクトは自動的に保持され、構成変更時のアクティビティ インスタンスのように破棄されることはありません。保持されるデータは、再コンポーズ後すぐに利用できるようになります。
 
@@ -1888,7 +1888,7 @@ fun resetGame() {
 
 ### 11. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble.git
@@ -1900,11 +1900,11 @@ $ git checkout viewmodel
 
 > **注:**解答コードは、ダウンロードしたリポジトリの `viewmodel` ブランチにあります。
 
-この Codelab の解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble/tree/viewmodel) で表示します。
+このレッスンの解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble/tree/viewmodel) で表示します。
 
 ### 12. まとめ
 
-お疲れさまでした。Codelab を完了しました。ここでは、Android アプリのアーキテクチャ ガイドラインでは、異なる役割を持つクラスに分割することと、モデルから UI を駆動することが推奨されていることを学習しました。
+お疲れさまでした。レッスンを完了しました。ここでは、Android アプリのアーキテクチャ ガイドラインでは、異なる役割を持つクラスに分割することと、モデルから UI を駆動することが推奨されていることを学習しました。
 
 作成したら、*#AndroidBasics* を付けて、ソーシャル メディアで共有しましょう。
 
@@ -1920,11 +1920,11 @@ $ git checkout viewmodel
 
 ### 1. 始める前に
 
-この Codelab では、`ViewModel` コンポーネントをテストする単体テストの作成方法について説明します。[Unscramble](https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble.git) ゲームアプリの単体テストを追加します。Unscramble アプリは、スクランブルされた単語を推測し、正解するとポイントを獲得できる、楽しい単語ゲームです。次の画像は、アプリのプレビューを示しています。
+このレッスンでは、`ViewModel` コンポーネントをテストする単体テストの作成方法について説明します。[Unscramble](https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble.git) ゲームアプリの単体テストを追加します。Unscramble アプリは、スクランブルされた単語を推測し、正解するとポイントを獲得できる、楽しい単語ゲームです。次の画像は、アプリのプレビューを示しています。
 
 ![](./images/basic-android-kotlin-compose-test-viewmodel/bb1e97c357603a27.png)
 
-「自動テストを作成する」Codelab では、自動テストの概要と重要性について学習しました。また、単体テストの実装方法についても学習しました。
+「自動テストを作成する」レッスンでは、自動テストの概要と重要性について学習しました。また、単体テストの実装方法についても学習しました。
 
 学習した内容は以下のとおりです。
 
@@ -1933,7 +1933,7 @@ $ git checkout viewmodel
 - 単体テストでは、関数、クラス、プロパティをテストできます。
 - ローカル単体テストは、ワークステーションで実行されます。つまり、Android デバイスやエミュレータを必要とせずに、開発環境で実行されます。言い換えると、ローカルテストはパソコンで実行できます。
 
-先に進む前に、「自動テストを作成する」と「Compose での ViewModel と状態」の Codelab を完了してください。
+先に進む前に、「自動テストを作成する」と「Compose での ViewModel と状態」のレッスンを完了してください。
 
 #### 前提条件
 
@@ -1989,7 +1989,7 @@ $ git checkout viewmodel
 
 ### 3. テストの依存関係を追加する
 
-この Codelab では、JUnit フレームワークを使用して単体テストを作成します。このフレームワークを使用するには、アプリ モジュールの **`build.gradle.kts`** ファイルに依存関係として追加する必要があります。
+このレッスンでは、JUnit フレームワークを使用して単体テストを作成します。このフレームワークを使用するには、アプリ モジュールの **`build.gradle.kts`** ファイルに依存関係として追加する必要があります。
 
 `implementation` 構成を使用して、アプリに必要な依存関係を指定します。たとえばアプリで `ViewModel` ライブラリを使用するには、次のコード スニペットに示すように、依存関係を `androidx.lifecycle:lifecycle-viewmodel-compose` に追加する必要があります。
 
@@ -2651,7 +2651,7 @@ fun gameViewModel_WordSkipped_ScoreUnchangedAndWordCountIncreased() {
 
 ### 6. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-unscramble.git
@@ -2702,7 +2702,7 @@ Dessert Clicker は、インラインの状態とデータを利用して機能�
 
 #### 前提条件
 
-- Compose での ViewModel と状態の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- Compose での ViewModel と状態のレッスンを通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -2764,7 +2764,7 @@ Jetpack ViewModel コンポーネントを使用して `ViewModel` クラスを�
 
 ロジックを `MainActivity` から ViewModel に移し、作成した UI 状態クラスを使用して UI 状態データにアクセスできるようにします。その後、すべてのデータと状態管理ロジックを `MainActivity` から削除します。
 
-このタスクを自分でやってみてください。必要に応じて、Compose での ViewModel と状態に関する Codelab のガイダンスを確認してください。
+このタスクを自分でやってみてください。必要に応じて、Compose での ViewModel と状態に関するレッスンのガイダンスを確認してください。
 
 ### 7. ViewModel を呼び出す
 
@@ -2783,19 +2783,32 @@ ViewModel が提供するデータとメソッドを使用して、`MainActivity
 - 画面回転でデータが消える問題は、この章の ViewModel で解決します。「なぜ消えるのか」（Activity が作り直される）をまず理解しましょう。
 - 「UI 状態は ViewModel に、表示は Composable に」という分け方は、この後のすべてのアプリで使います。
 
-## 8. 提出物
+## 8. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit4/DessertClicker/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「画面を回転するとデータが消える理由を、Activity のライフサイクルとつなげて説明して」
+「`ViewModel` と `StateFlow` で UI 状態を持つ構成を、なぜそう分けるのかが分かるように図解して」
+「演習: Dessert Clicker に ViewModel を追加する で、どの変数を ViewModel に移すべきか判断に迷っている。判断基準を教えて（現在のコード: ここに貼る）」
+「この章の内容で理解確認クイズを5問作って（解答は最後にまとめて）」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 9. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit4/DessertClicker/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - 演習: Dessert Clicker に ViewModel を追加する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 9. チェックリスト
+## 10. チェックリスト
 
 - [ ] Activity のライフサイクル（onCreate / onStart / onResume …）を説明できる
 - [ ] `ViewModel` と `StateFlow` で UI 状態を管理できる

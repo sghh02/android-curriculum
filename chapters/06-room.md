@@ -11,24 +11,24 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約435分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約435分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
 | 1 | 記事 | [Flow のテスト](https://developer.android.com/kotlin/flow/test?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 2 | Codelab | Room を使用してデータを永続化する | 約150分 |  |
-| 3 | Codelab | Room によるデータの読み取りと更新 | 約120分 |  |
-| 4 | Codelab | 演習: Bus Schedule アプリを作成する | 約150分 | **提出対象** |
+| 2 | レッスン | Room を使用してデータを永続化する | 約150分 |  |
+| 3 | レッスン | Room によるデータの読み取りと更新 | 約120分 |  |
+| 4 | レッスン | 演習: Bus Schedule アプリを作成する | 約150分 | **提出対象** |
 | 5 | クイズ | [テスト: Room](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-2/android-basics-compose-unit-6-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. Room を使用してデータを永続化する
 
@@ -74,16 +74,16 @@ Codelab の進め方は次の通りです。
 
 ### 2. アプリの概要
 
-この Codelab では、Inventory アプリのスターター コードを扱い、Room ライブラリを使用してアプリにデータベース レイヤを追加します。アプリの最終バージョンでは、在庫データベースからアイテムのリストを表示します。ユーザーは、新しいアイテムの追加、既存のアイテムの更新、在庫データベースからのアイテムの削除を行えます。この Codelab では、アイテムデータを Room データベースに保存します。アプリの残りの機能については、次の Codelab で説明します。
+このレッスンでは、Inventory アプリのスターター コードを扱い、Room ライブラリを使用してアプリにデータベース レイヤを追加します。アプリの最終バージョンでは、在庫データベースからアイテムのリストを表示します。ユーザーは、新しいアイテムの追加、既存のアイテムの更新、在庫データベースからのアイテムの削除を行えます。このレッスンでは、アイテムデータを Room データベースに保存します。アプリの残りの機能については、次のレッスンで説明します。
 
 | ![在庫アイテムが表示されたスマートフォンの画面](./images/basic-android-kotlin-compose-persisting-data-room/dff66d262bbd788e.png) | ![スマートフォンに表示された [Add Item] 画面](./images/basic-android-kotlin-compose-persisting-data-room/7008448fe6aba0a2.png) | ![アイテムの詳細が入力された [Add Item] 画面](./images/basic-android-kotlin-compose-persisting-data-room/bae9fd572d154881.png) |
 |---|---|---|
 
-> **注**: 上のスクリーンショットは、この Codelab の最後ではなく、パスウェイの最後におけるアプリの最終バージョンのスクリーンショットです。このスクリーンショットは、アプリの最終バージョンの概要を示しています。
+> **注**: 上のスクリーンショットは、このレッスンの最後ではなく、パスウェイの最後におけるアプリの最終バージョンのスクリーンショットです。このスクリーンショットは、アプリの最終バージョンの概要を示しています。
 
 ### 3. スターター アプリの概要
 
-##### この Codelab のスターター コードをダウンロードする
+##### このレッスンのスターター コードをダウンロードする
 
 まず、スターター コードをダウンロードします。
 
@@ -123,7 +123,7 @@ $ git checkout starter
 
 ![アイテムの詳細が入力された [Add Item] 画面](./images/basic-android-kotlin-compose-persisting-data-room/bae9fd572d154881.png)
 
-この Codelab では、Room を使用してインベントリの詳細を SQLite データベースに保存するコードを追加します。Room 永続ライブラリを使用して SQLite データベースを操作します。
+このレッスンでは、Room を使用してインベントリの詳細を SQLite データベースに保存するコードを追加します。Room 永続ライブラリを使用して SQLite データベースを操作します。
 
 #### コードのチュートリアル
 
@@ -155,7 +155,7 @@ Kotlin では、データクラスを通じてデータを簡単に扱えます�
 - Room [DAOs](https://developer.android.com/training/data-storage/room/accessing-data) は、データベース内のデータを取得、更新、挿入、削除するためにアプリで使用するメソッドを提供します。
 - Room [Database クラス](https://developer.android.com/reference/kotlin/androidx/room/Database)は、データベースに関連付けられている DAO のインスタンスをアプリに提供するデータベース クラスです。
 
-これらのコンポーネントの実装と詳細については、この Codelab で後ほど説明します。下図に、Room のコンポーネントが連携してデータベースを操作する仕組みを示します。
+これらのコンポーネントの実装と詳細については、このレッスンで後ほど説明します。下図に、Room のコンポーネントが連携してデータベースを操作する仕組みを示します。
 
 ![](./images/basic-android-kotlin-compose-persisting-data-room/a3288e8f37250031.png)
 
@@ -277,7 +277,7 @@ data class Item(
 
 ### 6. アイテム DAO を作成する
 
-[データ アクセス オブジェクト](https://developer.android.com/reference/androidx/room/Dao)（DAO）は、抽象インターフェースを提供することで永続化レイヤをアプリの残りの部分から分離するために使用できるパターンです。この分離は、これまでの Codelab で見てきた[単一責任の原則](https://en.wikipedia.org/wiki/Single-responsibility_principle)に則したものです。
+[データ アクセス オブジェクト](https://developer.android.com/reference/androidx/room/Dao)（DAO）は、抽象インターフェースを提供することで永続化レイヤをアプリの残りの部分から分離するために使用できるパターンです。この分離は、これまでのレッスンで見てきた[単一責任の原則](https://en.wikipedia.org/wiki/Single-responsibility_principle)に則したものです。
 
 DAO の機能は、基となる永続化レイヤでのデータベース操作に関連するすべての複雑さを隠し、アプリの残りの部分から分離することです。これにより、データを使用するコードから独立してデータレイヤを変更できます。
 
@@ -404,7 +404,7 @@ import kotlinx.coroutines.flow.Flow
 fun getItem(id: Int): Flow<Item>
 ```
 
-永続化レイヤでは `Flow` を使用することをおすすめします。戻り値の型として `Flow` を指定すると、データベース内のデータが変更されるたびに通知が届きます。`Room` がこの `Flow` を最新の状態に維持します。つまり、データを明示的に取得する必要があるのは一度だけです。このセットアップは次の Codelab で実装する在庫リストを更新する際に役立ちます。戻り値の型が `Flow` であるため、Room はバックグラウンド スレッドでクエリを実行します。明示的に `suspend` 関数にしてコルーチン スコープ内で呼び出す必要はありません。
+永続化レイヤでは `Flow` を使用することをおすすめします。戻り値の型として `Flow` を指定すると、データベース内のデータが変更されるたびに通知が届きます。`Room` がこの `Flow` を最新の状態に維持します。つまり、データを明示的に取得する必要があるのは一度だけです。このセットアップは次のレッスンで実装する在庫リストを更新する際に役立ちます。戻り値の型が `Flow` であるため、Room はバックグラウンド スレッドでクエリを実行します。明示的に `suspend` 関数にしてコルーチン スコープ内で呼び出す必要はありません。
 
 > **注**: Room データベースの `Flow` は、データベース内のデータが変更されるたびに通知を送信して、データを最新の状態に保つことができます。これにより、データを監視し、それに応じて UI を更新できます。
 
@@ -554,7 +554,7 @@ Android Studio が型の不一致エラーを生成します。このエラー�
 .fallbackToDestructiveMigration()
 ```
 
-> **注**: 通常は、スキーマが変更されたときの移行戦略を移行オブジェクトに指定します。「移行オブジェクト」とは、データが失われないように、古いスキーマの行をすべて取得して新しいスキーマの行に変換する方法を定義するオブジェクトです。[移行](https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929)はこの Codelab の対象外ですが、スキーマが変更され、データを失うことなく日付を移動する必要がある場合のことを指します。サンプルアプリであるため、これに代わる簡単な方法はデータベースを破棄して再構築することです。その場合、在庫データは失われます。たとえば、新しいパラメータの追加など、エンティティ クラスでなんらかの変更を行った場合、アプリでデータベースの削除と再初期化を行えるようにできます。
+> **注**: 通常は、スキーマが変更されたときの移行戦略を移行オブジェクトに指定します。「移行オブジェクト」とは、データが失われないように、古いスキーマの行をすべて取得して新しいスキーマの行に変換する方法を定義するオブジェクトです。[移行](https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929)はこのレッスンの対象外ですが、スキーマが変更され、データを失うことなく日付を移動する必要がある場合のことを指します。サンプルアプリであるため、これに代わる簡単な方法はデータベースを破棄して再構築することです。その場合、在庫データは失われます。たとえば、新しいパラメータの追加など、エンティティ クラスでなんらかの変更を行った場合、アプリでデータベースの削除と再初期化を行えるようにできます。
 
 18. データベース インスタンスを作成するために、`.build()` を呼び出します。この呼び出しにより、Android Studio のエラーが解消されます。
 
@@ -1018,11 +1018,11 @@ ItemEntryBody(
 
 ![](./images/basic-android-kotlin-compose-persisting-data-room/9e21d9f7eb426008.png)
 
-お疲れさまでした。[Room](https://developer.android.com/reference/androidx/room/package-summary) を使用してデータを保持するアプリを作成できました。次の Codelab では、アプリに `lazyColumn` を追加してデータベースのアイテムを表示し、エンティティの削除や更新などの新機能をアプリに追加します。ご参加をお待ちしております。
+お疲れさまでした。[Room](https://developer.android.com/reference/androidx/room/package-summary) を使用してデータを保持するアプリを作成できました。次のレッスンでは、アプリに `lazyColumn` を追加してデータベースのアイテムを表示し、エンティティの削除や更新などの新機能をアプリに追加します。ご参加をお待ちしております。
 
 ### 11. 解答コードを取得する
 
-この Codelab の解答コードは GitHub リポジトリにあります。この Codelab の完成したコードをダウンロードするには、次の git コマンドを使用します。
+このレッスンの解答コードは GitHub リポジトリにあります。このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app.git
@@ -1034,7 +1034,7 @@ $ git checkout room
 
 > **注:**解答コードは、ダウンロードしたリポジトリの `room` ブランチにあります。
 
-この Codelab の解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app/tree/room) で表示します。
+このレッスンの解答コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app/tree/room) で表示します。
 
 ### 12. 概要
 
@@ -1075,7 +1075,7 @@ Android デベロッパー ドキュメント
 
 ### 1. 始める前に
 
-前の Codelab では、Room 永続ライブラリ（[SQLite](https://developer.android.com/training/data-storage/sqlite) データベース上の抽象化レイヤ）を使用してアプリデータを保存する方法を学習しました。この Codelab では、Inventory アプリに機能を追加し、Room を使用して SQLite データベースのデータの読み取り、表示、更新、削除を行う方法について学習します。`LazyColumn` を使用してデータベースのデータを表示し、データベースを構成するデータが変更されると表示データを自動的に更新します。
+前のレッスンでは、Room 永続ライブラリ（[SQLite](https://developer.android.com/training/data-storage/sqlite) データベース上の抽象化レイヤ）を使用してアプリデータを保存する方法を学習しました。このレッスンでは、Inventory アプリに機能を追加し、Room を使用して SQLite データベースのデータの読み取り、表示、更新、削除を行う方法について学習します。`LazyColumn` を使用してデータベースのデータを表示し、データベースを構成するデータが変更されると表示データを自動的に更新します。
 
 #### 前提条件
 
@@ -1083,7 +1083,7 @@ Android デベロッパー ドキュメント
 - エンティティ クラス、DAO クラス、データベース クラスを作成できること。
 - データ アクセス オブジェクト（DAO）を使用して Kotlin 関数を SQL クエリにマッピングできること。
 - [`LazyColumn`](https://developer.android.com/jetpack/compose/lists) でリストアイテムを表示できること。
-- このユニットで前の Codelab（Room を使用してデータを永続化する）を修了していること。
+- このユニットで前のレッスン（Room を使用してデータを永続化する）を修了していること。
 
 #### 学習内容
 
@@ -1100,16 +1100,16 @@ Android デベロッパー ドキュメント
 
 ### 2. スターター アプリの概要
 
-この Codelab では、前の Codelab（Room を使用してデータを永続化する）で扱った Inventory アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは [**Add Item**] 画面を使用してアプリ データベースにデータを追加できます。
+このレッスンでは、前のレッスン（Room を使用してデータを永続化する）で扱った Inventory アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは [**Add Item**] 画面を使用してアプリ データベースにデータを追加できます。
 
 > **注:**現在のバージョンのスターター アプリでは、データベースに保存されているデータは表示されません。
 
 | ![アイテムの詳細が入力された [Add Item] 画面](./images/basic-android-kotlin-compose-update-data-room/bae9fd572d154881.png) | ![在庫が空であることを示すスマートフォンの画面](./images/basic-android-kotlin-compose-update-data-room/fb1fb265e2aa93f9.png) |
 |---|---|
 
-この Codelab ではアプリを拡張し、Room ライブラリを使用して、データの読み取りと表示、データベースのエンティティの更新と削除を行えるようにします。
+このレッスンではアプリを拡張し、Room ライブラリを使用して、データの読み取りと表示、データベースのエンティティの更新と削除を行えるようにします。
 
-##### この Codelab のスターター コードをダウンロードする
+##### このレッスンのスターター コードをダウンロードする
 
 まず、スターター コードをダウンロードします。
 
@@ -1123,7 +1123,7 @@ $ git checkout room
 
 > **注:**スターター コードは、ダウンロードしたリポジトリの `room` ブランチにあります。
 
-この Codelab のスターター コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app/tree/room) で表示します。
+このレッスンのスターター コードを確認する場合は、[GitHub](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app/tree/room) で表示します。
 
 ### 3. UI 状態を更新する
 
@@ -1317,7 +1317,7 @@ HomeBody(
 
 ### 5. データベースをテストする
 
-コードをテストする重要性については、これまでの Codelab で説明しました。このタスクでは、DAO クエリをテストする単体テストを追加します。その後、Codelab を進めながらテストを追加します。
+コードをテストする重要性については、これまでのレッスンで説明しました。このタスクでは、DAO クエリをテストする単体テストを追加します。その後、レッスンを進めながらテストを追加します。
 
 データベース実装をテストするには、JUnit テストを作成して Android デバイス上で実行することをおすすめします。このテストではアクティビティの作成が必要ないため、UI テストよりも高速に実行できます。
 
@@ -1464,7 +1464,7 @@ fun daoGetAllItems_returnsAllItemsFromDB() = runBlocking {
 
 ##### ui/item/ItemDetailsScreen.kt
 
-この画面はスターター コードの一部であり、アイテムの詳細を表示します。これについては、後の Codelab で説明します。この Codelab では、この画面は扱いません。`ItemDetailsViewModel.kt` は、この画面に対応する `ViewModel` です。
+この画面はスターター コードの一部であり、アイテムの詳細を表示します。これについては、後のレッスンで説明します。このレッスンでは、この画面は扱いません。`ItemDetailsViewModel.kt` は、この画面に対応する `ViewModel` です。
 
 ![](./images/basic-android-kotlin-compose-update-data-room/de7761a894d1b2ab.png)
 
@@ -2160,7 +2160,7 @@ Room を使用してデータベースを管理する初めてのアプリを作
 
 ### 9. 解答コード
 
-この Codelab の解答コードは、以下に示す GitHub リポジトリとブランチにあります。
+このレッスンの解答コードは、以下に示す GitHub リポジトリとブランチにあります。
 
 > **解答コードの URL:**
 > 
@@ -2187,15 +2187,15 @@ Kotlin リファレンス
 
 #### はじめに
 
-Room を使用してデータを永続化する Codelab では、Android アプリに Room データベースを実装する方法を学習しました。この演習では、独立して行われる一連のステップを通じて、Room データベースの実装について理解を深めることができます。
+Room を使用してデータを永続化するレッスンでは、Android アプリに Room データベースを実装する方法を学習しました。この演習では、独立して行われる一連のステップを通じて、Room データベースの実装について理解を深めることができます。
 
-この演習セットでは、Room を使用してデータを永続化する Codelab で学習したコンセプトを使用して、Bus Schedule アプリを完成させます。このアプリは、Room データベースから取得したデータを使用して、バス停と出発予定時刻のリストをユーザーに提示します。
+この演習セットでは、Room を使用してデータを永続化するレッスンで学習したコンセプトを使用して、Bus Schedule アプリを完成させます。このアプリは、Room データベースから取得したデータを使用して、バス停と出発予定時刻のリストをユーザーに提示します。
 
 解答コードは最後にあります。この学習体験を最大限に活用するため、記載された解答コードを確認する前に、できる限りご自身で実装とトラブルシューティングを行ってみてください。この実践時間中に、多くのことを学びましょう。
 
 #### 前提条件
 
-- Persist Data with Room Codelab の「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること
+- Persist Data with Room レッスンの「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること
 
 #### 必要なもの
 
@@ -2278,22 +2278,35 @@ ViewModel を更新して DAO からデータを取得し、サンプルデー�
 
 ## 6. つまずきやすいポイント
 
-- Room 関連のビルドエラーは KSP（アノテーション処理）の設定漏れが原因のことが多いです。Codelab の `build.gradle.kts` の記述と見比べましょう。
+- Room 関連のビルドエラーは KSP（アノテーション処理）の設定漏れが原因のことが多いです。レッスンの `build.gradle.kts` の記述と見比べましょう。
 - 「保存したはずのデータが表示されない」ときは、Database Inspector で実際にテーブルの中身を見るのが最短です。
 
-## 7. 提出物
+## 7. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit6/BusSchedule/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「Room の Entity / DAO / Database の役割を、1 件保存する流れに沿って説明して」
+「Room を追加したらビルドが通らない。KSP の設定漏れを疑っている。`build.gradle.kts` のどこを確認すべきか教えて（エラー全文: ここに貼る）」
+「`Flow` を使うと UI が自動更新される仕組みを説明して」
+「演習: Bus Schedule アプリ の自分の DAO をレビューして（コード: ここに貼る）」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 8. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit6/BusSchedule/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - 演習: Bus Schedule アプリを作成する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 8. チェックリスト
+## 9. チェックリスト
 
 - [ ] Room の Entity / DAO / Database の役割を説明できる
 - [ ] アプリを再起動してもデータが残る CRUD アプリを作れる

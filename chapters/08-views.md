@@ -10,22 +10,22 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約280分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約280分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | ビューで Android アプリを作成する | 約150分 |  |
-| 2 | Codelab | Compose を以前のアプリに追加する | 約120分 | **提出対象** |
+| 1 | レッスン | ビューで Android アプリを作成する | 約150分 |  |
+| 2 | レッスン | Compose を以前のアプリに追加する | 約120分 | **提出対象** |
 | 3 | クイズ | [テスト: Android ビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-1/android-basics-compose-unit-8-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
 
-Codelab の進め方は次の通りです。
+このプログラムの進め方は次の通りです。
 
-1. 下の各 Codelab を読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
+1. 下の各レッスンを読み、各ステップの説明を理解してから **自分でコードを打つ**（コピペで済ませない）
 2. ステップごとにアプリを実行し、期待どおり動くか確認する
 3. 動かないときは、エラー文をそのまま AI に貼って「何が原因か」を聞き、直したら **なぜ直ったか** をメモする
-4. パスウェイ末尾のクイズを受けて、間違えた項目を Codelab で読み直す
+4. 末尾のクイズを受けて、間違えた項目をレッスンで読み直す
 
-> Codelab 本文は Google Developers の公式 Codelab（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
+> レッスン本文は Google Developers の公式コンテンツ（CC BY 4.0）を日本語のまま転載しています。画面が最新の Android Studio と異なる場合があります。
 
 ## 3. ビューで Android アプリを作成する
 
@@ -34,7 +34,7 @@ Codelab の進め方は次の通りです。
 
 #### はじめに
 
-ここまで、Compose で Android アプリを作成する方法を学んできました。それは良いことです。Compose は、開発プロセスを簡素化できる非常に強力なツールです。しかし、Android アプリは必ずしも宣言型 UI で作成されているわけではありません。Android アプリの歴史において、Compose はごく最近のツールです。もともと、Android UI はビューを使用して作成されていました。そのため、Android デベロッパーとしての歩みを進めていくと、ビューに遭遇する可能性が高くなります。この Codelab では、Compose 以前の Android アプリの作成方法の基礎（XML、ビュー、ビュー バインディング、Fragment）を学びます。
+ここまで、Compose で Android アプリを作成する方法を学んできました。それは良いことです。Compose は、開発プロセスを簡素化できる非常に強力なツールです。しかし、Android アプリは必ずしも宣言型 UI で作成されているわけではありません。Android アプリの歴史において、Compose はごく最近のツールです。もともと、Android UI はビューを使用して作成されていました。そのため、Android デベロッパーとしての歩みを進めていくと、ビューに遭遇する可能性が高くなります。このレッスンでは、Compose 以前の Android アプリの作成方法の基礎（XML、ビュー、ビュー バインディング、Fragment）を学びます。
 
 #### 前提条件:
 
@@ -48,7 +48,7 @@ Codelab の進め方は次の通りです。
 
 #### 作成するアプリの概要
 
-この Codelab では、Juice Tracker アプリを完成させます。このアプリは、詳細なアイテムで構成されるリストを作成することで、注目のジュースを追跡できるというものです。Fragment と XML を追加して変更し、UI とスターター コードを完成させます。具体的には、UI と関連するロジックや Navigation を含む、新しいジュースを作るための入力フォームを作成します。その結果、独自のジュースを追加できる空のリストを持ったアプリができあがります。
+このレッスンでは、Juice Tracker アプリを完成させます。このアプリは、詳細なアイテムで構成されるリストを作成することで、注目のジュースを追跡できるというものです。Fragment と XML を追加して変更し、UI とスターター コードを完成させます。具体的には、UI と関連するロジックや Navigation を含む、新しいジュースを作るための入力フォームを作成します。その結果、独自のジュースを追加できる空のリストを持ったアプリができあがります。
 
 ![](./images/basic-android-kotlin-compose-app-with-views/d6dc43171ae62047.png) ![](./images/basic-android-kotlin-compose-app-with-views/87b2ca7b49e814cb.png) ![](./images/basic-android-kotlin-compose-app-with-views/2d630489477e216e.png)
 
@@ -65,7 +65,7 @@ Codelab の進め方は次の通りです。
 
 ### 3. レイアウトを作成する
 
-[`Views`](https://developer.android.com/reference/android/view/View) でアプリを作成する場合は、[Layout](https://developer.android.com/develop/ui/views/layout/declaring-layout) 内に UI を構築します。Layout は通常、XML を使用して宣言します。宣言した XML レイアウト ファイルは、リソース ディレクトリの **[res] > [layout]** に配置されます。レイアウトには、UI を構成するコンポーネントが含まれています。これらのコンポーネントが `View` と呼ばれるものです。XML 構文は、タグ、要素、属性で構成されています。XML 構文の詳細については、[Android の XML レイアウトを作成する](https://developer.android.com/codelabs/basic-android-kotlin-training-xml-layouts)の Codelab をご覧ください。
+[`Views`](https://developer.android.com/reference/android/view/View) でアプリを作成する場合は、[Layout](https://developer.android.com/develop/ui/views/layout/declaring-layout) 内に UI を構築します。Layout は通常、XML を使用して宣言します。宣言した XML レイアウト ファイルは、リソース ディレクトリの **[res] > [layout]** に配置されます。レイアウトには、UI を構成するコンポーネントが含まれています。これらのコンポーネントが `View` と呼ばれるものです。XML 構文は、タグ、要素、属性で構成されています。XML 構文の詳細については、[Android の XML レイアウトを作成する](https://developer.android.com/codelabs/basic-android-kotlin-training-xml-layouts)のレッスンをご覧ください。
 
 このセクションでは [**Type of juice**] 入力ダイアログの XML レイアウトを作成します。
 
@@ -378,7 +378,7 @@ class EntryDialogFragment : BottomSheetDialogFragment() {
 }
 ```
 
-なお、上記のコードでは `EntryDialogFragment` は完成していません。まだ実装する必要のあることが多数あります。既存の `Juice` データをフィールドに入力する（該当する場合）、`colorSpinner` から色を選ぶ、`cancelButton` を実装などです。ただし、このコードは `Fragment` に固有なものではなく、自身で実装できるはずです。残りの機能を実装しましょう。最後の手段として、この Codelab の解答コードを参照することもできます。
+なお、上記のコードでは `EntryDialogFragment` は完成していません。まだ実装する必要のあることが多数あります。既存の `Juice` データをフィールドに入力する（該当する場合）、`colorSpinner` から色を選ぶ、`cancelButton` を実装などです。ただし、このコードは `Fragment` に固有なものではなく、自身で実装できるはずです。残りの機能を実装しましょう。最後の手段として、このレッスンの解答コードを参照することもできます。
 
 ### 7. 入力ダイアログの起動
 
@@ -435,7 +435,7 @@ onEdit = { drink ->
 
 ### 8. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-juice-tracker.git
@@ -456,9 +456,9 @@ $ git checkout views
 
 Jetpack Compose は、当初から View の相互運用性を考慮して設計されており、Compose と View システムはリソースを共有し、互いに連携しながら UI を表示することができます。この機能により、Compose を既存のビューベースのアプリに追加することができるようになっています。つまり、アプリ全体が完全に Compose ベースになるまで、Compose と View をコードベース内で共存させることができるのです。
 
-この Codelab では、**Juice Tracker** アプリのビューベースのリストアイテムを Compose に変更します。残りの Juice Tracker のビューは、必要に応じて自分で変換できます。
+このレッスンでは、**Juice Tracker** アプリのビューベースのリストアイテムを Compose に変更します。残りの Juice Tracker のビューは、必要に応じて自分で変換できます。
 
-ビューベースの UI を備えたアプリがある場合、その UI 全体を一度に書き換えたくはないでしょう。この Codelab では、ビューベースの UI の中の 1 つのビューを Compose 要素に変換します。
+ビューベースの UI を備えたアプリがある場合、その UI 全体を一度に書き換えたくはないでしょう。このレッスンでは、ビューベースの UI の中の 1 つのビューを Compose 要素に変換します。
 
 #### 前提条件
 
@@ -478,15 +478,15 @@ Jetpack Compose は、当初から View の相互運用性を考慮して設計�
 
 ### 2. スターター アプリの概要
 
-この Codelab では、ビューを使用して Android アプリを作成するで取得した **Juice Tracker** アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは、ジュースの名前、説明、色、評価など、ジュースの情報をアプリ データベースに追加できます。
+このレッスンでは、ビューを使用して Android アプリを作成するで取得した **Juice Tracker** アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは、ジュースの名前、説明、色、評価など、ジュースの情報をアプリ データベースに追加できます。
 
 ![](./images/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app/36bd5542e97fee2e.png)
 
-この Codelab では、ビューベースのリストアイテムを Compose に変換します。
+このレッスンでは、ビューベースのリストアイテムを Compose に変換します。
 
 ![ジュースの詳細を示すリストアイテム](./images/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app/9aa691f45f5a880d.png)
 
-この Codelab のスターター コードをダウンロードする
+このレッスンのスターター コードをダウンロードする
 
 まず、スターター コードをダウンロードします。
 
@@ -520,7 +520,7 @@ buildFeatures {
 }
 ```
 
-このフラグにより、Android Studio が Compose を扱えるようになります。前の Codelab ではこのステップを実施していません。これは、新しい Android Studio Compose テンプレート プロジェクトを作成するときに、このコードが Android Studio によって自動的に生成されるためです。
+このフラグにより、Android Studio が Compose を扱えるようになります。前のレッスンではこのステップを実施していません。これは、新しい Android Studio Compose テンプレート プロジェクトを作成するときに、このコードが Android Studio によって自動的に生成されるためです。
 
 4. `buildFeatures` で、`composeOptions` ブロックを追加します。
 5. ブロック内で、`kotlinCompilerExtensionVersion` を `"1.5.1"` に設定して Kotlin コンパイラ バージョンを設定します。
@@ -552,7 +552,7 @@ dependencies {
 
 1. `layout/list_item.xml` を開き、[**Split**] タブでプレビューを表示します。
 
-この Codelab を終了すると、このビューがコンポーザブルに置き換わります。
+このレッスンを終了すると、このビューがコンポーザブルに置き換わります。
 
 ![](./images/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app/7a2df616fde1ec56.png)
 
@@ -916,7 +916,7 @@ fun bind(input: Juice) {
 
 ### 6. 解答コードを取得する
 
-この Codelab の完成したコードをダウンロードするには、以下の git コマンドを使用します。
+このレッスンの完成したコードをダウンロードするには、以下の git コマンドを使用します。
 
 ```
 $ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-juice-tracker.git
@@ -940,7 +940,7 @@ Android デベロッパー ドキュメント
 - [相互運用 API | Jetpack Compose | Android デベロッパー](https://developer.android.com/jetpack/compose/interop/interop-apis)
 - [移行戦略 | Jetpack Compose | Android デベロッパー](https://developer.android.com/jetpack/compose/interop/migration-strategy)
 
-Codelab [中級]
+レッスン [中級]
 
 - [Jetpack Compose への移行](https://developer.android.com/codelabs/jetpack-compose-migration#0)
 
@@ -948,19 +948,31 @@ Codelab [中級]
 
 - 実務の既存アプリはまだ View（XML）で書かれているものが多いです。「読める」ことがこの章の目的で、XML を書けるようになる必要はありません。
 
-## 6. 提出物
+## 6. AIに質問する（この章の例）
 
-次の Codelab で完成させた Android Studio プロジェクトを、学習用リポジトリの `unit8/Juice/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
+
+```text
+「XML レイアウトと Compose の違いを、同じ画面を両方で書いた例で説明して」
+「`ComposeView` で既存の View ベースの画面にコンポーザブルを追加する手順を教えて」
+「Fragment と Activity の関係を初心者向けに説明して」
+```
+
+質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
+
+## 7. 提出物
+
+次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit8/Juice/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
 - Compose を以前のアプリに追加する
 
 PR 本文には次の 3 点を書いてください。
 
-- **やったこと**：どの Codelab / 演習を完了したか
+- **やったこと**：どのレッスン / 演習を完了したか
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 7. チェックリスト
+## 8. チェックリスト
 
 - [ ] XML レイアウト・Fragment・RecyclerView など従来の View システムの基本を説明できる
 - [ ] View ベースの既存アプリに `ComposeView` でコンポーザブルを追加できる

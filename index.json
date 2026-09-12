@@ -13,13 +13,6 @@
           "path": "chapters/00-program-guide.md",
           "estimatedMinutes": 20,
           "hasAssignment": false
-        },
-        {
-          "id": "question-format",
-          "title": "第0.5章: 質問フォーマット",
-          "path": "chapters/00-question-format.md",
-          "estimatedMinutes": 10,
-          "hasAssignment": false
         }
       ]
     },
