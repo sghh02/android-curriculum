@@ -143,6 +143,13 @@
           metaHtml += "</div>";
         }
         els.article.innerHTML = metaHtml + window.marked.parse(md);
+        // 相対パスの画像は Markdown ファイルの場所を基準に解決する（program-viewer と同じ挙動）
+        var mdDir = item.path.replace(/[^/]*$/, "");
+        Array.prototype.forEach.call(els.article.querySelectorAll("img"), function (img) {
+          var src = img.getAttribute("src") || "";
+          if (/^(https?:)?\/\//.test(src) || src.charAt(0) === "/" || src.indexOf("data:") === 0) return;
+          img.setAttribute("src", "./" + mdDir + src.replace(/^\.\//, ""));
+        });
         buildPager(idx);
         window.scrollTo(0, 0);
       })
