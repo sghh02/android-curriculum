@@ -24,21 +24,21 @@
           "id": "kotlin-intro",
           "title": "第1章: Kotlin の概要",
           "path": "chapters/01-kotlin-intro.md",
-          "estimatedMinutes": 225,
+          "estimatedMinutes": 210,
           "hasAssignment": true
         },
         {
           "id": "android-studio-setup",
           "title": "第2章: Android Studio をセットアップする",
           "path": "chapters/01-android-studio-setup.md",
-          "estimatedMinutes": 190,
+          "estimatedMinutes": 180,
           "hasAssignment": false
         },
         {
           "id": "basic-layout",
           "title": "第3章: 基本的なレイアウトを作成する",
           "path": "chapters/01-basic-layout.md",
-          "estimatedMinutes": 345,
+          "estimatedMinutes": 330,
           "hasAssignment": true
         }
       ]
@@ -51,21 +51,21 @@
           "id": "kotlin-fundamentals",
           "title": "第4章: Kotlin の基礎",
           "path": "chapters/02-kotlin-fundamentals.md",
-          "estimatedMinutes": 405,
+          "estimatedMinutes": 390,
           "hasAssignment": true
         },
         {
           "id": "add-button",
           "title": "第5章: アプリにボタンを追加する",
           "path": "chapters/02-add-button.md",
-          "estimatedMinutes": 235,
+          "estimatedMinutes": 225,
           "hasAssignment": true
         },
         {
           "id": "ui-state",
           "title": "第6章: UI と状態を操作する",
           "path": "chapters/02-ui-state.md",
-          "estimatedMinutes": 435,
+          "estimatedMinutes": 420,
           "hasAssignment": true
         }
       ]
@@ -78,21 +78,21 @@
           "id": "kotlin-more",
           "title": "第7章: Kotlin の基礎（その他）",
           "path": "chapters/03-kotlin-more.md",
-          "estimatedMinutes": 375,
+          "estimatedMinutes": 360,
           "hasAssignment": true
         },
         {
           "id": "scrollable-list",
           "title": "第8章: スクロール可能なリストを作成する",
           "path": "chapters/03-scrollable-list.md",
-          "estimatedMinutes": 265,
+          "estimatedMinutes": 255,
           "hasAssignment": true
         },
         {
           "id": "beautiful-apps",
           "title": "第9章: 美しいアプリを作成する",
           "path": "chapters/03-beautiful-apps.md",
-          "estimatedMinutes": 390,
+          "estimatedMinutes": 375,
           "hasAssignment": true
         }
       ]
@@ -105,21 +105,21 @@
           "id": "architecture-components",
           "title": "第10章: アーキテクチャ コンポーネント",
           "path": "chapters/04-architecture-components.md",
-          "estimatedMinutes": 405,
+          "estimatedMinutes": 390,
           "hasAssignment": true
         },
         {
           "id": "navigation",
           "title": "第11章: Jetpack Compose でのナビゲーション",
           "path": "chapters/04-navigation.md",
-          "estimatedMinutes": 375,
+          "estimatedMinutes": 360,
           "hasAssignment": true
         },
         {
           "id": "adaptive-layouts",
           "title": "第12章: さまざまな表示サイズに適応する",
           "path": "chapters/04-adaptive-layouts.md",
-          "estimatedMinutes": 405,
+          "estimatedMinutes": 390,
           "hasAssignment": true
         }
       ]
@@ -132,14 +132,14 @@
           "id": "get-data-internet",
           "title": "第13章: インターネットからデータを取得する",
           "path": "chapters/05-get-data-internet.md",
-          "estimatedMinutes": 345,
+          "estimatedMinutes": 330,
           "hasAssignment": true
         },
         {
           "id": "load-images",
           "title": "第14章: インターネットから画像を読み込んで表示する",
           "path": "chapters/05-load-images.md",
-          "estimatedMinutes": 405,
+          "estimatedMinutes": 390,
           "hasAssignment": true
         }
       ]
@@ -152,21 +152,21 @@
           "id": "sql-intro",
           "title": "第15章: SQL の概要",
           "path": "chapters/06-sql-intro.md",
-          "estimatedMinutes": 100,
+          "estimatedMinutes": 90,
           "hasAssignment": false
         },
         {
           "id": "room",
           "title": "第16章: Room を使用してデータを永続化する",
           "path": "chapters/06-room.md",
-          "estimatedMinutes": 435,
+          "estimatedMinutes": 420,
           "hasAssignment": true
         },
         {
           "id": "datastore",
           "title": "第17章: DataStore でキーを使用してデータにアクセスし保存する",
           "path": "chapters/06-datastore.md",
-          "estimatedMinutes": 130,
+          "estimatedMinutes": 120,
           "hasAssignment": true
         }
       ]
@@ -179,7 +179,7 @@
           "id": "workmanager",
           "title": "第18章: WorkManager でタスクのスケジュールを設定する",
           "path": "chapters/07-workmanager.md",
-          "estimatedMinutes": 280,
+          "estimatedMinutes": 270,
           "hasAssignment": true
         }
       ]
@@ -192,14 +192,14 @@
           "id": "views",
           "title": "第19章: ビュー内の Android ビューと Compose",
           "path": "chapters/08-views.md",
-          "estimatedMinutes": 280,
+          "estimatedMinutes": 270,
           "hasAssignment": true
         },
         {
           "id": "views-in-compose",
           "title": "第20章: Compose 内のビュー",
           "path": "chapters/08-views-in-compose.md",
-          "estimatedMinutes": 130,
+          "estimatedMinutes": 120,
           "hasAssignment": true
         }
       ]
