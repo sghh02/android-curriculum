@@ -1,6 +1,6 @@
 # 第6章: UI と状態を操作する
 
-> 公式コース: [ユニット 2: アプリ UI を作成する](https://developer.android.com/courses/android-basics-compose/unit-2?hl=ja) ／ [パスウェイ 3: UI と状態を操作する](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-3?hl=ja)
+> ユニット 2「アプリ UI を作成する」 パスウェイ 3
 > 提出ブランチ: `feature/02-ui-state`
 
 ## 1. この章のゴール
@@ -11,18 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約435分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約435分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Compose の状態を理解する | — | 見なくてOK |
-| 2 | 動画 | チップ計算アプリの概要 | — | 見なくてOK |
-| 3 | Codelab | [Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state?hl=ja) | 約90分 | 本文は下に掲載 |
-| 4 | Codelab | [カスタムのチップを計算する](https://developer.android.com/codelabs/basic-android-kotlin-compose-calculate-tip?hl=ja) | 約90分 | 本文は下に掲載 |
-| 5 | Codelab | [自動テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-write-automated-tests?hl=ja) | 約60分 | 本文は下に掲載 |
-| 6 | Codelab | [プロジェクト: アートスペース アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-art-space?hl=ja) | 約180分 | **提出対象**（本文は下に掲載） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: UI と状態を操作する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-3/android-basics-compose-unit-2-pathway-3?hl=ja) | 約15分 |  |
+| 1 | Codelab | Compose の状態の概要 | 約90分 |  |
+| 2 | Codelab | カスタムのチップを計算する | 約90分 |  |
+| 3 | Codelab | 自動テストを作成する | 約60分 |  |
+| 4 | Codelab | プロジェクト: アートスペース アプリを作成する | 約180分 | **提出対象** |
+| 5 | クイズ | [テスト: UI と状態を操作する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-3/android-basics-compose-unit-2-pathway-3?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -928,8 +925,6 @@ $ git checkout state
 - [状態と Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 - [Jetpack Compose の状態に関する Codelab](https://developer.android.com/codelabs/jetpack-compose-state)
 - [Compose の思想](https://developer.android.com/jetpack/compose/mental-model)
-- [Jetpack Compose: 状態](https://youtu.be/mymWGMy9pYI)
-- [Compose の状態: Compose の自動状態監視の使用](https://www.youtube.com/watch?v=rmv2ug-wW4U)
 - [状態をホイスティングする場所 | Compose | Android デベロッパー](https://developer.android.com/jetpack/compose/state-hoisting)
 
 ## 4. カスタムのチップを計算する
@@ -939,13 +934,13 @@ $ git checkout state
 
 ### 1. 始める前に
 
-この Codelab では、[Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state#0) Codelab の解答コードを使用して、インタラクティブなチップ計算ツールを作成します。このアプリでは、請求額とチップ率を入力するとチップ金額が自動的に計算され、四捨五入されます。最終的なアプリの外観は次のとおりです。
+この Codelab では、Compose の状態の概要 Codelab の解答コードを使用して、インタラクティブなチップ計算ツールを作成します。このアプリでは、請求額とチップ率を入力するとチップ金額が自動的に計算され、四捨五入されます。最終的なアプリの外観は次のとおりです。
 
 ![](./images/basic-android-kotlin-compose-calculate-tip/d8e768525099378a.png)
 
 #### 前提条件
 
-- [Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state#0) Codelab
+- Compose の状態の概要 Codelab
 - `Text` コンポーザブルと `TextField` コンポーザブルをアプリに追加できる
 - `remember()` 関数、状態、状態ホイスティング、コンポーズ可能な関数のステートフル / ステートレスの違いに関する知識
 
@@ -962,7 +957,7 @@ $ git checkout state
 #### **必要なもの**
 
 - [Android Studio](https://developer.android.com/studio) の最新バージョン
-- [Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state#12) Codelab の解答コード
+- Compose の状態の概要 Codelab の解答コード
 
 ### 2. スターター コードを取得する
 
@@ -982,7 +977,7 @@ $ git checkout state
 
 ### 3. スターター アプリの概要
 
-この Codelab は、前の Codelab「[Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state)」の「Tip Time アプリ」を使って始めます。このアプリは、固定のチップ率でチップ金額を計算するために必要なユーザー インターフェースを提供するものです。[**Bill amount**] テキスト ボックスに、サービス料金を入力します。アプリはチップ金額を計算して `Text` コンポーザブルに表示します。
+この Codelab は、前の Codelab「Compose の状態の概要」の「Tip Time アプリ」を使って始めます。このアプリは、固定のチップ率でチップ金額を計算するために必要なユーザー インターフェースを提供するものです。[**Bill amount**] テキスト ボックスに、サービス料金を入力します。アプリはチップ金額を計算して `Text` コンポーザブルに表示します。
 
 #### **Tip Time アプリを実行する**
 

@@ -1,6 +1,6 @@
 # 第11章: Jetpack Compose でのナビゲーション
 
-> 公式コース: [ユニット 4: ナビゲーションとアプリ アーキテクチャ](https://developer.android.com/courses/android-basics-compose/unit-4?hl=ja) ／ [パスウェイ 2: Jetpack Compose でのナビゲーション](https://developer.android.com/courses/pathways/android-basics-compose-unit-4-pathway-2?hl=ja)
+> ユニット 4「ナビゲーションとアプリ アーキテクチャ」 パスウェイ 2
 > 提出ブランチ: `feature/04-navigation`
 
 ## 1. この章のゴール
@@ -11,16 +11,14 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約375分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約375分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | ナビゲーションと Cupcake アプリの概要 | — | 見なくてOK |
-| 2 | Codelab | [Compose で画面間を移動する](https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation?hl=ja) | 約150分 | 本文は下に掲載 |
-| 3 | Codelab | [Cupcake アプリをテストする](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-cupcake?hl=ja) | 約60分 | 本文は下に掲載 |
-| 4 | Codelab | [演習: ナビゲーションを追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-navigation?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 5 | 動画 | 次のステップ | — | 見なくてOK |
-| 6 | クイズ | [テスト: Jetpack Compose でのナビゲーション](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-2/android-basics-compose-unit-4-pathway-2?hl=ja) | 約15分 |  |
+| 1 | Codelab | Compose で画面間を移動する | 約150分 |  |
+| 2 | Codelab | Cupcake アプリをテストする | 約60分 |  |
+| 3 | Codelab | 演習: ナビゲーションを追加する | 約150分 | **提出対象** |
+| 4 | クイズ | [テスト: Jetpack Compose でのナビゲーション](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-2/android-basics-compose-unit-4-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1134,14 +1132,14 @@ $ git checkout navigation
 
 ### 1. はじめに
 
-「[Compose で画面間を移動する](https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation)」Codelab では、Jetpack Navigation Compose コンポーネントを使用して、Compose アプリにナビゲーションを追加する方法を学習しました。
+「Compose で画面間を移動する」Codelab では、Jetpack Navigation Compose コンポーネントを使用して、Compose アプリにナビゲーションを追加する方法を学習しました。
 
 Cupcake アプリには複数の画面があり、ユーザーは移動し、さまざまなアクションを行えます。このアプリは、自動テストのスキルを磨くのに適しています。この Codelab では、Cupcake アプリの UI テストをいくつか作成し、テスト カバレッジを最大化する方法について学習します。
 
 #### 前提条件
 
 - 関数型、ラムダ、スコープ関数など、Kotlin 言語に精通していること
-- 「[Compose で画面間を移動する](https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation)」Codelab を完了していること
+- 「Compose で画面間を移動する」Codelab を完了していること
 
 #### 学習内容
 
@@ -1848,13 +1846,13 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 お疲れさまでした。Jetpack Compose で複数の画面間を移動する最初のアプリを作成しました。今度は、学んだことを実践してみましょう。
 
-この演習では、複数の画面コンポーザブルを持つアプリにナビゲーションを追加するために必要なコンポーネントの作成に焦点を当てます。この教材では、[Compose を使用して画面間を移動する](https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation) Codelab で学習した成果に基づき、その知識を応用して、既存のアプリにナビゲーションを追加します。
+この演習では、複数の画面コンポーザブルを持つアプリにナビゲーションを追加するために必要なコンポーネントの作成に焦点を当てます。この教材では、Compose を使用して画面間を移動する Codelab で学習した成果に基づき、その知識を応用して、既存のアプリにナビゲーションを追加します。
 
 解答コードは最後に掲載されていますが、演習に取り組んでから解答を確認するようにしてください。解答はアプリを実装する方法の一つとして捉えてください。
 
 #### 前提条件
 
-- [Compose を使用して画面間を移動する](https://developer.android.com/codelabs/basic-android-kotlin-compose-navigation) Codelab を通じて「Compose での Android の基礎」コースワークを完了していること
+- Compose を使用して画面間を移動する Codelab を通じて「Compose での Android の基礎」コースワークを完了していること
 
 #### 必要なもの
 

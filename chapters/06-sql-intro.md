@@ -1,6 +1,6 @@
 # 第15章: SQL の概要
 
-> 公式コース: [ユニット 6: データの永続化](https://developer.android.com/courses/android-basics-compose/unit-6?hl=ja) ／ [パスウェイ 1: SQL の概要](https://developer.android.com/courses/pathways/android-basics-compose-unit-6-pathway-1?hl=ja)
+> ユニット 6「データの永続化」 パスウェイ 1
 
 ## 1. この章のゴール
 
@@ -10,14 +10,12 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約100分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約100分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | データベースと SQL の概要 | — | 見なくてOK |
-| 2 | Codelab | [SQL を使用してデータベースに対する読み取りと書き込みを行う](https://developer.android.com/codelabs/basic-android-kotlin-compose-sql?hl=ja) | 約90分 | 本文は下に掲載 |
-| 3 | 動画 | 次のステップ | — | 見なくてOK |
-| 4 | クイズ | [テスト: SQL の概要](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-1/android-basics-compose-unit-6-pathway-1?hl=ja) | 約10分 |  |
+| 1 | Codelab | SQL を使用してデータベースに対する読み取りと書き込みを行う | 約90分 |  |
+| 2 | クイズ | [テスト: SQL の概要](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-1/android-basics-compose-unit-6-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 

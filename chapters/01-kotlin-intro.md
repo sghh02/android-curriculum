@@ -1,6 +1,6 @@
 # 第1章: Kotlin の概要
 
-> 公式コース: [ユニット 1: 初めての Android アプリ](https://developer.android.com/courses/android-basics-compose/unit-1?hl=ja) ／ [パスウェイ 1: Kotlin の概要](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-1?hl=ja)
+> ユニット 1「初めての Android アプリ」 パスウェイ 1
 > 提出ブランチ: `feature/01-kotlin-intro`
 
 ## 1. この章のゴール
@@ -11,18 +11,16 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約235分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約235分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | Codelab | [始める前に](https://developer.android.com/codelabs/basic-android-kotlin-compose-before-you-begin?hl=ja) | 約10分 | 本文は下に掲載 |
-| 2 | 動画 | 「Compose での Android の基礎」へようこそ | — | 見なくてOK |
-| 3 | Codelab | [初めての Kotlin プログラム](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-program?hl=ja) | 約30分 | 本文は下に掲載 |
-| 4 | Codelab | [Kotlin で変数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-variables?hl=ja) | 約60分 | 本文は下に掲載 |
-| 5 | Codelab | [Kotlin で関数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-functions?hl=ja) | 約60分 | 本文は下に掲載 |
-| 6 | Codelab | [練習問題: Kotlin の基本](https://developer.android.com/codelabs/basic-android-kotlin-compose-intro-kotlin-practice-problems?hl=ja) | 約60分 | **提出対象**（本文は下に掲載） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: Kotlin によるプログラミングの概要](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-1/intro-to-programming?hl=ja) | 約15分 |  |
+| 1 | Codelab | 始める前に | 約10分 |  |
+| 2 | Codelab | 初めての Kotlin プログラム | 約30分 |  |
+| 3 | Codelab | Kotlin で変数を作成して使用する | 約60分 |  |
+| 4 | Codelab | Kotlin で関数を作成して使用する | 約60分 |  |
+| 5 | Codelab | 練習問題: Kotlin の基本 | 約60分 | **提出対象** |
+| 6 | クイズ | [テスト: Kotlin によるプログラミングの概要](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-1/intro-to-programming?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -56,7 +54,7 @@ Codelab では、アプリまたはアプリの機能を作成するためのコ
 
 プログラミング経験がすでにある方は、教材の一部をスキップして、コースを速く進めることができます。各ユニットの冒頭には、そのユニットでアプリを作成するために必要な Kotlin プログラミングのコンセプトを学ぶ Codelab があります。Kotlin 言語に関するそれらのトピックに自信がある場合は、セクションをスキップして、アプリの作成に関するコンテンツに進むことができます。
 
-すでに Android 開発を行っている方は、このコースで紹介している Compose のトピックに興味をお持ちのことでしょう。[Compose](https://developer.android.com/jetpack/compose) は、ネイティブ UI を作成するための Android の最新のツールキットであり、UI の開発を簡素化および高速化します。UI を実装するために必要なコードが Android ビューシステムと比べて少ないため、アプリのメンテナンスが容易になります。Compose について詳しく学びたい場合は、このコースの前半に特にご注目ください。UI、マテリアル デザイン、ナビゲーションが取り上げられます。または、[Android デベロッパー向けの Jetpack Compose コース](https://developer.android.com/courses/pathways/compose)を学習することもできます。そちらでは、Compose に切り替えるデベロッパー向けの重要なトピックに関する記事、動画、Codelab をご利用になれます。
+すでに Android 開発を行っている方は、このコースで紹介している Compose のトピックに興味をお持ちのことでしょう。[Compose](https://developer.android.com/jetpack/compose) は、ネイティブ UI を作成するための Android の最新のツールキットであり、UI の開発を簡素化および高速化します。UI を実装するために必要なコードが Android ビューシステムと比べて少ないため、アプリのメンテナンスが容易になります。Compose について詳しく学びたい場合は、このコースの前半に特にご注目ください。UI、マテリアル デザイン、ナビゲーションが取り上げられます。または、Android デベロッパー向けの Jetpack Compose コースを学習することもできます。そちらでは、Compose に切り替えるデベロッパー向けの重要なトピックに関する記事、動画、Codelab をご利用になれます。
 
 どの方法で Android を学習なさるとしても、そのトレーニング リソースがアプリのアイデアを実現するために役立つことを願っています。
 
@@ -2173,7 +2171,7 @@ Kotlin プログラミングの基本を身につけたところで、今度は�
 - Kotlin の基本的なデータ型に関する知識があること
 - 不変変数と可変変数に関する知識があること
 - `println()` 関数に関する知識があること
-- [初めての Kotlin プログラム](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-program)、[Kotlin で変数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-variables)、[Kotlin で関数を作成して使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-functions)の Codelab を完了していること
+- 初めての Kotlin プログラム、Kotlin で変数を作成して使用する、Kotlin で関数を作成して使用するの Codelab を完了していること
 
 #### 必要なもの
 

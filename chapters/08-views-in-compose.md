@@ -1,6 +1,6 @@
 # 第20章: Compose 内のビュー
 
-> 公式コース: [ユニット 8: Compose とビュー](https://developer.android.com/courses/android-basics-compose/unit-8?hl=ja) ／ [パスウェイ 2: Compose 内のビュー](https://developer.android.com/courses/pathways/android-basics-compose-unit-8-pathway-2?hl=ja)
+> ユニット 8「Compose とビュー」 パスウェイ 2
 > 提出ブランチ: `feature/08-views-in-compose`
 
 ## 1. この章のゴール
@@ -10,14 +10,12 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約130分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約130分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Compose 内のビュー | — | 見なくてOK |
-| 2 | Codelab | [Compose のビュー相互運用機能](https://developer.android.com/codelabs/basic-android-kotlin-compose-view-interop?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 3 | 動画 | 次のステップ | — | 見なくてOK |
-| 4 | クイズ | [テスト: Compose 内のビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-2/android-basics-compose-unit-8-pathway-2?hl=ja) | 約10分 |  |
+| 1 | Codelab | Compose のビュー相互運用機能 | 約120分 | **提出対象** |
+| 2 | クイズ | [テスト: Compose 内のビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-2/android-basics-compose-unit-8-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -43,7 +41,7 @@ Codelab の進め方は次の通りです。
 
 #### 前提条件:
 
-- [ビューで Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-app-with-views)の Codelab で [Compose での Android の基礎](https://developer.android.com/courses/android-basics-compose/course)コースワークを完了していること。
+- ビューで Android アプリを作成するの Codelab で Compose での Android の基礎コースワークを完了していること。
 
 #### 必要なもの
 
@@ -59,7 +57,7 @@ Codelab の進め方は次の通りです。
 
 #### コードのチュートリアル
 
-この Codelab では、[ビューで Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-app-with-views) の Codelab と [Compose をビューベースのアプリに追加する](https://developer.android.com/codelabs/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app)の Codelab と同じ JuiceTracker アプリを使用します。このバージョンとの違いは、提供されているスターター コードが Compose だけでできている点です。このアプリは現在、入力ダイアログ シートとリスト画面上部の広告バナーに、色と評価の入力がありません。
+この Codelab では、ビューで Android アプリを作成する の Codelab と Compose をビューベースのアプリに追加するの Codelab と同じ JuiceTracker アプリを使用します。このバージョンとの違いは、提供されているスターター コードが Compose だけでできている点です。このアプリは現在、入力ダイアログ シートとリスト画面上部の広告バナーに、色と評価の入力がありません。
 
 `bottomsheet` ディレクトリには、入力ダイアログに関連するすべての UI コンポーネントが含まれています。このパッケージには、作成時に色と評価の入力用の UI コンポーネントが含まれている必要があります。
 
@@ -647,7 +645,7 @@ $ git checkout compose-with-views
 #### 関連リンク
 
 - [相互運用 API](https://developer.android.com/jetpack/compose/interop/interop-apis)
-- [レイアウト](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-3)
+- レイアウト
 
 ### 8. 最後に
 
@@ -657,7 +655,7 @@ $ git checkout compose-with-views
 
 このコースを完了することで、Jetpack Compose を使用して美しくレスポンシブなアプリを作成する方法をよく理解しただけでなく、効率的でメンテナンスしやすく、視覚的に魅力のある Android アプリを作成するために必要な知識とスキルを身に付けることができました。この基礎知識を身に付けておけば、最新の Android 開発や Compose のスキルを継続的に学習して身に付けることができます。
 
-このコースにご参加いただき、ありがとうございました。今後も、[Android デベロッパー向けドキュメント](https://developer.android.com/)、[Android デベロッパー向けの Jetpack Compose コース](https://developer.android.com/courses/jetpack-compose/course)、[最新の Android アプリ アーキテクチャ](https://developer.android.com/courses/pathways/android-architecture)、[Android デベロッパー ブログ](https://medium.com/androiddevelopers)、その他の [Codelab](https://developer.android.com/codelabs/)、[サンプル プロジェクト](https://github.com/android/compose-samples)などの資料も活用して、スキルを身に付け、その幅を広げることをおすすめします。
+このコースにご参加いただき、ありがとうございました。今後も、[Android デベロッパー向けドキュメント](https://developer.android.com/)、Android デベロッパー向けの Jetpack Compose コース、最新の Android アプリ アーキテクチャ、[Android デベロッパー ブログ](https://medium.com/androiddevelopers)、その他の [Codelab](https://developer.android.com/codelabs/)、[サンプル プロジェクト](https://github.com/android/compose-samples)などの資料も活用して、スキルを身に付け、その幅を広げることをおすすめします。
 
 最後に、ソーシャル メディアで作成したコンテンツを共有し、その際にはハッシュタグ #AndroidBasics を付けて、Google と他の Android デベロッパー コミュニティがあなたの学習プロセスを追いかけることができるようにしましょう。
 

@@ -1,6 +1,6 @@
 # 第14章: インターネットから画像を読み込んで表示する
 
-> 公式コース: [ユニット 5: インターネットに接続する](https://developer.android.com/courses/android-basics-compose/unit-5?hl=ja) ／ [パスウェイ 2: インターネットから画像を読み込んで表示する](https://developer.android.com/courses/pathways/android-basics-compose-unit-5-pathway-2?hl=ja)
+> ユニット 5「インターネットに接続する」 パスウェイ 2
 > 提出ブランチ: `feature/05-load-images`
 
 ## 1. この章のゴール
@@ -11,17 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約405分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約405分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | アーキテクチャ: データレイヤ | — | 見なくてOK |
-| 2 | Codelab | [リポジトリと手動依存関係挿入を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository?hl=ja) | 約120分 | 本文は下に掲載 |
-| 3 | Codelab | [インターネットから画像を読み込んで表示する](https://developer.android.com/codelabs/basic-android-kotlin-compose-load-images?hl=ja) | 約90分 | 本文は下に掲載 |
-| 4 | Codelab | [練習: Amphibians アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-amphibians-app?hl=ja) | 約180分 | **提出対象**（本文は下に掲載） |
-| 5 | Codelab | [プロジェクト: Bookshelf アプリの作成](https://developer.android.com/codelabs/basic-android-kotlin-compose-bookshelf?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 6 | 動画 | 次のステップ | — | 見なくてOK |
-| 7 | クイズ | [テスト: 画像を読み込んで表示する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-2/android-basics-compose-unit-5-pathway-2?hl=ja) | 約15分 |  |
+| 1 | Codelab | リポジトリと手動依存関係挿入を追加する | 約120分 |  |
+| 2 | Codelab | インターネットから画像を読み込んで表示する | 約90分 |  |
+| 3 | Codelab | 練習: Amphibians アプリを作成する | 約180分 | **提出対象** |
+| 4 | Codelab | プロジェクト: Bookshelf アプリの作成 | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 5 | クイズ | [テスト: 画像を読み込んで表示する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-2/android-basics-compose-unit-5-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1025,7 +1023,7 @@ Coil は、基本的に次の 2 つのものを必要とします。
 
 #### **Coil の依存関係を追加する**
 
-1. [リポジトリと手動 DI の追加](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository) Codelab から [Mars Photos アプリの解答コード](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/coil-starter)を開きます。
+1. リポジトリと手動 DI の追加 Codelab から [Mars Photos アプリの解答コード](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/coil-starter)を開きます。
 2. アプリを実行して、火星写真の取得数が表示されることを確認します。
 3. **build.gradle.kts (Module :app)** を開きます。
 4. `dependencies` セクションで、Coil ライブラリ用に次の行を追加します。
@@ -1638,7 +1636,7 @@ Android デベロッパー ドキュメント:
 
 #### 前提条件
 
-- Codelab [インターネットから画像を読み込んで表示する](https://developer.android.com/codelabs/basic-android-kotlin-compose-load-images)の「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること。
+- Codelab インターネットから画像を読み込んで表示するの「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -1694,11 +1692,11 @@ Android Studio で新しいプロジェクトから始めます。
 
 両生類のデータ用のデータクラス、データを管理するためのリポジトリ、ネットワークからデータを取得するためのデータソース クラスを含めることをおすすめします。
 
-ネットワーク呼び出しについてご不明な点がありましたら、Codelab [インターネットからデータを取得する](https://www.google.com/url?sa=D&q=https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-getting-data-internet)の[ウェブサービスと Retrofit](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet#4) をご覧ください。
+ネットワーク呼び出しについてご不明な点がありましたら、Codelab [インターネットからデータを取得する](https://www.google.com/url?sa=D&q=https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-getting-data-internet)のウェブサービスと Retrofit をご覧ください。
 
-ネットワーク レスポンスの解析についてご不明な点がありましたら、[kotlinx.serialization を使用して JSON レスポンスを解析する](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet#7)をご覧ください。
+ネットワーク レスポンスの解析についてご不明な点がありましたら、kotlinx.serialization を使用して JSON レスポンスを解析するをご覧ください。
 
-Coil を使用して画像を読み込む方法については、[公式ドキュメント](https://coil-kt.github.io/coil/)をご確認ください。または Codelab [インターネットから画像を読み込んで表示する](https://www.google.com/url?sa=D&q=https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-load-images)の[ダウンロードした画像を表示する](https://developer.android.com/codelabs/basic-android-kotlin-compose-load-images#2)をもう一度ご覧ください。
+Coil を使用して画像を読み込む方法については、[公式ドキュメント](https://coil-kt.github.io/coil/)をご確認ください。または Codelab [インターネットから画像を読み込んで表示する](https://www.google.com/url?sa=D&q=https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-load-images)のダウンロードした画像を表示するをもう一度ご覧ください。
 
 ### 7. 依存関係インジェクションを実装する
 
@@ -1712,8 +1710,8 @@ DI を実装する場合は、アプリに必要な依存関係を取得する�
 
 この機能の実装についてご不明な点がありましたら、以下をご覧ください。
 
-- アプリケーション コンテナについては、Codelab [リポジトリと手動 DI を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository)の[依存関係インジェクション](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository#3)と[アプリケーション コンテナをアプリにアタッチする](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository#4)をご覧ください。
-- アプリのクラスコードについては、[アプリケーション コンテナをアプリにアタッチする](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository#4)をご覧ください。
+- アプリケーション コンテナについては、Codelab リポジトリと手動 DI を追加するの依存関係インジェクションとアプリケーション コンテナをアプリにアタッチするをご覧ください。
+- アプリのクラスコードについては、アプリケーション コンテナをアプリにアタッチするをご覧ください。
 
 ### 8. 解答コード
 

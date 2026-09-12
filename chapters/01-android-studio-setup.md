@@ -1,6 +1,6 @@
 # 第2章: Android Studio をセットアップする
 
-> 公式コース: [ユニット 1: 初めての Android アプリ](https://developer.android.com/courses/android-basics-compose/unit-1?hl=ja) ／ [パスウェイ 2: Android Studio をセットアップする](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2?hl=ja)
+> ユニット 1「初めての Android アプリ」 パスウェイ 2
 
 ## 1. この章のゴール
 
@@ -10,17 +10,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約190分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約190分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Android Studio の概要 | — | 見なくてOK |
-| 2 | Codelab | [Android Studio をダウンロードしてインストールする](https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio?hl=ja) | 約60分 | 本文は下に掲載 |
-| 3 | Codelab | [初めての Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app?hl=ja) | 約60分 | 本文は下に掲載 |
-| 4 | Codelab | [Android Emulator で初めてのアプリを実行する](https://developer.android.com/codelabs/basic-android-kotlin-compose-emulator?hl=ja) | 約30分 | 本文は下に掲載 |
-| 5 | Codelab | [Android デバイスを接続する方法](https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device?hl=ja) | 約30分 | 本文は下に掲載 |
-| 6 | 動画 | 次のステップ | — | 見なくてOK |
-| 7 | クイズ | [テスト: Android Studio](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-2/android-basics-compose-unit-1-pathway-2?hl=ja) | 約10分 |  |
+| 1 | Codelab | Android Studio をダウンロードしてインストールする | 約60分 |  |
+| 2 | Codelab | 初めての Android アプリを作成する | 約60分 |  |
+| 3 | Codelab | Android Emulator で初めてのアプリを実行する | 約30分 |  |
+| 4 | Codelab | Android デバイスを接続する方法 | 約30分 |  |
+| 5 | クイズ | [テスト: Android Studio](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-2/android-basics-compose-unit-1-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -378,7 +376,7 @@ cd android-studio/bin
 
 ### 1. 始める前に
 
-[Android Studio](https://developer.android.com/studio) をパソコンにインストールしていない場合は、インストールします。Android Studio の実行に必要なシステム要件（ダウンロード ページの下部に記載されています）をパソコンが満たしていることを確認します。設定の手順について詳しくは、Codelab の「[Android Studio のダウンロードとインストール](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2)」をご覧ください。
+[Android Studio](https://developer.android.com/studio) をパソコンにインストールしていない場合は、インストールします。Android Studio の実行に必要なシステム要件（ダウンロード ページの下部に記載されています）をパソコンが満たしていることを確認します。設定の手順について詳しくは、Codelab の「Android Studio のダウンロードとインストール」をご覧ください。
 
 この Codelab では、Android Studio に用意されているプロジェクト テンプレートを使用して、初めての Android アプリを作成します。Kotlin と Jetpack Compose を使用して、アプリをカスタマイズします。なお、Android Studio は更新されて UI が変更されることがあるため、ご使用の Android Studio がこの Codelab のスクリーンショットと多少異なっていても問題ありません。
 
@@ -539,7 +537,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 ```
 
-関数については以前に学習しました（復習が必要な場合は[「Kotlin で関数を作成して使用する」の codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-functions) をご覧ください）。ただし、コンポーズ可能な関数には異なる点がいくつかあります。
+関数については以前に学習しました（復習が必要な場合は「Kotlin で関数を作成して使用する」の codelab をご覧ください）。ただし、コンポーズ可能な関数には異なる点がいくつかあります。
 
 ![](./images/basic-android-kotlin-compose-first-app/178c1b8d480aefe2.png)
 
@@ -829,7 +827,7 @@ fun GreetingPreview() {
 
 これで、Android Studio について学び、Compose で初めての Android アプリを作成できました。
 
-この Codelab は、[「Compose を用いた Android アプリ開発の基礎」コース](https://developer.android.com/courses/android-basics-compose/course)の一部です。エミュレータまたは実機でアプリを実行する方法については、[このパスウェイ](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-2)の次の Codelab をご覧ください。
+この Codelab は、「Compose を用いた Android アプリ開発の基礎」コースの一部です。エミュレータまたは実機でアプリを実行する方法については、このパスウェイの次の Codelab をご覧ください。
 
 #### 概要
 
@@ -854,7 +852,7 @@ fun GreetingPreview() {
 
 ### 1. 始める前に
 
-この Codelab では、[初めての Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app) Codelab で作成したグリーティング カードアプリを取り上げ、Android Virtual Device（AVD）をセットアップして、Android Emulator でコードの動作を確認します。
+この Codelab では、初めての Android アプリを作成する Codelab で作成したグリーティング カードアプリを取り上げ、Android Virtual Device（AVD）をセットアップして、Android Emulator でコードの動作を確認します。
 
 #### 前提条件
 

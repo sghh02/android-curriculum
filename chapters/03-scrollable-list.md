@@ -1,6 +1,6 @@
 # 第8章: スクロール可能なリストを作成する
 
-> 公式コース: [ユニット 3: リストの表示とマテリアル デザインの使用](https://developer.android.com/courses/android-basics-compose/unit-3?hl=ja) ／ [パスウェイ 2: スクロール可能なリストを作成する](https://developer.android.com/courses/pathways/android-basics-compose-unit-3-pathway-2?hl=ja)
+> ユニット 3「リストの表示とマテリアル デザインの使用」 パスウェイ 2
 > 提出ブランチ: `feature/03-scrollable-list`
 
 ## 1. この章のゴール
@@ -11,16 +11,14 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約265分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約265分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Affirmations アプリの概要 | — | 見なくてOK |
-| 2 | Codelab | [スクロール可能なリストを追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-add-scrollable-list?hl=ja) | 約90分 | **提出対象**（本文は下に掲載） |
-| 3 | Codelab | [アプリアイコンを変更する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-change-app-icon?hl=ja) | 約45分 | 本文は下に掲載 |
-| 4 | Codelab | [演習: グリッドを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-grid?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 5 | 動画 | 次のステップ | — | 見なくてOK |
-| 6 | クイズ | [テスト: スクロール可能なリストを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-2/android-basics-compose-unit-3-pathway-2?hl=ja) | 約10分 |  |
+| 1 | Codelab | スクロール可能なリストを追加する | 約90分 | **提出対象** |
+| 2 | Codelab | アプリアイコンを変更する | 約45分 |  |
+| 3 | Codelab | 演習: グリッドを作成する | 約120分 | **提出対象** |
+| 4 | クイズ | [テスト: スクロール可能なリストを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-2/android-basics-compose-unit-3-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1017,7 +1015,7 @@ $ git checkout main
 
 お疲れさまでした。スクロール可能なリストを使用する最初のアプリを作成しました。今度は、学んだことを実践してみましょう。
 
-この演習では、スクロール可能なリストを作成する際に必要なコンポーネントの作成に焦点を当てます。具体的には、[スクロール可能なリストを追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-add-scrollable-list) Codelab で学んだ成果に基づき、その知識を応用してスクロール可能なグリッドを作成します。
+この演習では、スクロール可能なリストを作成する際に必要なコンポーネントの作成に焦点を当てます。具体的には、スクロール可能なリストを追加する Codelab で学んだ成果に基づき、その知識を応用してスクロール可能なグリッドを作成します。
 
 一部のセクションでは、これまでに学んだことがないコンポーザブルまたは修飾子を使用する必要があります。その場合は、各問題で参照できる**リファレンス**をご覧ください。馴染みのない修飾子、プロパティ、コンポーザブルに関するドキュメントへのリンクがあります。ドキュメントを読み、そのコンセプトをアプリに取り入れる方法を確認してください。ドキュメントの内容を理解する能力は、知識を深めるために身につける必要がある重要なスキルです。
 
@@ -1025,7 +1023,7 @@ $ git checkout main
 
 #### 前提条件
 
-- [スクロール可能なリストを追加する Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-add-scrollable-list) を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- スクロール可能なリストを追加する Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -1173,7 +1171,7 @@ object DataSource {
 - [リストとグリッド](https://developer.android.com/jetpack/compose/lists#grids)
 - [固定グリッドセル](https://developer.android.com/reference/kotlin/androidx/compose/foundation/lazy/grid/GridCells.Fixed)
 - [リスト: コンテンツの間隔](https://developer.android.com/jetpack/compose/lists#content-spacing)
-- [Codelab: スクロール可能なリストを追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-add-scrollable-list)
+- Codelab: スクロール可能なリストを追加する
 
 ### 7. 解答コードを取得する
 

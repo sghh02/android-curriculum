@@ -1,6 +1,6 @@
 # 第9章: 美しいアプリを作成する
 
-> 公式コース: [ユニット 3: リストの表示とマテリアル デザインの使用](https://developer.android.com/courses/android-basics-compose/unit-3?hl=ja) ／ [パスウェイ 3: 美しいアプリを作成する](https://developer.android.com/courses/pathways/android-basics-compose-unit-3-pathway-3?hl=ja)
+> ユニット 3「リストの表示とマテリアル デザインの使用」 パスウェイ 3
 > 提出ブランチ: `feature/03-beautiful-apps`
 
 ## 1. この章のゴール
@@ -11,18 +11,16 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約390分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約390分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Compose でのマテリアル デザインの概要 | — | 見なくてOK |
-| 2 | Codelab | [Jetpack Compose でのマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming?hl=ja) | 約120分 | 本文は下に掲載 |
-| 3 | Codelab | [Jetpack Compose でのシンプルなアニメーション](https://developer.android.com/codelabs/basic-android-kotlin-compose-woof-animation?hl=ja) | 約60分 | 本文は下に掲載 |
-| 4 | Codelab | [ユーザー補助機能のテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-accessibility?hl=ja) | 約45分 | 本文は下に掲載 |
-| 5 | Codelab | [演習: スーパーヒーローのアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-superheroes?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 6 | Codelab | [プロジェクト: 30 日間アプリの作成](https://developer.android.com/codelabs/basic-android-kotlin-compose-30-days?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: 美しいアプリを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-3/android-basics-compose-unit-3-pathway-3?hl=ja) | 約15分 |  |
+| 1 | Codelab | Jetpack Compose でのマテリアル テーマ設定 | 約120分 |  |
+| 2 | Codelab | Jetpack Compose でのシンプルなアニメーション | 約60分 |  |
+| 3 | Codelab | ユーザー補助機能のテスト | 約45分 |  |
+| 4 | Codelab | 演習: スーパーヒーローのアプリを作成する | 約150分 | **提出対象** |
+| 5 | Codelab | プロジェクト: 30 日間アプリの作成 | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 6 | クイズ | [テスト: 美しいアプリを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-3/android-basics-compose-unit-3-pathway-3?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1304,7 +1302,7 @@ $ git checkout material
 
 #### 作成するアプリの概要
 
-- [Jetpack Compose でのマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming#0)の Codelab で作成した **Woof** アプリに対し、ユーザーの操作に応答するシンプルなアニメーションを追加します。
+- Jetpack Compose でのマテリアル テーマ設定の Codelab で作成した **Woof** アプリに対し、ユーザーの操作に応答するシンプルなアニメーションを追加します。
 
 #### 必要なもの
 
@@ -1313,7 +1311,7 @@ $ git checkout material
 
 ### 2. アプリの概要
 
-[Jetpack Compose を使用したマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming#0)の Codelab では、マテリアル デザインを使用して、犬とその情報のリストを表示する **Woof** アプリを作成しました。
+Jetpack Compose を使用したマテリアル テーマ設定の Codelab では、マテリアル デザインを使用して、犬とその情報のリストを表示する **Woof** アプリを作成しました。
 
 ![](./images/basic-android-kotlin-compose-woof-animation/36c6cabd93421a92.png)
 
@@ -1991,8 +1989,6 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 - [Jetpack Compose でのアニメーション](https://developer.android.com/jetpack/compose/animation)
 - Codelab: [Jetpack Compose で要素をアニメーション化する](https://developer.android.com/codelabs/jetpack-compose-animation)
-- 動画: [刷新されたアニメーション](https://www.youtube.com/watch?v=Z_T1bVjhMLk)
-- 動画: [Jetpack Compose: アニメーション](https://youtu.be/7yY2OocGiQU)
 
 ## 5. ユーザー補助機能のテスト
 
@@ -2059,7 +2055,7 @@ Android Studio で **Woof** アプリコードを開きます。
 
 ![](./images/basic-android-kotlin-compose-test-accessibility/fef200739a6b0e6d.png)
 
-3. [**Next**] をクリックしてエミュレータの作成に進みます。新しいハードウェア プロファイル作成を完了する方法について復習が必要な場合は、こちらの [Codelab セクション](https://developer.android.com/codelabs/basic-android-kotlin-compose-emulator?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-1-pathway-2%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-emulator#1)の動画をご覧ください。
+3. [**Next**] をクリックしてエミュレータの作成に進みます。新しいハードウェア プロファイル作成を完了する方法について復習が必要な場合は、こちらの Codelab セクションの動画をご覧ください。
 4. エミュレータを作成したら、**デバイス マネージャー**で矢印アイコンをクリックして起動します。
 
 ![](./images/basic-android-kotlin-compose-test-accessibility/91619522d628e743.png)
@@ -2150,7 +2146,7 @@ TalkBack を無効にする方法について詳しくは、[サポート ドキ
 ユーザーが操作できる画面上の要素はすべて、確実に操作できるよう十分な大きさにする必要があります。クリック可能なアイテムのタップ ターゲットの最小サイズは、高さ 48 dp x 幅 48 dp です。マテリアル デザイン コンポーネントには、Compose が適切な最小ターゲット サイズを自動的に割り当てるものがいくつかあります。タップ ターゲットの最小サイズは、48 dp 未満のクリック可能なコンポーネントを指します。48 dp を超えるコンポーネントには、コンポーネントのサイズ以上のタップ ターゲットが設定されます。タップ ターゲットのサイズについて詳しくは、以下のリソースをご覧ください。
 
 1. 最小ターゲット サイズについては、[Compose のユーザー補助のドキュメント](https://developer.android.com/jetpack/compose/accessibility#minimum-target-sizes)をご覧ください。
-2. タップ ターゲットのサイズについては、[Google ユーザー補助機能の新機能](https://youtu.be/6LsaP6oKxMY?t=166)の動画をご覧ください。
+2. タップ ターゲットのサイズについては、Google ユーザー補助機能の新機能の動画をご覧ください。
 
 **Woof** アプリのコードを見てみましょう。**MainActivity.kt** では、`DogItemButton` コンポーザブルは `IconButton` コンポーザブルを使用します。
 
@@ -2220,10 +2216,9 @@ fun IconButton(
 
 #### 詳細
 
-- [Android のユーザー補助機能](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8OENfLdh3zM5T6IRdlVYKj)
 - [ユーザー補助の設計](https://m3.material.io/foundations/accessible-design/overview)
 - [Jetpack Compose のユーザー補助](https://developer.android.com/codelabs/jetpack-compose-accessibility#0)
-- [Android アプリのユーザー補助機能を強化する](https://developer.android.com/courses/pathways/make-your-android-app-accessible)
+- Android アプリのユーザー補助機能を強化する
 
 ## 6. 演習: スーパーヒーローのアプリを作成する（提出対象）
 
@@ -2234,7 +2229,7 @@ fun IconButton(
 
 お疲れさまでした。このパスウェイでは、マテリアル デザインの基本と、アプリにシンプルなアニメーションを追加する方法を学習しました。次に、学習した内容を実践してみましょう。
 
-この演習セットでは、パスウェイで学習したコンセプトを活用して**スーパーヒーロー**のアプリを作成します。このアプリでは、[Jetpack Compose でのマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming) Codelab で学習したマテリアル デザインの原則に基づいて、スクロール可能なリストに必要なコンポーネントと洗練された UI を作成します。
+この演習セットでは、パスウェイで学習したコンセプトを活用して**スーパーヒーロー**のアプリを作成します。このアプリでは、Jetpack Compose でのマテリアル テーマ設定 Codelab で学習したマテリアル デザインの原則に基づいて、スクロール可能なリストに必要なコンポーネントと洗練された UI を作成します。
 
 解答コードは最後に掲載されていますが、演習に取り組んでから解答を確認するようにしてください。解答はアプリを実装する方法の一つと捉えましょう。改善の余地はたくさんあるので、いろいろなことを自由に試してください。
 
@@ -2242,7 +2237,7 @@ fun IconButton(
 
 #### 前提条件
 
-- [Jetpack Compose でのシンプルなアニメーション](https://developer.android.com/codelabs/basic-android-kotlin-compose-woof-animation#1)を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- Jetpack Compose でのシンプルなアニメーションを通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -2264,8 +2259,8 @@ fun IconButton(
 このタスクではプロジェクトを設定して、スーパーヒーローのダミーデータを作成します。
 
 1. **Empty Activity** テンプレートと、バージョン 24 以上の SDK を使用して、新しいプロジェクトを作成します。
-2. アプリのアセット（スーパーヒーローの画像、アプリのロゴ）を[こちら](https://github.com/google-developer-training/basic-android-kotlin-compose-training-superheroes/raw/main/Image%20assets.zip)からダウンロードします。アプリアイコンを追加する方法について復習するには、Codelab の[アプリアイコンを変更する](https://developer.android.com/codelabs/basic-android-kotlin-compose-training-change-app-icon)をご覧ください。アプリに画像を追加する方法について復習するには、Codelab の[インタラクティブな Dice Roller アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app)をご覧ください。
-3. [https://fonts.google.com](https://fonts.google.com) から、Cabin の太字フォントと Cabin の標準フォント ファイルをダウンロードして、利用可能な各種フォントを確認します。アプリのタイポグラフィをカスタマイズする方法については、Codelab の[Jetpack Compose でのマテリアル テーマ設定](https://developer.android.com/codelabs/basic-android-kotlin-compose-material-theming#6)をご覧ください。
+2. アプリのアセット（スーパーヒーローの画像、アプリのロゴ）を[こちら](https://github.com/google-developer-training/basic-android-kotlin-compose-training-superheroes/raw/main/Image%20assets.zip)からダウンロードします。アプリアイコンを追加する方法について復習するには、Codelab のアプリアイコンを変更するをご覧ください。アプリに画像を追加する方法について復習するには、Codelab のインタラクティブな Dice Roller アプリを作成するをご覧ください。
+3. [https://fonts.google.com](https://fonts.google.com) から、Cabin の太字フォントと Cabin の標準フォント ファイルをダウンロードして、利用可能な各種フォントを確認します。アプリのタイポグラフィをカスタマイズする方法については、Codelab のJetpack Compose でのマテリアル テーマ設定をご覧ください。
 4. 各スーパーヒーローのデータを保持するデータクラスを作成します。コードを整理するために、`Hero` データクラス用に `model` という名前の新しいパッケージを作成します。リストアイテムは次のようになります。
 
 ![](./images/basic-android-kotlin-compose-practice-superheroes/268233a1e2b3b407.png)

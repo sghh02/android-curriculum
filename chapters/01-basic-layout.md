@@ -1,6 +1,6 @@
 # 第3章: 基本的なレイアウトを作成する
 
-> 公式コース: [ユニット 1: 初めての Android アプリ](https://developer.android.com/courses/android-basics-compose/unit-1?hl=ja) ／ [パスウェイ 3: 基本的なレイアウトを作成する](https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-3?hl=ja)
+> ユニット 1「初めての Android アプリ」 パスウェイ 3
 > 提出ブランチ: `feature/01-basic-layout`
 
 ## 1. この章のゴール
@@ -11,20 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約345分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約345分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Jetpack Compose の概要 | — | 見なくてOK |
-| 2 | 動画 | 誕生日カードアプリを設計する | — | 見なくてOK |
-| 3 | Codelab | [テキスト コンポーザブルを使用してシンプルなアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-text-composables?hl=ja) | 約60分 | 本文は下に掲載 |
-| 4 | 動画 | スクリーンキャスト: テキスト コンポーザブル | — | 見なくてOK |
-| 5 | Codelab | [Android アプリに画像を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-images?hl=ja) | 約60分 | 本文は下に掲載 |
-| 6 | 動画 | スクリーンキャスト: 画像を追加する | — | 見なくてOK |
-| 7 | Codelab | [練習問題: Compose の基本](https://developer.android.com/codelabs/basic-android-kotlin-compose-composables-practice-problems?hl=ja) | 約90分 | 本文は下に掲載 |
-| 8 | Codelab | [プロジェクト: 名刺アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-business-card?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 9 | 動画 | 次のステップ | — | 見なくてOK |
-| 10 | クイズ | [テスト: 基本的なレイアウトを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-3/Build-a-basic-layout?hl=ja) | 約15分 |  |
+| 1 | Codelab | テキスト コンポーザブルを使用してシンプルなアプリを作成する | 約60分 |  |
+| 2 | Codelab | Android アプリに画像を追加する | 約60分 |  |
+| 3 | Codelab | 練習問題: Compose の基本 | 約90分 |  |
+| 4 | Codelab | プロジェクト: 名刺アプリを作成する | 約120分 | **提出対象** |
+| 5 | クイズ | [テスト: 基本的なレイアウトを作成する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-1-pathway-3/Build-a-basic-layout?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -912,7 +907,7 @@ Happy Birthday アプリを作成しました。
 #### 必要なもの
 
 - Android Studio がインストールされているパソコン
-- [テキスト コンポーザブルを使用してシンプルなアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-text-composables) Codelab で作成したアプリ
+- テキスト コンポーザブルを使用してシンプルなアプリを作成する Codelab で作成したアプリ
 
 ### 2. アプリをセットアップする
 
@@ -1572,8 +1567,8 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 #### 前提条件
 
-- [「テキスト コンポーザブルを使用してシンプルなアプリを作成する」Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-text-composables#0) を完了している
-- [「Android アプリに画像を追加する」Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-images#0) を完了している
+- 「テキスト コンポーザブルを使用してシンプルなアプリを作成する」Codelab を完了している
+- 「Android アプリに画像を追加する」Codelab を完了している
 - Android Studio の最新バージョン
 - Kotlin プログラミング言語に関する基本的な知識
 - Android Studio でデフォルトのテンプレートを使用して Android プロジェクトを作成できる
@@ -1609,7 +1604,7 @@ UI 仕様は次のとおりです。
 
 ##### リソース
 
-[プロジェクトにインポートする](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-images#0)必要がある[こちらの画像](https://github.com/google-developer-training/basic-android-kotlin-compose-training-practice-problems/blob/main/Unit%201/Pathway%203/ComposeArticle/app/src/main/res/drawable-nodpi/bg_compose_background.png)と、以下の文字列。
+プロジェクトにインポートする必要がある[こちらの画像](https://github.com/google-developer-training/basic-android-kotlin-compose-training-practice-problems/blob/main/Unit%201/Pathway%203/ComposeArticle/app/src/main/res/drawable-nodpi/bg_compose_background.png)と、以下の文字列。
 
 - `Jetpack Compose tutorial`
 - `Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.`
