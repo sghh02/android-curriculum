@@ -1,35 +1,12 @@
 # android-curriculum
 
-Android学習用プログラム（Markdown）です。`index.json` が目次・メタ情報、`chapters/` が本文になります。
+Android 学習用プログラム（Markdown）です。`index.json` が目次・メタ情報、`chapters/` が本文になります。
 
-## Authoring
-
-### index.json (lessons metadata)
-
-`items[]` は以下のフィールドを持ちます（すべて必須）:
-
-- `id`: レッスンID（kebab-case）
-- `title`: レッスンタイトル（本文MarkdownのH1と一致）
-- `path`: `chapters/*.md`
-- `type`: `guide` / `lesson` / `hands-on` / `project` / `reference`
-- `difficulty`: `beginner` / `intermediate` / `advanced`
-- `estimatedMinutes`: 目安時間（分）
-- `practiceMinutes`: 演習の目安時間（分）
-- `prerequisites`: 前提レッスンID（string[]）
-- `tags`: タグ（string[]）
-
-各レッスンMarkdownは、少なくとも以下の見出し（H2）を含むことを推奨します：
-
-- `## 前提`
-- `## この章でできるようになること`
-- `## AIに聞いてみよう`
-- `## 演習`
-- `## ふりかえり`
-- `## 次の章`
+Google 公式コース [Compose を用いた Android アプリ開発の基礎](https://developer.android.com/courses/android-basics-compose/course?hl=ja) を教材にし、**パスウェイ 1 つ = 1 章** で構成しています。各章に「やる Codelab」「やらなくてOK な項目」「提出物」を整理しています。
 
 ## Validate
 
-`index.json` と `chapters/` の整合性チェック（パス存在・タイトル一致・`hasAssignment`・提出/完了セクション・提出ブランチ名・章内リンク）:
+`index.json` と `chapters/` の整合性チェック（パス存在・タイトル一致・`hasAssignment`・提出/完了セクション・提出ブランチ名）:
 
 ```bash
 node scripts/validate-index.mjs
@@ -39,3 +16,4 @@ node scripts/validate-index.mjs
 
 - `index.json`: プログラム構造（Unit/lesson）
 - `chapters/*.md`: レッスン本文
+- `index.html` / `app.js` / `styles.css`: ローカル確認用ビューア
