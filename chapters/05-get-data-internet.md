@@ -1,6 +1,6 @@
 # 第13章: インターネットからデータを取得する
 
-> 公式コース: [ユニット 5: インターネットに接続する](https://developer.android.com/courses/android-basics-compose/unit-5?hl=ja) ／ [パスウェイ 1: インターネットからデータを取得する](https://developer.android.com/courses/pathways/android-basics-compose-unit-5-pathway-1?hl=ja)
+> ユニット 5「インターネットに接続する」 パスウェイ 1
 > 提出ブランチ: `feature/05-get-data-internet`
 
 ## 1. この章のゴール
@@ -11,17 +11,14 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約345分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約345分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | インターネットに接続する | — | 見なくてOK |
-| 2 | Codelab | [Kotlin Playground でのコルーチンの概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-kotlin-playground?hl=ja) | 約90分 | 本文は下に掲載 |
-| 3 | Codelab | [Android Studio でのコルーチンの概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-coroutines-android-studio?hl=ja) | 約90分 | 本文は下に掲載 |
-| 4 | 動画 | HTTP / REST の概要 | — | 見なくてOK |
-| 5 | Codelab | [インターネットからデータを取得する](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 6 | 動画 | 次のステップ | — | 見なくてOK |
-| 7 | クイズ | [テスト: インターネットからデータを取得する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-1/android-basics-compose-unit-5-pathway-1?hl=ja) | 約15分 |  |
+| 1 | Codelab | Kotlin Playground でのコルーチンの概要 | 約90分 |  |
+| 2 | Codelab | Android Studio でのコルーチンの概要 | 約90分 |  |
+| 3 | Codelab | インターネットからデータを取得する | 約150分 | **提出対象** |
+| 4 | クイズ | [テスト: インターネットからデータを取得する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-5-pathway-1/android-basics-compose-unit-5-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1004,7 +1001,7 @@ scope.launch(Dispatchers.Default) {
 }
 ```
 
-`CoroutineContext` の詳細と、コンテキストが親から継承される仕組みについては、[KotlinConf の講演動画](https://youtu.be/w0kfnydnFWI?t=256)をご覧ください。
+`CoroutineContext` の詳細と、コンテキストが親から継承される仕組みについては、KotlinConf の講演動画をご覧ください。
 
 ディスパッチャについて何度か言及していますが、その役割は、処理をディスパッチすること、またはスレッドに割り当てることです。スレッドとディスパッチャについて、さらに詳しく見ていきましょう。
 
@@ -1151,8 +1148,6 @@ Kotlin のコルーチン コードは、構造化された同時実行の原則
 - [コルーチンのコンテキストとディスパッチャ](https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html)
 - [コルーチンでのキャンセルと例外](https://medium.com/androiddevelopers/coroutines-first-things-first-e6187bf3bb21)
 - [Android でのコルーチン](https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb)
-- [Kotlin のコルーチン 101](https://www.youtube.com/watch?v=ZTDXo0-SKuU&t=2s&sa=D&source=docs&ust=1664866751197807&usg=AOvVaw19xcRyp5y7Sdx1dzcf-YQP)
-- [KotlinConf 2019: コルーチン: すべてをキャッチするには](https://www.youtube.com/watch?v=w0kfnydnFWI)
 
 ## 4. Android Studio でのコルーチンの概要
 
@@ -1167,7 +1162,7 @@ Kotlin のコルーチン コードは、構造化された同時実行の原則
 
 - Kotlin 言語の基本（関数やラムダを含む）に関する知識
 - Jetpack Compose でレイアウトを作成できること
-- Kotlin で単体テストを作成できること（[ViewModel Codelab の単体テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel#0)を参照）
+- Kotlin で単体テストを作成できること（ViewModel Codelab の単体テストを作成するを参照）
 - スレッドと同時実行の仕組みに関する知識
 - コルーチンと CoroutineScope に関する基本的な知識
 
@@ -1710,7 +1705,7 @@ fun raceParticipant_RaceFinished_ProgressUpdated() = runTest {
 
 #### **課題に挑戦しましょう**
 
-[ViewModel の単体テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel#0)の Codelab で説明したテスト戦略を利用します。ハッピーパス、エラーケース、境界ケースを網羅するテストを追加します。
+ViewModel の単体テストを作成するの Codelab で説明したテスト戦略を利用します。ハッピーパス、エラーケース、境界ケースを網羅するテストを追加します。
 
 作成したテストと、解答コードで使用できるテストを比較します。
 
@@ -1759,7 +1754,6 @@ cd basic-android-kotlin-compose-training-race-tracker
 - [Kotlin のコルーチンと Flow に関する参考情報](https://developer.android.com/kotlin/coroutines/additional-resources)
 - [コルーチンの例外](https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c)
 - [Android でのコルーチン（パート 1）](https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb)
-- [Kotlin でのコルーチン 101](https://www.youtube.com/watch?v=ZTDXo0-SKuU&t=2s&sa=D&source=docs&ust=1664866751197807&usg=AOvVaw19xcRyp5y7Sdx1dzcf-YQP)
 
 ## 5. インターネットからデータを取得する（提出対象）
 

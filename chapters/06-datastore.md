@@ -1,6 +1,6 @@
 # 第17章: DataStore でキーを使用してデータにアクセスし保存する
 
-> 公式コース: [ユニット 6: データの永続化](https://developer.android.com/courses/android-basics-compose/unit-6?hl=ja) ／ [パスウェイ 3: DataStore でキーを使用してデータにアクセスし保存する](https://developer.android.com/courses/pathways/android-basics-compose-unit-6-pathway-3?hl=ja)
+> ユニット 6「データの永続化」 パスウェイ 3
 > 提出ブランチ: `feature/06-datastore`
 
 ## 1. この章のゴール
@@ -10,16 +10,13 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約130分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約130分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | DataStore の概要 | — | 見なくてOK |
-| 2 | 動画 | Preferences DataStore | — | 見なくてOK |
-| 3 | Codelab | [DataStore を使用して設定をローカルに保存する](https://developer.android.com/codelabs/basic-android-kotlin-compose-datastore?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 4 | Codelab | [プロジェクト: フライト検索アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-flight-search?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 5 | 動画 | 次のステップ | — | 見なくてOK |
-| 6 | クイズ | [テスト: DataStore](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-3/android-basics-compose-unit-6-pathway-3?hl=ja) | 約10分 |  |
+| 1 | Codelab | DataStore を使用して設定をローカルに保存する | 約120分 | **提出対象** |
+| 2 | Codelab | プロジェクト: フライト検索アプリを作成する | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 3 | クイズ | [テスト: DataStore](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-3/android-basics-compose-unit-6-pathway-3?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -50,7 +47,7 @@ Codelab の進め方は次の通りです。
 
 #### 前提条件:
 
-- [Room によるデータの読み取りと更新](https://developer.android.com/codelabs/basic-android-kotlin-compose-update-data-room)の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること
+- Room によるデータの読み取りと更新の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること
 
 #### 必要なもの
 

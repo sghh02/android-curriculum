@@ -1,6 +1,6 @@
 # 第16章: Room を使用してデータを永続化する
 
-> 公式コース: [ユニット 6: データの永続化](https://developer.android.com/courses/android-basics-compose/unit-6?hl=ja) ／ [パスウェイ 2: Room を使用してデータを永続化する](https://developer.android.com/courses/pathways/android-basics-compose-unit-6-pathway-2?hl=ja)
+> ユニット 6「データの永続化」 パスウェイ 2
 > 提出ブランチ: `feature/06-room`
 
 ## 1. この章のゴール
@@ -11,18 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約435分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約435分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Kotlin Flow の実践 | — | 見なくてOK |
-| 2 | 記事 | [Flow のテスト](https://developer.android.com/kotlin/flow/test?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 3 | 動画 | Room Kotlin API を使用する | — | 見なくてOK |
-| 4 | Codelab | [Room を使用してデータを永続化する](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room?hl=ja) | 約150分 | 本文は下に掲載 |
-| 5 | Codelab | [Room によるデータの読み取りと更新](https://developer.android.com/codelabs/basic-android-kotlin-compose-update-data-room?hl=ja) | 約120分 | 本文は下に掲載 |
-| 6 | Codelab | [演習: Bus Schedule アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-bus-schedule-app?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: Room](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-2/android-basics-compose-unit-6-pathway-2?hl=ja) | 約15分 |  |
+| 1 | 記事 | [Flow のテスト](https://developer.android.com/kotlin/flow/test?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 2 | Codelab | Room を使用してデータを永続化する | 約150分 |  |
+| 3 | Codelab | Room によるデータの読み取りと更新 | 約120分 |  |
+| 4 | Codelab | 演習: Bus Schedule アプリを作成する | 約150分 | **提出対象** |
+| 5 | クイズ | [テスト: Room](https://developer.android.com/courses/quizzes/android-basics-compose-unit-6-pathway-2/android-basics-compose-unit-6-pathway-2?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1068,8 +1065,6 @@ Android デベロッパー ドキュメント
 
 動画
 
-- [Kotlin: Room Kotlin API を使用する](https://www.youtube.com/watch?v=vsDkhRTMdA0)
-- [Database Inspector](https://www.youtube.com/watch?v=UMc7Tu0nKYQ)
 
 その他のドキュメントと記事
 
@@ -1092,7 +1087,7 @@ Android デベロッパー ドキュメント
 - エンティティ クラス、DAO クラス、データベース クラスを作成できること。
 - データ アクセス オブジェクト（DAO）を使用して Kotlin 関数を SQL クエリにマッピングできること。
 - [`LazyColumn`](https://developer.android.com/jetpack/compose/lists) でリストアイテムを表示できること。
-- このユニットで前の Codelab（[Room を使用してデータを永続化する](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room)）を修了していること。
+- このユニットで前の Codelab（Room を使用してデータを永続化する）を修了していること。
 
 #### 学習内容
 
@@ -1109,7 +1104,7 @@ Android デベロッパー ドキュメント
 
 ### 2. スターター アプリの概要
 
-この Codelab では、前の Codelab（[Room を使用してデータを永続化する](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room)）で扱った Inventory アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは [**Add Item**] 画面を使用してアプリ データベースにデータを追加できます。
+この Codelab では、前の Codelab（Room を使用してデータを永続化する）で扱った Inventory アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは [**Add Item**] 画面を使用してアプリ データベースにデータを追加できます。
 
 > **注:**現在のバージョンのスターター アプリでは、データベースに保存されているデータは表示されません。
 
@@ -2198,15 +2193,15 @@ Kotlin リファレンス
 
 #### はじめに
 
-[Room を使用してデータを永続化する](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room) Codelab では、Android アプリに Room データベースを実装する方法を学習しました。この演習では、独立して行われる一連のステップを通じて、Room データベースの実装について理解を深めることができます。
+Room を使用してデータを永続化する Codelab では、Android アプリに Room データベースを実装する方法を学習しました。この演習では、独立して行われる一連のステップを通じて、Room データベースの実装について理解を深めることができます。
 
-この演習セットでは、[Room を使用してデータを永続化する](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room) Codelab で学習したコンセプトを使用して、Bus Schedule アプリを完成させます。このアプリは、Room データベースから取得したデータを使用して、バス停と出発予定時刻のリストをユーザーに提示します。
+この演習セットでは、Room を使用してデータを永続化する Codelab で学習したコンセプトを使用して、Bus Schedule アプリを完成させます。このアプリは、Room データベースから取得したデータを使用して、バス停と出発予定時刻のリストをユーザーに提示します。
 
 解答コードは最後にあります。この学習体験を最大限に活用するため、記載された解答コードを確認する前に、できる限りご自身で実装とトラブルシューティングを行ってみてください。この実践時間中に、多くのことを学びましょう。
 
 #### 前提条件
 
-- [Persist Data with Room](https://developer.android.com/codelabs/basic-android-kotlin-compose-persisting-data-room) Codelab の「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること
+- Persist Data with Room Codelab の「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること
 
 #### 必要なもの
 

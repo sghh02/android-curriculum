@@ -1,6 +1,6 @@
 # 第7章: Kotlin の基礎（その他）
 
-> 公式コース: [ユニット 3: リストの表示とマテリアル デザインの使用](https://developer.android.com/courses/android-basics-compose/unit-3?hl=ja) ／ [パスウェイ 1: Kotlin の基礎（その他）](https://developer.android.com/courses/pathways/android-basics-compose-unit-3-pathway-1?hl=ja)
+> ユニット 3「リストの表示とマテリアル デザインの使用」 パスウェイ 1
 > 提出ブランチ: `feature/03-kotlin-more`
 
 ## 1. この章のゴール
@@ -11,16 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約375分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約375分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | ユニット 3 へようこそ | — | 見なくてOK |
-| 2 | Codelab | [ジェネリック、オブジェクト、拡張機能](https://developer.android.com/codelabs/basic-android-kotlin-compose-generics?hl=ja) | 約90分 | 本文は下に掲載 |
-| 3 | Codelab | [Kotlin でコレクションを使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-collections?hl=ja) | 約90分 | 本文は下に掲載 |
-| 4 | Codelab | [コレクションを操作する高階関数](https://developer.android.com/codelabs/basic-android-kotlin-compose-higher-order-functions?hl=ja) | 約90分 | 本文は下に掲載 |
-| 5 | Codelab | [演習: クラスとコレクション](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-classes-and-collections?hl=ja) | 約90分 | **提出対象**（本文は下に掲載） |
-| 6 | クイズ | [テスト: Kotlin の基礎（その他）](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-1/android-basics-compose-unit-3-pathway-1?hl=ja) | 約15分 |  |
+| 1 | Codelab | ジェネリック、オブジェクト、拡張機能 | 約90分 |  |
+| 2 | Codelab | Kotlin でコレクションを使用する | 約90分 |  |
+| 3 | Codelab | コレクションを操作する高階関数 | 約90分 |  |
+| 4 | Codelab | 演習: クラスとコレクション | 約90分 | **提出対象** |
+| 5 | クイズ | [テスト: Kotlin の基礎（その他）](https://developer.android.com/courses/quizzes/android-basics-compose-unit-3-pathway-1/android-basics-compose-unit-3-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -1068,7 +1067,7 @@ Pluto
 
 #### `List` と `MutableList`
 
-Kotlin で目にするコレクション型は、1 つ以上のインターフェースを実装します。このユニットの前の部分の[ジェネリック、オブジェクト、拡張機能](https://developer.android.com/codelabs/basic-android-kotlin-compose-generics)の Codelab で説明したとおり、インターフェースは実装対象のクラスの標準的なプロパティとメソッドのセットを指定します。`List` インターフェースを実装するクラスは、`List` インターフェースのすべてのプロパティとメソッドの実装を行います。`MutableList` の場合も同様です。
+Kotlin で目にするコレクション型は、1 つ以上のインターフェースを実装します。このユニットの前の部分のジェネリック、オブジェクト、拡張機能の Codelab で説明したとおり、インターフェースは実装対象のクラスの標準的なプロパティとメソッドのセットを指定します。`List` インターフェースを実装するクラスは、`List` インターフェースのすべてのプロパティとメソッドの実装を行います。`MutableList` の場合も同様です。
 
 `List` と `MutableList` の役割は何でしょうか。
 
@@ -1545,7 +1544,7 @@ println(solarSystem["Jupiter"])
 
 ### 1. はじめに
 
-[Kotlin で関数型とラムダ式を使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-function-types-and-lambda) Codelab で、高階関数について学びました。これは、他の関数をパラメータとして受け取ったり、関数を返したりする、`repeat()` などの関数です。高階関数は特にコレクションと深い関係があり、並べ替えやフィルタリングなどの一般的なタスクをより少ないコードで実行するのに役立ちます。コレクションを扱うための基礎を十分に習得したところで、もう一度高階関数について学びましょう。
+Kotlin で関数型とラムダ式を使用する Codelab で、高階関数について学びました。これは、他の関数をパラメータとして受け取ったり、関数を返したりする、`repeat()` などの関数です。高階関数は特にコレクションと深い関係があり、並べ替えやフィルタリングなどの一般的なタスクをより少ないコードで実行するのに役立ちます。コレクションを扱うための基礎を十分に習得したところで、もう一度高階関数について学びましょう。
 
 この Codelab では、コレクション型に対して使用できるさまざまな関数（`forEach()`、`map()`、`filter()`、`groupBy()`、`fold()`、`sortedBy()` など）を学習します。その過程で、ラムダ式を扱う追加の演習を行います。
 
@@ -2088,7 +2087,7 @@ Vanilla Creme
 
 #### 前提条件
 
-- **Compose を用いた Android アプリ開発の基礎**コースの[ユニット 3 パスウェイ 1](https://developer.android.com/courses/pathways/android-basics-compose-unit-3-pathway-1) と、それ以前のパスウェイを完了していること。
+- **Compose を用いた Android アプリ開発の基礎**コースのユニット 3 パスウェイ 1 と、それ以前のパスウェイを完了していること。
 - Kotlin プログラミング言語の基本（クラス、オブジェクト、コレクション、高階関数など）に精通していること
 
 #### 必要なもの

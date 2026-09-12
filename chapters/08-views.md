@@ -1,6 +1,6 @@
 # 第19章: ビュー内の Android ビューと Compose
 
-> 公式コース: [ユニット 8: Compose とビュー](https://developer.android.com/courses/android-basics-compose/unit-8?hl=ja) ／ [パスウェイ 1: ビュー内の Android ビューと Compose](https://developer.android.com/courses/pathways/android-basics-compose-unit-8-pathway-1?hl=ja)
+> ユニット 8「Compose とビュー」 パスウェイ 1
 > 提出ブランチ: `feature/08-views`
 
 ## 1. この章のゴール
@@ -10,16 +10,13 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約280分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約280分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Android ビューシステム | — | 見なくてOK |
-| 2 | Codelab | [ビューで Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-app-with-views?hl=ja) | 約150分 | 本文は下に掲載 |
-| 3 | 動画 | ビュー内の Compose | — | 見なくてOK |
-| 4 | Codelab | [Compose を以前のアプリに追加する](https://developer.android.com/codelabs/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 5 | 動画 | 次のステップ | — | 見なくてOK |
-| 6 | クイズ | [テスト: Android ビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-1/android-basics-compose-unit-8-pathway-1?hl=ja) | 約10分 |  |
+| 1 | Codelab | ビューで Android アプリを作成する | 約150分 |  |
+| 2 | Codelab | Compose を以前のアプリに追加する | 約120分 | **提出対象** |
+| 3 | クイズ | [テスト: Android ビュー](https://developer.android.com/courses/quizzes/android-basics-compose-unit-8-pathway-1/android-basics-compose-unit-8-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -43,7 +40,7 @@ Codelab の進め方は次の通りです。
 
 #### 前提条件:
 
-- [ユニット 7](https://developer.android.com/courses/android-basics-compose/unit-7) で「Compose での Android の基礎」コースワークを完了していること。
+- ユニット 7 で「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -485,7 +482,7 @@ Jetpack Compose は、当初から View の相互運用性を考慮して設計�
 
 ### 2. スターター アプリの概要
 
-この Codelab では、[ビューを使用して Android アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-app-with-views)で取得した **Juice Tracker** アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは、ジュースの名前、説明、色、評価など、ジュースの情報をアプリ データベースに追加できます。
+この Codelab では、ビューを使用して Android アプリを作成するで取得した **Juice Tracker** アプリの解答コードをスターター コードとして使用します。スターター アプリはすでに、[Room](https://developer.android.com/reference/androidx/room/package-summary) 永続ライブラリを使用してデータを保存できる状態になっています。ユーザーは、ジュースの名前、説明、色、評価など、ジュースの情報をアプリ データベースに追加できます。
 
 ![](./images/basic-android-kotlin-training-compose-add-compose-to-a-view-based-app/36bd5542e97fee2e.png)
 

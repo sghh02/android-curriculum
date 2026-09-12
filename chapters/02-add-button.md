@@ -1,6 +1,6 @@
 # 第5章: アプリにボタンを追加する
 
-> 公式コース: [ユニット 2: アプリ UI を作成する](https://developer.android.com/courses/android-basics-compose/unit-2?hl=ja) ／ [パスウェイ 2: アプリにボタンを追加する](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-2?hl=ja)
+> ユニット 2「アプリ UI を作成する」 パスウェイ 2
 > 提出ブランチ: `feature/02-add-button`
 
 ## 1. この章のゴール
@@ -11,16 +11,14 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約235分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約235分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Dice Roller アプリの概要 | — | 見なくてOK |
-| 2 | Codelab | [インタラクティブな Dice Roller アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app?hl=ja) | 約90分 | **提出対象**（本文は下に掲載） |
-| 3 | Codelab | [Android Studio でデバッガを使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-intro-debugger?hl=ja) | 約45分 | 本文は下に掲載 |
-| 4 | Codelab | [練習: クリック動作](https://developer.android.com/codelabs/basic-android-kotlin-compose-button-click-practice-problem?hl=ja) | 約90分 | **提出対象**（本文は下に掲載） |
-| 5 | 動画 | 次のステップ | — | 見なくてOK |
-| 6 | クイズ | [テスト: アプリにボタンを追加する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-2/android-basics-compose-unit-2-pathway-2?hl=ja) | 約10分 |  |
+| 1 | Codelab | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
+| 2 | Codelab | Android Studio でデバッガを使用する | 約45分 |  |
+| 3 | Codelab | 練習: クリック動作 | 約90分 | **提出対象** |
+| 4 | クイズ | [テスト: アプリにボタンを追加する](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-2/android-basics-compose-unit-2-pathway-2?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -596,7 +594,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 - Android Studio に関する基本的な知識があること
 - Android Studio で基本的な Jetpack Compose アプリを作成、実行できること
-- [インタラクティブな Dice Roller アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app) Codelab を修了していること
+- インタラクティブな Dice Roller アプリを作成する Codelab を修了していること
 
 #### 学習内容
 
@@ -918,7 +916,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 
 1. アプリの[画像の ZIP ファイル](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade/raw/main/lemonade_images.zip)をダウンロードします。
 2. ZIP ファイルをダブルクリックします。このステップでは、画像がフォルダに展開されます。
-3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、[インタラクティブな Dice Roller アプリを作成する Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app) で確認してください。
+3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、インタラクティブな Dice Roller アプリを作成する Codelab で確認してください。
 
 プロジェクト フォルダは次のスクリーンショットのように、`lemon_drink.xml`、`lemon_restart.xml`、`lemon_squeeze.xml`、`lemon_tree.xml` のアセットが **res > drawable** ディレクトリに表示されるようにしてください。
 
@@ -947,7 +945,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 - `Glass of lemonade`
 - `Empty glass`
 
-アプリで文字列リソースを宣言する方法がわからない場合は、[インタラクティブな Dice Roller アプリを作成する Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-build-a-dice-roller-app) または[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+アプリで文字列リソースを宣言する方法がわからない場合は、インタラクティブな Dice Roller アプリを作成する Codelab または[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
 
 #### **レモネードを作る手順**
 

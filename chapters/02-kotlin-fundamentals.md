@@ -1,6 +1,6 @@
 # 第4章: Kotlin の基礎
 
-> 公式コース: [ユニット 2: アプリ UI を作成する](https://developer.android.com/courses/android-basics-compose/unit-2?hl=ja) ／ [パスウェイ 1: Kotlin の基礎](https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-1?hl=ja)
+> ユニット 2「アプリ UI を作成する」 パスウェイ 1
 > 提出ブランチ: `feature/02-kotlin-fundamentals`
 
 ## 1. この章のゴール
@@ -11,18 +11,16 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約405分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約405分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | Kotlin の基礎へようこそ | — | 見なくてOK |
-| 2 | Codelab | [Kotlin で条件を記述する](https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals?hl=ja) | 約60分 | 本文は下に掲載 |
-| 3 | Codelab | [Kotlin で null 可能性を使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-nullability?hl=ja) | 約60分 | 本文は下に掲載 |
-| 4 | Codelab | [Kotlin でクラスとオブジェクトを使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects?hl=ja) | 約90分 | 本文は下に掲載 |
-| 5 | Codelab | [Kotlin で関数型とラムダ式を使用する](https://developer.android.com/codelabs/basic-android-kotlin-compose-function-types-and-lambda?hl=ja) | 約90分 | 本文は下に掲載 |
-| 6 | Codelab | [演習: Kotlin の基礎](https://developer.android.com/codelabs/basic-android-kotlin-compose-kotlin-fundamentals-practice-problems?hl=ja) | 約90分 | **提出対象**（本文は下に掲載） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: Kotlin の基礎](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-1/android-basics-compose-unit-2-pathway-1?hl=ja) | 約15分 |  |
+| 1 | Codelab | Kotlin で条件を記述する | 約60分 |  |
+| 2 | Codelab | Kotlin で null 可能性を使用する | 約60分 |  |
+| 3 | Codelab | Kotlin でクラスとオブジェクトを使用する | 約90分 |  |
+| 4 | Codelab | Kotlin で関数型とラムダ式を使用する | 約90分 |  |
+| 5 | Codelab | 演習: Kotlin の基礎 | 約90分 | **提出対象** |
+| 6 | クイズ | [テスト: Kotlin の基礎](https://developer.android.com/courses/quizzes/android-basics-compose-unit-2-pathway-1/android-basics-compose-unit-2-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -4376,7 +4374,7 @@ Kotlin プログラミングの基礎を学んだので、次は学んだこと�
 - Kotlin のラムダ式に慣れていること
 - null 値許容変数の扱い方に関する知識
 - Kotlin のクラスとオブジェクトの作成方法に関する知識
-- [Kotlin での条件構文の使い方](https://developer.android.com/codelabs/basic-android-kotlin-compose-conditionals#0)、[Kotlin での null 値許容の使い方](https://developer.android.com/codelabs/basic-android-kotlin-compose-nullability#0)、[Kotlin でのクラスとオブジェクトの使い方](https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects#0)、[Kotlin での関数型とラムダ式の使い方](https://developer.android.com/codelabs/basic-android-kotlin-compose-function-types-and-lambda#0)に関する各 Codelab を修了していること
+- Kotlin での条件構文の使い方、Kotlin での null 値許容の使い方、Kotlin でのクラスとオブジェクトの使い方、Kotlin での関数型とラムダ式の使い方に関する各 Codelab を修了していること
 
 #### 必要なもの
 

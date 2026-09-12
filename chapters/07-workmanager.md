@@ -1,6 +1,6 @@
 # 第18章: WorkManager でタスクのスケジュールを設定する
 
-> 公式コース: [ユニット 7: WorkManager](https://developer.android.com/courses/android-basics-compose/unit-7?hl=ja) ／ [パスウェイ 1: WorkManager でタスクのスケジュールを設定する](https://developer.android.com/courses/pathways/android-basics-compose-unit-7-pathway-1?hl=ja)
+> ユニット 7「WorkManager」 パスウェイ 1
 > 提出ブランチ: `feature/07-workmanager`
 
 ## 1. この章のゴール
@@ -10,17 +10,14 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約280分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約280分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | WorkManager の概要 | — | 見なくてOK |
-| 2 | 動画 | WorkManager の実装 | — | 見なくてOK |
-| 3 | Codelab | [WorkManager によるバックグラウンド処理](https://developer.android.com/codelabs/basic-android-kotlin-compose-workmanager?hl=ja) | 約120分 | 本文は下に掲載 |
-| 4 | Codelab | [高度な WorkManager とテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-verify-background-work?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 5 | Codelab | [演習: Water Me アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-water-me-app?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 6 | 動画 | 次のステップ | — | 見なくてOK |
-| 7 | クイズ | [テスト: WorkManager](https://developer.android.com/courses/quizzes/android-basics-compose-unit-7-pathway-1/android-basics-compose-unit-7-pathway-1?hl=ja) | 約10分 |  |
+| 1 | Codelab | WorkManager によるバックグラウンド処理 | 約120分 |  |
+| 2 | Codelab | 高度な WorkManager とテスト | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 3 | Codelab | 演習: Water Me アプリを作成する | 約150分 | **提出対象** |
+| 4 | クイズ | [テスト: WorkManager](https://developer.android.com/courses/quizzes/android-basics-compose-unit-7-pathway-1/android-basics-compose-unit-7-pathway-1?hl=ja) | 約10分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -42,8 +39,8 @@ Codelab の進め方は次の通りです。
 
 #### 前提条件
 
-- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow) と [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) に関する知識。これらのクラスを初めて使用する場合は、[Compose での ViewModel と状態 Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)（特に ViewModel と状態関連）、または [Room によるデータの読み取りと更新 Codelab](https://developer.android.com/codelabs/basic-android-kotlin-compose-update-data-room)（特に Flow と StateFlow 関連）をご確認ください。
-- リポジトリと依存関係注入に関する知識。確認するには、[リポジトリと手動 DI を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository)をご覧ください。
+- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow) と [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) に関する知識。これらのクラスを初めて使用する場合は、Compose での ViewModel と状態 Codelab（特に ViewModel と状態関連）、または Room によるデータの読み取りと更新 Codelab（特に Flow と StateFlow 関連）をご確認ください。
+- リポジトリと依存関係注入に関する知識。確認するには、リポジトリと手動 DI を追加するをご覧ください。
 - アプリにコルーチンを実装する能力
 
 #### 学習内容
@@ -1094,7 +1091,7 @@ override suspend fun doWork(): Result {
 
 ここでのタスクは、`WorkManagerWaterRepository` から正しいパラメータでこのメソッドを呼び出す [`OneTimeWorkRequest`](https://developer.android.com/reference/androidx/work/OneTimeWorkRequest) を作成することです。
 
-詳しくは、[WorkManager によるバックグラウンド処理](https://developer.android.com/codelabs/basic-android-kotlin-compose-workmanager)をご覧ください。
+詳しくは、WorkManager によるバックグラウンド処理をご覧ください。
 
 #### 処理リクエストを作成する
 

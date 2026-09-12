@@ -1,6 +1,6 @@
 # 第10章: アーキテクチャ コンポーネント
 
-> 公式コース: [ユニット 4: ナビゲーションとアプリ アーキテクチャ](https://developer.android.com/courses/android-basics-compose/unit-4?hl=ja) ／ [パスウェイ 1: アーキテクチャ コンポーネント](https://developer.android.com/courses/pathways/android-basics-compose-unit-4-pathway-1?hl=ja)
+> ユニット 4「ナビゲーションとアプリ アーキテクチャ」 パスウェイ 1
 > 提出ブランチ: `feature/04-architecture-components`
 
 ## 1. この章のゴール
@@ -11,19 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約405分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約405分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | ユニット 4 へようこそ | — | 見なくてOK |
-| 2 | Codelab | [アクティビティのライフサイクルのステージ](https://developer.android.com/codelabs/basic-android-kotlin-compose-activity-lifecycle?hl=ja) | 約90分 | 本文は下に掲載 |
-| 3 | 動画 | アプリ アーキテクチャの概要 | — | 見なくてOK |
-| 4 | 動画 | アーキテクチャ: UI レイヤ | — | 見なくてOK |
-| 5 | Codelab | [Compose での ViewModel と状態](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?hl=ja) | 約120分 | 本文は下に掲載 |
-| 6 | Codelab | [ViewModel をテストする単体テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel?hl=ja) | 約60分 | 本文は下に掲載 |
-| 7 | Codelab | [演習: Dessert Clicker に ViewModel を追加する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-viewmodel?hl=ja) | 約120分 | **提出対象**（本文は下に掲載） |
-| 8 | 動画 | 次のステップ | — | 見なくてOK |
-| 9 | クイズ | [テスト: アーキテクチャ コンポーネント](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-1/android-basics-compose-unit-4-pathway-1?hl=ja) | 約15分 |  |
+| 1 | Codelab | アクティビティのライフサイクルのステージ | 約90分 |  |
+| 2 | Codelab | Compose での ViewModel と状態 | 約120分 |  |
+| 3 | Codelab | ViewModel をテストする単体テストを作成する | 約60分 |  |
+| 4 | Codelab | 演習: Dessert Clicker に ViewModel を追加する | 約120分 | **提出対象** |
+| 5 | クイズ | [テスト: アーキテクチャ コンポーネント](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-1/android-basics-compose-unit-4-pathway-1?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -468,7 +464,7 @@ var revenue by remember { mutableStateOf(0) }
 
 Compose は再コンポーズ時に収益の状態を記憶しますが、構成の変更の際はこの状態を保持しません。構成の変更の際に Compose が状態を保持するようにするには、`rememberSaveable` を使用する必要があります。
 
-その他の演習と詳細については、[Compose の状態の概要](https://developer.android.com/codelabs/basic-android-kotlin-compose-using-state) Codelab をご覧ください。
+その他の演習と詳細については、Compose の状態の概要 Codelab をご覧ください。
 
 #### `rememberSaveable` を使用して構成の変更をまたいで値を保存する
 
@@ -1921,7 +1917,7 @@ $ git checkout viewmodel
 - [アプリ アーキテクチャ ガイド | Android デベロッパー](https://developer.android.com/topic/architecture)
 - [UI レイヤ | Android デベロッパー](https://developer.android.com/topic/architecture/ui-layer)
 - [単方向データフローで状態を管理する | Android デベロッパー](https://developer.android.com/topic/architecture/ui-layer#udf)
-- 学習パスウェイ: [最新の Android アプリ アーキテクチャ](https://developer.android.com/courses/pathways/android-architecture)
+- 学習パスウェイ: 最新の Android アプリ アーキテクチャ
 
 ## 5. ViewModel をテストする単体テストを作成する
 
@@ -1934,7 +1930,7 @@ $ git checkout viewmodel
 
 ![](./images/basic-android-kotlin-compose-test-viewmodel/bb1e97c357603a27.png)
 
-「[自動テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-write-automated-tests?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-write-automated-tests#0)」Codelab では、自動テストの概要と重要性について学習しました。また、単体テストの実装方法についても学習しました。
+「自動テストを作成する」Codelab では、自動テストの概要と重要性について学習しました。また、単体テストの実装方法についても学習しました。
 
 学習した内容は以下のとおりです。
 
@@ -1943,7 +1939,7 @@ $ git checkout viewmodel
 - 単体テストでは、関数、クラス、プロパティをテストできます。
 - ローカル単体テストは、ワークステーションで実行されます。つまり、Android デバイスやエミュレータを必要とせずに、開発環境で実行されます。言い換えると、ローカルテストはパソコンで実行できます。
 
-先に進む前に、「[自動テストを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-write-automated-tests?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-write-automated-tests#0)」と「[Compose での ViewModel と状態](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)」の Codelab を完了してください。
+先に進む前に、「自動テストを作成する」と「Compose での ViewModel と状態」の Codelab を完了してください。
 
 #### 前提条件
 
@@ -2714,7 +2710,7 @@ Dessert Clicker は、インラインの状態とデータを利用して機能�
 
 #### 前提条件
 
-- [Compose での ViewModel と状態](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- Compose での ViewModel と状態の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
@@ -2776,7 +2772,7 @@ Jetpack ViewModel コンポーネントを使用して `ViewModel` クラスを�
 
 ロジックを `MainActivity` から ViewModel に移し、作成した UI 状態クラスを使用して UI 状態データにアクセスできるようにします。その後、すべてのデータと状態管理ロジックを `MainActivity` から削除します。
 
-このタスクを自分でやってみてください。必要に応じて、[Compose での ViewModel と状態](https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state)に関する Codelab のガイダンスを確認してください。
+このタスクを自分でやってみてください。必要に応じて、Compose での ViewModel と状態に関する Codelab のガイダンスを確認してください。
 
 ### 7. ViewModel を呼び出す
 

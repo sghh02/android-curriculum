@@ -1,6 +1,6 @@
 # 第12章: さまざまな表示サイズに適応する
 
-> 公式コース: [ユニット 4: ナビゲーションとアプリ アーキテクチャ](https://developer.android.com/courses/android-basics-compose/unit-4?hl=ja) ／ [パスウェイ 3: さまざまな表示サイズに適応する](https://developer.android.com/courses/pathways/android-basics-compose-unit-4-pathway-3?hl=ja)
+> ユニット 4「ナビゲーションとアプリ アーキテクチャ」 パスウェイ 3
 > 提出ブランチ: `feature/04-adaptive-layouts`
 
 ## 1. この章のゴール
@@ -11,18 +11,15 @@
 
 ## 2. 進め方
 
-公式パスウェイの内容を **上から順番に** 進めます。動画と「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています。目安時間の合計は約405分です。
+公式パスウェイの内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。Codelab の本文はこのページの下にすべて掲載しています（公式の動画はこのプログラムでは扱いません）。目安時間の合計は約405分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | 動画 | アダプティブ レイアウト | — | 見なくてOK |
-| 2 | 動画 | Reply アプリの概要 | — | 見なくてOK |
-| 3 | Codelab | [ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens?hl=ja) | 約120分 | 本文は下に掲載 |
-| 4 | Codelab | [アダプティブ レイアウトでアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-content-for-large-screens?hl=ja) | 約120分 | 本文は下に掲載 |
-| 5 | Codelab | [演習: スポーツアプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-practice-sports-app?hl=ja) | 約150分 | **提出対象**（本文は下に掲載） |
-| 6 | Codelab | [プロジェクト: My City アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-my-city?hl=ja) | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
-| 7 | 動画 | 次のステップ | — | 見なくてOK |
-| 8 | クイズ | [テスト: アダプティブ レイアウト](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-3/android-basics-compose-unit-4-pathway-3?hl=ja) | 約15分 |  |
+| 1 | Codelab | ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する | 約120分 |  |
+| 2 | Codelab | アダプティブ レイアウトでアプリを作成する | 約120分 |  |
+| 3 | Codelab | 演習: スポーツアプリを作成する | 約150分 | **提出対象** |
+| 4 | Codelab | プロジェクト: My City アプリを作成する | — | **やらなくてOK**（学習効果に対して難易度・工数が高い） |
+| 5 | クイズ | [テスト: アダプティブ レイアウト](https://developer.android.com/courses/quizzes/android-basics-compose-unit-4-pathway-3/android-basics-compose-unit-4-pathway-3?hl=ja) | 約15分 | 公式サイトで受ける |
 
 Codelab の進め方は次の通りです。
 
@@ -972,13 +969,13 @@ git checkout nav-update
 
 ### 1. はじめに
 
-前の Codelab では、ウィンドウ サイズクラスを使用してダイナミック ナビゲーションを実装することで、Reply アプリをアダプティブに変換する作業を始めました。こうした機能は、あらゆる画面サイズに対応したアプリを構築するための重要な基礎であり、第一歩です。「[ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens)」Codelab を受講していない場合は、戻ってそこから開始することを強くおすすめします。
+前の Codelab では、ウィンドウ サイズクラスを使用してダイナミック ナビゲーションを実装することで、Reply アプリをアダプティブに変換する作業を始めました。こうした機能は、あらゆる画面サイズに対応したアプリを構築するための重要な基礎であり、第一歩です。「ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する」Codelab を受講していない場合は、戻ってそこから開始することを強くおすすめします。
 
 この Codelab では、学習したコンセプトを基に、アプリにアダプティブ レイアウトをさらに実装します。実装するアダプティブ レイアウトは、正規レイアウト（大画面ディスプレイでよく使用されるパターンのセット）の一部です。また、堅牢なアプリを迅速に構築するための、他のツールやテストの手法についても学習します。
 
 #### 前提条件
 
-- 「[ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens)」Codelab を修了している
+- 「ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する」Codelab を修了している
 - クラス、関数、条件文など、Kotlin プログラミングに精通している
 - `ViewModel` クラスをよく理解している
 - `Composable` 関数をよく理解している
@@ -1024,7 +1021,7 @@ $ git checkout nav-update
 
 #### さまざまな画面サイズのプレビューを作成する
 
-「[ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens)」Codelab では、プレビュー コンポーザブルを使用して開発プロセスに役立てる方法を学びました。アダプティブ アプリの場合、複数のプレビューを作成して、さまざまな画面サイズでアプリを表示することをおすすめします。複数のプレビューを使用すると、あらゆる画面サイズに対する変更を一度に確認できます。またプレビューは、コードをレビューする他のデベロッパーにとって、アプリがさまざまな画面サイズに対応していることを確認するうえでも役立ちます。
+「ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する」Codelab では、プレビュー コンポーザブルを使用して開発プロセスに役立てる方法を学びました。アダプティブ アプリの場合、複数のプレビューを作成して、さまざまな画面サイズでアプリを表示することをおすすめします。複数のプレビューを使用すると、あらゆる画面サイズに対する変更を一度に確認できます。またプレビューは、コードをレビューする他のデベロッパーにとって、アプリがさまざまな画面サイズに対応していることを確認するうえでも役立ちます。
 
 これまでは、コンパクト画面をサポートするプレビューが 1 つあるだけでした。今度はプレビューを増やします。
 
@@ -1542,7 +1539,7 @@ Reply アプリの構成の継続性を手動でテストする手順は次の�
 
 #### コンパクト画面のテストを構成する
 
-「[Cupcake アプリをテストする](https://developer.android.com/codelabs/basic-android-kotlin-compose-test-cupcake)」Codelab では、UI テストの作成について学習しました。ここでは、さまざまな画面サイズ向けに固有のテストを作成する方法を学習しましょう。
+「Cupcake アプリをテストする」Codelab では、UI テストの作成について学習しました。ここでは、さまざまな画面サイズ向けに固有のテストを作成する方法を学習しましょう。
 
 Reply アプリでは、画面サイズに応じて異なるナビゲーション要素を使用します。たとえば、ユーザーが拡大画面を表示したときは固定的なナビゲーション ドロワーを表示することが想定されます。さまざまな画面サイズについて、ボトム ナビゲーション、ナビゲーション レール、ナビゲーション ドロワーなど、さまざまなナビゲーション要素の存在を確認するためのテストを作成すると便利です。
 
@@ -2236,7 +2233,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 #### 前提条件
 
-- [ダイナミック ナビゲーションを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens#0)と[アダプティブ レイアウトを使用してアダプティブ アプリを作成する](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-content-for-large-screens#0)の Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
+- ダイナミック ナビゲーションを使用してアダプティブ アプリを作成するとアダプティブ レイアウトを使用してアダプティブ アプリを作成するの Codelab を通じて、「Compose での Android の基礎」コースワークを完了していること。
 
 #### 必要なもの
 
