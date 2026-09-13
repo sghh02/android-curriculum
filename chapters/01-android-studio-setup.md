@@ -28,7 +28,6 @@
 
 ## 3. Android Studio をダウンロードしてインストールする
 
-
 ### 1. 始める前に
 
 このレッスンでは、Android Studio をインストールします。
@@ -135,7 +134,7 @@ Windows 8.1 でデバイスの仕様を確認する手順は次のとおりで�
 
 ![](./images/basic-android-kotlin-compose-install-android-studio/6a7eba659ca0d6f1.png)
 
-7. Android Studio の初回起動時、ライトモードとダークモードのどちらを使用するかを選択します。このコースのスクリーンショットではライトモードが使用されていますが、どちらを選択しても構いません。
+7. Android Studio の初回起動時、ライトモードとダークモードのどちらを使用するかを選択します。このプログラムのスクリーンショットではライトモードが使用されていますが、どちらを選択しても構いません。
 
 ![](./images/basic-android-kotlin-compose-install-android-studio/e91289b2f9f25157.png)
 
@@ -319,7 +318,7 @@ cd android-studio/bin
 
 ![](./images/basic-android-kotlin-compose-install-android-studio/f066c9371aff4900.png)
 
-7. ライトモードとダークモードのどちらを使用するかを選択します。このコースのスクリーンショットではライトモードが使用されていますが、どちらを選択しても構いません。この設定は後からいつでも変更できます。
+7. ライトモードとダークモードのどちらを使用するかを選択します。このプログラムのスクリーンショットではライトモードが使用されていますが、どちらを選択しても構いません。この設定は後からいつでも変更できます。
 
 ![](./images/basic-android-kotlin-compose-install-android-studio/94c5ef155301e63f.png)
 
@@ -365,7 +364,6 @@ cd android-studio/bin
 - [Android Studio の概要](https://developer.android.com/studio/intro)
 
 ## 4. 初めての Android アプリを作成する
-
 
 ### 1. 始める前に
 
@@ -483,7 +481,7 @@ Android Studio のプロジェクト テンプレートは、ある種のアプ�
 
 ![](./images/basic-android-kotlin-compose-first-app/84dc993206449d28.png)
 
-4. もう一度 [**Android**] を選択し、さきほどのビューに戻ります。このコースでは **Android** ビューを使用します。ファイル構造がおかしい場合は、**Android** ビューになっていることを確認してください。
+4. もう一度 [**Android**] を選択し、さきほどのビューに戻ります。このプログラムでは **Android** ビューを使用します。ファイル構造がおかしい場合は、**Android** ビューになっていることを確認してください。
 
 ### 4. テキストを更新する
 
@@ -840,7 +838,6 @@ fun GreetingPreview() {
 
 ## 5. Android Emulator で初めてのアプリを実行する
 
-
 ### 1. 始める前に
 
 このレッスンでは、初めての Android アプリを作成するレッスンで作成したグリーティング カードアプリを取り上げ、Android Virtual Device（AVD）をセットアップして、Android Emulator でコードの動作を確認します。
@@ -958,7 +955,6 @@ Android 14 UpsideDownCake はこの記事の執筆時点で最新バージョン
 - [Android Emulator 上でアプリを実行する](https://developer.android.com/studio/run/emulator)
 
 ## 6. Android デバイスを接続する方法
-
 
 ### 1. 始める前に
 

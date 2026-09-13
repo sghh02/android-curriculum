@@ -28,7 +28,6 @@
 
 ## 3. WorkManager によるバックグラウンド処理
 
-
 ### 1. 始める前に
 
 このレッスンでは、遅延可能なバックグラウンド処理用のライブラリで、下位互換性、柔軟性、シンプルさを兼ね備えた [WorkManager](https://developer.android.com/arch/work) を取り上げます。`WorkManager` は、Android 上で遅延可能な処理を確実に実行するための推奨タスク スケジューラです。
@@ -999,7 +998,6 @@ WorkManager は、このレッスンで取り上げたもの以外にも、繰�
 
 ## 4. 演習: Water Me アプリを作成する（提出対象）
 
-
 ### 1. 始める前に
 
 #### はじめに
@@ -1014,7 +1012,7 @@ WorkManager について学習しながら、Worker クラスで処理を定義�
 
 #### 前提条件
 
-- [高度な WorkManager とテスト](https://developer.android.com/codelabs/basic-android-kotlin-compose-verify-background-work) レッスンの「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること。
+- 「WorkManager によるバックグラウンド処理」のレッスンを完了していること
 
 #### 必要なもの
 

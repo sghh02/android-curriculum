@@ -27,7 +27,6 @@
 
 ## 3. ビューで Android アプリを作成する
 
-
 ### 1. 始める前に
 
 #### はじめに
@@ -36,7 +35,7 @@
 
 #### 前提条件:
 
-- ユニット 7 で「Compose での Android の基礎」コースワークを完了していること。
+- ユニット 7 までを完了していること
 
 #### 必要なもの
 
@@ -448,7 +447,6 @@ $ git checkout views
 解答コードを確認する場合は、[GitHub で表示します](https://github.com/google-developer-training/basic-android-kotlin-compose-training-juice-tracker/tree/views)。
 
 ## 4. Compose を以前のアプリに追加する（提出対象）
-
 
 ### 1. 始める前に
 
