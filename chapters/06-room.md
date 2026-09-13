@@ -30,7 +30,6 @@
 
 ## 3. Room を使用してデータを永続化する
 
-
 ### 1. 始める前に
 
 ほとんどの製品版品質のアプリには、保持する必要のあるデータがあります。たとえば、曲のプレイリスト、To-Do リストの項目、収支の記録、星座表、個人データの履歴などが挙げられます。そのようなユースケースでは、この永続データの保存にデータベースを使用します。
@@ -39,7 +38,7 @@
 
 抽象化レイヤは、基となる実装や複雑さを隠す機能のセットです。この場合、SQLite のような既存の機能セットに対するインターフェースを提供します。
 
-下図に、このコースで推奨されているアーキテクチャ全体におけるデータソースとしての Room の位置付けを示します。Room はデータソースです。
+下図に、このプログラムで推奨されているアーキテクチャ全体におけるデータソースとしての Room の位置付けを示します。Room はデータソースです。
 
 ![リポジトリとデータソースを含むデータレイヤ](./images/basic-android-kotlin-compose-persisting-data-room/dcfae1d1e200f931.png)
 
@@ -1059,9 +1058,6 @@ Android デベロッパー ドキュメント
 - [Room に関する 7 つのプロフェッショナル向けのヒント](https://medium.com/androiddevelopers/7-pro-tips-for-room-fbadea4bfbd1)
 - [唯一無二のオブジェクト。Kotlin 用語集](https://medium.com/androiddevelopers/the-one-and-only-object-5dfd2cf7ab9b)
 
-動画
-
-
 その他のドキュメントと記事
 
 - [シングルトン パターン](https://en.wikipedia.org/wiki/Singleton_pattern)
@@ -1069,7 +1065,6 @@ Android デベロッパー ドキュメント
 - [SQLite チュートリアル - SQLite を早くマスターする簡単な方法](https://www.sqlitetutorial.net/)
 
 ## 4. Room によるデータの読み取りと更新
-
 
 ### 1. 始める前に
 
@@ -2180,7 +2175,6 @@ Kotlin リファレンス
 
 ## 5. 演習: Bus Schedule アプリを作成する（提出対象）
 
-
 ### 1. 始める前に
 
 #### はじめに
@@ -2193,7 +2187,7 @@ Room を使用してデータを永続化するレッスンでは、Android ア�
 
 #### 前提条件
 
-- Persist Data with Room レッスンの「Compose を用いた Android アプリ開発の基礎」コースワークを完了していること
+- 「Persist Data with Room」のレッスンを完了していること
 
 #### 必要なもの
 
