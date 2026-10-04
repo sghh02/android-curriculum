@@ -14,7 +14,7 @@
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | レッスン | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
+| 1 | レッスン | タップに反応する Dice Roller アプリを作成する | 約90分 | **提出対象** |
 | 2 | レッスン | Android Studio でデバッガを使用する | 約45分 |  |
 | 3 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
 
@@ -27,11 +27,11 @@
 
 > 画面が最新の Android Studio と異なる場合があります。
 
-## 3. インタラクティブな Dice Roller アプリを作成する（提出対象）
+## 3. タップに反応する Dice Roller アプリを作成する（提出対象）
 
 ### 1. 始める前に
 
-このレッスンでは、ユーザーが `Button` コンポーザブルをタップしてサイコロを振る、インタラクティブな **Dice Roller** アプリを作成します。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
+このレッスンでは、ユーザーの操作に応じて画面が変わる **Dice Roller** アプリを作成します。ユーザーが `Button` コンポーザブルをタップすると、サイコロが振られます。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
 
 Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し、`Button` コンポーザブルがタップされたときの動作を処理するビジネス ロジックを作成します。
 
@@ -50,7 +50,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 #### 作成するアプリの概要
 
-- ユーザーにサイコロを振らせてその結果を表示する、Dice Roller というインタラクティブな Android アプリ。
+- ユーザーがサイコロを振ると、その結果が画面に表示される Dice Roller という Android アプリ。
 
 #### 必要なもの
 
@@ -58,9 +58,9 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 このレッスンが完了すると、アプリは次のようになります。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/3e9a9f44c6c84634.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
-### 2. ベースラインを確立する
+### 2. 新しいプロジェクトを作成する
 
 #### プロジェクトを作成する
 
@@ -74,7 +74,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/8fd6db761068ca04.png)
 
-### 3. レイアウト インフラストラクチャを作成する
+### 3. レイアウトの土台を作成する
 
 #### プロジェクトをプレビューする
 
@@ -90,28 +90,65 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 #### サンプルコードを再構成する
 
-Dice Roller アプリのテーマに近づけるために、生成されたコードの一部を変更する必要があります。
+Dice Roller アプリに合わせて、生成されたコードの一部を変更する必要があります。
 
-完成したアプリのスクリーンショットには、サイコロの画像と、サイコロを転がすためのボタンがありました。このアーキテクチャを反映するように、コンポーズ可能な関数を構成します。
-
-サンプルコードを再構成するには:
-
-1. `GreetingPreview()` 関数を削除します。
-2. `@Composable` アノテーションを付けて `DiceWithButtonAndImage()` 関数を作成します。
-
-このコンポーズ可能な関数はレイアウトの UI コンポーネントを表し、また、ボタンクリックと画像表示のロジックを保持します。
-
-3. `Greeting(name: String, modifier: Modifier = Modifier)` 関数を削除します。
-4. `@Preview` アノテーションと `@Composable` アノテーションを付けて `DiceRollerApp()` 関数を作成します。
-
-このアプリはボタンと画像のみで構成されているため、このコンポーズ可能な関数がアプリそのものだと考えてください。そのため、`DiceRollerApp()` 関数という名前になっています。
+Empty Activity テンプレートで生成された `MainActivity.kt` は、次のようになっています（`package` と `import` は省略しています）。
 
 **`MainActivity.kt`**
 
 ```kotlin
-@Preview
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            DiceRollerTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Greeting(
+                        name = "Android",
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
+    }
+}
+
 @Composable
-fun DiceRollerApp() {
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    DiceRollerTheme {
+        Greeting("Android")
+    }
+}
+```
+
+完成したアプリのスクリーンショットには、サイコロの画像と、サイコロを転がすためのボタンがありました。この構成を反映するように、コンポーズ可能な関数を構成します。
+
+サンプルコードを再構成するには:
+
+1. `Greeting(name: String, modifier: Modifier = Modifier)` 関数を削除します。
+2. `@Composable` アノテーションを付けて `DiceWithButtonAndImage()` 関数を作成します。
+
+このコンポーズ可能な関数はレイアウトの UI コンポーネントを表し、また、ボタンクリックと画像表示のロジックを保持します。
+
+3. `@Composable` アノテーションを付けて `DiceRollerApp()` 関数を作成します。`Modifier` 型の `modifier` 引数を受け取るようにし、デフォルト値 `Modifier` を代入します。
+
+このアプリはボタンと画像のみで構成されているため、このコンポーズ可能な関数がアプリそのものだと考えてください。そのため、`DiceRollerApp()` 関数という名前になっています。`modifier` 引数とデフォルト値については、次の「修飾子を追加する」で説明します。
+
+**`MainActivity.kt`**
+
+```kotlin
+@Composable
+fun DiceRollerApp(modifier: Modifier = Modifier) {
 
 }
 
@@ -121,39 +158,58 @@ fun DiceWithButtonAndImage() {
 }
 ```
 
-`Greeting()` 関数を削除したため、`DiceRollerTheme()` ラムダ本文の `Greeting("Android")` の呼び出しが赤色でハイライト表示されます。これは、コンパイラがその関数への参照を見つけられなくなったためです。
+`Greeting()` 関数を削除したため、`setContent{}` ラムダ内と `GreetingPreview()` 関数内にある `Greeting()` の呼び出しが赤色でハイライト表示されます。これは、コンパイラがその関数への参照を見つけられなくなったためです。
 
-5. `onCreate()` メソッドにある `setContent{}` ラムダ内のコードをすべて削除します。
-6. `setContent{}` ラムダ本体で `DiceRollerTheme{}` ラムダを呼び出し、`DiceRollerTheme{}` ラムダ内で `DiceRollerApp()` 関数を呼び出します。
+4. `onCreate()` メソッドで、`Scaffold` のラムダ本体にある `Greeting()` の呼び出しを `DiceRollerApp()` 関数の呼び出しに置き換えます。`modifier` 引数には、元のコードと同じ `Modifier.padding(innerPadding)` を渡します。`enableEdgeToEdge()`、`DiceRollerTheme`、`Scaffold` はそのまま残します。
 
 **`MainActivity.kt`**
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    enableEdgeToEdge()
     setContent {
         DiceRollerTheme {
-            DiceRollerApp()
+            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                DiceRollerApp(modifier = Modifier.padding(innerPadding))
+            }
         }
     }
 }
 ```
 
-7. `DiceRollerApp()` 関数で、`DiceWithButtonAndImage()` 関数を呼び出します。
+`enableEdgeToEdge()` を呼び出すと、アプリはステータスバーやナビゲーション バーの裏側まで描画されます。`Scaffold` は画面の基本的な枠組みを提供するコンポーザブルで、ラムダに渡される `innerPadding` は、コンテンツがシステムバーと重ならないようにするための余白です。この余白を `Modifier.padding(innerPadding)` として `DiceRollerApp()` 関数に渡します。
+
+5. `GreetingPreview()` 関数の名前を `DiceRollerAppPreview()` に変更し、`DiceRollerTheme{}` ラムダ内の `Greeting("Android")` の呼び出しを `DiceRollerApp()` 関数の呼び出しに置き換えます。
 
 **`MainActivity.kt`**
 
 ```kotlin
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun DiceRollerApp() {
+fun DiceRollerAppPreview() {
+    DiceRollerTheme {
+        DiceRollerApp()
+    }
+}
+```
+
+プレビューでは `modifier` 引数を渡していないため、デフォルト値の `Modifier` が使用されます。
+
+6. `DiceRollerApp()` 関数で、`DiceWithButtonAndImage()` 関数を呼び出します。
+
+**`MainActivity.kt`**
+
+```kotlin
+@Composable
+fun DiceRollerApp(modifier: Modifier = Modifier) {
     DiceWithButtonAndImage()
 }
 ```
 
 #### 修飾子を追加する
 
-Compose は、Compose UI 要素の動作を装飾または変更する要素のコレクションである [`Modifier`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier) オブジェクトを使用します。これを使用して **Dice Roller** アプリのコンポーネントの UI コンポーネントをスタイル設定します。
+Compose は、Compose UI 要素の動作を装飾または変更する要素のコレクションである [`Modifier`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier) オブジェクトを使用します。これを使用して **Dice Roller** アプリの UI コンポーネントをスタイル設定します。
 
 修飾子を追加するには:
 
@@ -162,7 +218,7 @@ Compose は、Compose UI 要素の動作を装飾または変更する要素の�
 **`MainActivity.kt`**
 
 ```kotlin
-@Composable 
+@Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 }
 ```
@@ -171,39 +227,44 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 > **注**: `import androidx.compose.ui.Modifier` ステートメントは `androidx.compose.ui.Modifier` パッケージをインポートし、`Modifier` オブジェクトを参照できるようにします。
 
-2. `DiceWithButtonAndImage()` コンポーザブルに修飾子パラメータが設定されたため、コンポーザブルが呼び出されたときに修飾子を渡します。`DiceWithButtonAndImage()` 関数のメソッド シグネチャが変更されたため、呼び出されたときに、必要な装飾を行った `Modifier` オブジェクトを渡す必要があります。`Modifier` クラスは、`DiceRollerApp()` 関数でコンポーザブルの装飾（動作の追加）を行います。この場合、`DiceWithButtonAndImage()` 関数に渡す `Modifier` オブジェクトに重要な装飾を追加します。
+2. `DiceWithButtonAndImage()` コンポーザブルに `modifier` パラメータが追加されたため、`DiceRollerApp()` 関数から呼び出すときに修飾子を渡します。ここでは新しい `Modifier` オブジェクトではなく、`DiceRollerApp()` 関数が受け取った `modifier` 引数を渡します。
 
-デフォルトがあるのに、どうしてわざわざ `Modifier` 引数を渡す必要があるのか、と思うかもしれません。これは、コンポーザブルが再コンポーズされる可能性があるためです。つまり実質、`@Composable` メソッドのコードブロックが再実行されます。`Modifier` オブジェクトがコードブロック内で作成された場合、再作成される可能性があるため、効率的ではありません。再コンポーズについては、このレッスンで後ほど説明します。
+デフォルト値があるのに、どうしてわざわざ `modifier` 引数を渡す必要があるのか、と思うかもしれません。これは、`DiceRollerApp()` 関数が受け取った `modifier` に、`Scaffold` から渡された `innerPadding` の余白が設定されているためです。この `modifier` を渡すことで、余白の設定が `DiceWithButtonAndImage()` 関数に引き継がれます。新しい `Modifier` オブジェクトを渡すと余白の設定が失われ、コンテンツがシステムバーと重なる可能性があります。
 
 **`MainActivity.kt`**
 
 ```kotlin
-DiceWithButtonAndImage(modifier = Modifier)
+DiceWithButtonAndImage(modifier = modifier)
 ```
 
-3. `Modifier` オブジェクトに [`fillMaxSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).fillMaxSize(kotlin.Float)) メソッドを連結して、レイアウトが画面全体に表示されるようにします。
+3. `modifier` に [`fillMaxSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).fillMaxSize(kotlin.Float)) メソッドを連結して、レイアウトが画面全体に表示されるようにします。
 
 このメソッドは、利用可能なスペースをコンポーネントで埋めることを指定します。このレッスンではこれまでに、完成した Dice Roller アプリの UI のスクリーンショットを確認しました。注目すべき特徴は、サイコロとボタンが画面の中央に配置されていることです。[`wrapContentSize()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).wrapContentSize(androidx.compose.ui.Alignment,kotlin.Boolean)) メソッドは、利用可能なスペースが少なくとも内部のコンポーネントと同じ大きさである必要があるということを指定します。ただし `fillMaxSize()` メソッドを使用しているため、利用可能なスペースよりレイアウト内部のコンポーネントが小さい場合は、[`Alignment`](https://developer.android.com/reference/kotlin/androidx/compose/ui/Alignment) オブジェクトを `wrapContentSize()` メソッドに渡して、利用可能なスペース内でコンポーネントをどのように配置するかを指定できます。
 
 **`MainActivity.kt`**
 
 ```kotlin
-DiceWithButtonAndImage(modifier = Modifier
-    .fillMaxSize()
+DiceWithButtonAndImage(
+    modifier = modifier
+        .fillMaxSize()
 )
 ```
 
 > **注**: `fillMaxSize()` と `wrapContentSize()` の import ステートメントは、それぞれ `import androidx.compose.foundation.layout.fillMaxSize` と `import androidx.compose.foundation.layout.wrapContentSize` です。
 
-4. `wrapContentSize()` メソッドを `Modifier` オブジェクトに連結し、コンポーネントを中央に配置するための引数として `Alignment.Center` を渡します。`Alignment.Center` は、コンポーネントを縦方向と横方向の両方で中央に配置することを指定します。
+4. `wrapContentSize()` メソッドを `modifier` に連結し、コンポーネントを中央に配置するための引数として `Alignment.Center` を渡します。`Alignment.Center` は、コンポーネントを縦方向と横方向の両方で中央に配置することを指定します。
 
 **`MainActivity.kt`**
 
 ```kotlin
-DiceWithButtonAndImage(modifier = Modifier
-    .fillMaxSize()
-    .wrapContentSize(Alignment.Center)
-)
+@Composable
+fun DiceRollerApp(modifier: Modifier = Modifier) {
+    DiceWithButtonAndImage(
+        modifier = modifier
+            .fillMaxSize()
+            .wrapContentSize(Alignment.Center)
+    )
+}
 ```
 
 > **注**: `Alignment` オブジェクトの import ステートメントは `import androidx.compose.ui.Alignment` です。
@@ -214,7 +275,7 @@ Compose では、縦向きレイアウトは `Column()` 関数を使用して作
 
 [`Column()`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) 関数は、子を縦方向に並べて配置するコンポーザブル レイアウトです。想定されるアプリデザインでは、次のようにサイコロの画像が [Roll] ボタンの上方に表示されます。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/7d70bb14948e3cc1.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
 縦向きレイアウトを作成するには:
 
@@ -234,7 +295,7 @@ Compose では、縦向きレイアウトは `Column()` 関数を使用して作
 
 ```kotlin
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
-    Column (
+    Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {}
@@ -247,7 +308,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 **`res/values/strings.xml`**
 
-```kotlin
+```xml
 <string name="roll">Roll</string>
 ```
 
@@ -255,8 +316,9 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 > **注:** `Button` コンポーザブルの import ステートメントは `import androidx.compose.material3.Button` です。
 
-3. `MainActivity.kt` ファイルで、関数のラムダ本体の `Button()` に `Text()` 関数を追加します。
-4. `roll` 文字列の文字列リソース ID を `stringResource()` 関数に渡し、結果を `Text` コンポーザブルに渡します。
+3. `MainActivity.kt` ファイルで、`Button()` 関数のラムダ本体に `Text()` 関数を追加します。
+4. `roll` 文字列の文字列リソース ID を `stringResource()` 関数に渡し、結果を `Text` コンポーザブルの `text` 引数に渡します。
+5. ボタンの文字を大きくするために、`Text` コンポーザブルの `fontSize` 引数に `24.sp` を渡します。
 
 **`MainActivity.kt`**
 
@@ -266,7 +328,7 @@ Column(
     horizontalAlignment = Alignment.CenterHorizontally
 ) {
     Button(onClick = { /*TODO*/ }) {
-        Text(stringResource(R.string.roll))
+        Text(text = stringResource(R.string.roll), fontSize = 24.sp)
     }
 }
 ```
@@ -275,17 +337,19 @@ Column(
 
 > **注:** `stringResource` 関数の import ステートメントは `import androidx.compose.ui.res.stringResource` です。
 
+> **注:** `sp` は文字サイズに使用する単位で、ユーザーがデバイスで設定した文字サイズに応じて拡大縮小されます。`sp` の import ステートメントは `import androidx.compose.ui.unit.sp` です。
+
 ### 6. 画像を追加する
 
 このアプリに不可欠なもう一つのコンポーネントは、ユーザーが [**Roll**] ボタンをタップすると結果を表示する、サイコロの画像です。`Image` コンポーザブルを使用して画像を追加しますが、画像リソースが必要です。そのため、まずはこのアプリのために用意された画像をダウンロードする必要があります。
 
 #### サイコロの画像をダウンロードする
 
-1. [こちらの URL](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller/raw/main/dice_images.zip) を開いて、サイコロの画像を ZIP ファイル形式でパソコンにダウンロードします。ダウンロードが完了するまで待機します。
+1. [こちらの URL](https://github.com/Hideichi-Kubo/android-training-assets/raw/main/dice-roller/dice-roller-assets.zip) を開いて、サイコロの画像を ZIP ファイル形式でパソコンにダウンロードします。ダウンロードが完了するまで待機します。
 
-パソコンに保存したファイルを見つけます。通常は **Downloads** フォルダにあります。
+パソコンに保存したファイルを見つけます。通常は [**ダウンロード**] フォルダにあります。
 
-2. ZIP ファイルを解凍すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice_images` フォルダが作成されます。
+2. ZIP ファイルを展開すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice-roller-assets` フォルダが作成されます。
 
 #### アプリにサイコロの画像を追加する
 
@@ -294,13 +358,13 @@ Column(
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/12f17d0b37dd97d2.png)
 
-3. 6 つのサイコロの画像フォルダを見つけて選択し、アップロードに進みます。
+3. 6 つのサイコロの画像ファイルを見つけて選択し、インポートに進みます。
 
-アップロードされた画像は次のようになります。
+選択した画像は次のように表示されます。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/4f66c8187a2c58e2.png)
 
-4. [**次へ**] をクリックします。
+4. [**Next**] をクリックします。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/688772df9c792264.png)
 
@@ -325,7 +389,7 @@ Column(
 
 #### `Image` コンポーザブルを追加する
 
-サイコロの画像は [**Roll**] ボタンの上に表示されます。Compose は、その性質上、UI コンポーネントを順番に配置します。言い換えると、最初に宣言されたコンポーザブルが最初に表示されます。つまり、最初に宣言されたコンポーザブルが、その後に宣言されたコンポーザブルの上または前に表示されます。`Column` コンポーザブル内のコンポーザブルは、デバイス上で上下に重なり合って表示されます。このアプリでは、`Column` を使用してコンポーザブルを縦に積み重ねます。そのため、`Column()` 関数内で最初に宣言されたコンポーザブルは、同じ `Column()` 関数内で後に宣言されたコンポーザブルより前に表示されます。
+サイコロの画像は [**Roll**] ボタンの上に表示されます。`Column` コンポーザブルは、ラムダ本体で宣言された順に、コンポーザブルを上から下へ縦に並べます。そのため、`Column()` 関数内で先に宣言したコンポーザブルほど、画面の上側に表示されます。
 
 `Image` コンポーザブルを追加するには:
 
@@ -340,14 +404,14 @@ Column(
 ) {
     Image()
     Button(onClick = { /*TODO*/ }) {
-      Text(stringResource(R.string.roll))
+        Text(text = stringResource(R.string.roll), fontSize = 24.sp)
     }
 }
 ```
 
 > **注:** `Image` コンポーザブルの import ステートメントは `import androidx.compose.foundation.Image` です。
 
-2. `Image()` 関数に `painter` 引数を渡し、ドローアブル リソース ID 引数を受け入れる `painterResource` 値を代入します。ここでは、リソース ID `R.drawable.dice_1` 引数を渡します。
+2. `Image()` 関数の `painter` 引数に、`painterResource()` 関数の戻り値を渡します。`painterResource()` 関数は、ドローアブル リソース ID を引数として受け取ります。ここでは、リソース ID `R.drawable.dice_1` を渡します。
 
 **`MainActivity.kt`**
 
@@ -376,7 +440,7 @@ Image(
 
 これで、必要な UI コンポーネントがすべて揃いました。しかし、`Button` と `Image` が少し詰まっています。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/54b27140071ac2fa.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-preview-no-spacer.png)
 
 1. これを修正するには、`Image` コンポーザブルと `Button` コンポーザブルの間に [`Spacer`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Spacer.composable#Spacer(androidx.compose.ui.Modifier)) コンポーザブルを追加します。`Spacer` は、パラメータとして `Modifier` を受け取ります。この場合、`Image` が `Button` の上にあるため、両者の間に縦方向のスペースが必要です。そのため、`Modifier` の高さを設定して `Spacer` に適用できます。高さを `16.dp` に設定してみます。通常、dp ディメンションは `4.dp` 単位で変更されます。
 
@@ -394,17 +458,17 @@ Spacer(modifier = Modifier.height(16.dp))
 > 
 > `import androidx.compose.ui.unit.dp`
 
-2. [**Preview**] ペインで、[**Build & Refresh**] をクリックします。
+2. [**Split**] ペインまたは [**Design**] ペインで、[**Build & Refresh**] をクリックします。
 
 次の画像のように表示されます。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/73eea4c166f7e9d2.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-preview-completed.png)
 
 ### 7. サイコロを振るロジックを作成する
 
 必要なコンポーザブルがすべて揃ったため、ボタンをタップするとサイコロが振られるようにアプリを変更します。
 
-#### ボタンをインタラクティブにする
+#### ボタンをタップに反応させる
 
 1. `DiceWithButtonAndImage()` 関数で、`Column()` 関数の前に `result` 変数を作成し、`1` 値と等しくなるように設定します。
 2. `Button` コンポーザブルを見てみると、内部にコメント `/*TODO*/` を含む中かっこのペアに設定された `onClick` パラメータが渡されています。ここでは、この中かっこはラムダというものを表します。中かっこの内部がラムダ本体です。関数を引数として渡す場合については、「[コールバック](https://en.wikipedia.org/wiki/Callback_(computer_programming))」とも呼ばれます。
@@ -435,7 +499,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { result = (1..6).random() }) {
-            Text(stringResource(R.string.roll))
+            Text(text = stringResource(R.string.roll), fontSize = 24.sp)
         }
     }
 }
@@ -443,9 +507,9 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 これでボタンをタップできるようになりましたが、ボタンをタップしても見た目は変わりません。機能を構築する必要があります。
 
-##### Dice Roller アプリに条件を追加する
+#### Dice Roller アプリに条件を追加する
 
-前のセクションでは、`result` 変数を作成し、`1` 値にハードコードしました。最終的に、[**Roll**] ボタンをタップすると `result` 変数の値がリセットされ、表示される画像が決定されます。
+前の手順では、`result` 変数を作成し、`1` 値にハードコードしました。最終的に、[**Roll**] ボタンをタップすると `result` 変数の値が更新され、表示される画像が決定されます。
 
 コンポーザブルは、デフォルトではステートレスです。つまり、値は保持されず、システムがいつでも再コンポーズでき、結果的に値がリセットされます。しかし、Compose ではこれを簡単に回避できます。コンポーズ可能な関数は、`remember` コンポーザブルを使用してオブジェクトをメモリに格納できます。
 
@@ -453,17 +517,27 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 `remember` コンポーザブルには、渡す関数が必要です。
 
-2. `remember` コンポーザブル本体で、`mutableStateOf()` 関数を渡してから、その関数に `1` 引数を渡します。
+2. `remember` コンポーザブル本体で、`mutableIntStateOf()` 関数を呼び出し、その関数に `1` 引数を渡します。
 
-`mutableStateOf()` 関数はオブザーバブルを返します。オブザーバブルについては後ほど詳しく説明しますが、ここでは基本的に、`result` 変数の値が変更されると再コンポーズがトリガーされ、結果の値が反映されて、UI が更新されます。
+`mutableIntStateOf()` 関数は、`Int` 型の値を保持し、その値の変更を Compose が監視できるオブジェクトを返します。この仕組みについては次の章で詳しく説明しますが、ここでは、`result` 変数の値が変更されると再コンポーズがトリガーされ、新しい値が UI に反映されると理解しておいてください。
 
 **`MainActivity.kt`**
 
 ```kotlin
-var result by remember { mutableStateOf(1) }
+var result by remember { mutableIntStateOf(1) }
 ```
 
-> **注**: `import androidx.compose.runtime.mutableStateOf` ステートメントと `import androidx.compose.runtime.remember` ステートメントは、`mutableStateOf()` 関数と `remember` コンポーザブルに必要なパッケージをインポートします。
+> **注**: 状態を作成する関数は、保持する値の型によって使い分けます。
+> 
+> - `Int`: `mutableIntStateOf()`
+> - `Long`: `mutableLongStateOf()`
+> - `Float`: `mutableFloatStateOf()`
+> - `Double`: `mutableDoubleStateOf()`
+> - 上記以外（`String`、`Boolean` など）: `mutableStateOf()`
+> 
+> 数値型に専用の関数を使うと、値をより効率的に保持できます。
+
+> **注**: `import androidx.compose.runtime.mutableIntStateOf` ステートメントと `import androidx.compose.runtime.remember` ステートメントは、`mutableIntStateOf()` 関数と `remember` コンポーザブルに必要なパッケージをインポートします。
 > 
 > State の必要な拡張関数をインポートするには、次の import ステートメントも必要です。
 > 
@@ -490,7 +564,7 @@ val imageResource = when (result) {
 }
 ```
 
-4. `Image` コンポーザブルの `painterResource` パラメータに渡される ID を `R.drawable.dice_1` ドローアブルから `imageResource` 変数に変更します。
+4. `Image` コンポーザブルの `painter` 引数で、`painterResource()` 関数に渡す ID を `R.drawable.dice_1` から `imageResource` 変数に変更します。
 5. `result` 変数を `toString()` で文字列に変換し、`contentDescription` として渡すことで、`result` 変数の値を反映するように `Image` コンポーザブルの `contentDescription` パラメータを変更します。
 
 **`MainActivity.kt`**
@@ -506,19 +580,19 @@ Image(
 
 **Dice Roller** アプリが完全に機能するようになりました。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/3e9a9f44c6c84634.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
 ### 8. 解答コードを取得する
 
 このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
-$ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller.git
+$ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 ```
 
 または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。
 
-解答コードを確認する場合は、[GitHub で表示します](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller)。
+解答コードを確認する場合は、[GitHub で表示します](https://github.com/Hideichi-Kubo/android-training-dice-roller)。解答コードは、リポジトリの `main` ブランチにあります。
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
 2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
@@ -540,7 +614,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/d8e9dbdeafe9038a.png)
 
-注: Android Studio がすでに開いている場合は、メニューから [**File**] > [**Open**] を選択します。
+> **注**: Android Studio がすでに開いている場合は、メニューから [**File**] > [**Open**] を選択します。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/8d1fda7396afe8e5.png)
 
@@ -551,18 +625,18 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 ### 9. まとめ
 
-Compose を使用して Android 用のインタラクティブな **Dice Roller** アプリを作成しました。
+Compose を使用して、ユーザーの操作に応じて画面が変わる Android 用の **Dice Roller** アプリを作成しました。
 
 #### 概要
 
 - コンポーズ可能な関数を定義する。
 - Composition でレイアウトを作成する。
-- `Button` コンポーザブルでボタンを作成します。
+- `Button` コンポーザブルでボタンを作成する。
 - `drawable` リソースをインポートする。
 - `Image` コンポーザブルを使用して画像を表示する。
-- コンポーザブルでインタラクティブな UI を作成する。
+- コンポーザブルで、ユーザーの操作に反応する UI を作成する。
 - `remember` コンポーザブルを使用して、Composition 内のオブジェクトをメモリに保存する。
-- `mutableStateOf()` 関数で UI を更新して、オブザーバブルを作成する。
+- `mutableIntStateOf()` 関数で、値が変わると UI が更新される状態を作成する。
 
 #### 詳細
 
@@ -586,7 +660,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 - Android Studio に関する基本的な知識があること
 - Android Studio で基本的な Jetpack Compose アプリを作成、実行できること
-- インタラクティブな Dice Roller アプリを作成するレッスンを修了していること
+- タップに反応する Dice Roller アプリを作成するレッスンを修了していること
 
 #### 学習内容
 
@@ -846,7 +920,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 #### **前提条件**
 
 - Compose で、テキスト コンポーザブルと画像コンポーザブルを使用するシンプルな UI レイアウトを作成できること
-- ボタンクリックに応答するインタラクティブ アプリを作成できること
+- ボタンクリックに応答するアプリを作成できること
 - コンポジションと再コンポジションに関する基本的な知識があること
 - Kotlin プログラミング言語の基本（関数、変数、条件、ラムダなど）に精通していること
 
@@ -856,7 +930,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 ### 2. アプリの概要
 
-あなたは、デジタル上でレモネードを作るという私たちのビジョンを一緒に実現しようとしています。プロジェクトの目標は、画面上の画像をタップするとレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルでインタラクティブなアプリを作成することです。このアプリはメタファーとして、あるいはちょっとした暇つぶしの方法として考えてください。
+あなたは、デジタル上でレモネードを作るという私たちのビジョンを一緒に実現しようとしています。プロジェクトの目標は、画面上の画像をタップするとレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルなアプリを作成することです。このアプリはメタファーとして、あるいはちょっとした暇つぶしの方法として考えてください。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/dfcc3bc3eb43e4dd.png)
 
@@ -897,7 +971,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 
 1. アプリの[画像の ZIP ファイル](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade/raw/main/lemonade_images.zip)をダウンロードします。
 2. ZIP ファイルをダブルクリックします。このステップでは、画像がフォルダに展開されます。
-3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンで確認してください。
+3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンで確認してください。
 
 プロジェクト フォルダは次のスクリーンショットのように、`lemon_drink.xml`、`lemon_restart.xml`、`lemon_squeeze.xml`、`lemon_tree.xml` のアセットが **res > drawable** ディレクトリに表示されるようにしてください。
 
@@ -926,7 +1000,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 - `Glass of lemonade`
 - `Empty glass`
 
-アプリで文字列リソースを宣言する方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+アプリで文字列リソースを宣言する方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
 
 #### **レモネードを作る手順**
 
@@ -1090,21 +1164,28 @@ Dice Roller アプリのコードに戻り、サイコロの出目の値に基�
 
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
-   var result by remember { mutableStateOf(1) }
-   val imageResource = when(result) {
-       1 -> R.drawable.dice_1
-       2 -> R.drawable.dice_2
-       3 -> R.drawable.dice_3
-       4 -> R.drawable.dice_4
-       5 -> R.drawable.dice_5
-       else -> R.drawable.dice_6
-   }
-   Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-       Image(painter = painterResource(id = imageResource), contentDescription = result.toString())
-       Button(onClick = { result = (1..6).random() }) {
-          Text(stringResource(id = R.string.roll))
-       }
-   }
+    var result by remember { mutableIntStateOf(1) }
+    val imageResource = when (result) {
+        1 -> R.drawable.dice_1
+        2 -> R.drawable.dice_2
+        3 -> R.drawable.dice_3
+        4 -> R.drawable.dice_4
+        5 -> R.drawable.dice_5
+        else -> R.drawable.dice_6
+    }
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(imageResource),
+            contentDescription = result.toString()
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = { result = (1..6).random() }) {
+            Text(text = stringResource(R.string.roll), fontSize = 24.sp)
+        }
+    }
 }
 
 ...
@@ -1115,10 +1196,10 @@ Dice Roller アプリのコードに関する以下の質問に答えてみま�
 - 表示するサイコロの画像は、どの変数の値で決まりますか。
 - 変数を変化させるトリガーとなるのは、ユーザーのどのような操作ですか。
 
-コンポーズ可能な関数 `DiceWithButtonAndImage()` は、次のコードで `remember` コンポーザブルと `mutableStateOf()` 関数で定義された `result` 変数にサイコロの直近の出目を格納します。
+コンポーズ可能な関数 `DiceWithButtonAndImage()` は、次のコードで `remember` コンポーザブルと `mutableIntStateOf()` 関数で定義された `result` 変数にサイコロの直近の出目を格納します。
 
 ```kotlin
-var result by remember { mutableStateOf(1) }
+var result by remember { mutableIntStateOf(1) }
 ```
 
 `result` 変数が新しい値に更新されると、Compose が `DiceWithButtonAndImage()` コンポーザブルの再コンポジションをトリガーします。つまり、コンポーザブルが再度実行されます。`result` 値は再コンポーズ後も保存されているため、`DiceWithButtonAndImage()` コンポーザブルが再度実行されると、最新の `result` 値が使用されます。このコンポーザブルは、`result` 変数の値に対して `when` 文を使用して、新たに表示するドローアブル リソース ID を決め、`Image` コンポーザブルがそれを表示します。
@@ -1305,7 +1386,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
-- インタラクティブな Dice Roller アプリを作成する
+- タップに反応する Dice Roller アプリを作成する
 - 練習: クリック動作
 
 PR 本文には次の 3 点を書いてください。
