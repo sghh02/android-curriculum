@@ -14,7 +14,7 @@
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
-| 1 | レッスン | インタラクティブな Dice Roller アプリを作成する | 約90分 | **提出対象** |
+| 1 | レッスン | タップに反応する Dice Roller アプリを作成する | 約90分 | **提出対象** |
 | 2 | レッスン | Android Studio でデバッガを使用する | 約45分 |  |
 | 3 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
 
@@ -27,11 +27,11 @@
 
 > 画面が最新の Android Studio と異なる場合があります。
 
-## 3. インタラクティブな Dice Roller アプリを作成する（提出対象）
+## 3. タップに反応する Dice Roller アプリを作成する（提出対象）
 
 ### 1. 始める前に
 
-このレッスンでは、ユーザーが `Button` コンポーザブルをタップしてサイコロを振る、インタラクティブな **Dice Roller** アプリを作成します。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
+このレッスンでは、ユーザーの操作に応じて画面が変わる **Dice Roller** アプリを作成します。ユーザーが `Button` コンポーザブルをタップすると、サイコロが振られます。サイコロを振った結果は `Image` コンポーザブルで画面に表示されます。
 
 Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し、`Button` コンポーザブルがタップされたときの動作を処理するビジネス ロジックを作成します。
 
@@ -50,7 +50,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 #### 作成するアプリの概要
 
-- ユーザーにサイコロを振らせてその結果を表示する、Dice Roller というインタラクティブな Android アプリ。
+- ユーザーがサイコロを振ると、その結果が画面に表示される Dice Roller という Android アプリ。
 
 #### 必要なもの
 
@@ -60,7 +60,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
-### 2. ベースラインを確立する
+### 2. 新しいプロジェクトを作成する
 
 #### プロジェクトを作成する
 
@@ -74,7 +74,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/8fd6db761068ca04.png)
 
-### 3. レイアウト インフラストラクチャを作成する
+### 3. レイアウトの土台を作成する
 
 #### プロジェクトをプレビューする
 
@@ -347,9 +347,9 @@ Column(
 
 1. [こちらの URL](https://github.com/Hideichi-Kubo/android-training-assets/raw/main/dice-roller/dice-roller-assets.zip) を開いて、サイコロの画像を ZIP ファイル形式でパソコンにダウンロードします。ダウンロードが完了するまで待機します。
 
-パソコンに保存したファイルを見つけます。通常は **Downloads** フォルダにあります。
+パソコンに保存したファイルを見つけます。通常は [**ダウンロード**] フォルダにあります。
 
-2. ZIP ファイルを解凍すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice-roller-assets` フォルダが作成されます。
+2. ZIP ファイルを展開すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice-roller-assets` フォルダが作成されます。
 
 #### アプリにサイコロの画像を追加する
 
@@ -358,9 +358,9 @@ Column(
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/12f17d0b37dd97d2.png)
 
-3. 6 つのサイコロの画像ファイルを見つけて選択し、アップロードに進みます。
+3. 6 つのサイコロの画像ファイルを見つけて選択し、インポートに進みます。
 
-アップロードされた画像は次のようになります。
+選択した画像は次のように表示されます。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/4f66c8187a2c58e2.png)
 
@@ -411,7 +411,7 @@ Column(
 
 > **注:** `Image` コンポーザブルの import ステートメントは `import androidx.compose.foundation.Image` です。
 
-2. `Image()` 関数に `painter` 引数を渡し、ドローアブル リソース ID 引数を受け入れる `painterResource` 値を代入します。ここでは、リソース ID `R.drawable.dice_1` 引数を渡します。
+2. `Image()` 関数の `painter` 引数に、`painterResource()` 関数の戻り値を渡します。`painterResource()` 関数は、ドローアブル リソース ID を引数として受け取ります。ここでは、リソース ID `R.drawable.dice_1` を渡します。
 
 **`MainActivity.kt`**
 
@@ -458,7 +458,7 @@ Spacer(modifier = Modifier.height(16.dp))
 > 
 > `import androidx.compose.ui.unit.dp`
 
-2. [**Preview**] ペインで、[**Build & Refresh**] をクリックします。
+2. [**Split**] ペインまたは [**Design**] ペインで、[**Build & Refresh**] をクリックします。
 
 次の画像のように表示されます。
 
@@ -468,7 +468,7 @@ Spacer(modifier = Modifier.height(16.dp))
 
 必要なコンポーザブルがすべて揃ったため、ボタンをタップするとサイコロが振られるようにアプリを変更します。
 
-#### ボタンをインタラクティブにする
+#### ボタンをタップに反応させる
 
 1. `DiceWithButtonAndImage()` 関数で、`Column()` 関数の前に `result` 変数を作成し、`1` 値と等しくなるように設定します。
 2. `Button` コンポーザブルを見てみると、内部にコメント `/*TODO*/` を含む中かっこのペアに設定された `onClick` パラメータが渡されています。ここでは、この中かっこはラムダというものを表します。中かっこの内部がラムダ本体です。関数を引数として渡す場合については、「[コールバック](https://en.wikipedia.org/wiki/Callback_(computer_programming))」とも呼ばれます。
@@ -507,9 +507,9 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 これでボタンをタップできるようになりましたが、ボタンをタップしても見た目は変わりません。機能を構築する必要があります。
 
-##### Dice Roller アプリに条件を追加する
+#### Dice Roller アプリに条件を追加する
 
-前のセクションでは、`result` 変数を作成し、`1` 値にハードコードしました。最終的に、[**Roll**] ボタンをタップすると `result` 変数の値が更新され、表示される画像が決定されます。
+前の手順では、`result` 変数を作成し、`1` 値にハードコードしました。最終的に、[**Roll**] ボタンをタップすると `result` 変数の値が更新され、表示される画像が決定されます。
 
 コンポーザブルは、デフォルトではステートレスです。つまり、値は保持されず、システムがいつでも再コンポーズでき、結果的に値がリセットされます。しかし、Compose ではこれを簡単に回避できます。コンポーズ可能な関数は、`remember` コンポーザブルを使用してオブジェクトをメモリに格納できます。
 
@@ -519,13 +519,23 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 2. `remember` コンポーザブル本体で、`mutableIntStateOf()` 関数を呼び出し、その関数に `1` 引数を渡します。
 
-`mutableIntStateOf()` 関数は、`Int` 型の値を保持するオブザーバブルを返します。`Int` 以外の値を保持する場合は、汎用の `mutableStateOf()` 関数を使用します。オブザーバブルについては後ほど詳しく説明しますが、ここでは基本的に、`result` 変数の値が変更されると再コンポーズがトリガーされ、結果の値が反映されて、UI が更新されます。
+`mutableIntStateOf()` 関数は、`Int` 型の値を保持し、その値の変更を Compose が監視できるオブジェクトを返します。この仕組みについては次の章で詳しく説明しますが、ここでは、`result` 変数の値が変更されると再コンポーズがトリガーされ、新しい値が UI に反映されると理解しておいてください。
 
 **`MainActivity.kt`**
 
 ```kotlin
 var result by remember { mutableIntStateOf(1) }
 ```
+
+> **注**: 状態を作成する関数は、保持する値の型によって使い分けます。
+> 
+> - `Int`: `mutableIntStateOf()`
+> - `Long`: `mutableLongStateOf()`
+> - `Float`: `mutableFloatStateOf()`
+> - `Double`: `mutableDoubleStateOf()`
+> - 上記以外（`String`、`Boolean` など）: `mutableStateOf()`
+> 
+> 数値型に専用の関数を使うと、値をより効率的に保持できます。
 
 > **注**: `import androidx.compose.runtime.mutableIntStateOf` ステートメントと `import androidx.compose.runtime.remember` ステートメントは、`mutableIntStateOf()` 関数と `remember` コンポーザブルに必要なパッケージをインポートします。
 > 
@@ -554,7 +564,7 @@ val imageResource = when (result) {
 }
 ```
 
-4. `Image` コンポーザブルの `painterResource` パラメータに渡される ID を `R.drawable.dice_1` ドローアブルから `imageResource` 変数に変更します。
+4. `Image` コンポーザブルの `painter` 引数で、`painterResource()` 関数に渡す ID を `R.drawable.dice_1` から `imageResource` 変数に変更します。
 5. `result` 変数を `toString()` で文字列に変換し、`contentDescription` として渡すことで、`result` 変数の値を反映するように `Image` コンポーザブルの `contentDescription` パラメータを変更します。
 
 **`MainActivity.kt`**
@@ -582,7 +592,7 @@ $ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 
 または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。
 
-解答コードを確認する場合は、[GitHub で表示します](https://github.com/Hideichi-Kubo/android-training-dice-roller)。
+解答コードを確認する場合は、[GitHub で表示します](https://github.com/Hideichi-Kubo/android-training-dice-roller)。解答コードは、リポジトリの `main` ブランチにあります。
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
 2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
@@ -615,7 +625,7 @@ $ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 
 ### 9. まとめ
 
-Compose を使用して Android 用のインタラクティブな **Dice Roller** アプリを作成しました。
+Compose を使用して、ユーザーの操作に応じて画面が変わる Android 用の **Dice Roller** アプリを作成しました。
 
 #### 概要
 
@@ -624,9 +634,9 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 - `Button` コンポーザブルでボタンを作成する。
 - `drawable` リソースをインポートする。
 - `Image` コンポーザブルを使用して画像を表示する。
-- コンポーザブルでインタラクティブな UI を作成する。
+- コンポーザブルで、ユーザーの操作に反応する UI を作成する。
 - `remember` コンポーザブルを使用して、Composition 内のオブジェクトをメモリに保存する。
-- `mutableIntStateOf()` 関数でオブザーバブルを作成し、UI を更新する。
+- `mutableIntStateOf()` 関数で、値が変わると UI が更新される状態を作成する。
 
 #### 詳細
 
@@ -650,7 +660,7 @@ Compose を使用して Android 用のインタラクティブな **Dice Roller*
 
 - Android Studio に関する基本的な知識があること
 - Android Studio で基本的な Jetpack Compose アプリを作成、実行できること
-- インタラクティブな Dice Roller アプリを作成するレッスンを修了していること
+- タップに反応する Dice Roller アプリを作成するレッスンを修了していること
 
 #### 学習内容
 
@@ -910,7 +920,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 #### **前提条件**
 
 - Compose で、テキスト コンポーザブルと画像コンポーザブルを使用するシンプルな UI レイアウトを作成できること
-- ボタンクリックに応答するインタラクティブ アプリを作成できること
+- ボタンクリックに応答するアプリを作成できること
 - コンポジションと再コンポジションに関する基本的な知識があること
 - Kotlin プログラミング言語の基本（関数、変数、条件、ラムダなど）に精通していること
 
@@ -920,7 +930,7 @@ Dice Roller は、ファイル、クラス、関数が少ないため、かな�
 
 ### 2. アプリの概要
 
-あなたは、デジタル上でレモネードを作るという私たちのビジョンを一緒に実現しようとしています。プロジェクトの目標は、画面上の画像をタップするとレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルでインタラクティブなアプリを作成することです。このアプリはメタファーとして、あるいはちょっとした暇つぶしの方法として考えてください。
+あなたは、デジタル上でレモネードを作るという私たちのビジョンを一緒に実現しようとしています。プロジェクトの目標は、画面上の画像をタップするとレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルなアプリを作成することです。このアプリはメタファーとして、あるいはちょっとした暇つぶしの方法として考えてください。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/dfcc3bc3eb43e4dd.png)
 
@@ -961,7 +971,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 
 1. アプリの[画像の ZIP ファイル](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade/raw/main/lemonade_images.zip)をダウンロードします。
 2. ZIP ファイルをダブルクリックします。このステップでは、画像がフォルダに展開されます。
-3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンで確認してください。
+3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンで確認してください。
 
 プロジェクト フォルダは次のスクリーンショットのように、`lemon_drink.xml`、`lemon_restart.xml`、`lemon_squeeze.xml`、`lemon_tree.xml` のアセットが **res > drawable** ディレクトリに表示されるようにしてください。
 
@@ -990,7 +1000,7 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 - `Glass of lemonade`
 - `Empty glass`
 
-アプリで文字列リソースを宣言する方法がわからない場合は、インタラクティブな Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+アプリで文字列リソースを宣言する方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
 
 #### **レモネードを作る手順**
 
@@ -1376,7 +1386,7 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
-- インタラクティブな Dice Roller アプリを作成する
+- タップに反応する Dice Roller アプリを作成する
 - 練習: クリック動作
 
 PR 本文には次の 3 点を書いてください。
