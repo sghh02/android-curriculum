@@ -345,11 +345,11 @@ Column(
 
 #### サイコロの画像をダウンロードする
 
-1. [こちらの URL](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller/raw/main/dice_images.zip) を開いて、サイコロの画像を ZIP ファイル形式でパソコンにダウンロードします。ダウンロードが完了するまで待機します。
+1. [こちらの URL](https://github.com/Hideichi-Kubo/android-training-assets/raw/main/dice-roller/dice-roller-assets.zip) を開いて、サイコロの画像を ZIP ファイル形式でパソコンにダウンロードします。ダウンロードが完了するまで待機します。
 
 パソコンに保存したファイルを見つけます。通常は **Downloads** フォルダにあります。
 
-2. ZIP ファイルを解凍すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice_images` フォルダが作成されます。
+2. ZIP ファイルを解凍すると、1～6 の目を持つサイコロの画像ファイルが 6 つ入った、新しい `dice-roller-assets` フォルダが作成されます。
 
 #### アプリにサイコロの画像を追加する
 
@@ -577,12 +577,12 @@ Image(
 このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
 ```
-$ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller.git
+$ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 ```
 
 または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。
 
-解答コードを確認する場合は、[GitHub で表示します](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller)。
+解答コードを確認する場合は、[GitHub で表示します](https://github.com/Hideichi-Kubo/android-training-dice-roller)。
 
 1. プロジェクト用に提供されている GitHub リポジトリ ページに移動します。
 2. ブランチ名がレッスンで指定されたブランチ名と一致していることを確認します。たとえば、次のスクリーンショットでは、ブランチ名は **main** です。
