@@ -58,7 +58,7 @@ Kotlin で Jetpack Compose を使用してアプリ レイアウトを作成し�
 
 このレッスンが完了すると、アプリは次のようになります。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/3e9a9f44c6c84634.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
 ### 2. ベースラインを確立する
 
@@ -275,7 +275,7 @@ Compose では、縦向きレイアウトは `Column()` 関数を使用して作
 
 [`Column()`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Column.composable#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) 関数は、子を縦方向に並べて配置するコンポーザブル レイアウトです。想定されるアプリデザインでは、次のようにサイコロの画像が [Roll] ボタンの上方に表示されます。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/7d70bb14948e3cc1.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
 縦向きレイアウトを作成するには:
 
@@ -440,7 +440,7 @@ Image(
 
 これで、必要な UI コンポーネントがすべて揃いました。しかし、`Button` と `Image` が少し詰まっています。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/54b27140071ac2fa.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-preview-no-spacer.png)
 
 1. これを修正するには、`Image` コンポーザブルと `Button` コンポーザブルの間に [`Spacer`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Spacer.composable#Spacer(androidx.compose.ui.Modifier)) コンポーザブルを追加します。`Spacer` は、パラメータとして `Modifier` を受け取ります。この場合、`Image` が `Button` の上にあるため、両者の間に縦方向のスペースが必要です。そのため、`Modifier` の高さを設定して `Spacer` に適用できます。高さを `16.dp` に設定してみます。通常、dp ディメンションは `4.dp` 単位で変更されます。
 
@@ -462,7 +462,7 @@ Spacer(modifier = Modifier.height(16.dp))
 
 次の画像のように表示されます。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/73eea4c166f7e9d2.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-preview-completed.png)
 
 ### 7. サイコロを振るロジックを作成する
 
@@ -570,7 +570,7 @@ Image(
 
 **Dice Roller** アプリが完全に機能するようになりました。
 
-![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/3e9a9f44c6c84634.png)
+![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/dice-roller-completed.png)
 
 ### 8. 解答コードを取得する
 
