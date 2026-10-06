@@ -6,17 +6,15 @@
 
 - `Button` の `onClick` でユーザー操作に反応するアプリを作れる
 - `remember` と `mutableStateOf` で画面の状態を持てる
-- Android Studio のデバッガで変数の中身を確認できる
 
 ## 2. 進め方
 
-次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約225分です。
+次の内容を **上から順番に** 進めます。「やらなくてOK」の行は飛ばして構いません。レッスンの本文はこのページの下にすべて掲載しています。目安時間の合計は約180分です。
 
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
 | 1 | レッスン | タップに反応する Dice Roller アプリを作成する | 約90分 | **提出対象** |
-| 2 | レッスン | Android Studio でデバッガを使用する | 約45分 |  |
-| 3 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
+| 2 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
 
 このプログラムの進め方は次の通りです。
 
@@ -648,266 +646,7 @@ Compose を使用して、ユーザーの操作に応じて画面が変わる An
 - [`Image` コンポーザブル](https://developer.android.com/reference/kotlin/androidx/compose/foundation/Image.composable#Image(androidx.compose.ui.graphics.ImageBitmap,kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,androidx.compose.ui.layout.ContentScale,kotlin.Float,androidx.compose.ui.graphics.ColorFilter,androidx.compose.ui.graphics.FilterQuality))
 - [状態と Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 
-## 4. Android Studio でデバッガを使用する
-
-### 1. 始める前に
-
-このレッスンでは、Android Studio のデバッガを使用して、Dice Roller アプリを実行したときの動作を調べる方法について説明します。
-
-デバッガは、Android アプリを動かすコードの実行を検査し、バグを修正できるようにするために不可欠なツールです。コードの実行を一時停止するポイントを指定し、変数、メソッド、その他のコードの側面を手動で操作できます。
-
-#### 前提条件
-
-- Android Studio に関する基本的な知識があること
-- Android Studio で基本的な Jetpack Compose アプリを作成、実行できること
-- タップに反応する Dice Roller アプリを作成するレッスンを修了していること
-
-#### 学習内容
-
-- Android アプリにデバッガをアタッチする方法
-- デバッガをアタッチしたアプリを起動する方法
-- デバッガの基本的な機能を使用する方法
-- デバッガの一般的な用途
-
-#### 必要なもの
-
-- Android Studio がインストールされているパソコン
-- Compose での Dice Roller アプリの解答コード
-
-### 2. スターター コードを取得する
-
-まず、コードをダウンロードします。
-
-または、コードの GitHub リポジトリのクローンを作成することもできます。
-
-```
-$ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller.git
-$ cd basic-android-kotlin-compose-training-dice-roller
-```
-
-> **注:**スターター コードは、ダウンロードしたリポジトリの `main` ブランチにあります。
-
-コードは [**GitHub リポジトリ**](https://github.com/google-developer-training/basic-android-kotlin-compose-training-dice-roller)で確認できます。
-
-### 3. デバッガを実行する
-
-アプリとともにデバッガを実行する方法は 2 つあります。
-
-- デバイスまたはエミュレータで実行されている既存のアプリプロセスにデバッガをアタッチする
-- デバッガでアプリを実行する
-
-どちらの方法でも、ある程度は同じことを実現できます。両方の方法を理解したら、好みの方法か、必要な方法を選んでください。
-
-#### アプリプロセスにデバッガをアタッチする
-
-アプリがすでに実行されている場合は、デバッガをアタッチできます。
-
-アプリプロセスにデバッガをアタッチする手順は次のとおりです。
-
-1. ![](./images/basic-android-kotlin-compose-intro-debugger/608818eddd06d35d.png)（**Attach Debugger to Android Process**）をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/9bd4c917bad56baa.png)
-
-デバッガをアタッチするプロセスを選択できる [**Choose Process**] ダイアログが開きます。
-
-2. [**`com.example.diceroller`**] を選択し、[**OK**] をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/a4c65b5bc972bd46.png)
-
-[**Debug**] ペインが Android Studio の下部に表示され、ターゲット デバイスまたはエミュレータにデバッガがアタッチされたことを示すメッセージが表示されます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/adad34e172cbc49a.png)
-
-アプリにデバッガをアタッチしましたが、その意味やデバッガでできることついては、このレッスンで後ほど説明します。次に、デバッガをアタッチしたアプリを起動する方法を学びます。
-
-#### **デバッガで**アプリを実行する
-
-デバッガを使用することが最初からわかっている場合は、デバッガでアプリを実行すると時間を節約できます。さらに、アプリの起動時にのみ実行されるコードをデバッグする場合は、デバッガをアタッチした状態でアプリを起動する必要があります。
-
-デバッガでアプリを実行する手順は次のとおりです。
-
-1. [**Debug**] ペインで ![](./images/basic-android-kotlin-compose-intro-debugger/ca283f38f21b0cb7.png)（**Stop**）をクリックし、デバイスまたはエミュレータ上のアプリを閉じます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/3c82e7f80c6c174d.png)
-
-2. ![](./images/basic-android-kotlin-compose-intro-debugger/67f9548b52d797b7.png)（**Debug ‘app'**）をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/cbf915fde4e6b443.png)
-
-同じ [**Debug**] ペインが Android Studio の下部に表示され、コンソールの出力が表示されます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/f69e0370c2b5ad0e.png)
-
-デバッガの起動方法について理解したところで、次はその使用方法について説明します。
-
-### 4. デバッガを使用する
-
-#### **Debug** **ペイン**
-
-[**Debug**] ペインの上部に多数のボタンがありますが、こうしたボタンは今のところあまり意味をなさず、ほとんどがグレー表示され、クリックできません。このセクションでは、デバッガでよく使用する機能について説明します。このレッスンでは、その他のボタンについても必要に応じて説明します。
-
-デバッガを初めて起動すると、[**Debug**] ペインに複数のボタンが表示されます。[**Debug**] ペインの上部には、[**Debugger**] ボタンと [**Console**] ボタンが表示されます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/5f35f4c555240598.png)
-
-[**Console**] ボタンをクリックするとアプリの logcat 出力が表示されます。コード内にログ ステートメントがある場合は、そのコード部分が実行されると出力が表示されます。
-
-[**Debugger**] ボタンをクリックすると別々のペインが 3 つ表示されますが、デバッガを使用していないため今のところ空白です。
-
-1. [Frames] ディスプレイ
-2. 評価と監視式のエントリ
-3. Variables ペイン
-
-![](./images/basic-android-kotlin-compose-intro-debugger/3752c14cdd27b8c4.png)
-
-#### デバッガの一般的な機能を使用する
-
-##### ブレークポイントを設定する
-
-デバッガの主な機能として、特定のコード行の実行をブレークポイントで停止できることが挙げられます。
-
-Android Studio でブレークポイントを設定するには、特定のコード行に移動してから、行番号の横のガターをクリックする必要があります。ブレークポイントの設定を解除するには、ガターの既存のブレークポイントをクリックして消去する必要があります。
-
-- これを試す場合は、`imageResource` 変数が設定されているところにブレークポイントを設定します。
-
-![ブレークポイントを追加、削除します](./images/basic-android-kotlin-compose-intro-debugger/4e2a6dba91f67ab1.gif)
-
-##### Resume Program **ボタン**を使用する
-
-前のセクションでは、`imageResource` 変数が設定されているところにブレークポイントを設定しました。このブレークポイントにより、命令の実行が一時停止されます。デバッガでコードの実行が一時停止されたとき、実行を続行してアプリの実行を継続する必要が生じることはよくあります。最も直接的な方法は、**Resume Program** ボタンを使用することです。
-
-プログラムを再開する手順は次のとおりです。
-
-1. ![](./images/basic-android-kotlin-compose-intro-debugger/67f9548b52d797b7.png)（**Debug ‘app'**）をクリックします。アプリを起動すると、次の画像のように表示されます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/c8a1660c4209458c.png)
-
-プログラムを再開する前に、デバッガが実行を一時停止したときに画面に表示される内容について説明します。
-
-- [**Debug**] ペインのボタンの多くがクリックできるようになります。
-- [**Frames**] ペインには、ブレークポイントが設定されている行への参照がハイライト表示されるなど、多くの情報が表示されます。
-- [**Variables**] ペインには、項目の数が表示されますが、このアプリには変数があまりないため、現時点でこのレッスンの範囲内に関連のある情報はあまりありません。ただし、変数を検査する機能は、実行時にコード内で起きることについての情報が得られるため、デバッガに不可欠な機能です。このレッスンでは、変数を検査する方法について後ほど詳しく説明します。
-
-デバイスまたはエミュレータでアプリを見ると、あるコード行でアプリが一時停止しているため、画面は空白になっています。具体的には、実行がブレークポイントで停止し、UI がまだレンダリングされていません。
-
-ブレークポイントが設定されているからといって、アプリがすぐに停止するとは限らないことに注意してください。コード内のどこにブレークポイントを設定したかによって異なります。この例では、アプリの起動時に実行される行にブレークポイントを設定しました。
-
-ブレークポイントが設定された行を実行しようとしたときにのみアプリがブレークポイントで一時停止する、という点が重要です。デバッガを進める方法は複数ありますが、今回は **Resume Program** ボタンを使用します。
-
-2. ![](./images/basic-android-kotlin-compose-intro-debugger/937f070d95764107.png)（**Resume Program**）をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/7d664cd5dd8a2d9b.png)
-
-次の画像のように表示されます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/388c58b0f31f797e.png)
-
-情報の大部分が消え、再度、ボタンがクリックできなくなります。また、デバイスまたはエミュレータでは、アプリは通常どおりに表示されます。これは、ブレークポイントでコードが一時停止されず、アプリが通常の実行状態になっているためです。デバッガはアタッチされていますが、ブレークポイントが設定されたコード行を実行しようとするまでは、特に何も起きません。このブレークポイントは以降の例で役立つため、そのままにしておきます。
-
-##### Step Into **ボタン**を使用する
-
-デバッガの **Step Into** ボタンを使用すると、実行時のコードを簡単かつ詳細に確認できます。命令がメソッドや他のコードを呼び出している場合、**Step Into** ボタンを使用すると、デバッガを起動してブレークポイントを設定する前に、手動で移動することなくコードに入ることができます。
-
-**Step Into** ボタンを使用する手順は次のとおりです。
-
-1. `DiceRollerApp()` 関数が呼び出される `MainActivity` クラスの `onCreate()` 関数内で、`setContent` ラムダ本体にブレークポイントを作成します。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/aa4337eabccc85d.png)
-
-2. ![](./images/basic-android-kotlin-compose-intro-debugger/67f9548b52d797b7.png)（**Debug ‘app'**）をクリックし、デバッガでアプリを再実行します。実行は、`DiceRollerApp()` 関数が呼び出される行で一時停止します。
-3. ![](./images/basic-android-kotlin-compose-intro-debugger/1e7236e85d113e8f.png)（**Step Into**）をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/73a80d2b10caea5f.png)
-
-40 行目がハイライト表示され、[**Debug**] ペインの [**Frames**] ペインに、40 行目でコードが一時停止されていることが示されました。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/ece32a03703a0531.png)
-
-[**Frames**] ペインを開くと、ハイライト表示された行の次の行の先頭に `invoke:` が付けられ、その後に行番号が続いていることがわかります（前の画像では 32 行目）。これを「コールスタック」といいます。基本的には、コードの実行を現在の行に導く呼び出しのチェーンが表示されます。この場合は、32 行目に `DiceRollerApp()` 関数を呼び出す命令があります。
-
-その関数呼び出しに設定されたブレークポイントでデバッガが停止したとき、**Step Into** ボタンをクリックすると、デバッガはその関数にステップインし、実行は関数が宣言されている 40 行目に導かれます。ハイライト表示された行は、実行が一時停止された場所を示しています。ハイライト表示された行の次の行に行番号が関連付けられている場合は、実行のパスを示しています。この場合、デバッガは 32 行目の命令によって 40 行目に達したことを示しています。
-
-4. ![](./images/basic-android-kotlin-compose-intro-debugger/937f070d95764107.png)（**Resume Program**）をクリックします。
-
-これで、設定した元のブレークポイントに達します。最初の例で実行を停止したときに見た内容について、理解が深まったかと思います。次の画像は、**Resume Program** セクションの 6 つ目のステップと同じ画像です。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/76a1bef8e6cdf656.png)
-
-コールスタックでは、`DiceWithButtonAndImage()` 関数が 50 行目で一時停止していることがわかります。この関数は、32 行目で呼び出された `DiceRollerApp()` 関数の 41 行目から呼び出されています。コールスタック機能を使用すると、実行パスを把握できます。アプリ内のさまざまな場所から関数を呼び出すときに非常に便利です。
-
-**Step Into** ボタンを使用すると、関数自体にブレークポイントを設定しなくても、関数に入って実行を一時停止できます。この場合、`DiceRollerApp()` 関数の呼び出しにブレークポイントを設定します。**Step Into** ボタンをクリックすると、`DiceRollerApp()` 関数で実行が一時停止します。
-
-Dice Roller は、ファイル、クラス、関数が少ないため、かなり小規模なアプリです。規模の大きいアプリを扱う場合、デバッガの **Step Into** 機能は、コードを移動することなくコードにドリルダウンするため有用です。
-
-##### Step Over **ボタン**を使用する
-
-**Step Over** ボタンを使用すると、実行時にアプリコードをステップ実行できます。実行を次のコード行に移して、デバッガを進めます。
-
-**Step Over** ボタンを使用する手順は次のとおりです。
-
-- ![](./images/basic-android-kotlin-compose-intro-debugger/21e306488908a0f3.png)（**Step Over**）をクリックします。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/25b1ea30948cfc31.png)
-
-デバッガが、次に実行する行（51 行目）でコードを一時停止していることがわかります。各行を連続してステップ実行できます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/17e5998c76809c62.png)
-
-##### Step Out **ボタン**を使用する
-
-**Step Out** ボタンは **Step Into** ボタンとは逆の動作をします。**Step Out** ボタンは、コールスタックにドリルダウンするのではなく、コールスタックに移動します。
-
-**Step Out** ボタンを使用する手順は次のとおりです。
-
-1. ![](./images/basic-android-kotlin-compose-intro-debugger/fbe8baec2ab73e94.png)（**Step Out**）をクリックします。
-
-プログラムはどの行で一時停止するでしょうか。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/9e7ce3969c28f091.png)
-
-2. デバッガは `DiceRollerApp()` 関数からステップアウトして、その関数を呼び出した行に戻りました。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/fd19d30216463877.png)
-
-**Step Out** ボタンは、メソッド コールスタックに深く入りすぎた場合に有用なツールです。ステップインしたメソッドごとにコードをすべてステップ実行することなく、コールスタックを上がることができます。
-
-#### **変数を検査する**
-
-このレッスンで前に [**Variables**] ペインについて簡単に説明しました。このペインでは、ペインに表示された変数を検査してアプリの問題をデバッグする方法について詳しく知ることができます。
-
-変数を検査する手順は次のとおりです。
-
-1. `DiceRollerApp()` 関数が呼び出されているところのブレークポイントをクリックして削除し、`imageResource` 変数が設定されているところのブレークポイントは残します。
-2. ![](./images/basic-android-kotlin-compose-intro-debugger/67f9548b52d797b7.png)（**Debug ‘app'**）をクリックします。`result$delegate` 変数が、値が 1 の `MutableState` になっています。これは、変数が定義されると、`mutableStateOf` 1 でインスタンス化されるためです。`MutableState` は、変更可能な状態を result 変数に代入できることを意味します。
-
-> **注:** [**Variables**] ペインの `result$delegate` 変数はコード内の `result` 変数を参照します。`result` 変数は `remember` デリゲートであるため、`$delegate` という表記があります。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/ac37c7436b5235c0.png)
-
-3. ![](./images/basic-android-kotlin-compose-intro-debugger/937f070d95764107.png)（**Resume Program**）をクリックします。
-4. アプリで [**Roll**] をクリックします。コードはブレークポイントで再度一時停止します。`result$delegate` 変数には異なる値が表示される可能性があります。
-
-この画像では、`result$delegate` 変数の可変状態に値 2 が格納されています。これは、デバッガで実行時に変数をどのように検査できるかを示しています。多機能なアプリでは、変数の値がクラッシュの原因となることがあります。デバッガを使用して変数を検査すると、クラッシュの詳細を把握してバグを修正できます。
-
-![](./images/basic-android-kotlin-compose-intro-debugger/a869ec4ba3b66fbf.png)
-
-### 5. まとめ
-
-お疲れさまでした。Android Studio のデバッガを使用しました。
-
-#### 概要
-
-- アプリにデバッガをアタッチする
-- デバッガをアタッチしたアプリを起動する
-- Debugger ペインについて理解する
-- ブレークポイントを設定する
-- デバッガからプログラムを再開する
-- **Step Into** ボタンを使用する
-- **Step Over** ボタンを使用する
-- **Step Out** ボタンを使用する
-- デバッガで変数を検査する
-
-## 5. 練習: クリック動作（提出対象）
+## 4. 練習: クリック動作（提出対象）
 
 ### 1. 始める前に
 
@@ -1365,24 +1104,22 @@ $ git clone https://github.com/google-developer-training/basic-android-kotlin-co
 
 [Lemonade アプリの GitHub リポジトリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade)でコードを見ることもできます。
 
-## 6. つまずきやすいポイント
+## 5. つまずきやすいポイント
 
 - 「ボタンを押しても画面が変わらない」場合、変数が `remember { mutableStateOf(...) }` になっているかを最初に疑いましょう。
-- デバッガの **ブレークポイント** は今後ずっと使う道具です。この章で「止めて、変数を見て、1 行ずつ進める」を一度体験してください。
 
-## 7. AIに質問する（この章の例）
+## 6. AIに質問する（この章の例）
 
 次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
 
 ```text
 「ボタンを押しても画面が変わらない。`remember` と `mutableStateOf` の役割を説明したうえで、自分のコードのどこが問題か確認質問をして（コード: ここに貼る）」
-「Android Studio のデバッガで、ブレークポイントを置いて変数を見る手順を初心者向けに説明して」
 「練習: クリック動作 で詰まった。答えを丸ごとではなく、方針→ヒント→確認質問の順で教えて」
 ```
 
 質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
 
-## 8. 提出物
+## 7. 提出物
 
 次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
@@ -1395,11 +1132,10 @@ PR 本文には次の 3 点を書いてください。
 - **動作確認**：どの端末（エミュレータ名 or 実機）で何を確認したか
 - **詰まった点と解決**：エラーの内容と、どう直したか（AI に聞いた内容も可）
 
-## 9. チェックリスト
+## 8. チェックリスト
 
 - [ ] `Button` の `onClick` でユーザー操作に反応するアプリを作れる
 - [ ] `remember` と `mutableStateOf` で画面の状態を持てる
-- [ ] Android Studio のデバッガで変数の中身を確認できる
 - [ ] 各レッスンの「まとめ」にある用語を自分の言葉で説明できる
 - [ ] 提出物が `unit2/DiceRoller/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
