@@ -5,7 +5,7 @@
 ## 1. この章のゴール
 
 - `Button` の `onClick` でユーザー操作に反応するアプリを作れる
-- `remember` と `mutableStateOf` で画面の状態を持てる
+- `remember` と `mutableIntStateOf` で画面の状態を持てる
 
 ## 2. 進め方
 
@@ -14,7 +14,7 @@
 | # | 種類 | 内容 | 目安 | 備考 |
 |---|---|---|---|---|
 | 1 | レッスン | タップに反応する Dice Roller アプリを作成する | 約90分 | **提出対象** |
-| 2 | レッスン | 練習: クリック動作 | 約90分 | **提出対象** |
+| 2 | レッスン | 練習: Lemonade アプリを作成する | 約90分 | **提出対象** |
 
 このプログラムの進め方は次の通りです。
 
@@ -136,7 +136,7 @@ fun GreetingPreview() {
 1. `Greeting(name: String, modifier: Modifier = Modifier)` 関数を削除します。
 2. `@Composable` アノテーションを付けて `DiceWithButtonAndImage()` 関数を作成します。
 
-このコンポーズ可能な関数はレイアウトの UI コンポーネントを表し、また、ボタンクリックと画像表示のロジックを保持します。
+このコンポーズ可能な関数はレイアウトの UI コンポーネントを表し、また、ボタンのタップと画像表示のロジックを保持します。
 
 3. `@Composable` アノテーションを付けて `DiceRollerApp()` 関数を作成します。`Modifier` 型の `modifier` 引数を受け取るようにし、デフォルト値 `Modifier` を代入します。
 
@@ -223,7 +223,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
 このコード スニペットではわかりにくい可能性があるため、詳しく説明します。この関数では、`modifier` パラメータを渡すことができます。`modifier` パラメータのデフォルト値は `Modifier` オブジェクトであるため、メソッド シグネチャに `= Modifier` 部分があります。このパラメータのデフォルト値により、今後このメソッドを呼び出す場合、パラメータの値を渡すかどうかを決めることができます。独自の `Modifier` オブジェクトを渡せば、UI の動作と装飾をカスタマイズできます。`Modifier` オブジェクトを渡さない場合は、デフォルトの値（プレーンな `Modifier` オブジェクト）であるとみなされます。この手法はどのようなパラメータにも適用できます。デフォルトの引数の詳細については、[Default arguments](https://kotlinlang.org/docs/functions.html#default-arguments) をご覧ください。
 
-> **注**: `import androidx.compose.ui.Modifier` ステートメントは `androidx.compose.ui.Modifier` パッケージをインポートし、`Modifier` オブジェクトを参照できるようにします。
+> **注:** `import androidx.compose.ui.Modifier` ステートメントは `androidx.compose.ui.Modifier` パッケージをインポートし、`Modifier` オブジェクトを参照できるようにします。
 
 2. `DiceWithButtonAndImage()` コンポーザブルに `modifier` パラメータが追加されたため、`DiceRollerApp()` 関数から呼び出すときに修飾子を渡します。ここでは新しい `Modifier` オブジェクトではなく、`DiceRollerApp()` 関数が受け取った `modifier` 引数を渡します。
 
@@ -248,7 +248,7 @@ DiceWithButtonAndImage(
 )
 ```
 
-> **注**: `fillMaxSize()` と `wrapContentSize()` の import ステートメントは、それぞれ `import androidx.compose.foundation.layout.fillMaxSize` と `import androidx.compose.foundation.layout.wrapContentSize` です。
+> **注:** `fillMaxSize()` と `wrapContentSize()` の import ステートメントは、それぞれ `import androidx.compose.foundation.layout.fillMaxSize` と `import androidx.compose.foundation.layout.wrapContentSize` です。
 
 4. `wrapContentSize()` メソッドを `modifier` に連結し、コンポーネントを中央に配置するための引数として `Alignment.Center` を渡します。`Alignment.Center` は、コンポーネントを縦方向と横方向の両方で中央に配置することを指定します。
 
@@ -265,7 +265,7 @@ fun DiceRollerApp(modifier: Modifier = Modifier) {
 }
 ```
 
-> **注**: `Alignment` オブジェクトの import ステートメントは `import androidx.compose.ui.Alignment` です。
+> **注:** `Alignment` オブジェクトの import ステートメントは `import androidx.compose.ui.Alignment` です。
 
 ### 4. 縦向きレイアウトを作成する
 
@@ -331,7 +331,7 @@ Column(
 }
 ```
 
-> **注**: `Button()` 関数を予測入力すると、`onClick = { /*TODO*/ }` 引数が表示されます。予測入力しない場合、または Android Studio で予測入力できない場合は、この引数をプレースホルダとして独自に実装できます。
+> **注:** `Button()` 関数を予測入力すると、`onClick = { /*TODO*/ }` 引数が表示されます。予測入力しない場合、または Android Studio で予測入力できない場合は、この引数をプレースホルダとして独自に実装できます。
 
 > **注:** `stringResource` 関数の import ステートメントは `import androidx.compose.ui.res.stringResource` です。
 
@@ -421,7 +421,7 @@ Image(
 
 > **注:** `painterResource` 関数の import ステートメントは `import androidx.compose.ui.res.painterResource` です。
 
-> **注**: 後ほど、リソース ID のために渡す値を変更します。ここでは、プレビュー用にコードがコンパイルされるよう、デフォルトを渡す必要があります。
+> **注:** 後ほど、リソース ID のために渡す値を変更します。ここでは、プレビュー用にコードがコンパイルされるよう、デフォルトを渡す必要があります。
 
 3. アプリで画像を作成するときは、必ず「コンテンツの説明」を用意してください。コンテンツの説明は、Android 開発における重要な要素です。ユーザー補助を強化するために、それぞれの UI コンポーネントに説明を付けます。コンテンツの説明について詳しくは、[各 UI 要素について説明する](https://developer.android.com/guide/topics/ui/accessibility/apps#describe-ui-element)をご覧ください。コンテンツの説明をパラメータとして画像に渡すことができます。
 
@@ -525,7 +525,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 var result by remember { mutableIntStateOf(1) }
 ```
 
-> **注**: 状態を作成する関数は、保持する値の型によって使い分けます。
+> **注:** 状態を作成する関数は、保持する値の型によって使い分けます。
 > 
 > - `Int`: `mutableIntStateOf()`
 > - `Long`: `mutableLongStateOf()`
@@ -535,7 +535,7 @@ var result by remember { mutableIntStateOf(1) }
 > 
 > 数値型に専用の関数を使うと、値をより効率的に保持できます。
 
-> **注**: `import androidx.compose.runtime.mutableIntStateOf` ステートメントと `import androidx.compose.runtime.remember` ステートメントは、`mutableIntStateOf()` 関数と `remember` コンポーザブルに必要なパッケージをインポートします。
+> **注:** `import androidx.compose.runtime.mutableIntStateOf` ステートメントと `import androidx.compose.runtime.remember` ステートメントは、`mutableIntStateOf()` 関数と `remember` コンポーザブルに必要なパッケージをインポートします。
 > 
 > State の必要な拡張関数をインポートするには、次の import ステートメントも必要です。
 > 
@@ -584,7 +584,7 @@ Image(
 
 このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
-```
+```bash
 $ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 ```
 
@@ -612,7 +612,7 @@ $ git clone https://github.com/Hideichi-Kubo/android-training-dice-roller.git
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/d8e9dbdeafe9038a.png)
 
-> **注**: Android Studio がすでに開いている場合は、メニューから [**File**] > [**Open**] を選択します。
+> **注:** Android Studio がすでに開いている場合は、メニューから [**File**] > [**Open**] を選択します。
 
 ![](./images/basic-android-kotlin-compose-build-a-dice-roller-app/8d1fda7396afe8e5.png)
 
@@ -628,12 +628,12 @@ Compose を使用して、ユーザーの操作に応じて画面が変わる An
 #### 概要
 
 - コンポーズ可能な関数を定義する。
-- Composition でレイアウトを作成する。
+- コンポジションでレイアウトを作成する。
 - `Button` コンポーザブルでボタンを作成する。
 - `drawable` リソースをインポートする。
 - `Image` コンポーザブルを使用して画像を表示する。
 - コンポーザブルで、ユーザーの操作に反応する UI を作成する。
-- `remember` コンポーザブルを使用して、Composition 内のオブジェクトをメモリに保存する。
+- `remember` コンポーザブルを使用して、コンポジション内のオブジェクトをメモリに保存する。
 - `mutableIntStateOf()` 関数で、値が変わると UI が更新される状態を作成する。
 
 #### 詳細
@@ -646,30 +646,30 @@ Compose を使用して、ユーザーの操作に応じて画面が変わる An
 - [`Image` コンポーザブル](https://developer.android.com/reference/kotlin/androidx/compose/foundation/Image.composable#Image(androidx.compose.ui.graphics.ImageBitmap,kotlin.String,androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,androidx.compose.ui.layout.ContentScale,kotlin.Float,androidx.compose.ui.graphics.ColorFilter,androidx.compose.ui.graphics.FilterQuality))
 - [状態と Jetpack Compose](https://developer.android.com/jetpack/compose/state)
 
-## 4. 練習: クリック動作（提出対象）
+## 4. 練習: Lemonade アプリを作成する（提出対象）
 
 ### 1. 始める前に
 
-この章で、アプリにボタンを追加する方法と、アプリをボタンクリックに応答するように変更する方法を学習しました。次は、アプリを作成して、学んだことを実践しましょう。
+この章で、アプリにボタンを追加する方法と、アプリをボタンのタップに応答するように変更する方法を学習しました。次は、アプリを作成して、学んだことを実践しましょう。
 
 作成するのは Lemonade アプリというアプリです。まず、Lemonade アプリの要件を確認し、アプリの外観と動作を把握しましょう。挑戦したい人は、自力で作成してもかまいません。行き詰まっても、以降のセクションに目を通せば、問題を分割して段階的に進める方法のヒントや指針が得られます。
 
 自分のやりやすいペースで練習問題に取り組みましょう。必要なだけ時間をかけ、アプリの機能を部分ごとに作成してください。Lemonade アプリの解答コードは最後に用意していますが、解答を確認する前に自分でアプリを作成してみることをおすすめします。用意されている解答は Lemonade アプリを作成する唯一の方法ではないので、アプリの要件が満たされていれば、別の方法で作成してもまったく問題ありません。
 
-#### **前提条件**
+#### 前提条件
 
-- Compose で、テキスト コンポーザブルと画像コンポーザブルを使用するシンプルな UI レイアウトを作成できること
-- ボタンクリックに応答するアプリを作成できること
-- コンポジションと再コンポジションに関する基本的な知識があること
+- Compose で、`Text` コンポーザブルと `Image` コンポーザブルを使用するシンプルな UI レイアウトを作成できること
+- ボタンのタップに応答するアプリを作成できること
+- コンポジションと再コンポーズに関する基本的な知識があること
 - Kotlin プログラミング言語の基本（関数、変数、条件、ラムダなど）に精通していること
 
-#### **必要なもの**
+#### 必要なもの
 
-- Android Studio がインストールされた、インターネットに接続できるパソコン。
+- Android Studio がインストールされた、インターネットに接続できるパソコン
 
 ### 2. アプリの概要
 
-あなたは、デジタル上でレモネードを作るという私たちのビジョンを一緒に実現しようとしています。プロジェクトの目標は、画面上の画像をタップするとレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルなアプリを作成することです。このアプリはメタファーとして、あるいはちょっとした暇つぶしの方法として考えてください。
+この練習の目標は、画面上の画像をタップしてレモンを絞り、グラス 1 杯分のレモネードを作るという、シンプルなアプリを作成することです。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/dfcc3bc3eb43e4dd.png)
 
@@ -686,13 +686,13 @@ Compose を使用して、ユーザーの操作に応じて画面が変わる An
 | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/5384eedd313cb5a9.png) | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/89cec3022a462039.png) | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/513e4b0ee349a4d2.png) | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/9dbd92f4413c186e.png) |
 |---|---|---|---|
 
-レモネードを作成するステップごとに、画面上の画像とテキストラベルは異なり、クリックに対する応答も異なります。たとえば、レモンの木をタップすると、レモンが表示されます。
+レモネードを作成するステップごとに、画面上の画像とテキストラベルは異なり、タップに対する応答も異なります。たとえば、レモンの木をタップすると、レモンが表示されます。
 
-ここでは、アプリの UI レイアウトを作成し、レモネードを作るためのすべてのステップをユーザーが完了するためのロジックを実装することです。
+ここでは、アプリの UI レイアウトを作成し、ユーザーがレモネードを作るすべてのステップを完了できるようにロジックを実装します。
 
 ### 3. 始める
 
-#### **プロジェクトの作成**
+#### プロジェクトの作成
 
 Android Studio で、**Empty Activity** テンプレートを使用して、以下のプロジェクトを作成します。
 
@@ -702,14 +702,14 @@ Android Studio で、**Empty Activity** テンプレートを使用して、以�
 
 アプリが正常に作成され、プロジェクトがビルドされたら、次のセクションに進みます。
 
-#### **画像を追加する**
+#### 画像を追加する
 
 Lemonade アプリで使用する 4 つのベクター型ドローアブル ファイルが用意されています。
 
 次の手順でファイルを入手します。
 
-1. アプリの[画像の ZIP ファイル](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade/raw/main/lemonade_images.zip)をダウンロードします。
-2. ZIP ファイルをダブルクリックします。このステップでは、画像がフォルダに展開されます。
+1. [こちらの URL](https://github.com/Hideichi-Kubo/android-training-assets/raw/main/lemonade/lemonade-assets.zip) を開いて、アプリの画像を ZIP ファイル形式でパソコンにダウンロードします。
+2. ZIP ファイルを展開すると、画像ファイルが 4 つ入った、新しい `lemonade-assets` フォルダが作成されます。
 3. 画像をアプリの `drawable` フォルダに追加します。方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンで確認してください。
 
 プロジェクト フォルダは次のスクリーンショットのように、`lemon_drink.xml`、`lemon_restart.xml`、`lemon_squeeze.xml`、`lemon_tree.xml` のアセットが **res > drawable** ディレクトリに表示されるようにしてください。
@@ -723,69 +723,133 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 
 アプリに画像ファイルが追加されると、コード内で参照できるようになります。たとえば、ベクター型ドローアブル ファイルの名前が `lemon_tree.xml` である場合、Kotlin コードでは、`R.drawable.lemon_tree` という形式のリソース ID を使ってそのドローアブルを参照できます。
 
-#### **文字列リソースを追加する**
+#### 文字列リソースを追加する
 
 プロジェクトの **res > values > strings.xml** ファイルに、次の文字列を追加します。
 
-- `Tap the lemon tree to select a lemon`
-- `Keep tapping the lemon to squeeze it`
-- `Tap the lemonade to drink it`
-- `Tap the empty glass to start again`
+**`res/values/strings.xml`**
 
-プロジェクトには、以下の文字列も必要です。ユーザー インターフェースの画面には表示されませんが、アプリ内の画像の内容説明で、画像を説明するために使用されます。以下の文字列をアプリの `strings.xml` ファイルに追加します。
+```xml
+<string name="lemon_select">Tap the lemon tree to select a lemon</string>
+<string name="lemon_squeeze">Keep tapping the lemon to squeeze it</string>
+<string name="lemon_drink">Tap the lemonade to drink it</string>
+<string name="lemon_empty_glass">Tap the empty glass to start again</string>
+```
 
-- `Lemon tree`
-- `Lemon`
-- `Glass of lemonade`
-- `Empty glass`
+プロジェクトには、以下の文字列も必要です。ユーザー インターフェースの画面には表示されませんが、アプリ内の画像のコンテンツの説明として使用されます。以下の文字列をアプリの `strings.xml` ファイルに追加します。
 
-アプリで文字列リソースを宣言する方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。各文字列リソースに、含まれる値を表す適切な識別名を付けましょう。たとえば、文字列 `"Lemon"` の場合、`strings.xml` ファイルで識別名 `lemon_content_description` で宣言すると、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+**`res/values/strings.xml`**
 
-#### **レモネードを作る手順**
+```xml
+<string name="lemon_tree_content_description">Lemon tree</string>
+<string name="lemon_content_description">Lemon</string>
+<string name="lemonade_content_description">Glass of lemonade</string>
+<string name="empty_glass_content_description">Empty glass</string>
+```
 
-これで、アプリの実装に必要な文字列リソースと画像アセットを用意できました。各ステップの概要と表示される画面は次のとおりです。
+アプリで文字列リソースを宣言する方法がわからない場合は、タップに反応する Dice Roller アプリを作成するレッスンまたは[文字列](https://developer.android.com/guide/topics/resources/string-resource#String)で確認してください。たとえば、文字列 `"Lemon"` は識別名 `lemon_content_description` で宣言しているため、コードではリソース ID `R.string.lemon_content_description` で参照できます。
+
+#### テーマの配色を設定する
+
+完成したアプリでは、画面上部のバーが黄色、画像の背景が緑色になっています。この配色になるように、プロジェクトのテーマを変更します。テーマのファイルは、`MainActivity.kt` と同じパッケージの下にある `ui.theme` フォルダにあります。
+
+1. `Color.kt` ファイルの末尾に、次の色を追加します。ライトテーマ用とダークテーマ用に、黄色と緑色を 2 つずつ定義します。
+
+**`Color.kt`**
+
+```kotlin
+// primaryContainer に使う黄色（90: ライトテーマ用、30: ダークテーマ用）
+val Yellow90 = Color(0xFFF9E44C)
+val Yellow30 = Color(0xFF504700)
+
+// tertiaryContainer に使う緑色（90: ライトテーマ用、30: ダークテーマ用）
+val Green90 = Color(0xFFC3ECD2)
+val Green30 = Color(0xFF294E3B)
+```
+
+2. `Theme.kt` ファイルの `DarkColorScheme` と `LightColorScheme` に、`primaryContainer` と `tertiaryContainer` を追加します。`tertiary` の行の末尾にカンマを追加するのを忘れないでください。
+
+**`Theme.kt`**
+
+```kotlin
+private val DarkColorScheme = darkColorScheme(
+    primary = Purple80,
+    secondary = PurpleGrey80,
+    tertiary = Pink80,
+    // 画面上部のバーの背景色
+    primaryContainer = Yellow30,
+    // 画像を配置するボタンの背景色
+    tertiaryContainer = Green30
+)
+
+private val LightColorScheme = lightColorScheme(
+    primary = Purple40,
+    secondary = PurpleGrey40,
+    tertiary = Pink40,
+    // 画面上部のバーの背景色
+    primaryContainer = Yellow90,
+    // 画像を配置するボタンの背景色
+    tertiaryContainer = Green90
+)
+```
+
+3. 同じ `Theme.kt` ファイルの `LemonadeTheme()` 関数で、`dynamicColor` 引数のデフォルト値を `false` に変更します。
+
+**`Theme.kt`**
+
+```kotlin
+dynamicColor: Boolean = false,
+```
+
+`dynamicColor` が `true` の場合、Android 12（API 31）以降の端末では、壁紙から作られた配色がアプリに適用されます。ここでは、端末の壁紙に関係なく同じ配色で表示されるように `false` にします。
+
+#### レモネードを作る手順
+
+これで、アプリの実装に必要な文字列リソース、画像アセット、テーマの配色を用意できました。各ステップの概要と表示される画面は次のとおりです。
 
 ステップ 1:
 
-- テキスト: `Tap the lemon tree to select a lemon`
 - 画像: レモンの木（`lemon_tree.xml`）
+- テキスト: `Tap the lemon tree to select a lemon`
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/b2b0ae4400c0d06d.png)
 
 ステップ 2:
 
-- テキスト: `Keep tapping the lemon to squeeze it`
 - 画像: レモン（`lemon_squeeze.xml`）
+- テキスト: `Keep tapping the lemon to squeeze it`
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/7c6281156d027a8.png)
 
 ステップ 3:
 
-- テキスト: `Tap the lemonade to drink it`
 - 画像: グラスいっぱいのレモネード（`lemon_drink.xml`）
+- テキスト: `Tap the lemonade to drink it`
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/38340dfe3df0f721.png)
 
 ステップ 4:
 
-- テキスト: `Tap the empty glass to start again`
 - 画像: 空のグラス（`lemon_restart.xml`）
+- テキスト: `Tap the empty glass to start again`
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/e9442e201777352b.png)
 
-#### **見た目を整える**
+#### 見た目を整える
 
 アプリの見た目を完成版のスクリーンショットに近づけるために、見た目の調整をいくつか行います。
 
-- テキストのフォントサイズを大きくして、デフォルトよりも大きくします（`18sp` など）。
-- テキストラベルとその下の画像の間にはスペースを入れて、近づきすぎないようにします（`16dp` など）。
-- ボタンにアクセント カラーを設定し、角を少し丸くして、画像がタップ可能であることをユーザーが理解できるようにします。
+- 画像を `Button` の中に配置します。ボタンにアクセント カラーを設定し、角を丸くして、画像がタップ可能であることをユーザーが理解できるようにします。
+- 画像とその下のテキストラベルの間にはスペースを入れて、近づきすぎないようにします（`32dp` など）。
+- テキストには、テーマのタイポグラフィ スタイル `bodyLarge` を適用します。
 
 挑戦したい人は、アプリの残りの部分を必要な動作の説明をもとに作成しましょう。さらに手引きが必要な場合は、次に進んでください。
 
-> **警告:** ヒントが表示される場合を除いて、残りの手順を読まないでください。自力で問題に取り組み、行き詰まった場合に、残りの手順を調べることをおすすめします。
+> **警告:** ヒントが必要な場合を除いて、残りの手順を読まないでください。自力で問題に取り組み、行き詰まった場合に、残りの手順を調べることをおすすめします。
 
 ### 4. アプリの作成方法を計画する
+
+> **注:** このセクションと次のセクションのスクリーンショットは、完成したアプリの画面です。実装の途中では、ボタンの色や形、画像の大きさなどがスクリーンショットと異なっていても問題ありません。見た目は最後の「アプリを完成させる」で整えます。
 
 アプリを作成する際は、最低限動作するバージョンから始めることをおすすめします。その後に、完成するまで必要な機能を段階的に追加しましょう。すべての機能の中から、最初に作成できる機能を見つけましょう。
 
@@ -793,7 +857,7 @@ Lemonade アプリでは、アプリの主要な部分が段階的に変化し�
 
 以下は、おすすめする作成手順の概要です。
 
-1. レモネードを作る最初のステップの UI レイアウトを作成します。木になっているレモンを選択するように求めるステップです。細かな見た目は後で調整できるので、画像の枠線は省略します。
+1. レモネードを作る最初のステップの UI レイアウトを作成します。木になっているレモンを選択するように求めるステップです。細かな見た目は後で調整できます。画像をタップできるようにする `Button` は、次のステップで追加します。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/b2b0ae4400c0d06d.png)
 
@@ -803,25 +867,74 @@ Lemonade アプリでは、アプリの主要な部分が段階的に変化し�
 
 3. コードを追加して、画像がタップされるたびにレモネードを作る手順の残りのステップを表示するようにします。この段階では、レモンを 1 回タップすると、レモネードの入ったグラスが表示されます。
 
-![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 箱まで、4 の箱から 1 の箱までの矢印があります。1 の箱の下には、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像があります。2 の箱の下には、「タップを続けてレモンを絞ってください」というテキストラベルと、レモンの画像があります。3 の箱の下には、「レモネードをタップして飲んでください」というテキストラベルと、レモネードが入ったグラスの画像があります。4 の箱の下には、「やり直すには空のガラスをタップしてください」というテキストラベルと、空のグラスの画像が表示されます。](./images/basic-android-kotlin-compose-button-click-practice-problem/33a36bcbe200af53.png)
+![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 の箱まで、4 の箱から 1 の箱までの矢印があります。1 の箱の下には、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像があります。2 の箱の下には、「タップを続けてレモンを絞ってください」というテキストラベルと、レモンの画像があります。3 の箱の下には、「レモネードをタップして飲んでください」というテキストラベルと、レモネードが入ったグラスの画像があります。4 の箱の下には、「やり直すには空のグラスをタップしてください」というテキストラベルと、空のグラスの画像が表示されます。](./images/basic-android-kotlin-compose-button-click-practice-problem/33a36bcbe200af53.png)
 
 4. レモンを絞るステップにカスタムの動作を追加して 2～4 の範囲の数をランダムに生成し、ユーザーがレモンをその回数だけ「絞る」（タップする）動作を必須にします。
 
-![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 箱まで、4 の箱から 1 の箱までの矢印があります。2 の箱から出て自身に戻る「ランダムな回数」というラベルの付いた別の矢印があります。1 の箱の下は、レモンの木の画像とそれに対応するテキストラベルです。2 の箱の下は、レモンの画像とそれに対応するテキストラベルです。3 の箱の下は、レモネードの入ったグラスの画像とそれ対応するテキストラベルです。4 の箱の下は、空のガラスの画像とそれ対応するテキストラベルです。](./images/basic-android-kotlin-compose-button-click-practice-problem/a23102cb6c068174.png)
+![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 の箱まで、4 の箱から 1 の箱までの矢印があります。2 の箱から出て自身に戻る「ランダムな回数」というラベルの付いた別の矢印があります。1 の箱の下は、レモンの木の画像とそれに対応するテキストラベルです。2 の箱の下は、レモンの画像とそれに対応するテキストラベルです。3 の箱の下は、レモネードの入ったグラスの画像とそれに対応するテキストラベルです。4 の箱の下は、空のグラスの画像とそれに対応するテキストラベルです。](./images/basic-android-kotlin-compose-button-click-practice-problem/a23102cb6c068174.png)
 
-5. その他に必要な見た目の調整を行ってアプリを完成させます。たとえば、フォントサイズを変更し、画像の周りに枠線を付けて、アプリの見た目を良くするなどです。[Kotlin のコーディング スタイル ガイドライン](https://developer.android.com/kotlin/style-guide)を遵守している、コードにコメントを追加しているなど、適切なコーディング手法に従っていることを確認します。
+5. その他に必要な見た目の調整を行ってアプリを完成させます。たとえば、テキストのスタイルを設定し、ボタンの色や角の丸みを調整して、アプリの見た目を良くするなどです。[Kotlin のコーディング スタイル ガイドライン](https://developer.android.com/kotlin/style-guide)を遵守している、コードにコメントを追加しているなど、適切なコーディング手法に従っていることを確認します。
 
 以上の作成手順の概要を採用して Lemonade アプリを実装する場合は、自力でアプリを作成してください。5 つのステップそれぞれで、さらに手引きが必要な場合は、次のセクションに進みます。
 
 ### 5. アプリを実装する
 
-#### **UI レイアウトを作成する**
+#### UI レイアウトを作成する
 
-まず、レモンの木の画像とそれに対応するテキストラベル（`Tap the lemon tree to select a lemon`）を画面の中央に表示するようにアプリを変更します。また、テキストとその下の画像の間に `16dp` のスペースを入れる必要もあります。
+まず、レモンの木の画像とそれに対応するテキストラベル（`Tap the lemon tree to select a lemon`）を画面の中央に表示するようにアプリを変更します。また、画像とその下のテキストの間に `32dp` のスペースを入れる必要もあります。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/b2b0ae4400c0d06d.png)
 
-必要に応じて、次のスターター コードを `MainActivity.kt` ファイルで使用します。
+Empty Activity テンプレートで生成された `MainActivity.kt` は、次のようになっています（`package` と `import` は省略しています）。
+
+**`MainActivity.kt`**
+
+```kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            LemonadeTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Greeting(
+                        name = "Android",
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    LemonadeTheme {
+        Greeting("Android")
+    }
+}
+```
+
+このコードを次のように変更します。
+
+1. `Greeting()` 関数を削除し、代わりにパラメータを受け取らない `LemonadeApp()` 関数を作成します。
+2. `onCreate()` メソッドの `setContent{}` ラムダで、`Scaffold` を `LemonadeApp()` 関数の呼び出しに置き換えます。`Scaffold` は `LemonadeApp()` 関数の中に移動します。`enableEdgeToEdge()` と `LemonadeTheme` はそのまま残します。
+3. `LemonadeApp()` 関数の `Scaffold` の `topBar` 引数に、アプリ名を表示する `CenterAlignedTopAppBar` を追加します。バーの色には、テーマで設定した `primaryContainer` を使用します。
+4. `Scaffold` のラムダ本体に `Surface` を追加し、`innerPadding` の余白を設定します。
+5. `GreetingPreview()` 関数の名前を `LemonadePreview()` に変更し、`Greeting("Android")` の呼び出しを `LemonadeApp()` 関数の呼び出しに置き換えます。
+
+変更後のコードは次のとおりです。必要に応じて、このスターター コードを `MainActivity.kt` ファイルで使用してください。
+
+**`MainActivity.kt`**
 
 ```kotlin
 package com.example.lemonade
@@ -829,76 +942,111 @@ package com.example.lemonade
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.lemonade.ui.theme.LemonadeTheme
 
 class MainActivity : ComponentActivity() {
-   override fun onCreate(savedInstanceState: Bundle?) {
-       super.onCreate(savedInstanceState)
-       setContent {
-           LemonadeTheme {
-               LemonApp()
-           }
-       }
-   }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            LemonadeTheme {
+                LemonadeApp()
+            }
+        }
+    }
 }
 
+// CenterAlignedTopAppBar は実験的な API のため、使用を明示する
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LemonApp() {
-   // A surface container using the 'background' color from the theme
-   Surface(
-       modifier = Modifier.fillMaxSize(),
-       color = MaterialTheme.colorScheme.background
-   ) {
-       Text(text = "Hello there!")
-   }
+fun LemonadeApp() {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        // topBar: 画面の上部に表示するバーを指定する
+        topBar = {
+            // タイトルを中央に配置するトップアプリバー
+            CenterAlignedTopAppBar(
+                // バーに表示するタイトル
+                title = {
+                    Text(
+                        text = stringResource(R.string.app_name),
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                // バーの背景色をテーマの primaryContainer に設定する
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
+            )
+        }
+    ) { innerPadding ->
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                // トップアプリバーやシステムバーと重ならないように余白を設定する
+                .padding(innerPadding),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Text(text = "Hello there!")
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-   LemonadeTheme {
-       LemonApp()
-   }
+fun LemonadePreview() {
+    LemonadeTheme {
+        LemonadeApp()
+    }
 }
 ```
 
-このコードは、Android Studio が自動生成したコードに似ていますが、`Greeting()` コンポーザブルの代わりに、`LemonApp()` コンポーザブルが定義されており、パラメータは受け取りません。また、コードを簡単にプレビューできるように、`DefaultPreview()` コンポーザブルが `LemonApp()` コンポーザブルを使用するように更新されています。
+> **注:** `CenterAlignedTopAppBar` は実験的な API です。実験的な API を使用する関数には、`@OptIn(ExperimentalMaterial3Api::class)` アノテーションを付ける必要があります。
 
-Android Studio でこのコードを入力したら、`LemonApp()` コンポーザブルを修正して、アプリの内容を入れる必要があります。以下に作業の参考となる質問をいくつかご紹介します。
+Android Studio でこのコードを入力したら、`Surface` の中身を修正して、アプリの内容を入れる必要があります。以下に作業の参考となる質問をいくつかご紹介します。
 
 - どのコンポーザブルを使用しますか。
 - コンポーザブルを目的の位置に配置するのに役立つ標準の [Compose レイアウト コンポーネント](https://developer.android.com/jetpack/compose/layouts/basics#standard-layouts)はありますか。
 
-> **重要:** より多くのユーザーがアプリを利用できるようにするために、[画像の内容説明](https://developer.android.com/jetpack/compose/accessibility#describe-visual)を設定して、画像に含まれる内容を説明することを忘れないでください。
+> **重要:** より多くのユーザーがアプリを利用できるようにするために、[画像のコンテンツの説明](https://developer.android.com/jetpack/compose/accessibility#describe-visual)を設定して、画像に含まれる内容を説明することを忘れないでください。
 
-このステップを実装して、起動時にレモンの木とテキストラベルが表示されるようにします。コードを変更したときには、Android Studio でコンポーザブルを[プレビュー](https://developer.android.com/jetpack/compose/tooling#preview)して、UI がどのように表示されるかを確認しましょう。アプリを実行して、前のセクションのスクリーンショットと同じように表示されることを確認します。
+このステップを実装して、起動時にレモンの木とテキストラベルが表示されるようにします。コードを変更したときには、Android Studio でコンポーザブルを[プレビュー](https://developer.android.com/jetpack/compose/tooling#preview)して、UI がどのように表示されるかを確認しましょう。アプリを実行して、レモンの木の画像とテキストラベルが画面の中央に表示されることを確認します。
 
 画像をタップしたときの動作の追加方法について手引きが必要な場合は、作業後にこの手順に戻ってください。
 
-#### **クリック動作を追加する**
+#### タップ時の動作を追加する
 
 次に、レモンの木の画像がタップされたら、レモンの画像がテキストラベル `Keep tapping the lemon to squeeze it` とともに表示されるようにコードを追加します。つまり、レモンの木をタップすると、テキストと画像が変化するということです。
 
 ![](./images/basic-android-kotlin-compose-button-click-practice-problem/adbf0d217e1ac77d.png)
 
-この章の前半で、ボタンをクリック可能にする方法を学習しました。Lemonade アプリの場合は、`Button` コンポーザブルがありません。しかし、`clickable` 修飾子を指定すれば、ボタンだけでなく任意のコンポーザブルをクリック可能にできます。例については、[クリック可能](https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).clickable(kotlin.Boolean,kotlin.String,androidx.compose.ui.semantics.Role,kotlin.Function0))のドキュメントのページを確認してください。
+この章の前半で、`Button` コンポーザブルの `onClick` を使用して、ボタンのタップに反応する方法を学習しました。Lemonade アプリでも同じ方法を使います。`Button` のラムダ本体には、`Text` だけでなく、`Image` などの任意のコンポーザブルを配置できます。`Image` を `Button` の中に配置すれば、画像がタップされたときの動作を `onClick` で実装できます。
 
-画像がクリックされたときには、何をすべきでしょうか。この動作を実装するコードは簡単でないため、以前に学習したアプリに戻ります。
+画像がタップされたときには、何をすべきでしょうか。この動作を実装するコードは簡単ではないため、前のレッスンで作成したアプリを振り返ります。
 
 ##### Dice Roller アプリを確認する
 
 Dice Roller アプリのコードに戻り、サイコロの出目の値に基づいてアプリが別々のサイコロ画像を表示する方法を確認してください。
 
-**Dice Roller アプリの MainActivity.kt**
+**Dice Roller アプリの `MainActivity.kt`**
 
 ```kotlin
+// Dice Roller アプリのコードです。Lemonade アプリには追加しません
 ...
 
 @Composable
@@ -938,10 +1086,11 @@ Dice Roller アプリのコードに関する以下の質問に答えてみま�
 コンポーズ可能な関数 `DiceWithButtonAndImage()` は、次のコードで `remember` コンポーザブルと `mutableIntStateOf()` 関数で定義された `result` 変数にサイコロの直近の出目を格納します。
 
 ```kotlin
+// Dice Roller アプリのコードです。Lemonade アプリには追加しません
 var result by remember { mutableIntStateOf(1) }
 ```
 
-`result` 変数が新しい値に更新されると、Compose が `DiceWithButtonAndImage()` コンポーザブルの再コンポジションをトリガーします。つまり、コンポーザブルが再度実行されます。`result` 値は再コンポーズ後も保存されているため、`DiceWithButtonAndImage()` コンポーザブルが再度実行されると、最新の `result` 値が使用されます。このコンポーザブルは、`result` 変数の値に対して `when` 文を使用して、新たに表示するドローアブル リソース ID を決め、`Image` コンポーザブルがそれを表示します。
+`result` 変数が新しい値に更新されると、Compose が `DiceWithButtonAndImage()` コンポーザブルの再コンポーズをトリガーします。つまり、コンポーザブルが再度実行されます。`result` 値は再コンポーズ後も保存されているため、`DiceWithButtonAndImage()` コンポーザブルが再度実行されると、最新の `result` 値が使用されます。このコンポーザブルは、`result` 変数の値に対して `when` 文を使用して、新たに表示するドローアブル リソース ID を決め、`Image` コンポーザブルがそれを表示します。
 
 ##### 学習した内容を Lemonade アプリに応用する
 
@@ -951,88 +1100,107 @@ var result by remember { mutableIntStateOf(1) }
 - Kotlin の条件構文を使用し、その変数の値に基づいてアプリが異なる動作を実行するようにできますか。できる場合は、その条件文をコードに記述してください。
 - 変数を変化させるトリガーとなるのは、ユーザーのどのような操作ですか。それが発生するコード内の適切な場所を見つけてください。そこに変数を更新するコードを追加してください。
 
-> **注:** レモネードを作る手順の各ステップを数で表すこともできます。たとえば、ステップ 1 にはレモンの木の画像があり、画像をクリックするとステップ 2 に進みます。これは、どのテキスト文字列とどの画像に対応するかを整理するのに役立ちます。
+> **注:** レモネードを作る手順の各ステップを数で表すこともできます。たとえば、ステップ 1 にはレモンの木の画像があり、画像をタップするとステップ 2 に進みます。これは、どのテキスト文字列とどの画像に対応するかを整理するのに役立ちます。
 > 
-> ![枠線が緑色で数字の 1 を囲んでいる箱があります。矢印が、この箱から、枠線が緑色で数字の 2 を囲んでいる別の箱を指しています。1 つ目の箱の下は、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像です。2 つ目の箱の下は、「レモンを絞るためにタップを続けてください」というテキストラベルとレモンの画像です。](./images/basic-android-kotlin-compose-button-click-practice-problem/270ecd406fc30120.png)
+> ![枠線が緑色で数字の 1 を囲んでいる箱があります。矢印が、この箱から、枠線が緑色で数字の 2 を囲んでいる別の箱を指しています。1 つ目の箱の下は、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像です。2 つ目の箱の下は、「タップを続けてレモンを絞ってください」というテキストラベルとレモンの画像です。](./images/basic-android-kotlin-compose-button-click-practice-problem/270ecd406fc30120.png)
 
 このセクションの実装はとても難しく、正しく動作させるには、コードの複数箇所を変更する必要があります。すぐにアプリが期待どおりに動作しなくても、気を落とすことはありません。この動作を実装する正しい方法は複数あります。
 
 完了したら、アプリを実行して正しく動作することを確認します。起動すると、レモンの木の画像とそれに対応するテキストラベルが表示されます。レモンの木の画像を 1 回タップすると、テキストラベルが更新され、レモンの画像が表示されます。この時点でレモンの画像をタップしても何も起こりません。
 
-#### **残りのステップを追加する**
+#### 残りのステップを追加する
 
-これで、レモネードを作る手順の 2 つのステップを表示できるようになりました。この時点の `LemonApp()` コンポーザブルは、次のコード スニペットのようになります。アプリの動作が同じであれば、多少コードが違っても問題ありません。
+これで、レモネードを作る手順の 2 つのステップを表示できるようになりました。この時点の `LemonadeApp()` コンポーザブルは、次のコード スニペットのようになります。アプリの動作が同じであれば、多少コードが違っても問題ありません。
 
-**MainActivity.kt**
+**`MainActivity.kt`**
 
 ```kotlin
 ...
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LemonApp() {
-   // Current step the app is displaying (remember allows the state to be retained
-   // across recompositions).
-   var currentStep by remember { mutableStateOf(1) }
+fun LemonadeApp() {
+    // 現在のステップ（1:木 2:絞る 3:飲む 4:空のグラス）
+    // remember により、再コンポーズ後も値が保持される
+    var currentStep by remember { mutableIntStateOf(1) }
 
-   // A surface container using the 'background' color from the theme
-   Surface(
-       modifier = Modifier.fillMaxSize(),
-       color = MaterialTheme.colorScheme.background
-   ) {
-       when (currentStep) {
-           1 -> {
-               Column (
-                   horizontalAlignment = Alignment.CenterHorizontally,
-                   verticalArrangement = Arrangement.Center,
-                   modifier = Modifier.fillMaxSize()
-               ){
-                   Text(text = stringResource(R.string.lemon_select))
-                   Spacer(modifier = Modifier.height(32.dp))
-                   Image(
-                       painter = painterResource(R.drawable.lemon_tree),
-                       contentDescription = stringResource(R.string.lemon_tree_content_description),
-                       modifier = Modifier
-                           .wrapContentSize()
-                           .clickable {
-                               currentStep = 2
-                           }
-                   )
-               }
-           }
-           2 -> {
-               Column (
-                   horizontalAlignment = Alignment.CenterHorizontally,
-                   verticalArrangement = Arrangement.Center,
-                   modifier = Modifier.fillMaxSize()
-               ){
-                   Text(text = stringResource(R.string.lemon_squeeze))
-                   Spacer(modifier = Modifier.height(32
-                       .dp))
-                   Image(
-                       painter = painterResource(R.drawable.lemon_squeeze),
-                       contentDescription = stringResource(R.string.lemon_content_description),
-                       modifier = Modifier.wrapContentSize()
-                   )
-               }
-           }
-       }
-   }
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(R.string.app_name),
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
+            )
+        }
+    ) { innerPadding ->
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            when (currentStep) {
+                1 -> {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        // Image を Button の中に配置し、タップで次のステップに進む
+                        Button(onClick = { currentStep = 2 }) {
+                            Image(
+                                painter = painterResource(R.drawable.lemon_tree),
+                                contentDescription = stringResource(R.string.lemon_tree_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_select))
+                    }
+                }
+                2 -> {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        // 次のステップへ進む処理は、この後で追加する
+                        Button(onClick = { }) {
+                            Image(
+                                painter = painterResource(R.drawable.lemon_squeeze),
+                                contentDescription = stringResource(R.string.lemon_content_description)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(32.dp))
+                        Text(text = stringResource(R.string.lemon_squeeze))
+                    }
+                }
+            }
+        }
+    }
 }
 ...
 ```
 
 次に、レモネードを作る手順の残りのステップを追加します。画像を 1 回タップすると、レモネードを作る手順の次のステップに進み、テキストと画像の両方が更新されます。前半の 2 つのステップだけでなく、すべてのステップをより柔軟に処理できるようにコードを変更する必要があります。
 
-![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 箱まで、4 の箱から 1 の箱までの矢印があります。1 の箱の下は、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像です。2 の箱の下は、「レモンを絞るためにタップを続けてください」というテキストラベルとレモンの画像です。3 の箱の下には、「レモネードをタップして飲んでください」というテキストラベルと、レモネードが入ったグラスの画像があります。4 の箱の下には、「やり直すには空のガラスをタップしてください」というテキストラベルと、空のグラスの画像が表示されます。](./images/basic-android-kotlin-compose-button-click-practice-problem/2c0f70529e0cf69d.png)
+![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 の箱まで、4 の箱から 1 の箱までの矢印があります。1 の箱の下は、「レモンの木をタップしてレモンを選んでください」というテキストラベルと、レモンの木の画像です。2 の箱の下は、「タップを続けてレモンを絞ってください」というテキストラベルとレモンの画像です。3 の箱の下には、「レモネードをタップして飲んでください」というテキストラベルと、レモネードが入ったグラスの画像があります。4 の箱の下には、「やり直すには空のグラスをタップしてください」というテキストラベルと、空のグラスの画像が表示されます。](./images/basic-android-kotlin-compose-button-click-practice-problem/2c0f70529e0cf69d.png)
 
-画像がクリックされるたびに動作を変えるには、クリック可能な動作をカスタマイズする必要があります。具体的には、画像がクリックされたときに実行されるラムダで、どのステップに遷移しようとしているかを認識している必要があります。
+画像がタップされるたびに動作を変えるには、`Button` の `onClick` に渡すラムダをカスタマイズする必要があります。具体的には、画像がタップされたときに実行されるラムダで、どのステップに遷移しようとしているかを認識している必要があります。
 
-レモネードを作る手順の各ステップの中に同じコードがあると気づき始めたと思います。前のコード スニペットの `when` 文で、`1` の場合のコードは `2` の場合によく似ていますが、わずかな違いがあります。可能であれば、UI で画像の上にテキストを表示する `LemonTextAndImage()` といったコンポーズ可能な関数を作成しましょう。入力パラメータを受け取る新しいコンポーズ可能な関数を作成すると、渡す入力さえ変えれば複数のシナリオで役立つ再利用可能な関数となります。どのような入力パラメータにするかは、自身で決めてください。このコンポーズ可能な関数を作成したら、関連する場所で新しい関数を呼び出すように既存のコードを更新します。
+レモネードを作る手順の各ステップの中に同じコードがあると気づき始めたと思います。前のコード スニペットの `when` 文で、`1` の場合のコードは `2` の場合によく似ていますが、わずかな違いがあります。可能であれば、UI でテキストの上に画像を表示する `LemonTextAndImage()` といったコンポーズ可能な関数を作成しましょう。入力パラメータを受け取る新しいコンポーズ可能な関数を作成すると、渡す入力さえ変えれば複数のシナリオで役立つ再利用可能な関数となります。どのような入力パラメータにするかは、自身で決めてください。このコンポーズ可能な関数を作成したら、関連する場所で新しい関数を呼び出すように既存のコードを更新します。
 
 `LemonTextAndImage()` のような別のコンポーザブルを使用することには、コードが整理され、堅牢になるという利点もあります。`LemonTextAndImage()` を呼び出すと、確実にテキストと画像の両方を新しい値にできます。これを使用しない場合は、更新されたテキストラベルが間違った画像とともに表示されてしまうケースが見逃されやすくなります。
 
-もう一つのヒントとして、ラムダ関数をコンポーザブルに渡すというものもあります。関数型の表記を使用して、渡す関数の型を指定してください。次の例では、`WelcomeScreen()` コンポーザブルが定義されていて、`name` 文字列と `() -> Unit` 型の `onStartClicked()` 関数という 2 つの入力パラメータを受け入れています。つまり、この関数は入力を受け取らず（矢印の前の空のかっこ）、戻り値がありません（矢印の後の `Unit`）。この関数型 `() -> Unit` に一致する関数を使用して、この `Button` の `onClick` ハンドラを設定できます。ボタンがクリックされると、`onStartClicked()` 関数が呼び出されます。
+もう一つのヒントとして、ラムダ関数をコンポーザブルに渡すというものもあります。関数型の表記を使用して、渡す関数の型を指定してください。次の例では、`WelcomeScreen()` コンポーザブルが定義されていて、`name` 文字列と `() -> Unit` 型の `onStartClicked()` 関数という 2 つの入力パラメータを受け入れています。つまり、この関数は入力を受け取らず（矢印の前の空のかっこ）、戻り値がありません（矢印の後の `Unit`）。この関数型 `() -> Unit` に一致する関数を使用して、この `Button` の `onClick` ハンドラを設定できます。ボタンがタップされると、`onStartClicked()` 関数が呼び出されます。
 
 ```kotlin
+// 説明用のサンプルです。Lemonade アプリには追加しません
 @Composable
 fun WelcomeScreen(name: String, onStartClicked: () -> Unit) {
     Column {
@@ -1052,11 +1220,11 @@ fun WelcomeScreen(name: String, onStartClicked: () -> Unit) {
 
 レモンを絞る回数をランダムにするカスタム ロジックの追加方法についてさらに手引きが必要な場合は、この手順に戻ってください。
 
-#### **絞るロジックを追加する**
+#### 絞るロジックを追加する
 
-お疲れさまでした。アプリのベースは作成できました。画像をタップすると、次のステップに進みます。ここでは、レモネードを作るためにレモンを複数回絞る必要があるという動作を追加します。レモンを絞る、つまりタップする必要がある回数は、2 から 4 までの乱数にする必要があります。この乱数は、木から新しいレモンを選ぶたびに変わる番号になります。
+お疲れさまでした。アプリのベースは作成できました。画像をタップすると、次のステップに進みます。ここでは、レモネードを作るためにレモンを複数回絞る必要があるという動作を追加します。レモンを絞る、つまりタップする必要がある回数は、2 から 4 までの乱数にする必要があります。この乱数は、木から新しいレモンを選ぶたびに変わります。
 
-![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 箱まで、4 の箱から 1 の箱までの矢印があります。2 の箱から出て自身に戻る「ランダムな回数」というラベルの付いた別の矢印があります。1 の箱の下は、レモンの木の画像とそれに対応するテキストラベルです。2 の箱の下は、レモンの画像とそれに対応するテキストラベルです。3 の箱の下は、レモネードの入ったグラスの画像とそれ対応するテキストラベルです。4 の箱の下は、空のガラスの画像とそれ対応するテキストラベルです。](./images/basic-android-kotlin-compose-button-click-practice-problem/52b9b7321e689600.png)
+![4 つの箱（それぞれ緑色の枠線）が横に並んでいます。それぞれの箱の中には 1 から 4 までの数字が書かれています。1 の箱から 2 の箱まで、2 の箱から 3 の箱まで、3 の箱から 4 の箱まで、4 の箱から 1 の箱までの矢印があります。2 の箱から出て自身に戻る「ランダムな回数」というラベルの付いた別の矢印があります。1 の箱の下は、レモンの木の画像とそれに対応するテキストラベルです。2 の箱の下は、レモンの画像とそれに対応するテキストラベルです。3 の箱の下は、レモネードの入ったグラスの画像とそれに対応するテキストラベルです。4 の箱の下は、空のグラスの画像とそれに対応するテキストラベルです。](./images/basic-android-kotlin-compose-button-click-practice-problem/52b9b7321e689600.png)
 
 ここで作業の参考となるように、いくつか質問をします。
 
@@ -1065,11 +1233,11 @@ fun WelcomeScreen(name: String, onStartClicked: () -> Unit) {
 - 次のステップに進む前に、レモンが必要な回数分タップされたことを確認するには、どうすればよいですか。
 - 画面が再描画されるたびにデータがリセットされないようにするため、`remember` コンポーザブルに変数を保存する必要はありますか。
 
-この変更の実装が完了したら、アプリを実行してください。次のステップに進むにはレモンの画像を複数回タップする必要があり、必要なタップ回数がそれぞれで 2 から 4 までの乱数になることを確認します。レモンの画像を 1 回タップするだけでレモネードの入ったガラスが表示される場合は、コードに戻って足らない部分を見つけ出し、もう一度試しください。
+この変更の実装が完了したら、アプリを実行してください。次のステップに進むにはレモンの画像を複数回タップする必要があり、必要なタップ回数がそれぞれで 2 から 4 までの乱数になることを確認します。レモンの画像を 1 回タップするだけでレモネードの入ったグラスが表示される場合は、コードに戻って足りない部分を見つけ出し、もう一度試してください。
 
 アプリを完成させる方法について追加の手引きが必要な場合は、この手順に戻ってください。
 
-#### **アプリを完成させる**
+#### アプリを完成させる
 
 完了まであと少しです。最後に細かな修正を加えて、アプリを仕上げましょう。
 
@@ -1079,52 +1247,80 @@ fun WelcomeScreen(name: String, onStartClicked: () -> Unit) {
 |---|---|
 | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/38340dfe3df0f721.png) | ![](./images/basic-android-kotlin-compose-button-click-practice-problem/e9442e201777352b.png) |
 
-- テキストと画像を画面の上下左右で中央になるように配置します。
-- テキストのフォントサイズを `18sp` に設定します。
-- テキストと画像の間に `16dp` のスペースを追加します。
-- 画像の周りに `2dp` の細い枠線を追加し、`4dp` の少し丸まった角にします。枠線は、赤が `105`、緑が `205`、青が `216` の [RGB](https://en.wikipedia.org/wiki/RGB_color_model) 色値です。枠線の追加方法の例については、Google で検索してください。または、[枠線](https://developer.android.com/jetpack/compose/modifiers-list#Border)に関するドキュメントを確認してください。
+次の調整を行います。
 
-これらの変更が完了したら、アプリを実行し、最終的なスクリーンショットと比較して、一致していることを確認します。
+- 画像とテキストを画面の上下左右で中央になるように配置します。
+- テキストの `style` 引数に `MaterialTheme.typography.bodyLarge` を設定します。
+- 画像とテキストの間に `32dp` のスペースを追加します。
+- 画像の幅を `128dp`、高さを `160dp` に設定し、`24dp` のパディングを追加します。
+- `Button` の `shape` 引数に `RoundedCornerShape(40.dp)` を渡して、角を丸くします。
+- `Button` の `colors` 引数に `ButtonDefaults.buttonColors()` 関数を渡し、その `containerColor` 引数に、テーマで設定した `MaterialTheme.colorScheme.tertiaryContainer` を指定します。
 
-良いコーディング習慣として、コードに戻ってコメントを追加し、誰がコードを読んでもあなたの思考プロセスを簡単に理解できるようにしてください。また、ファイルの先頭にある、コード内で使用されていない import 文を削除してください。コードが [Kotlin スタイルガイド](https://developer.android.com/kotlin/style-guide)に従っていることを確認します。このような努力により、コードの可読性が上がり、メンテナンスが容易になります。
+`Button` と `Text` のコードは、たとえば次のようになります。引数名は、自分で作成した関数に合わせて読み替えてください。
+
+**`MainActivity.kt`**
+
+```kotlin
+Button(
+    onClick = onImageClick,
+    // 角の丸みを 40.dp に設定する
+    shape = RoundedCornerShape(40.dp),
+    // ボタンの背景色をテーマの tertiaryContainer に設定する
+    colors = ButtonDefaults.buttonColors(
+        containerColor = MaterialTheme.colorScheme.tertiaryContainer
+    )
+) {
+    // 画像の表示
+}
+Spacer(modifier = Modifier.height(32.dp))
+Text(
+    text = stringResource(textLabelResourceId),
+    // テーマで定義された文字スタイルを適用する
+    style = MaterialTheme.typography.bodyLarge
+)
+```
+
+これらの変更が完了したら、アプリを実行し、最終的なスクリーンショットと比較して、同じような見た目になっていることを確認します。端末や Android のバージョンによって、細部が異なる場合があります。
+
+良いコーディング習慣として、コードに戻ってコメントを追加し、誰がコードを読んでもあなたの思考プロセスを簡単に理解できるようにしてください。また、ファイルの先頭にある、コード内で使用されていない import ステートメントを削除してください。コードが [Kotlin のコーディング スタイル ガイドライン](https://developer.android.com/kotlin/style-guide)に従っていることを確認します。このような努力により、コードの可読性が上がり、メンテナンスが容易になります。
 
 お疲れさまでした。Lemonade アプリの実装という素晴らしい成果をあげました。解決すべき部分がたくさんある難しいアプリでした。自分へのご褒美として、さわやかなレモネードを飲みましょう。乾杯！
 
 ### 6. 解答コードを取得する
 
-解答コードをダウンロード:
+このレッスンの完成したコードをダウンロードするには、次の git コマンドを使用します。
 
-または、GitHub リポジトリのクローンを作成してコードを入手することもできます。
+```bash
+$ git clone https://github.com/Hideichi-Kubo/android-training-lemonade.git
+```
 
-```
-$ git clone https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade.git
-```
+または、リポジトリを ZIP ファイルとしてダウンロードし、Android Studio で開くこともできます。手順は、Dice Roller アプリのレッスンの「解答コードを取得する」と同じです。
+
+解答コードを確認する場合は、[GitHub で表示します](https://github.com/Hideichi-Kubo/android-training-lemonade)。解答コードは、リポジトリの `main` ブランチにあります。
 
 アプリを実装する方法は複数あるため、解答コードと正確に一致している必要はありません。
 
-[Lemonade アプリの GitHub リポジトリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade)でコードを見ることもできます。
-
 ## 5. つまずきやすいポイント
 
-- 「ボタンを押しても画面が変わらない」場合、変数が `remember { mutableStateOf(...) }` になっているかを最初に疑いましょう。
+- 「ボタンを押しても画面が変わらない」場合、変数が `remember { mutableIntStateOf(...) }` になっているかを最初に疑いましょう。
 
 ## 6. AIに質問する（この章の例）
 
 次の例をそのままAIに投げてOKです（必要なら自分のコード/エラーに置き換えてください）。
 
 ```text
-「ボタンを押しても画面が変わらない。`remember` と `mutableStateOf` の役割を説明したうえで、自分のコードのどこが問題か確認質問をして（コード: ここに貼る）」
-「練習: クリック動作 で詰まった。答えを丸ごとではなく、方針→ヒント→確認質問の順で教えて」
+「ボタンを押しても画面が変わらない。`remember` と `mutableIntStateOf` の役割を説明したうえで、自分のコードのどこが問題か確認質問をして（コード: ここに貼る）」
+「練習: Lemonade アプリを作成する で詰まった。答えを丸ごとではなく、方針→ヒント→確認質問の順で教えて」
 ```
 
 質問がまとまらないときは、第0章の「質問テンプレ」を使ってください。
 
 ## 7. 提出物
 
-次のレッスンで完成させた Android Studio プロジェクトを、学習用リポジトリの `unit2/DiceRoller/` に置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
+次のレッスンで完成させた Android Studio プロジェクトを、それぞれ学習用リポジトリの指定のフォルダに置きます（プロジェクトフォルダごとコピー。`build/` と `.idea/` は含めない）。
 
-- タップに反応する Dice Roller アプリを作成する
-- 練習: クリック動作
+- タップに反応する Dice Roller アプリを作成する: `unit2/DiceRoller/`
+- 練習: Lemonade アプリを作成する: `unit2/Lemonade/`
 
 PR 本文には次の 3 点を書いてください。
 
@@ -1135,9 +1331,9 @@ PR 本文には次の 3 点を書いてください。
 ## 8. チェックリスト
 
 - [ ] `Button` の `onClick` でユーザー操作に反応するアプリを作れる
-- [ ] `remember` と `mutableStateOf` で画面の状態を持てる
+- [ ] `remember` と `mutableIntStateOf` で画面の状態を持てる
 - [ ] 各レッスンの「まとめ」にある用語を自分の言葉で説明できる
-- [ ] 提出物が `unit2/DiceRoller/` にあり、Android Studio（または Kotlin Playground）で開いて動く
+- [ ] 提出物が `unit2/DiceRoller/` と `unit2/Lemonade/` にあり、Android Studio（または Kotlin Playground）で開いて動く
 
 ---
 

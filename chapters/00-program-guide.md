@@ -47,6 +47,7 @@ Git プログラムで作った学習用リポジトリ（または新しく作�
 ├── unit2/
 │   ├── kotlin-fundamentals/
 │   ├── DiceRoller/
+│   ├── Lemonade/
 │   └── ArtSpace/
 └── ...
 ```

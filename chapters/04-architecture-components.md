@@ -439,7 +439,7 @@ Composition は、初回のコンポーズとその後の再コンポーズに�
 
 Compose が再コンポーズをトラッキングし、トリガーするには、状態がいつ変化したのかを把握する必要があります。オブジェクトの状態をトラッキングするよう Compose に指示するには、オブジェクトの型を [`State`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/State) または [`MutableState`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/MutableState) にする必要があります。`State` 型は不変であり、読み取りのみが可能です。`MutableState` 型は可変であり、読み取りと書き込みが可能です。
 
-`MutableState` については、以前のレッスンの [Lemonade アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-lemonade)と [Tip Time アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator)ですでに確認、使用しました。
+`MutableState` については、以前のレッスンの [Lemonade アプリ](https://github.com/Hideichi-Kubo/android-training-lemonade)と [Tip Time アプリ](https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator)ですでに確認、使用しました。
 
 可変変数 `revenue` を作成するには、`mutableStateOf` を使用して宣言します。`0` は初期のデフォルト値です。
 
