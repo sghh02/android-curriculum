@@ -750,9 +750,11 @@ Lemonade アプリで使用する 4 つのベクター型ドローアブル フ�
 **`Color.kt`**
 
 ```kotlin
+// primaryContainer に使う黄色（90: ライトテーマ用、30: ダークテーマ用）
 val Yellow90 = Color(0xFFF9E44C)
 val Yellow30 = Color(0xFF504700)
 
+// tertiaryContainer に使う緑色（90: ライトテーマ用、30: ダークテーマ用）
 val Green90 = Color(0xFFC3ECD2)
 val Green30 = Color(0xFF294E3B)
 ```
@@ -766,7 +768,9 @@ private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80,
+    // 画面上部のバーの背景色
     primaryContainer = Yellow30,
+    // 画像を配置するボタンの背景色
     tertiaryContainer = Green30
 )
 
@@ -774,7 +778,9 @@ private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40,
+    // 画面上部のバーの背景色
     primaryContainer = Yellow90,
+    // 画像を配置するボタンの背景色
     tertiaryContainer = Green90
 )
 ```
@@ -862,6 +868,8 @@ Lemonade アプリでは、アプリの主要な部分が段階的に変化し�
 以上の作成手順の概要を採用して Lemonade アプリを実装する場合は、自力でアプリを作成してください。5 つのステップそれぞれで、さらに手引きが必要な場合は、次のセクションに進みます。
 
 ### 5. アプリを実装する
+
+> **注:** このセクションのスクリーンショットは、完成したアプリの画面です。実装の途中では、ボタンの色や形、画像の大きさなどがスクリーンショットと異なっていても問題ありません。見た目は最後の「アプリを完成させる」で整えます。
 
 #### **UI レイアウトを作成する**
 
@@ -955,19 +963,24 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// CenterAlignedTopAppBar は実験的な API のため、使用を明示する
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LemonadeApp() {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        // topBar: 画面の上部に表示するバーを指定する
         topBar = {
+            // タイトルを中央に配置するトップアプリバー
             CenterAlignedTopAppBar(
+                // バーに表示するタイトル
                 title = {
                     Text(
                         text = stringResource(R.string.app_name),
                         fontWeight = FontWeight.Bold
                     )
                 },
+                // バーの背景色をテーマの primaryContainer に設定する
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer
                 )
@@ -977,6 +990,7 @@ fun LemonadeApp() {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
+                // トップアプリバーやシステムバーと重ならないように余白を設定する
                 .padding(innerPadding),
             color = MaterialTheme.colorScheme.background
         ) {
@@ -1003,7 +1017,7 @@ Android Studio でこのコードを入力したら、`Surface` の中身を修�
 
 > **重要:** より多くのユーザーがアプリを利用できるようにするために、[画像の内容説明](https://developer.android.com/jetpack/compose/accessibility#describe-visual)を設定して、画像に含まれる内容を説明することを忘れないでください。
 
-このステップを実装して、起動時にレモンの木とテキストラベルが表示されるようにします。コードを変更したときには、Android Studio でコンポーザブルを[プレビュー](https://developer.android.com/jetpack/compose/tooling#preview)して、UI がどのように表示されるかを確認しましょう。アプリを実行して、このセクションの冒頭のスクリーンショットと同じように表示されることを確認します。
+このステップを実装して、起動時にレモンの木とテキストラベルが表示されるようにします。コードを変更したときには、Android Studio でコンポーザブルを[プレビュー](https://developer.android.com/jetpack/compose/tooling#preview)して、UI がどのように表示されるかを確認しましょう。アプリを実行して、レモンの木の画像とテキストラベルが画面の中央に表示されることを確認します。
 
 画像をタップしたときの動作の追加方法について手引きが必要な場合は、作業後にこの手順に戻ってください。
 
@@ -1096,6 +1110,7 @@ var result by remember { mutableIntStateOf(1) }
 @Composable
 fun LemonadeApp() {
     // 現在のステップ（1:木 2:絞る 3:飲む 4:空のグラス）
+    // remember により、再コンポーズ後も値が保持される
     var currentStep by remember { mutableIntStateOf(1) }
 
     Scaffold(
@@ -1127,6 +1142,7 @@ fun LemonadeApp() {
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
+                        // Image を Button の中に配置し、タップで次のステップに進む
                         Button(onClick = { currentStep = 2 }) {
                             Image(
                                 painter = painterResource(R.drawable.lemon_tree),
@@ -1143,6 +1159,7 @@ fun LemonadeApp() {
                         verticalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
                     ) {
+                        // 次のステップへ進む処理は、この後で追加する
                         Button(onClick = { }) {
                             Image(
                                 painter = painterResource(R.drawable.lemon_squeeze),
@@ -1226,7 +1243,31 @@ fun WelcomeScreen(name: String, onStartClicked: () -> Unit) {
 - `Button` の `shape` 引数に `RoundedCornerShape(40.dp)` を渡して、角を丸くします。
 - `Button` の `colors` 引数に `ButtonDefaults.buttonColors()` 関数を渡し、その `containerColor` 引数に、テーマで設定した `MaterialTheme.colorScheme.tertiaryContainer` を指定します。
 
-これらの変更が完了したら、アプリを実行し、最終的なスクリーンショットと比較して、一致していることを確認します。
+`Button` と `Text` のコードは、たとえば次のようになります。引数名は、自分で作成した関数に合わせて読み替えてください。
+
+**`MainActivity.kt`**
+
+```kotlin
+Button(
+    onClick = onImageClick,
+    // 角の丸みを 40.dp に設定する
+    shape = RoundedCornerShape(40.dp),
+    // ボタンの背景色をテーマの tertiaryContainer に設定する
+    colors = ButtonDefaults.buttonColors(
+        containerColor = MaterialTheme.colorScheme.tertiaryContainer
+    )
+) {
+    // 画像の表示
+}
+Spacer(modifier = Modifier.height(32.dp))
+Text(
+    text = stringResource(textLabelResourceId),
+    // テーマで定義された文字スタイルを適用する
+    style = MaterialTheme.typography.bodyLarge
+)
+```
+
+これらの変更が完了したら、アプリを実行し、最終的なスクリーンショットと比較して、同じような見た目になっていることを確認します。端末や Android のバージョンによって、細部が異なる場合があります。
 
 良いコーディング習慣として、コードに戻ってコメントを追加し、誰がコードを読んでもあなたの思考プロセスを簡単に理解できるようにしてください。また、ファイルの先頭にある、コード内で使用されていない import 文を削除してください。コードが [Kotlin スタイルガイド](https://developer.android.com/kotlin/style-guide)に従っていることを確認します。このような努力により、コードの可読性が上がり、メンテナンスが容易になります。
 
